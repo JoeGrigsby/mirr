@@ -43,16 +43,16 @@ const factions=[
 {id:'cardassian',name:'Cardassian Union',short:'Cardassian Union',color:'#f9b855',p:[-64,-1,296],rx:25,rz:33,rot:.2},
 {id:'breen',name:'Breen Confederacy',short:'Breen',color:'#8ddfea',p:[-75,1,250],rx:22,rz:18,rot:-.4},
 {id:'ferengi',name:'Ferengi Alliance',short:'Ferengi',color:'#ecd778',p:[-31,2,263],rx:15,rz:17,rot:0},
-{id:'kzinti',name:'Kzinti Hegemony',short:'Kzinti Hegemony',color:'#e84fc0',p:[-70,1,373],
-  shape:[[-18,-23],[-8,-18],[8,-15],[22,-1],[20,19],[6,25],[-12,17],[-22,-1]]},
-{id:'lyran',name:'Lyran Empire',short:'Lyran Empire',color:'#3fae5c',p:[-26,2,378],labelAt:[-6,370],
-  shape:[[-26,-10],[-4,-16],[22,-12],[32,0],[20,14],[0,18],[-20,10],[-24,-2]]},
-{id:'hydran',name:'Hydran Kingdom',short:'Hydran Kingdom',color:'#5f6fd9',p:[26,1,381],
-  shape:[[-24,-17],[-6,-23],[20,-19],[36,-1],[24,21],[-2,27],[-24,15],[-22,-1]]},
-{id:'gorn',name:'Gorn Hegemony',short:'Gorn Hegemony',color:'#c0392b',p:[-40,-1,407],
-  shape:[[-26,-10],[-7,-15],[23,-11],[35,-3],[26,11],[2,15],[-19,10],[-33,1]]},
-{id:'tholian',name:'Tholian Assembly',short:'Tholians',color:'#d9c365',p:[-14,-2,443],
-  shape:[[-45,-24],[-5,-27],[34,-22],[62,-10],[65,13],[34,27],[-5,29],[-36,21],[-56,4],[-51,-12]]},
+{id:'kzinti',name:'Kzinti Hegemony',short:'Kzinti Hegemony',color:'#e84fc0',p:[-69,1,393],labelAt:[-76,378],
+  shape:[[-4,-26],[6,-20],[14,-8],[18,10],[6,20],[-8,18],[-18,4],[-14,-14]]},
+{id:'lyran',name:'Lyran Empire',short:'Lyran Empire',color:'#3fae5c',p:[-39,2,395],labelAt:[-31,404],
+  shape:[[-16,4],[-9,-6],[2,-8],[12,-7],[22,0],[14,8],[0,10],[-11,9]]},
+{id:'hydran',name:'Hydran Kingdom',short:'Hydran Kingdom',color:'#5f6fd9',p:[-7,1,391],labelAt:[11,377],
+  shape:[[-10,4],[-7,-8],[2,-15],[14,-15],[24,-6],[30,4],[22,14],[10,19],[-2,18],[-9,10]]},
+{id:'gorn',name:'Gorn Hegemony',short:'Gorn Hegemony',color:'#c0392b',p:[-40,-1,415],labelAt:[-45,424],
+  shape:[[-10,-11],[1,-10],[18,-8],[22,2],[14,16],[-2,20],[-16,14],[-20,0]]},
+{id:'tholian',name:'Tholian Assembly',short:'Tholians',color:'#d9c365',p:[-15,-2,454],labelAt:[-13,468],
+  shape:[[-4,-19],[7,-31],[21,-27],[33,-18],[46,-7],[49,6],[40,19],[27,28],[10,32],[-7,34],[-24,29],[-37,21],[-43,7],[-40,-6],[-28,-16],[-16,-25]]},
 {id:'dominion',name:'Dominion',short:'Dominion',color:'#d67dff',p:[-215,3,-240],rx:125,rz:92,rot:.3},
 {id:'borg',name:'Borg Collective',short:'Borg Collective',color:'#91e058',p:[235,2,-185],rx:100,rz:165,rot:-.4}
 ];
@@ -65,6 +65,8 @@ else{for(let j=0;j<64;j++){let a=j/64*Math.PI*2,k=1+.08*Math.sin(a*5+f.rx)+.05*M
 let n=points.length;
 for(let j=0;j<n;j++){let a=points[j],b=points[(j+1)%n];vertexData(territoryFill,f.p,c,.095);vertexData(territoryFill,a,c,.095);vertexData(territoryFill,b,c,.095);for(let y of [-2,2]){vertexData(territoryLines,add(a,[0,y,0]),c,y===2?.65:.18);vertexData(territoryLines,add(b,[0,y,0]),c,y===2?.65:.18)}if(j%8===0){vertexData(territoryLines,add(a,[0,-2,0]),c,.12);vertexData(territoryLines,add(a,[0,2,0]),c,.12)}}}
 const fills=mesh(territoryFill,gl.TRIANGLES),borders=mesh(territoryLines,gl.LINES);
+const claimedData=[];{let f=factions.find(x=>x.id==='tholian'),c=hex(f.color),inner=closedSpline(f.shape.map(([x,z])=>[x*.6,z*.6]),8);for(let i=0;i<inner.length;i++)if(i%6<3){let a=[f.p[0]+inner[i][0],f.p[1]+3,f.p[2]+inner[i][1]],b=[f.p[0]+inner[(i+1)%inner.length][0],f.p[1]+3,f.p[2]+inner[(i+1)%inner.length][1]];vertexData(claimedData,a,c,.4);vertexData(claimedData,b,c,.4)}}
+const claimedMesh=mesh(claimedData,gl.LINES);
 const gridData=[];function line(a,b,c,alpha=.2){vertexData(gridData,a,c,alpha);vertexData(gridData,b,c,alpha)}
 for(let i=-500;i<=500;i+=50){let extent=Math.sqrt(500*500-i*i);line([i,-9,-extent],[i,-9,extent],[.2,.48,.65],.095);line([-extent,-9,i],[extent,-9,i],[.2,.48,.65],.095)}
 line([-520,0,0],[520,0,0],[.4,.72,.9],.55);line([0,0,-520],[0,0,520],[.4,.72,.9],.55);
@@ -79,18 +81,18 @@ const places=[
 {id:'cardassia',name:'Cardassia',p:[-69,2,299],f:'cardassian',text:'Cardassian homeworld · On the Federation’s western flank in the supplied maps.'},
 {id:'ferenginar',name:'Ferenginar',p:[-32,4,263],f:'ferengi',text:'Ferengi homeworld · The gold territory north of Federation space in this model.'},
 {id:'andoria',name:'Andoria',p:[-19,-3,332],f:'fed',text:'A Federation destination. Vertical separation is illustrative for this 3D chart.'},
-{id:'kzin',name:'Kzin',p:[-78,3,360],f:'kzinti',text:'Kzinti Hegemony homeworld · Tucked into the tapered northwestern half of Kzinti space, on the Federation frontier.'},
-{id:'lyra',name:'Lyra',p:[-14,4,378],f:'lyran',text:'Lyran Empire homeworld · Bridges Kzinti space to the west and the Hydran Kingdom to the east.'},
-{id:'epsilonhydra',name:'Epsilon Hydra VII',p:[16,4,381],f:'hydran',text:'Hydran Kingdom capital · Sits closest to Klingon space in this contested region.'},
-{id:'gorn',name:'Gorn',p:[-40,2,407],f:'gorn',text:'Gorn Hegemony homeworld · South of the Kzinti-Lyran border, bordering the Tholian Assembly.'},
-{id:'tholia',name:'Tholia',p:[-14,3,433],f:'tholian',text:'Tholian Assembly homeworld · A reclusive, crystalline species holding the dominant southern territory of this region.'},
+{id:'kzin',name:'Kzin',p:[-79,3,377],f:'kzinti',text:'Kzinti Hegemony homeworld · Set in the narrow northwestern half of Kzinti space, on the Federation frontier.'},
+{id:'lyra',name:'Lyra',p:[-31,4,393],f:'lyran',text:'Lyran Empire homeworld · Bridges Kzinti space to the west and the Hydran Kingdom to the east.'},
+{id:'epsilonhydra',name:'Epsilon Hydra VII',p:[-9,4,389],f:'hydran',text:'Hydran Kingdom capital · Set in the western half of Hydran territory, closest to Klingon space.'},
+{id:'gorn',name:'Gorn',p:[-38,2,413],f:'gorn',text:'Gorn Hegemony homeworld · South of the Kzinti-Lyran border, bordering the Tholian Assembly.'},
+{id:'tholia',name:'Tholia',p:[-15,3,436],f:'tholian',text:'Tholian Assembly homeworld · A reclusive, crystalline species holding the dominant southern territory of this region.'},
 {id:'gamma',name:'Gamma terminus',p:[-166,5,-227],f:'dominion',text:'The Gamma Quadrant end of the Bajoran wormhole. Dominion territory lies nearby.'},
 {id:'borg',name:'Borg space',p:[223,5,-179],f:'borg',text:'Explore the large green region of the Delta Quadrant.'},
 {id:'dominion',name:'Dominion space',p:[-229,6,-255],f:'dominion',text:'Explore the purple region of the Gamma Quadrant.'},
 {id:'core',name:'Galactic core',p:[0,0,0],f:null,text:'The dense stellar center, where the four quadrant divisions meet.'}
 ];
-const destinationDistances={borg:100,dominion:100,gamma:100,core:175,kzin:48,lyra:46,epsilonhydra:58,gorn:46,tholia:92};
-const destinations=[{id:'overview',name:'Galaxy overview',p:[0,0,0],distance:1040},{id:'localspace',name:'Local space',p:[-9,0,376],distance:280},...places.map(p=>({...p,distance:destinationDistances[p.id]??23}))];
+const destinationDistances={borg:100,dominion:100,gamma:100,core:175,kzin:52,lyra:44,epsilonhydra:55,gorn:50,tholia:95};
+const destinations=[{id:'overview',name:'Galaxy overview',p:[0,0,0],distance:1040},{id:'localspace',name:'Local space',p:[-10,0,392],distance:270},...places.map(p=>({...p,distance:destinationDistances[p.id]??23}))];
 const markers=[];for(let p of places){let c=p.f?hex(factions.find(f=>f.id===p.f).color):[1,.8,.5];vertexData(markers,p.p,c,1,9);vertexData(markers,p.p,[1,1,1],1,3.5)}const markerMesh=mesh(markers,gl.POINTS,true);
 const wormData=[],wa=places.find(p=>p.id==='bajor').p,wb=places.find(p=>p.id==='gamma').p;let wormPoints=[];
 for(let i=0;i<=180;i++){let t=i/180;wormPoints.push(add(mix(wa,wb,t),[Math.sin(t*Math.PI)*25,Math.sin(t*Math.PI)*85,0]))}for(let i=0;i<180;i++){if(i%6<3){vertexData(wormData,wormPoints[i],[1,.73,.31],.75);vertexData(wormData,wormPoints[i+1],[1,.73,.31],.75)}}const wormMesh=mesh(wormData,gl.LINES);
@@ -129,7 +131,7 @@ function frame(now){let dt=Math.min((now-last)/1000,.05);last=now;if(transition)
 if(touring&&!transition&&now>nextTourAt){tourIndex++;if(tourIndex>=tourStops.length){stopTour();status()}else go(tourStops[tourIndex],true)}
 basis();if(mode==='flight'){let rate=(2+Math.pow(Number($('speed').value)/100,2)*350)*dt*(keys.has('shift')?4:1),delta=[0,0,0];if(keys.has('w'))delta=add(delta,forward);if(keys.has('s'))delta=sub(delta,forward);if(keys.has('d'))delta=add(delta,right);if(keys.has('a'))delta=sub(delta,right);if(keys.has('e'))delta[1]+=1;if(keys.has('q'))delta[1]-=1;eye=add(eye,mul(norm(delta),rate));if(keys.has('arrowleft'))yaw+=dt;if(keys.has('arrowright'))yaw-=dt;if(keys.has('arrowup'))pitch=Math.min(1.53,pitch+dt);if(keys.has('arrowdown'))pitch=Math.max(-1.53,pitch-dt);if(Math.hypot(...eye)>4000)eye=mul(norm(eye),4000)}
 gl.clearColor(.006,.014,.032,1);gl.clear(gl.COLOR_BUFFER_BIT);gl.disable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);gl.uniform3fv(uniforms.eye,eye);gl.uniform3fv(uniforms.right,right);gl.uniform3fv(uniforms.up,up);gl.uniform3fv(uniforms.forward,forward);gl.uniform1f(uniforms.aspect,width/height);gl.uniform1f(uniforms.focal,1.7);gl.uniform1f(uniforms.dpr,dpr);
-if($('grid').checked)draw(gridMesh);if($('territories').checked)draw(fills);draw(starMesh);if($('territories').checked)draw(borders);if($('wormhole').checked)draw(wormMesh);draw(markerMesh);
+if($('grid').checked)draw(gridMesh);if($('territories').checked)draw(fills);draw(starMesh);if($('territories').checked){draw(borders);draw(claimedMesh)}if($('wormhole').checked)draw(wormMesh);draw(markerMesh);
 if(++labelTick%3===0){updateLabels();$('compass').textContent='X '+eye[0].toFixed(0)+' · Y '+eye[1].toFixed(0)+' · Z '+eye[2].toFixed(0)+'\nMODEL COORDINATES'}requestAnimationFrame(frame)}
 basis();requestAnimationFrame(frame);
 })();
