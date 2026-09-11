@@ -160,7 +160,7 @@ basis();if(mode==='flight'){let rate=(2+Math.pow(Number($('speed').value)/100,2)
 gl.clearColor(.006,.014,.032,1);gl.clear(gl.COLOR_BUFFER_BIT);gl.disable(gl.DEPTH_TEST);gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE);gl.uniform3fv(uniforms.eye,eye);gl.uniform3fv(uniforms.right,right);gl.uniform3fv(uniforms.up,up);gl.uniform3fv(uniforms.forward,forward);gl.uniform1f(uniforms.aspect,width/height);gl.uniform1f(uniforms.focal,1.7);gl.uniform1f(uniforms.dpr,dpr);
 if($('grid').checked)draw(gridMesh);if($('territories').checked)draw(fills);draw(starMesh);if($('territories').checked){draw(borders);draw(claimedMesh)}if($('wormhole').checked)draw(wormMesh);draw(markerMesh);
 if(++labelTick%3===0){updateLabels();$('compass').textContent='X '+eye[0].toFixed(0)+' · Y '+eye[1].toFixed(0)+' · Z '+eye[2].toFixed(0)+'\nMODEL COORDINATES'}requestAnimationFrame(frame)}
-go('borderregion');transition=null;target=destinations.find(d=>d.id==='borderregion').p.slice();distance=78;pitch=-Math.PI/2+.001;yaw=0;status();basis();requestAnimationFrame(frame);
+document.body.classList.remove('flight');$('fly').textContent='Free flight';$('fly').setAttribute('aria-pressed','false');$('hint').textContent='Drag to orbit · Scroll / pinch to zoom · Select a destination to fly there';status();basis();requestAnimationFrame(frame);
 })();
 </script>
 </body></html>
