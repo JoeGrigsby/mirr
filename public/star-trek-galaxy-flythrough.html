@@ -148,6 +148,13 @@ for(let i=0;i<700;i++){
  const r=Math.sqrt(random())*110,t=random()*Math.PI*2;
  vertexData(galaxyHaze,[Math.cos(t)*r,gauss()*9,Math.sin(t)*r],[.78,.66,.54],.0025*(1-r/125),-(44+random()*42));
 }
+// A large, faint light-yellow halo sphere surrounding the galactic bulge, echoing the soft
+// glow of infrared all-sky images of the Milky Way's core (e.g. COBE/WISE composites).
+for(let i=0;i<3600;i++){
+ const r=Math.pow(random(),.6)*190,p=mul(norm([gauss(),gauss(),gauss()]),r);
+ const fade=Math.pow(Math.max(0,1-r/190),1.3);
+ vertexData(galaxyHaze,p,[1,.95,.78],.15*fade,-(60+random()*70));
+}
 const starMesh=mesh(stars,gl.POINTS,true),backgroundMesh=mesh(backgroundStars,gl.POINTS,true),trekStarMesh=mesh(trekStars,gl.POINTS,true),galaxyHazeMesh=mesh(galaxyHaze,gl.POINTS,true),galaxyDustMesh=mesh(galaxyDust,gl.POINTS,true),galaxyDebrisMesh=mesh(galaxyDebris,gl.POINTS,true);
 
 // Reference proportions: manually sampled Shakaar map contours, normalized to the existing Klingon footprint. Approximate 2D area ratios; compact territory areas are preserved; all local borders and markers share one reference coordinate transform.
