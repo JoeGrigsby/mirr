@@ -152,8 +152,8 @@ for(let i=0;i<700;i++){
 // glow of infrared all-sky images of the Milky Way's core (e.g. COBE/WISE composites).
 for(let i=0;i<3600;i++){
  const r=Math.pow(random(),.6)*63.3,p=mul(norm([gauss(),gauss(),gauss()]),r);
- const fade=Math.pow(Math.max(0,1-r/63.3),1.3);
- vertexData(galaxyHaze,p,[1,.95,.78],.25*fade,-(20+random()*23));
+ const fade=Math.pow(Math.max(0,1-r/63.3),2.6);
+ vertexData(galaxyHaze,p,[1,.95,.78],.12*fade,-(30+random()*34));
 }
 const starMesh=mesh(stars,gl.POINTS,true),backgroundMesh=mesh(backgroundStars,gl.POINTS,true),trekStarMesh=mesh(trekStars,gl.POINTS,true),galaxyHazeMesh=mesh(galaxyHaze,gl.POINTS,true),galaxyDustMesh=mesh(galaxyDust,gl.POINTS,true),galaxyDebrisMesh=mesh(galaxyDebris,gl.POINTS,true);
 
