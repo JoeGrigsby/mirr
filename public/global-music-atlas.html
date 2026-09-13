@@ -211,6 +211,8 @@ header small{color:#fff;opacity:.85;letter-spacing:2px;font-size:11px;text-shado
 #tourBtn{flex:1}
 .legendGrid{display:flex;flex-direction:column;gap:6px;margin-top:2px}
 .legendGrid.collapsed{display:none}
+.timelineBody{margin-top:2px}
+.timelineBody.collapsed{display:none}
 .section-label.collapsible{display:flex;align-items:center;justify-content:space-between;width:100%;background:none;border:none;padding:0;font:inherit;color:var(--muted);letter-spacing:2px;text-transform:uppercase;font-size:11px;cursor:pointer}
 .section-label.collapsible .chev{transition:transform .2s}
 .section-label.collapsible[aria-expanded=false] .chev{transform:rotate(-90deg)}
@@ -223,7 +225,7 @@ header small{color:#fff;opacity:.85;letter-spacing:2px;font-size:11px;text-shado
 .momentForm select{width:100%;margin-bottom:7px}
 .momentForm.collapsed{display:none}
 .momentForm button{width:100%}
-#notesOpenBtn{width:100%;margin-bottom:8px}
+#notesOpenBtn{width:100%;margin-top:8px}
 
 #detail{position:absolute;right:26px;top:150px;width:270px;z-index:3;max-height:calc(100dvh - 180px);overflow-y:auto}
 #detail.hidden{display:none}
@@ -291,16 +293,18 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 
 <div id="sidebarStack">
   <aside class="panel">
-    <button id="notesOpenBtn">Map notes &amp; sources</button>
-    <span class="section-label">Tune the timeline</span>
-    <div id="yearReadout">1958–2025</div>
-    <div class="yearRangeRow">
-      <label for="yearFromSlider">From</label>
-      <input id="yearFromSlider" type="range" min="1958" max="2025" step="1" value="2016" aria-label="From year">
-    </div>
-    <div class="yearRangeRow">
-      <label for="yearToSlider">To</label>
-      <input id="yearToSlider" type="range" min="1958" max="2025" step="1" value="2016" aria-label="To year">
+    <button class="section-label collapsible" id="timelineToggle" aria-expanded="false">Tune the timeline <span class="chev">▾</span></button>
+    <div class="timelineBody collapsed" id="timelineBody">
+      <div id="yearReadout">1958–2025</div>
+      <div class="yearRangeRow">
+        <label for="yearFromSlider">From</label>
+        <input id="yearFromSlider" type="range" min="1958" max="2025" step="1" value="1958" aria-label="From year">
+      </div>
+      <div class="yearRangeRow">
+        <label for="yearToSlider">To</label>
+        <input id="yearToSlider" type="range" min="1958" max="2025" step="1" value="2025" aria-label="To year">
+      </div>
+      <button id="notesOpenBtn">Map notes &amp; sources</button>
     </div>
   </aside>
   <aside class="panel">
@@ -318,7 +322,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
   </aside>
 </div>
 
-<section class="panel" id="detail">
+<section class="panel hidden" id="detail">
   <div class="detail-head">
     <div class="tag" id="detailTag">R&amp;B · 2004</div>
     <button id="detailClose" aria-label="Close">×</button>
@@ -346,7 +350,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 </div>
 
 <div id="tooltip" style="display: none; left: 879px; top: 173px;"><b>Every Breath You Take</b><br>The Police · Newcastle, England, UK</div>
-<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a></footer>
+<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a> · version 0.3 - last updated Sep. 13, 2026</footer>
 
 <dialog id="mapNotes" aria-labelledby="notesTitle">
   <button id="notesClose">Close</button>
@@ -550,6 +554,11 @@ document.getElementById('genresToggle').onclick=()=>{
  btn.setAttribute('aria-expanded',String(!expanded));
  legendGrid.classList.toggle('collapsed',expanded);
 };
+document.getElementById('timelineToggle').onclick=()=>{
+ const btn=document.getElementById('timelineToggle'),expanded=btn.getAttribute('aria-expanded')==='true';
+ btn.setAttribute('aria-expanded',String(!expanded));
+ document.getElementById('timelineBody').classList.toggle('collapsed',expanded);
+};
 document.getElementById('findSongToggle').onclick=()=>{
  const btn=document.getElementById('findSongToggle'),expanded=btn.getAttribute('aria-expanded')==='true';
  btn.setAttribute('aria-expanded',String(!expanded));
@@ -577,7 +586,7 @@ const projection=d3.geoOrthographic().clipAngle(90).rotate([80,-18,0]);
 const path=d3.geoPath(projection);
 const graticule=d3.geoGraticule();
 const OVERVIEW_ROTATE=[80,-18,0];
-let w=0,h=0,baseScale=200,countries=null,zoomedCountry=null,yearFrom=2016,yearTo=2016;
+let w=0,h=0,baseScale=200,countries=null,zoomedCountry=null,yearFrom=1958,yearTo=2025;
 function yearLabel(){return yearFrom===yearTo?String(yearFrom):(yearFrom+'–'+yearTo)}
 
 function sizeSvg(){
@@ -589,6 +598,8 @@ function sizeSvg(){
  draw();
 }
 window.addEventListener('resize',sizeSvg);
+document.addEventListener('fullscreenchange',sizeSvg);
+document.addEventListener('webkitfullscreenchange',sizeSvg);
 
 function draw(){
  gOcean.attr('cx',projection.translate()[0]).attr('cy',projection.translate()[1]).attr('r',projection.scale());
