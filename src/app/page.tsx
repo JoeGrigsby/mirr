@@ -20,7 +20,7 @@ const guides = [
   {
     number: "№ 003",
     title: "Alcatraz Island Atlas",
-    href: null,
+    href: "https://joegrigsby.github.io/mirr/alcatraz-island-atlas.html",
   },
 ];
 
