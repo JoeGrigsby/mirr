@@ -47,6 +47,9 @@ export default function Home() {
           </li>
         ))}
       </ul>
+      <footer className="siteFooter">
+        Built with AI assistance (Anthropic Claude, OpenAI ChatGPT)
+      </footer>
     </main>
   );
 }

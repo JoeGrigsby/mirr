@@ -112,3 +112,10 @@ a.guideCard:focus-visible {
   text-transform: uppercase;
   color: #bfae86;
 }
+
+.siteFooter {
+  margin-top: 40px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: rgba(236, 223, 196, 0.55);
+}
