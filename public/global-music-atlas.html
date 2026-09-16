@@ -594,7 +594,8 @@ const gLand=svg.append('g').attr('class','landGroup');
 const gBorders=svg.append('path').attr('class','land-border');
 const gPins=svg.append('g').attr('class','pinsGroup');
 const gSphere=svg.append('circle').attr('class','sphere-outline');
-const projection=d3.geoOrthographic().clipAngle(90).rotate([80,-18,0]);
+const INTRO_ROTATE=[-110,-18,0];
+const projection=d3.geoOrthographic().clipAngle(90).rotate(INTRO_ROTATE);
 const path=d3.geoPath(projection);
 const graticule=d3.geoGraticule();
 const OVERVIEW_ROTATE=[80,-18,0];
@@ -646,6 +647,7 @@ d3.json('vendor/countries-110m.json').then(topo=>{
  gLand.selectAll('path').data(feats).join('path').attr('class','land');
  buildPins();
  sizeSvg();
+ animateProjection(OVERVIEW_ROTATE,baseScale,2400);
 });
 
 function buildPins(){
