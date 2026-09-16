@@ -767,8 +767,7 @@ function hideTip(){tooltip.style.display='none'}
 // ---------- detail panel ----------
 const detail=document.getElementById('detail');
 function youtubeSearchUrl(title,artist){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(artist+' '+title)}
-// TRIAL: album art via the iTunes Search API, limited to a few songs while we evaluate match quality/reliability.
-const ALBUM_ART_TRIAL=new Set(['Blinding Lights','Billie Jean','Yeah!']);
+// Album art fetched on demand from the iTunes Search API for any song with a known album.
 const albumArtCache={};
 function showAlbumArt(link,img,s,entry){
  img.src=entry.art;img.alt=s.alb+' cover art';
@@ -778,7 +777,7 @@ function showAlbumArt(link,img,s,entry){
 function loadAlbumArt(s){
  const link=document.getElementById('detailAlbumArtLink'),img=document.getElementById('detailAlbumArt');
  link.classList.add('hidden');link.removeAttribute('href');img.removeAttribute('src');
- if(!s.alb||!ALBUM_ART_TRIAL.has(s.t))return;
+ if(!s.alb)return;
  const key=s.a+'|'+s.alb;
  if(albumArtCache[key]){showAlbumArt(link,img,s,albumArtCache[key]);return}
  const primaryArtist=s.a.split(/ feat\.| ft\.| &|,/)[0];
