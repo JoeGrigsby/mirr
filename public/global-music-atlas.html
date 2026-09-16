@@ -187,6 +187,9 @@ footer a:hover{color:#e8dcc4}
 .pin.past .core{opacity:.03;r:1.6}
 .pin.future{opacity:0;pointer-events:none}
 .pin.muted{opacity:.12}
+.pin.selected{opacity:1;pointer-events:auto}
+.pin.selected .core{stroke:#ffe08a;stroke-width:3px}
+.pin.selected .glow{opacity:.9}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
 
 #caption{position:absolute;left:26px;top:175px;z-index:3;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:9px 16px;font-size:12px;color:var(--muted);box-shadow:0 8px 20px rgba(80,60,30,.14)}
@@ -599,7 +602,7 @@ const projection=d3.geoOrthographic().clipAngle(90).rotate(INTRO_ROTATE);
 const path=d3.geoPath(projection);
 const graticule=d3.geoGraticule();
 const OVERVIEW_ROTATE=[80,-18,0];
-let w=0,h=0,baseScale=200,countries=null,zoomedCountry=null,yearFrom=1958,yearTo=2025;
+let w=0,h=0,baseScale=200,countries=null,zoomedCountry=null,yearFrom=1958,yearTo=2025,selectedSongId=null;
 function yearLabel(){return yearFrom===yearTo?String(yearFrom):(yearFrom+'–'+yearTo)}
 
 function sizeSvg(){
@@ -663,7 +666,7 @@ function buildPins(){
  refreshPins();
 }
 function refreshPins(){
- gPins.selectAll('.pin').classed('past',d=>d.y<yearFrom).classed('current',d=>d.y>=yearFrom&&d.y<=yearTo).classed('future',d=>d.y>yearTo).classed('muted',d=>activeGenre&&d.g!==activeGenre);
+ gPins.selectAll('.pin').classed('past',d=>d.y<yearFrom).classed('current',d=>d.y>=yearFrom&&d.y<=yearTo).classed('future',d=>d.y>yearTo).classed('muted',d=>activeGenre&&d.g!==activeGenre).classed('selected',d=>d.id===selectedSongId);
 }
 
 // ---------- drag to spin + click country ----------
@@ -716,9 +719,9 @@ function fitScaleFor(feature,targetRotate){
  const factor=avail/Math.max(dx,dy,1);
  return Math.min(baseScale*factor,baseScale*16);
 }
-function zoomToCountry(feature){
+function zoomToCountry(feature,centerLonLat){
  stopTour();
- const centroid=d3.geoCentroid(feature);
+ const centroid=centerLonLat||d3.geoCentroid(feature);
  const targetRotate=[-centroid[0],-centroid[1],0];
  const targetScale=fitScaleFor(feature,targetRotate);
  svg.classed('zoomed',true);
@@ -749,10 +752,13 @@ document.getElementById('backBtn').onclick=()=>{
  document.getElementById('caption').style.display='';
  animateProjection(OVERVIEW_ROTATE,baseScale,1100,()=>{zoomedCountry=null;status()});
  detail.classList.add('hidden');
+ selectedSongId=null;refreshPins();
 };
 function goToSong(s){
  const feat=countries.feats.find(f=>f.properties&&f.properties.name===s.countryName);
- if(feat)zoomToCountry(feat);
+ if(feat)zoomToCountry(feat,[s.lon,s.lat]);
+ document.getElementById('timelineToggle').setAttribute('aria-expanded','true');
+ document.getElementById('timelineBody').classList.remove('collapsed');
  setTimeout(()=>focusSong(s),1250);
 }
 
@@ -894,6 +900,7 @@ function loadAlbumArt(s){
  tryArtist(0);
 }
 function focusSong(s){
+ selectedSongId=s.id;refreshPins();
  detail.classList.remove('hidden');
  document.getElementById('detailWatch').style.display='';
  document.getElementById('detailTag').textContent=GL[s.g].toUpperCase()+' · '+s.y;
@@ -906,7 +913,7 @@ function focusSong(s){
  document.getElementById('detailYoutube').href=youtubeSearchUrl(s.t,s.a);
  status(s.t.toUpperCase()+' · '+s.c.toUpperCase()+', '+s.s);
 }
-document.getElementById('detailClose').onclick=()=>detail.classList.add('hidden');
+document.getElementById('detailClose').onclick=()=>{detail.classList.add('hidden');selectedSongId=null;refreshPins()};
 
 function status(){}
 
