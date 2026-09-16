@@ -547,6 +547,7 @@ SONGS.forEach((s,i)=>{s.id='s'+i;if(!s.countryName)s.countryName='United States 
 
 // ---------- legend ----------
 const legendGrid=document.getElementById('legendGrid');
+legendGrid.innerHTML='';
 let activeGenre=null;
 GENRES.forEach(g=>{
  const count=SONGS.filter(s=>s.g===g.k).length;
