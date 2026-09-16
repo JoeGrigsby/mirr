@@ -63,6 +63,16 @@
 body{height:100dvh;display:flex;flex-direction:column}header{flex-shrink:0}.app{height:auto;flex:1}.project-footer{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px 20px;padding:8px 22px;border-top:1px solid var(--line);background:#101718;color:var(--muted);font-size:11px;line-height:1.6;letter-spacing:.15px}.project-footer p{margin:0}.project-footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}.footer-links{display:flex;gap:14px;flex-wrap:wrap}.project-footer a:hover{color:var(--ink)}
 @media(max-width:650px){.project-footer{padding:10px 15px;font-size:10px}}
 </style></head><body>
+<style>
+#smallScreenNotice{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(8,8,8,.88);backdrop-filter:blur(4px)}
+#smallScreenNotice[hidden]{display:none}
+#smallScreenNotice .ssn-card{max-width:380px;background:#191512;color:#f1e9da;border:1px solid #6b563a;border-radius:10px;padding:30px 26px;text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.55);font-family:system-ui,sans-serif}
+#smallScreenNotice .ssn-title{font-weight:700;font-size:17px;margin:0 0 14px;letter-spacing:.3px;color:#f1e9da}
+#smallScreenNotice p{font-size:13px;line-height:1.65;margin:0 0 20px;color:#cfc3b0}
+#ssnContinue{padding:10px 20px;border-radius:6px;border:1px solid #d3ad69;background:none;color:#d3ad69;cursor:pointer;font-size:12px;letter-spacing:.4px}
+#ssnContinue:hover{background:rgba(211,173,105,.13)}
+</style>
+<div id="smallScreenNotice" hidden><div class="ssn-card"><p class="ssn-title">Best experienced on a larger screen</p><p>We apologize, but this guide is built to be experienced on a full browser window on a desktop or tablet — that's what lets us share this material without sacrificing its detail.</p><button id="ssnContinue" type="button">Continue anyway</button></div></div>
 <header><div class="brand"><div class="mark" aria-hidden="true">≋</div><div><div class="eyebrow">The Story Field Guide Project · № 004</div><h1>BANNED BOOKS TIMELINE</h1></div></div><div class="header-right"><a href="https://joegrigsby.github.io/mirr/">← All Field Guides</a><div class="meta">An atlas of contested stories &nbsp; / &nbsp; 1920–2026</div></div></header>
 <div class="app"><aside aria-label="Explore the collection"><div class="section-title">EXPLORE</div>
 <details><summary><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v6m8-6v6"/></svg><span class="filter-title">Time<span class="sub" id="time-sub">All years</span></span></summary><div class="options"><div class="range-values"><span id="from-label">1920</span><span id="to-label">2026</span></div><label class="help" for="from">From year</label><input id="from" type="range" min="1920" max="2026" value="1920"><label class="help" for="to">To year</label><input id="to" type="range" min="1920" max="2026" value="2026"></div></details>
@@ -360,4 +370,23 @@ for(const id of ['about','data-note'])$(id).onclick=()=>$('sources').showModal()
 new ResizeObserver(fit).observe(chart.parentElement);document.fonts.ready.then(fit);
 loadCovers();
 })();
-</script></body></html>
+</script>
+
+<script>
+(function(){
+ var notice=document.getElementById('smallScreenNotice');
+ if(!notice)return;
+ var KEY='sfg-small-screen-dismissed';
+ function check(){
+  var dismissed=false;try{dismissed=sessionStorage.getItem(KEY)==='1'}catch(e){}
+  if(dismissed){notice.hidden=true;return}
+  notice.hidden=window.innerWidth>=820;
+ }
+ var btn=document.getElementById('ssnContinue');
+ if(btn)btn.onclick=function(){try{sessionStorage.setItem(KEY,'1')}catch(e){}notice.hidden=true};
+ window.addEventListener('resize',check);
+ check();
+})();
+</script>
+
+</body></html>
