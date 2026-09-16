@@ -2628,8 +2628,19 @@ class Component extends DCLogic {
  componentDidMount(){
   this.handleResize=()=>this.draw();
   window.addEventListener("resize",this.handleResize);
-  this.draw();
+  this.introZoom();
   this.resizeObserver=new ResizeObserver(()=>this.draw());this.resizeObserver.observe(this.canvasRef.current.parentElement);
+ }
+ introZoom(){
+  const target=this.cam.zoom,start=.45,duration=1700,t0=performance.now();
+  this.cam.zoom=start;
+  const tick=now=>{
+   const t=Math.min(1,(now-t0)/duration),e=1-Math.pow(1-t,3);
+   this.cam.zoom=start+(target-start)*e;
+   this.draw();
+   if(t<1)requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
  }
  componentDidUpdate(){ this.draw(); }
  componentWillUnmount(){
