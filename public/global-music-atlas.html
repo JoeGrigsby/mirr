@@ -361,7 +361,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 </div>
 
 <div id="tooltip" style="display: none; left: 879px; top: 173px;"><b>Every Breath You Take</b><br>The Police · Newcastle, England, UK</div>
-<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a> · Album art via the <a href="https://developer.apple.com/documentation/applemarketingtools" target="_blank" rel="noopener noreferrer">iTunes Search API</a> · version 0.5 - Sep 15, 2026 · Built with AI assistance (Anthropic Claude, OpenAI ChatGPT)</footer>
+<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a> · Album art via the <a href="https://developer.apple.com/documentation/applemarketingtools" target="_blank" rel="noopener noreferrer">iTunes Search API</a> and the <a href="https://coverartarchive.org/" target="_blank" rel="noopener noreferrer">Cover Art Archive</a> · version 0.5 - Sep 15, 2026 · Built with AI assistance (Anthropic Claude, OpenAI ChatGPT)</footer>
 
 <dialog id="mapNotes" aria-labelledby="notesTitle">
   <button id="notesClose">Close</button>
@@ -795,6 +795,19 @@ function pickBestResult(results,wantArtist,wantName){
  const nameScore=r=>{const n=normMatch(r.collectionName||r.trackName);return n===wn?3:n.startsWith(wn)||wn.startsWith(n)?2:n.includes(wn)?1:0};
  return looseArtist.sort((a,b)=>nameScore(b)-nameScore(a))[0];
 }
+// Second-tier fallback when iTunes has no usable match: MusicBrainz for the
+// release-group identity, then the Cover Art Archive for the actual image.
+// Both are free and require no API key.
+function pickBestReleaseGroup(results,wantArtist,wantName){
+ if(!results||!results.length)return null;
+ const wa=normMatch(wantArtist),wn=normMatch(wantName);
+ const artistOf=r=>r['artist-credit-phrase']||(r['artist-credit']&&r['artist-credit'].map(a=>a.name).join(' '))||'';
+ const exactArtist=results.filter(r=>normMatch(artistOf(r))===wa);
+ const looseArtist=exactArtist.length?exactArtist:results.filter(r=>{const a=normMatch(artistOf(r));return a&&(a.includes(wa)||wa.includes(a))});
+ if(!looseArtist.length)return null;
+ const nameScore=r=>{const n=normMatch(r.title);return n===wn?3:n.startsWith(wn)||wn.startsWith(n)?2:n.includes(wn)?1:0};
+ return looseArtist.sort((a,b)=>nameScore(b)-nameScore(a))[0];
+}
 function showAlbumArt(link,img,placeholder,s,entry,altLabel){
  img.src=entry.art;img.alt=altLabel+' cover art';
  if(entry.url)link.href=entry.url;else link.removeAttribute('href');
@@ -831,7 +844,7 @@ function loadAlbumArt(s){
   if(stillCurrent())placeholder.classList.remove('hidden');
  }
  function tryArtist(i){
-  if(i>=candidates.length){noArtFound();return}
+  if(i>=candidates.length){tryMusicBrainz(0);return}
   const wantArtist=candidates[i],term=encodeURIComponent(wantArtist+' '+query);
   fetch('https://itunes.apple.com/search?term='+term+'&entity='+entity+'&limit=10').then(r=>{
    if(!r.ok)throw new Error('bad status');
@@ -839,12 +852,43 @@ function loadAlbumArt(s){
   }).then(data=>{
    const result=pickBestResult(data.results,wantArtist,query);
    if(!result){
-    if(i+1<candidates.length)tryArtist(i+1);else noArtFound();
+    if(i+1<candidates.length)tryArtist(i+1);else tryMusicBrainz(0);
     return;
    }
    const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:usingAlbum?result.collectionViewUrl:result.trackViewUrl};
    albumArtCache[key]=entry;
    if(stillCurrent())showAlbumArt(link,img,placeholder,s,entry,query);
+  }).catch(requestFailed);
+ }
+ function tryMusicBrainz(i){
+  if(i>=candidates.length){noArtFound();return}
+  const wantArtist=candidates[i],mbTerm=encodeURIComponent(wantArtist+' '+query);
+  fetch('https://musicbrainz.org/ws/2/release-group/?query='+mbTerm+'&fmt=json&limit=5').then(r=>{
+   if(!r.ok)throw new Error('bad status');
+   return r.json();
+  }).then(data=>{
+   const rg=pickBestReleaseGroup(data['release-groups'],wantArtist,query);
+   if(!rg){
+    if(i+1<candidates.length)tryMusicBrainz(i+1);else noArtFound();
+    return;
+   }
+   fetch('https://coverartarchive.org/release-group/'+rg.id).then(r2=>{
+    if(!r2.ok)throw new Error('no cover art registered');
+    return r2.json();
+   }).then(caa=>{
+    const images=caa.images||[];
+    const pick=images.find(im=>im.front)||images[0];
+    const art=pick&&(pick.thumbnails&&(pick.thumbnails.large||pick.thumbnails['500'])||pick.image);
+    if(!art){
+     if(i+1<candidates.length)tryMusicBrainz(i+1);else noArtFound();
+     return;
+    }
+    const entry={art,url:'https://musicbrainz.org/release-group/'+rg.id};
+    albumArtCache[key]=entry;
+    if(stillCurrent())showAlbumArt(link,img,placeholder,s,entry,query);
+   }).catch(()=>{
+    if(i+1<candidates.length)tryMusicBrainz(i+1);else noArtFound();
+   });
   }).catch(requestFailed);
  }
  tryArtist(0);
