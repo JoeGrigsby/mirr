@@ -24,7 +24,7 @@ const guides = [
   },
   {
     number: "№ 004",
-    title: "Banned Books",
+    title: "Banned Books Timeline",
     href: "https://joegrigsby.github.io/mirr/banned-books-field-guide.html",
   },
 ];
