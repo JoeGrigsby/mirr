@@ -190,7 +190,7 @@ footer a:hover{color:#e8dcc4}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.28)}}
 
 #caption{position:absolute;left:26px;top:175px;z-index:3;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:9px 16px;font-size:12px;color:var(--muted);box-shadow:0 8px 20px rgba(80,60,30,.14)}
-#backBtn{display:none;position:absolute;left:26px;top:225px;z-index:3}
+#backBtn{display:none}
 #backBtn.show{display:inline-block}
 
 header{position:absolute;top:24px;left:28px;z-index:3;pointer-events:none}
@@ -274,7 +274,6 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
   #sidebarStack{display:none;left:14px;top:182px;width:calc(100% - 28px);max-height:calc(100dvh - 272px)}
   body.nav-open #sidebarStack{display:flex}
   #caption{top:132px;left:14px;font-size:11px}
-  #backBtn{left:14px;top:180px}
   #detail{right:12px;left:auto;top:80px;width:200px;max-height:calc(100dvh - 300px)}
   #bottomBar{left:14px;right:10px;bottom:14px;justify-content:flex-end}
   #toolbar{flex-wrap:wrap}
@@ -296,7 +295,6 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 
 <button id="navToggle" aria-expanded="false">Panels ☰</button>
 <div id="caption">Drag to spin · click a country to explore</div>
-<button id="backBtn">◄ Back to globe</button>
 
 <div id="sidebarStack">
   <aside class="panel">
@@ -346,6 +344,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 
 <div id="bottomBar">
   <div id="toolbar" class="panel">
+    <button id="backBtn">◄ Back to globe</button>
     <button id="panLeft" class="navBtn" aria-label="Pan left">◀</button>
     <button id="panUp" class="navBtn" aria-label="Pan up">▲</button>
     <button id="panDown" class="navBtn" aria-label="Pan down">▼</button>
@@ -847,19 +846,19 @@ function animateBy(dLon,dLat,scaleFactor){
 }
 function panBy(dLon,dLat){animateBy(dLon,dLat,1)}
 function zoomBy(factor){animateBy(0,0,factor)}
-document.getElementById('panUp').onclick=()=>panBy(0,10);
-document.getElementById('panDown').onclick=()=>panBy(0,-10);
-document.getElementById('panLeft').onclick=()=>panBy(-10,0);
-document.getElementById('panRight').onclick=()=>panBy(10,0);
+document.getElementById('panUp').onclick=()=>panBy(0,-10);
+document.getElementById('panDown').onclick=()=>panBy(0,10);
+document.getElementById('panLeft').onclick=()=>panBy(10,0);
+document.getElementById('panRight').onclick=()=>panBy(-10,0);
 document.getElementById('zoomIn').onclick=()=>zoomBy(1.35);
 document.getElementById('zoomOut').onclick=()=>zoomBy(1/1.35);
 window.addEventListener('keydown',e=>{
  const tag=(e.target&&e.target.tagName||'').toLowerCase();
  if(tag==='input'||tag==='select'||tag==='textarea')return;
- if(e.key==='ArrowUp'){panBy(0,10);e.preventDefault()}
- else if(e.key==='ArrowDown'){panBy(0,-10);e.preventDefault()}
- else if(e.key==='ArrowLeft'){panBy(-10,0);e.preventDefault()}
- else if(e.key==='ArrowRight'){panBy(10,0);e.preventDefault()}
+ if(e.key==='ArrowUp'){panBy(0,-10);e.preventDefault()}
+ else if(e.key==='ArrowDown'){panBy(0,10);e.preventDefault()}
+ else if(e.key==='ArrowLeft'){panBy(10,0);e.preventDefault()}
+ else if(e.key==='ArrowRight'){panBy(-10,0);e.preventDefault()}
  else if(e.key==='+'||e.key==='='){zoomBy(1.35);e.preventDefault()}
  else if(e.key==='-'||e.key==='_'){zoomBy(1/1.35);e.preventDefault()}
 });
