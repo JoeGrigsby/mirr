@@ -791,21 +791,25 @@ function loadAlbumArt(s){
   return;
  }
  const primaryArtist=s.a.split(/ feat\.| ft\.| &|,/)[0];
- const term=encodeURIComponent(primaryArtist+' '+s.alb);
- fetch('https://itunes.apple.com/search?term='+term+'&entity=album&limit=1').then(r=>r.json()).then(data=>{
-  const result=data.results&&data.results[0];
-  const stillCurrent=document.getElementById('detailAlbum').textContent===s.alb;
-  if(!result||!result.artworkUrl100){
+ const featMatch=s.a.match(/ (?:feat\.|ft\.) (.+)$/i);
+ const featuredArtist=featMatch?featMatch[1].split(/ &|,/)[0]:null;
+ const candidates=featuredArtist&&featuredArtist!==primaryArtist?[primaryArtist,featuredArtist]:[primaryArtist];
+ function tryArtist(i){
+  if(i>=candidates.length){
    albumArtCache[key]=null;
-   if(stillCurrent)placeholder.classList.remove('hidden');
+   if(document.getElementById('detailAlbum').textContent===s.alb)placeholder.classList.remove('hidden');
    return;
   }
-  const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:result.collectionViewUrl};
-  albumArtCache[key]=entry;
-  if(stillCurrent)showAlbumArt(link,img,placeholder,s,entry);
- }).catch(()=>{
-  if(document.getElementById('detailAlbum').textContent===s.alb)placeholder.classList.remove('hidden');
- });
+  const term=encodeURIComponent(candidates[i]+' '+s.alb);
+  fetch('https://itunes.apple.com/search?term='+term+'&entity=album&limit=1').then(r=>r.json()).then(data=>{
+   const result=data.results&&data.results[0];
+   if(!result||!result.artworkUrl100){tryArtist(i+1);return}
+   const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:result.collectionViewUrl};
+   albumArtCache[key]=entry;
+   if(document.getElementById('detailAlbum').textContent===s.alb)showAlbumArt(link,img,placeholder,s,entry);
+  }).catch(()=>tryArtist(i+1));
+ }
+ tryArtist(0);
 }
 function focusSong(s){
  detail.classList.remove('hidden');
