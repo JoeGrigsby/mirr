@@ -332,7 +332,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
     <div class="tag" id="detailTag">R&amp;B · 2004</div>
     <button id="detailClose" aria-label="Close">×</button>
   </div>
-  <a id="detailAlbumArtLink" class="hidden" target="_blank" rel="noopener noreferrer" aria-label="View album on Apple Music"><img id="detailAlbumArt" alt=""></a>
+  <a id="detailAlbumArtLink" class="hidden" target="_blank" rel="noopener noreferrer" aria-label="View on Apple Music"><img id="detailAlbumArt" alt=""></a>
   <div id="detailAlbumArtPlaceholder" class="hidden">No Image Found</div>
   <div id="detailTitle">Yeah!</div>
   <p id="detailAlbum">Confessions</p>
@@ -771,10 +771,13 @@ function hideTip(){tooltip.style.display='none'}
 // ---------- detail panel ----------
 const detail=document.getElementById('detail');
 function youtubeSearchUrl(title,artist){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(artist+' '+title)}
-// Album art fetched on demand from the iTunes Search API for any song with a known album.
+// Cover art fetched on demand from the iTunes Search API: album art when a song's
+// album is known, otherwise the single's own release art (every iTunes single is
+// catalogued with its own artwork, even when it never appeared on a studio album).
 const albumArtCache={};
-function showAlbumArt(link,img,placeholder,s,entry){
- img.src=entry.art;img.alt=s.alb+' cover art';
+let currentArtSongId=null;
+function showAlbumArt(link,img,placeholder,s,entry,altLabel){
+ img.src=entry.art;img.alt=altLabel+' cover art';
  if(entry.url)link.href=entry.url;else link.removeAttribute('href');
  link.classList.remove('hidden');
  placeholder.classList.add('hidden');
@@ -782,30 +785,50 @@ function showAlbumArt(link,img,placeholder,s,entry){
 function loadAlbumArt(s){
  const link=document.getElementById('detailAlbumArtLink'),img=document.getElementById('detailAlbumArt'),placeholder=document.getElementById('detailAlbumArtPlaceholder');
  link.classList.add('hidden');link.removeAttribute('href');img.removeAttribute('src');
- if(!s.alb){placeholder.classList.remove('hidden');return}
  placeholder.classList.add('hidden');
- const key=s.a+'|'+s.alb;
+ currentArtSongId=s.id;
+ const usingAlbum=!!s.alb;
+ const query=usingAlbum?s.alb:s.t;
+ const entity=usingAlbum?'album':'song';
+ const key=(usingAlbum?'album:':'song:')+s.a+'|'+query;
+ const stillCurrent=()=>currentArtSongId===s.id;
  if(key in albumArtCache){
   const entry=albumArtCache[key];
-  if(entry)showAlbumArt(link,img,placeholder,s,entry);else placeholder.classList.remove('hidden');
+  if(entry)showAlbumArt(link,img,placeholder,s,entry,query);else placeholder.classList.remove('hidden');
   return;
  }
  const primaryArtist=s.a.split(/ feat\.| ft\.| &|,/)[0];
- const term=encodeURIComponent(primaryArtist+' '+s.alb);
- fetch('https://itunes.apple.com/search?term='+term+'&entity=album&limit=1').then(r=>r.json()).then(data=>{
-  const result=data.results&&data.results[0];
-  const stillCurrent=document.getElementById('detailAlbum').textContent===s.alb;
-  if(!result||!result.artworkUrl100){
-   albumArtCache[key]=null;
-   if(stillCurrent)placeholder.classList.remove('hidden');
-   return;
-  }
-  const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:result.collectionViewUrl};
-  albumArtCache[key]=entry;
-  if(stillCurrent)showAlbumArt(link,img,placeholder,s,entry);
- }).catch(()=>{
-  if(document.getElementById('detailAlbum').textContent===s.alb)placeholder.classList.remove('hidden');
- });
+ const featMatch=s.a.match(/ (?:feat\.|ft\.) (.+)$/i);
+ const featuredArtist=featMatch?featMatch[1].split(/ &|,/)[0]:null;
+ const candidates=featuredArtist&&featuredArtist!==primaryArtist?[primaryArtist,featuredArtist]:[primaryArtist];
+ function noArtFound(){
+  // Confirmed via a successful API response with no match — safe to remember for this session.
+  albumArtCache[key]=null;
+  if(stillCurrent())placeholder.classList.remove('hidden');
+ }
+ function requestFailed(){
+  // The request itself failed (network hiccup, rate limit, bad response) — don't cache
+  // a false negative; just show the placeholder for now and allow a retry next time.
+  if(stillCurrent())placeholder.classList.remove('hidden');
+ }
+ function tryArtist(i){
+  if(i>=candidates.length){noArtFound();return}
+  const term=encodeURIComponent(candidates[i]+' '+query);
+  fetch('https://itunes.apple.com/search?term='+term+'&entity='+entity+'&limit=1').then(r=>{
+   if(!r.ok)throw new Error('bad status');
+   return r.json();
+  }).then(data=>{
+   const result=data.results&&data.results[0];
+   if(!result||!result.artworkUrl100){
+    if(i+1<candidates.length)tryArtist(i+1);else noArtFound();
+    return;
+   }
+   const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:usingAlbum?result.collectionViewUrl:result.trackViewUrl};
+   albumArtCache[key]=entry;
+   if(stillCurrent())showAlbumArt(link,img,placeholder,s,entry,query);
+  }).catch(requestFailed);
+ }
+ tryArtist(0);
 }
 function focusSong(s){
  detail.classList.remove('hidden');
