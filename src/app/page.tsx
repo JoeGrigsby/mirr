@@ -22,6 +22,11 @@ const guides = [
     title: "Alcatraz Island Atlas",
     href: "https://joegrigsby.github.io/mirr/alcatraz-island-atlas.html",
   },
+  {
+    number: "№ 004",
+    title: "Banned Books",
+    href: "https://joegrigsby.github.io/mirr/banned-books-field-guide.html",
+  },
 ];
 
 export default function Home() {
