@@ -229,6 +229,7 @@ header small{color:#fff;opacity:.85;letter-spacing:2px;font-size:11px;text-shado
 
 #detail{position:absolute;right:26px;top:150px;width:270px;z-index:3;max-height:calc(100dvh - 180px);overflow-y:auto}
 #detail.hidden{display:none}
+#detailAlbumArtLink.hidden,#detailAlbumArtPlaceholder.hidden{display:none}
 .detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .tag{font-size:11px;letter-spacing:1.5px;color:var(--accent);font-weight:700}
 #detailClose{padding:2px 8px;line-height:1}
@@ -236,6 +237,7 @@ header small{color:#fff;opacity:.85;letter-spacing:2px;font-size:11px;text-shado
 #detailAlbumArtLink{display:block;width:96px;height:96px;margin:8px 0 4px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.18);transition:box-shadow .15s ease,transform .15s ease}
 #detailAlbumArtLink:hover,#detailAlbumArtLink:focus-visible{box-shadow:0 6px 14px rgba(0,0,0,.28);transform:translateY(-1px)}
 #detailAlbumArt{display:block;width:96px;height:96px;object-fit:cover;border-radius:6px}
+#detailAlbumArtPlaceholder{display:flex;align-items:center;justify-content:center;width:96px;height:96px;margin:8px 0 4px;border-radius:6px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 10px rgba(0,0,0,.1);color:#999;font-size:11px;font-weight:600;letter-spacing:.3px;text-align:center;line-height:1.3;padding:6px;box-sizing:border-box}
 #detailAlbum{color:var(--muted);font-size:12px;font-style:italic;margin:0 0 2px}
 #detailArtist{color:var(--muted);font-size:13px;margin:0 0 8px}
 #detailFact{font-size:12px;color:#6e4a10;border-top:1px solid var(--line);padding-top:8px;margin-top:8px;font-weight:600}
@@ -333,6 +335,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
     <button id="detailClose" aria-label="Close">×</button>
   </div>
   <a id="detailAlbumArtLink" class="hidden" target="_blank" rel="noopener noreferrer" aria-label="View album on Apple Music"><img id="detailAlbumArt" alt=""></a>
+  <div id="detailAlbumArtPlaceholder" class="hidden">No Image Found</div>
   <div id="detailTitle">Yeah!</div>
   <p id="detailAlbum">Confessions</p>
   <p id="detailArtist">Usher feat. Lil Jon &amp; Ludacris — Atlanta, GA</p>
@@ -457,14 +460,14 @@ const SONGS=[
 {y:1996,t:'Un-Break My Heart',alb:'Secrets',a:'Toni Braxton',c:'Severn',s:'MD',lat:39.1301,lon:-76.6997,g:'rnb',atRank:15,text:"A Maryland-raised singer's soaring ballad spends 11 weeks atop the chart."},
 {y:2004,t:'Yeah!',alb:'Confessions',a:'Usher feat. Lil Jon & Ludacris',c:'Atlanta',s:'GA',lat:33.7490,lon:-84.3880,g:'rnb',atRank:16,text:"An Atlanta trio's crunk-R&B fusion rules the Hot 100 for 12 weeks."},
 {y:1981,t:'Bette Davis Eyes',alb:'Mistaken Identity',a:'Kim Carnes',c:'Pasadena',s:'CA',lat:34.1478,lon:-118.1445,g:'rock',atRank:17,text:"A raspy-voiced Pasadena singer's synth-pop classic spends nine weeks at No. 1."},
-{y:1981,t:'Endless Love',a:'Diana Ross & Lionel Richie',c:'Detroit',s:'MI',lat:42.3314,lon:-83.0458,g:'rnb',atRank:18,text:"A Motown legend's title-track duet spends nine weeks atop the Hot 100."},
+{y:1981,t:'Endless Love',alb:'Endless Love (Original Motion Picture Soundtrack)',a:'Diana Ross & Lionel Richie',c:'Detroit',s:'MI',lat:42.3314,lon:-83.0458,g:'rnb',atRank:18,text:"A Motown legend's title-track duet spends nine weeks atop the Hot 100."},
 {y:1976,t:"Tonight's the Night (Gonna Be Alright)",alb:'A Night on the Town',a:'Rod Stewart',c:'London',s:'England, UK',lat:51.5072,lon:-0.1276,g:'rock',atRank:19,countryName:'United Kingdom',text:"A London-born rock singer's husky ballad spends eight weeks at No. 1."},
 {y:1997,t:'You Were Meant for Me / Foolish Games',alb:'Pieces of You',a:'Jewel',c:'Homer',s:'AK',lat:59.6425,lon:-151.5483,g:'indie',atRank:20,text:"An Alaska-raised singer-songwriter's double-sided hit spends 13 weeks combined at No. 2."},
 {y:1991,t:'(Everything I Do) I Do It for You',alb:'Waking Up the Neighbours',a:'Bryan Adams',c:'Kingston',s:'Ontario, Canada',lat:44.2312,lon:-76.4860,g:'rock',atRank:21,countryName:'Canada',text:"A Canadian rocker's Robin Hood soundtrack ballad spends seven weeks at No. 1."},
 {y:1994,t:"I'll Make Love to You",alb:'II',a:'Boyz II Men',c:'Philadelphia',s:'PA',lat:39.9526,lon:-75.1652,g:'rnb',atRank:22,text:"A Philadelphia quartet's smooth ballad spends 14 weeks at No. 1."},
-{y:1960,t:'The Theme From "A Summer Place"',a:'Percy Faith & His Orchestra',c:'Toronto',s:'Ontario, Canada',lat:43.6532,lon:-79.3832,g:'pop',atRank:23,countryName:'Canada',text:"A Toronto-born orchestra leader's instrumental spends nine weeks at No. 1."},
+{y:1960,t:'The Theme From "A Summer Place"',alb:'A Summer Place',a:'Percy Faith & His Orchestra',c:'Toronto',s:'Ontario, Canada',lat:43.6532,lon:-79.3832,g:'pop',atRank:23,countryName:'Canada',text:"A Toronto-born orchestra leader's instrumental spends nine weeks at No. 1."},
 {y:1978,t:'Le Freak',alb:"C'est Chic",a:'Chic',c:'New York City',s:'NY',lat:40.7128,lon:-74.0060,g:'edm',atRank:24,text:"A New York disco outfit's dancefloor anthem spends five weeks at No. 1."},
-{y:1977,t:'How Deep Is Your Love',a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:25,countryName:'United Kingdom',text:"The lead single from Saturday Night Fever spends six weeks at No. 1."},
+{y:1977,t:'How Deep Is Your Love',alb:'Saturday Night Fever',a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:25,countryName:'United Kingdom',text:"The lead single from Saturday Night Fever spends six weeks at No. 1."},
 {y:1982,t:'Eye of the Tiger',alb:'Eye of the Tiger',a:'Survivor',c:'Chicago',s:'IL',lat:41.8781,lon:-87.6298,g:'rock',atRank:26,text:"A Chicago band's Rocky III theme spends six weeks atop the Hot 100."},
 {y:2011,t:'We Found Love',alb:'Talk That Talk',a:'Rihanna feat. Calvin Harris',c:'Bridgetown',s:'Barbados',lat:13.1132,lon:-59.5988,g:'pop',atRank:27,countryName:'Barbados',text:"A Barbadian superstar's dance-pop single spends 10 weeks at No. 1."},
 {y:2008,t:'Low',alb:'Mail on Sunday',a:'Flo Rida feat. T-Pain',c:'Miami',s:'FL',lat:25.7617,lon:-80.1918,g:'hiphop',atRank:28,text:"A Miami rapper's debut single spends 10 weeks atop the Hot 100."},
@@ -480,7 +483,7 @@ const SONGS=[
 {y:1998,t:'Truly Madly Deeply',alb:'Savage Garden',a:'Savage Garden',c:'Brisbane',s:'Australia',lat:-27.4698,lon:153.0251,g:'pop',atRank:39,countryName:'Australia',text:"A Brisbane duo's soft-rock love song spends three weeks at No. 1."},
 {y:1976,t:'Silly Love Songs',alb:'Wings at the Speed of Sound',a:'Wings',c:'Liverpool',s:'England, UK',lat:53.4084,lon:-2.9916,g:'rock',atRank:40,countryName:'United Kingdom',text:"A former Beatle's post-breakup single spends five weeks atop the Hot 100."},
 {y:1973,t:"Let's Get It On",alb:"Let's Get It On",a:'Marvin Gaye',c:'Washington',s:'DC',lat:38.9072,lon:-77.0369,g:'rnb',atRank:41,text:"A Motown soul legend's sensual classic spends two weeks at No. 1."},
-{y:1978,t:'Night Fever',a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:42,countryName:'United Kingdom',text:"A second Saturday Night Fever single spends eight weeks atop the Hot 100."},
+{y:1978,t:'Night Fever',alb:'Saturday Night Fever',a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:42,countryName:'United Kingdom',text:"A second Saturday Night Fever single spends eight weeks atop the Hot 100."},
 {y:1980,t:'Another One Bites the Dust',alb:'The Game',a:'Queen',c:'London',s:'England, UK',lat:51.5072,lon:-0.1276,g:'rock',atRank:43,countryName:'United Kingdom',text:"A London rock band's bass-driven crossover spends three weeks at No. 1."},
 {y:1983,t:'Say Say Say',alb:'Pipes of Peace',a:'Paul McCartney & Michael Jackson',c:'Gary',s:'IN',lat:41.5934,lon:-87.3464,g:'pop',atRank:44,text:"A Gary, Indiana-born superstar's duet with a former Beatle spends six weeks at No. 1."},
 {y:2001,t:'How You Remind Me',alb:'Silver Side Up',a:'Nickelback',c:'Hanna',s:'Alberta, Canada',lat:51.6167,lon:-111.9014,g:'rock',atRank:45,countryName:'Canada',text:"An Alberta rock band's breakout single spends four weeks atop the Hot 100."},
@@ -492,13 +495,13 @@ const SONGS=[
 {y:2013,t:'Blurred Lines',alb:'Blurred Lines',a:'Robin Thicke feat. T.I. + Pharrell',c:'Los Angeles',s:'CA',lat:34.0522,lon:-118.2437,g:'rnb',atRank:51,text:"A Los Angeles-born singer's summer single spends 12 weeks at No. 1."},
 {y:1997,t:'Candle in the Wind 1997',a:'Elton John',c:'Pinner',s:'England, UK',lat:51.5928,lon:-0.3817,g:'pop',atRank:52,countryName:'United Kingdom',text:"A reworked tribute single becomes one of the best-selling singles ever, spending 14 weeks at No. 1."},
 {y:2007,t:'No One',alb:'As I Am',a:'Alicia Keys',c:'New York City',s:'NY',lat:40.7128,lon:-74.0060,g:'rnb',atRank:53,text:"A Manhattan-raised singer-pianist's ballad spends five weeks atop the Hot 100."},
-{y:1992,t:'I Will Always Love You',a:'Whitney Houston',c:'Newark',s:'NJ',lat:40.7357,lon:-74.1724,g:'rnb',atRank:54,text:"A Newark-born singer's Bodyguard soundtrack ballad spends 14 weeks at No. 1."},
+{y:1992,t:'I Will Always Love You',alb:'The Bodyguard: Original Soundtrack Album',a:'Whitney Houston',c:'Newark',s:'NJ',lat:40.7357,lon:-74.1724,g:'rnb',atRank:54,text:"A Newark-born singer's Bodyguard soundtrack ballad spends 14 weeks at No. 1."},
 {y:1992,t:'End of the Road',alb:'Cooleyhighharmony',a:'Boyz II Men',c:'Philadelphia',s:'PA',lat:39.9526,lon:-75.1652,g:'rnb',atRank:55,text:"A Philadelphia quartet's ballad spends 13 weeks atop the Hot 100."},
 {y:2009,t:'Boom Boom Pow',alb:'The E.N.D.',a:'The Black Eyed Peas',c:'Los Angeles',s:'CA',lat:34.0522,lon:-118.2437,g:'hiphop',atRank:56,text:"Part of the same record-setting 26-week Black Eyed Peas reign as 'I Gotta Feeling.'"},
-{y:1980,t:'Call Me',a:'Blondie',c:'New York City',s:'NY',lat:40.7128,lon:-74.0060,g:'rock',atRank:57,text:"A New York new-wave band's Giorgio Moroder collaboration spends six weeks at No. 1."},
+{y:1980,t:'Call Me',alb:'American Gigolo (Original Motion Picture Soundtrack)',a:'Blondie',c:'New York City',s:'NY',lat:40.7128,lon:-74.0060,g:'rock',atRank:57,text:"A New York new-wave band's Giorgio Moroder collaboration spends six weeks at No. 1."},
 {y:2005,t:'Let Me Love You',alb:'Turning Point',a:'Mario',c:'Baltimore',s:'MD',lat:39.2904,lon:-76.6122,g:'rnb',atRank:58,text:"A Baltimore-born singer's debut hit spends nine weeks atop the Hot 100."},
-{y:1978,t:"Stayin' Alive",a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:59,countryName:'United Kingdom',text:"A third Saturday Night Fever single spends four weeks atop the Hot 100."},
-{y:1980,t:'Lady',a:'Kenny Rogers',c:'Houston',s:'TX',lat:29.7601,lon:-95.3701,g:'country',atRank:60,text:"A Houston-born country star's Lionel Richie-penned ballad spends six weeks at No. 1."},
+{y:1978,t:"Stayin' Alive",alb:'Saturday Night Fever',a:'Bee Gees',c:'Manchester',s:'England, UK',lat:53.4808,lon:-2.2426,g:'pop',atRank:59,countryName:'United Kingdom',text:"A third Saturday Night Fever single spends four weeks atop the Hot 100."},
+{y:1980,t:'Lady',alb:"Kenny Rogers' Greatest Hits",a:'Kenny Rogers',c:'Houston',s:'TX',lat:29.7601,lon:-95.3701,g:'country',atRank:60,text:"A Houston-born country star's Lionel Richie-penned ballad spends six weeks at No. 1."},
 {y:2010,t:'TiK ToK',alb:'Animal',a:'Kesha',c:'Nashville',s:'TN',lat:36.1627,lon:-86.7816,g:'pop',atRank:61,text:"A Nashville-raised singer's debut single spends nine weeks atop the Hot 100."},
 {y:1966,t:"I'm a Believer",alb:'More of the Monkees',a:'The Monkees',c:'Los Angeles',s:'CA',lat:34.0522,lon:-118.2437,g:'rock',atRank:62,text:"A made-for-TV band's Neil Diamond-penned single spends seven weeks at No. 1."},
 {y:2005,t:'Gold Digger',alb:'Late Registration',a:'Kanye West feat. Jamie Foxx',c:'Chicago',s:'IL',lat:41.8781,lon:-87.6298,g:'hiphop',atRank:63,text:"A Chicago-raised producer-rapper's single spends 10 weeks atop the Hot 100."},
@@ -728,6 +731,7 @@ function zoomToCountry(feature){
    document.getElementById('detailTitle').textContent=name;
    document.getElementById('detailAlbum').textContent='';
    document.getElementById('detailAlbumArtLink').classList.add('hidden');
+   document.getElementById('detailAlbumArtPlaceholder').classList.add('hidden');
    document.getElementById('detailArtist').textContent='';
    document.getElementById('detailText').textContent='No releases catalogued yet for this country — check back as the atlas grows.';
    document.getElementById('detailFact').textContent='';
@@ -769,26 +773,39 @@ const detail=document.getElementById('detail');
 function youtubeSearchUrl(title,artist){return 'https://www.youtube.com/results?search_query='+encodeURIComponent(artist+' '+title)}
 // Album art fetched on demand from the iTunes Search API for any song with a known album.
 const albumArtCache={};
-function showAlbumArt(link,img,s,entry){
+function showAlbumArt(link,img,placeholder,s,entry){
  img.src=entry.art;img.alt=s.alb+' cover art';
  if(entry.url)link.href=entry.url;else link.removeAttribute('href');
  link.classList.remove('hidden');
+ placeholder.classList.add('hidden');
 }
 function loadAlbumArt(s){
- const link=document.getElementById('detailAlbumArtLink'),img=document.getElementById('detailAlbumArt');
+ const link=document.getElementById('detailAlbumArtLink'),img=document.getElementById('detailAlbumArt'),placeholder=document.getElementById('detailAlbumArtPlaceholder');
  link.classList.add('hidden');link.removeAttribute('href');img.removeAttribute('src');
- if(!s.alb)return;
+ if(!s.alb){placeholder.classList.remove('hidden');return}
+ placeholder.classList.add('hidden');
  const key=s.a+'|'+s.alb;
- if(albumArtCache[key]){showAlbumArt(link,img,s,albumArtCache[key]);return}
+ if(key in albumArtCache){
+  const entry=albumArtCache[key];
+  if(entry)showAlbumArt(link,img,placeholder,s,entry);else placeholder.classList.remove('hidden');
+  return;
+ }
  const primaryArtist=s.a.split(/ feat\.| ft\.| &|,/)[0];
  const term=encodeURIComponent(primaryArtist+' '+s.alb);
  fetch('https://itunes.apple.com/search?term='+term+'&entity=album&limit=1').then(r=>r.json()).then(data=>{
   const result=data.results&&data.results[0];
-  if(!result||!result.artworkUrl100)return;
+  const stillCurrent=document.getElementById('detailAlbum').textContent===s.alb;
+  if(!result||!result.artworkUrl100){
+   albumArtCache[key]=null;
+   if(stillCurrent)placeholder.classList.remove('hidden');
+   return;
+  }
   const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:result.collectionViewUrl};
   albumArtCache[key]=entry;
-  if(document.getElementById('detailAlbum').textContent===s.alb)showAlbumArt(link,img,s,entry);
- }).catch(()=>{});
+  if(stillCurrent)showAlbumArt(link,img,placeholder,s,entry);
+ }).catch(()=>{
+  if(document.getElementById('detailAlbum').textContent===s.alb)placeholder.classList.remove('hidden');
+ });
 }
 function focusSong(s){
  detail.classList.remove('hidden');
