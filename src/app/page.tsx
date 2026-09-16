@@ -32,7 +32,11 @@ const guides = [
 export default function Home() {
   return (
     <main className={`${oswald.variable} home`}>
-      <h1>Story Field Guide Projects</h1>
+      <h1>
+        Story Field
+        <br />
+        Guide Projects
+      </h1>
       <p className="tagline">Go Exploring</p>
       <ul className="guideList">
         {guides.map((guide) => (
