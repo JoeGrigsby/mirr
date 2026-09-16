@@ -780,6 +780,21 @@ function youtubeSearchUrl(title,artist){return 'https://www.youtube.com/results?
 // catalogued with its own artwork, even when it never appeared on a studio album).
 const albumArtCache={};
 let currentArtSongId=null;
+// iTunes search results for punctuation-heavy or widely-covered titles are often
+// noisy (karaoke versions, other artists' remixes crediting the original as a
+// "feat."), so instead of trusting the first hit we score several candidates and
+// require the artist name to actually match before accepting a result.
+function normMatch(s){return (s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+function pickBestResult(results,wantArtist,wantName){
+ if(!results||!results.length)return null;
+ const wa=normMatch(wantArtist),wn=normMatch(wantName);
+ const withArt=results.filter(r=>r.artworkUrl100);
+ const exactArtist=withArt.filter(r=>normMatch(r.artistName)===wa);
+ const looseArtist=exactArtist.length?exactArtist:withArt.filter(r=>{const a=normMatch(r.artistName);return a&&(a.includes(wa)||wa.includes(a))});
+ if(!looseArtist.length)return null;
+ const nameScore=r=>{const n=normMatch(r.collectionName||r.trackName);return n===wn?3:n.startsWith(wn)||wn.startsWith(n)?2:n.includes(wn)?1:0};
+ return looseArtist.sort((a,b)=>nameScore(b)-nameScore(a))[0];
+}
 function showAlbumArt(link,img,placeholder,s,entry,altLabel){
  img.src=entry.art;img.alt=altLabel+' cover art';
  if(entry.url)link.href=entry.url;else link.removeAttribute('href');
@@ -817,13 +832,13 @@ function loadAlbumArt(s){
  }
  function tryArtist(i){
   if(i>=candidates.length){noArtFound();return}
-  const term=encodeURIComponent(candidates[i]+' '+query);
-  fetch('https://itunes.apple.com/search?term='+term+'&entity='+entity+'&limit=1').then(r=>{
+  const wantArtist=candidates[i],term=encodeURIComponent(wantArtist+' '+query);
+  fetch('https://itunes.apple.com/search?term='+term+'&entity='+entity+'&limit=10').then(r=>{
    if(!r.ok)throw new Error('bad status');
    return r.json();
   }).then(data=>{
-   const result=data.results&&data.results[0];
-   if(!result||!result.artworkUrl100){
+   const result=pickBestResult(data.results,wantArtist,query);
+   if(!result){
     if(i+1<candidates.length)tryArtist(i+1);else noArtFound();
     return;
    }
