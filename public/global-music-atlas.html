@@ -233,7 +233,9 @@ header small{color:#fff;opacity:.85;letter-spacing:2px;font-size:11px;text-shado
 .tag{font-size:11px;letter-spacing:1.5px;color:var(--accent);font-weight:700}
 #detailClose{padding:2px 8px;line-height:1}
 #detailTitle{font-family:'Oswald',sans-serif;font-size:20px;margin:6px 0 2px;font-weight:600}
-#detailAlbumArt{display:block;width:96px;height:96px;object-fit:cover;border-radius:6px;margin:8px 0 4px;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+#detailAlbumArtLink{display:block;width:96px;height:96px;margin:8px 0 4px;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.18);transition:box-shadow .15s ease,transform .15s ease}
+#detailAlbumArtLink:hover,#detailAlbumArtLink:focus-visible{box-shadow:0 6px 14px rgba(0,0,0,.28);transform:translateY(-1px)}
+#detailAlbumArt{display:block;width:96px;height:96px;object-fit:cover;border-radius:6px}
 #detailAlbum{color:var(--muted);font-size:12px;font-style:italic;margin:0 0 2px}
 #detailArtist{color:var(--muted);font-size:13px;margin:0 0 8px}
 #detailFact{font-size:12px;color:#6e4a10;border-top:1px solid var(--line);padding-top:8px;margin-top:8px;font-weight:600}
@@ -330,7 +332,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
     <div class="tag" id="detailTag">R&amp;B · 2004</div>
     <button id="detailClose" aria-label="Close">×</button>
   </div>
-  <img id="detailAlbumArt" class="hidden" alt="">
+  <a id="detailAlbumArtLink" class="hidden" target="_blank" rel="noopener noreferrer" aria-label="View album on Apple Music"><img id="detailAlbumArt" alt=""></a>
   <div id="detailTitle">Yeah!</div>
   <p id="detailAlbum">Confessions</p>
   <p id="detailArtist">Usher feat. Lil Jon &amp; Ludacris — Atlanta, GA</p>
@@ -355,7 +357,7 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
 </div>
 
 <div id="tooltip" style="display: none; left: 879px; top: 173px;"><b>Every Breath You Take</b><br>The Police · Newcastle, England, UK</div>
-<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a> · version 0.4 - Sep 15, 2026 · Built with AI assistance (Anthropic Claude, OpenAI ChatGPT)</footer>
+<footer>Background photo: Anastasia Saldatava Florence, Italy · Published September 15, 2021 · FUJIFILM X-T4 · Free to use under the <a href="https://unsplash.com/photos/a-room-filled-with-lots-of-records-and-cds-7Ys0u4woGQs" target="_blank" rel="noopener noreferrer">Unsplash License</a> · Album art via the <a href="https://developer.apple.com/documentation/applemarketingtools" target="_blank" rel="noopener noreferrer">iTunes Search API</a> · version 0.4 - Sep 15, 2026 · Built with AI assistance (Anthropic Claude, OpenAI ChatGPT)</footer>
 
 <dialog id="mapNotes" aria-labelledby="notesTitle">
   <button id="notesClose">Close</button>
@@ -725,7 +727,7 @@ function zoomToCountry(feature){
    document.getElementById('detailTag').textContent='NO DATA YET';
    document.getElementById('detailTitle').textContent=name;
    document.getElementById('detailAlbum').textContent='';
-   document.getElementById('detailAlbumArt').classList.add('hidden');
+   document.getElementById('detailAlbumArtLink').classList.add('hidden');
    document.getElementById('detailArtist').textContent='';
    document.getElementById('detailText').textContent='No releases catalogued yet for this country — check back as the atlas grows.';
    document.getElementById('detailFact').textContent='';
@@ -768,20 +770,25 @@ function youtubeSearchUrl(title,artist){return 'https://www.youtube.com/results?
 // TRIAL: album art via the iTunes Search API, limited to a few songs while we evaluate match quality/reliability.
 const ALBUM_ART_TRIAL=new Set(['Blinding Lights','Billie Jean','Yeah!']);
 const albumArtCache={};
+function showAlbumArt(link,img,s,entry){
+ img.src=entry.art;img.alt=s.alb+' cover art';
+ if(entry.url)link.href=entry.url;else link.removeAttribute('href');
+ link.classList.remove('hidden');
+}
 function loadAlbumArt(s){
- const img=document.getElementById('detailAlbumArt');
- img.classList.add('hidden');img.removeAttribute('src');
+ const link=document.getElementById('detailAlbumArtLink'),img=document.getElementById('detailAlbumArt');
+ link.classList.add('hidden');link.removeAttribute('href');img.removeAttribute('src');
  if(!s.alb||!ALBUM_ART_TRIAL.has(s.t))return;
  const key=s.a+'|'+s.alb;
- if(albumArtCache[key]){img.src=albumArtCache[key];img.alt=s.alb+' cover art';img.classList.remove('hidden');return}
+ if(albumArtCache[key]){showAlbumArt(link,img,s,albumArtCache[key]);return}
  const primaryArtist=s.a.split(/ feat\.| ft\.| &|,/)[0];
  const term=encodeURIComponent(primaryArtist+' '+s.alb);
  fetch('https://itunes.apple.com/search?term='+term+'&entity=album&limit=1').then(r=>r.json()).then(data=>{
-  const art=data.results&&data.results[0]&&data.results[0].artworkUrl100;
-  if(!art)return;
-  const hiRes=art.replace('100x100bb','600x600bb');
-  albumArtCache[key]=hiRes;
-  if(document.getElementById('detailAlbum').textContent===s.alb){img.src=hiRes;img.alt=s.alb+' cover art';img.classList.remove('hidden')}
+  const result=data.results&&data.results[0];
+  if(!result||!result.artworkUrl100)return;
+  const entry={art:result.artworkUrl100.replace('100x100bb','600x600bb'),url:result.collectionViewUrl};
+  albumArtCache[key]=entry;
+  if(document.getElementById('detailAlbum').textContent===s.alb)showAlbumArt(link,img,s,entry);
  }).catch(()=>{});
 }
 function focusSong(s){
