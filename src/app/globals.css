@@ -40,7 +40,7 @@ body {
 }
 
 .titleRow {
-  --title-font-size: clamp(32px, 6vw, 64px);
+  --title-font-size: clamp(25.6px, 4.8vw, 51.2px);
   --title-line-height: 1.05;
   --tagline-font-size: clamp(15px, 2.2vw, 20px);
   --tagline-line-height: 1.3;
