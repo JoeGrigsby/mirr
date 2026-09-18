@@ -32,6 +32,14 @@ const guides = [
 export default function Home() {
   return (
     <main className={`${oswald.variable} home`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/mirr/logo.png"
+        alt="Story Field Guide logo"
+        width={140}
+        height={140}
+        className="siteLogo"
+      />
       <h1>
         Story Field
         <br />
