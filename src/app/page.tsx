@@ -33,11 +33,6 @@ export default function Home() {
   return (
     <main className={`${oswald.variable} home`}>
       <div className="titleRow">
-        <h1>
-          Story Field
-          <br />
-          Guide Projects
-        </h1>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/mirr/logo.png"
@@ -46,8 +41,15 @@ export default function Home() {
           height={140}
           className="siteLogo"
         />
+        <div className="titleGroup">
+          <h1>
+            Story Field
+            <br />
+            Guide Projects
+          </h1>
+          <p className="tagline">Go Exploring</p>
+        </div>
       </div>
-      <p className="tagline">Go Exploring</p>
       <ul className="guideList">
         {guides.map((guide) => (
           <li key={guide.number}>
