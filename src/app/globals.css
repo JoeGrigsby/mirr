@@ -39,18 +39,29 @@ body {
   font-family: var(--font-oswald), sans-serif;
 }
 
+.titleRow {
+  --title-font-size: clamp(32px, 6vw, 64px);
+  --title-line-height: 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
 .siteLogo {
-  width: 120px;
-  height: 120px;
-  margin-bottom: 8px;
+  width: auto;
+  height: calc(var(--title-font-size) * var(--title-line-height) * 2);
+  flex-shrink: 0;
 }
 
 .home h1 {
   margin: 0;
-  font-size: clamp(32px, 6vw, 64px);
+  font-size: var(--title-font-size);
+  line-height: var(--title-line-height);
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
+  text-align: left;
   color: #ecdfc4;
 }
 
