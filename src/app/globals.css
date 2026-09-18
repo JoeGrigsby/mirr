@@ -39,6 +39,12 @@ body {
   font-family: var(--font-oswald), sans-serif;
 }
 
+.siteLogo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
 .home h1 {
   margin: 0;
   font-size: clamp(32px, 6vw, 64px);
