@@ -42,16 +42,21 @@ body {
 .titleRow {
   --title-font-size: clamp(32px, 6vw, 64px);
   --title-line-height: 1.05;
+  --tagline-font-size: clamp(15px, 2.2vw, 20px);
+  --tagline-line-height: 1.3;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 40px;
 }
 
 .siteLogo {
   width: auto;
-  height: calc(var(--title-font-size) * var(--title-line-height) * 2);
+  height: calc(
+    var(--title-font-size) * var(--title-line-height) * 2 +
+    var(--tagline-font-size) * var(--tagline-line-height)
+  );
   flex-shrink: 0;
 }
 
@@ -74,7 +79,8 @@ body {
 
 .home .tagline {
   margin: 0;
-  font-size: clamp(15px, 2.2vw, 20px);
+  font-size: var(--tagline-font-size);
+  line-height: var(--tagline-line-height);
   font-weight: 300;
   letter-spacing: 5px;
   text-transform: uppercase;
