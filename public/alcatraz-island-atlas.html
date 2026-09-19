@@ -2417,8 +2417,8 @@ body{margin:0}.model-tools button{background:#17292de8;border:1px solid #476068;
    </sc-if>
   </div>
   <div style="position:relative;flex:0 0 auto;box-sizing:border-box;height:clamp(440px,65vh,780px);min-height:440px;border:1px solid #3d454b;border-radius:10px;overflow:hidden;background:#20262b">
-   <canvas ref="{{canvasRef}}" tabindex="0" aria-label="Interactive 3D model. Drag to rotate, shift drag to pan, scroll to zoom. Arrow keys rotate; plus and minus zoom; Home resets." style="position:absolute;inset:0;display:block;width:100%;height:100%;touch-action:none;cursor:grab"></canvas>
-   <div style="position:absolute;top:18px;left:18px;pointer-events:none"><div style="font-size:10px;letter-spacing:2px;color:#b8c8c8">{{modelCaption}}</div><div style="font-size:10px;color:#7f969c;margin-top:5px">DRAG TO ORBIT · SCROLL TO ZOOM</div></div>
+   <canvas ref="{{canvasRef}}" tabindex="0" aria-label="Interactive 3D model. Drag to rotate, shift drag to pan, scroll to zoom, double-click to zoom in. Arrow keys rotate; plus and minus zoom; Home resets." style="position:absolute;inset:0;display:block;width:100%;height:100%;touch-action:none;cursor:grab"></canvas>
+   <div style="position:absolute;top:18px;left:18px;pointer-events:none"><div style="font-size:10px;letter-spacing:2px;color:#b8c8c8">{{modelCaption}}</div><div style="font-size:10px;color:#7f969c;margin-top:5px">DRAG TO ORBIT · SCROLL OR DOUBLE-CLICK TO ZOOM</div></div>
    <div style="position:absolute;bottom:14px;left:14px;right:14px;display:flex;gap:5px;flex-wrap:wrap" class="model-tools">
     <button sc-camel-on-click="{{onResetModel}}" title="Reset camera (Home)">↺ Reset</button>
     <button sc-camel-on-click="{{onPlanModel}}">Top view</button>
@@ -2687,6 +2687,7 @@ class Component extends DCLogic {
   const end=e=>{touches.delete(e.pointerId);if(gesture&&!gesture.moved&&e.type==='pointerup'){const r=canvas.getBoundingClientRect();const hits=(this.hits||[]).filter(p=>Math.hypot(p.x-e.clientX+r.left,p.y-e.clientY+r.top)<14).sort((a,b)=>Math.hypot(a.x-e.clientX+r.left,a.y-e.clientY+r.top)-Math.hypot(b.x-e.clientX+r.left,b.y-e.clientY+r.top));if(hits[0])this.selectStory(hits[0].id)}gesture=null;canvas.style.cursor='grab'};
   canvas.addEventListener('pointerup',end);canvas.addEventListener('pointercancel',end);canvas.addEventListener('contextmenu',e=>e.preventDefault());
   canvas.addEventListener('wheel',e=>{e.preventDefault();this.cam.zoom=Math.max(.5,Math.min(3,this.cam.zoom*Math.exp(-e.deltaY*.001)));this.draw()},{passive:false});
+  canvas.addEventListener('dblclick',e=>{e.preventDefault();this.cam.zoom=Math.min(3,this.cam.zoom*1.4);this.draw()});
   canvas.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','Home'].includes(e.key))return;e.preventDefault();if(e.key==='Home'){this.cameraPreset(false);return}if(e.key==='ArrowLeft')this.cam.yaw-=.12;if(e.key==='ArrowRight')this.cam.yaw+=.12;if(e.key==='ArrowUp')this.cam.pitch=Math.min(1.52,this.cam.pitch+.08);if(e.key==='ArrowDown')this.cam.pitch=Math.max(.16,this.cam.pitch-.08);if(e.key==='+'||e.key==='=')this.cam.zoom=Math.min(3,this.cam.zoom*1.12);if(e.key==='-')this.cam.zoom=Math.max(.5,this.cam.zoom/1.12);this.draw()});
  }
  draw(){
