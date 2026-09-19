@@ -2446,9 +2446,9 @@ body{margin:0}.model-tools button{background:#17292de8;border:1px solid #476068;
     </div>
     <sc-if value="{{selected.imageSrc}}">
      <figure style="margin:14px 0 0">
-      <a href="{{selected.imageUrl}}" target="_blank" rel="noopener noreferrer" title="Open full-resolution archival image" style="display:block;background:#182024;border:1px solid #454c52;border-radius:6px;overflow:hidden">
+      <div role="button" tabindex="0" sc-camel-on-click="{{onOpenMedia}}" title="Open in viewer" style="display:block;background:#182024;border:1px solid #454c52;border-radius:6px;overflow:hidden;cursor:pointer">
        <img src="{{selected.imageSrc}}" alt="{{selected.imageAlt}}" style="display:block;width:100%;height:280px;object-fit:contain" decoding="async">
-      </a>
+      </div>
       <figcaption style="font-size:11px;line-height:1.5;color:#bbc1bb;margin-top:7px">
        <div style="font-size:9px;letter-spacing:1.2px;color:#d1a24a;margin-bottom:4px">{{selected.imageKind}}</div>
        <div>{{selected.imageCaption}}</div>
@@ -2516,6 +2516,32 @@ body{margin:0}.model-tools button{background:#17292de8;border:1px solid #476068;
     </div>
    </div>
   </div>
+ </div>
+</sc-if>
+
+<sc-if value="{{mediaOpen}}" hint-placeholder-val="{{false}}">
+ <div role="dialog" aria-modal="true" aria-label="Archival document viewer" style="position:fixed;inset:0;background:#0a0c0e;display:flex;flex-direction:column;z-index:30">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:#20262b;border-bottom:1px solid #454c52;flex:none">
+   <div style="min-width:0">
+    <div style="font-size:9px;letter-spacing:1.2px;color:#d1a24a">{{mediaKind}}</div>
+    <div style="font-size:13px;color:#e8e3d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{mediaCaption}}</div>
+   </div>
+   <button sc-camel-on-click="{{onCloseMedia}}" aria-label="Close viewer" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 14px;cursor:pointer;flex:none;font-size:13px">Close ×</button>
+  </div>
+  <sc-if value="{{mediaIsPdf}}" hint-placeholder-val="{{false}}">
+   <iframe src="{{mediaUrl}}" title="{{mediaCaption}}" style="flex:1;border:0;background:#fff"></iframe>
+  </sc-if>
+  <sc-if value="{{mediaIsImage}}" hint-placeholder-val="{{false}}">
+   <div ref="{{mediaViewportRef}}" style="flex:1;overflow:hidden;position:relative;cursor:grab;background:#0d1114;touch-action:none">
+    <img ref="{{mediaImgRef}}" src="{{mediaUrl}}" alt="{{mediaAlt}}" draggable="false" style="position:absolute;top:50%;left:50%;max-width:none;transform:translate(-50%,-50%) scale(1);transform-origin:center;user-select:none;pointer-events:none">
+   </div>
+   <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;background:#20262b;border-top:1px solid #454c52;flex:none;flex-wrap:wrap">
+    <button sc-camel-on-click="{{onMediaZoomOut}}" aria-label="Zoom out" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:15px;line-height:1">−</button>
+    <button sc-camel-on-click="{{onMediaZoomReset}}" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 12px;cursor:pointer;font-size:12px">Reset</button>
+    <button sc-camel-on-click="{{onMediaZoomIn}}" aria-label="Zoom in" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:15px;line-height:1">+</button>
+    <span style="font-size:11px;color:#9aa0a3;margin-left:8px">Drag to pan · scroll or double-click to zoom</span>
+   </div>
+  </sc-if>
  </div>
 </sc-if>
 </div>
@@ -2632,14 +2658,17 @@ class Component extends DCLogic {
  constructor(props){
   super(props);
   this.canvasRef=React.createRef();
-  this.cam={yaw:-.56,pitch:.68,zoom:1,px:0,py:0};this.modelLabels=true;this.modelPins=true;this.tiers=3;
-  this.state={view:"island",yearFrom:1934,yearTo:1971,facets:new Set(FACETS.map(f=>f.key)),query:"",selectedId:null,sourcesOpen:false};
+  this.mediaViewportRef=React.createRef();this.mediaImgRef=React.createRef();
+  this.cam={yaw:-.56,pitch:.68,zoom:1,px:0,py:0};this.media={zoom:1,x:0,y:0};this.modelLabels=true;this.modelPins=true;this.tiers=3;
+  this.state={view:"island",yearFrom:1934,yearTo:1971,facets:new Set(FACETS.map(f=>f.key)),query:"",selectedId:null,sourcesOpen:false,mediaOpen:false};
  }
  componentDidMount(){
   this.handleResize=()=>this.draw();
   window.addEventListener("resize",this.handleResize);
   this.introZoom();
   this.resizeObserver=new ResizeObserver(()=>this.draw());this.resizeObserver.observe(this.canvasRef.current.parentElement);
+  this.handleMediaKey=e=>{if(e.key==="Escape"&&this.state.mediaOpen)this.closeMedia()};
+  window.addEventListener("keydown",this.handleMediaKey);
  }
  introZoom(){
   const target=this.cam.zoom,start=.45,duration=1700,t0=performance.now();
@@ -2652,9 +2681,10 @@ class Component extends DCLogic {
   };
   requestAnimationFrame(tick);
  }
- componentDidUpdate(){ this.draw(); }
+ componentDidUpdate(){ this.draw(); if(this.mediaViewportRef.current)this.bindMediaViewer(this.mediaViewportRef.current); }
  componentWillUnmount(){
   window.removeEventListener("resize",this.handleResize);
+  window.removeEventListener("keydown",this.handleMediaKey);
   if(this.resizeObserver)this.resizeObserver.disconnect();
  }
  currentList(){
@@ -2673,6 +2703,20 @@ class Component extends DCLogic {
  setYearFrom(v){ this.setState(s=>({yearFrom:Math.min(v,s.yearTo)})); }
  setYearTo(v){ this.setState(s=>({yearTo:Math.max(v,s.yearFrom)})); }
  cameraPreset(top){this.cam={yaw:top?0:-.56,pitch:top?1.52:.68,zoom:1,px:0,py:0};this.draw()}
+ openMedia(){this.media={zoom:1,x:0,y:0};this.setState({mediaOpen:true})}
+ closeMedia(){this.setState({mediaOpen:false})}
+ applyMediaTransform(){const el=this.mediaImgRef.current;if(el)el.style.transform="translate(-50%,-50%) translate("+this.media.x+"px,"+this.media.y+"px) scale("+this.media.zoom+")"}
+ mediaZoomBy(f){this.media.zoom=Math.max(1,Math.min(6,this.media.zoom*f));if(this.media.zoom===1){this.media.x=0;this.media.y=0}this.applyMediaTransform()}
+ mediaZoomReset(){this.media={zoom:1,x:0,y:0};this.applyMediaTransform()}
+ bindMediaViewer(viewport){
+  if(this.boundMediaViewer===viewport)return;this.boundMediaViewer=viewport;let dragging=false,startX=0,startY=0,startPanX=0,startPanY=0;
+  viewport.addEventListener('pointerdown',e=>{dragging=true;viewport.setPointerCapture(e.pointerId);startX=e.clientX;startY=e.clientY;startPanX=this.media.x;startPanY=this.media.y;viewport.style.cursor='grabbing'});
+  viewport.addEventListener('pointermove',e=>{if(!dragging)return;this.media.x=startPanX+(e.clientX-startX);this.media.y=startPanY+(e.clientY-startY);this.applyMediaTransform()});
+  const end=()=>{dragging=false;viewport.style.cursor='grab'};
+  viewport.addEventListener('pointerup',end);viewport.addEventListener('pointercancel',end);
+  viewport.addEventListener('wheel',e=>{e.preventDefault();this.mediaZoomBy(Math.exp(-e.deltaY*.001))},{passive:false});
+  viewport.addEventListener('dblclick',e=>{e.preventDefault();if(this.media.zoom>1){this.media={zoom:1,x:0,y:0}}else{this.media.zoom=2.5}this.applyMediaTransform()});
+ }
  bindModel(canvas){
   if(this.boundCanvas===canvas)return;this.boundCanvas=canvas;const touches=new Map();let gesture=null;
   canvas.addEventListener('pointerdown',e=>{canvas.focus();canvas.setPointerCapture(e.pointerId);touches.set(e.pointerId,[e.clientX,e.clientY]);gesture={x:e.clientX,y:e.clientY,startX:e.clientX,startY:e.clientY,moved:false,pan:e.shiftKey||e.button===2};canvas.style.cursor='grabbing'});
@@ -2791,7 +2835,7 @@ class Component extends DCLogic {
   const interior={e4:[48,10,-25],e10:[3,2,-15],e13:[-25,4,4],e14:[-53,4,-83],i1:[-23,5,10],i2:[49,5,15],i3:[-23,5,28],i4:[8,5,12],i5:[-23,5,41],i6:[40,4,83],i7:[8,5,30],l2:[3,1,0],l3:[48,8,0],l4:[-25,5,-85],l5:[49,5,85],l6:[30,5,85],g3:[3,2,-30]};return interior[s.id]||[0,2,0];
  }
  renderVals(){
-  const {view,yearFrom,yearTo,facets,query,selectedId,sourcesOpen}=this.state;
+  const {view,yearFrom,yearTo,facets,query,selectedId,sourcesOpen,mediaOpen}=this.state;
   const list=this.currentList();
   const dotOf=k=>FACETS.find(f=>f.key===k).dot;
   const counts={}; FACETS.forEach(f=>{ counts[f.key]=STORIES.filter(s=>s.facet===f.key&&s.year>=yearFrom&&s.year<=yearTo).length; });
@@ -2810,6 +2854,8 @@ class Component extends DCLogic {
    facetText:FACETS.find(f=>f.key===rawSelected.facet).text,
    sourceLabel:rawSelected.sourceLabel||"Search the National Archives catalog"
   }:null;
+  const mediaIsPdf=!!(selected&&selected.imageUrl&&/\.pdf(?:[#?]|$)/i.test(selected.imageUrl));
+  const mediaIsImage=!!(selected&&selected.imageUrl&&!mediaIsPdf);
   const visiblePins=list.filter(s=>s.zone===view).map(s=>({
    id:s.id,title:s.title,leftPct:s.x,topPct:s.y,dot:dotOf(s.facet),
    shadow:selectedId===s.id?"0 0 0 4px rgba(209,162,74,.55)":"0 1px 4px rgba(0,0,0,.5)",
@@ -2836,10 +2882,19 @@ class Component extends DCLogic {
    onYearTo:e=>this.setYearTo(+e.target.value),
    query,onQuery:e=>this.setState({query:e.target.value}),
    filteredStories,visiblePins,selected,noSelection:!selected,
-   onCloseDetail:()=>this.setState({selectedId:null}),
+   onCloseDetail:()=>this.setState({selectedId:null,mediaOpen:false}),
    onEnterCellhouse:()=>this.setState({view:"cellhouse"}),
    onBackToIsland:()=>this.setState({view:"island"}),
    sourcesOpen,onToggleSources:()=>this.setState(s=>({sourcesOpen:!s.sourcesOpen})),
+   mediaOpen,mediaIsPdf,mediaIsImage,
+   mediaUrl:selected?.imageUrl,mediaAlt:selected?.imageAlt,
+   mediaCaption:selected?.imageCaption,mediaKind:selected?.imageKind,
+   mediaViewportRef:this.mediaViewportRef,mediaImgRef:this.mediaImgRef,
+   onOpenMedia:()=>this.openMedia(),
+   onCloseMedia:()=>this.closeMedia(),
+   onMediaZoomIn:()=>this.mediaZoomBy(1.3),
+   onMediaZoomOut:()=>this.mediaZoomBy(1/1.3),
+   onMediaZoomReset:()=>this.mediaZoomReset(),
    canvasRef:this.canvasRef,
    shownCount:list.length,totalCount:STORIES.length,
    reviewedDate:"September 2026"
