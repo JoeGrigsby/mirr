@@ -27,6 +27,11 @@ const guides = [
     title: "Banned Books Timeline",
     href: "https://joegrigsby.github.io/mirr/banned-books-field-guide.html",
   },
+  {
+    number: "№ 005",
+    title: "Nuclear Arsenal",
+    href: "https://joegrigsby.github.io/mirr/nuclear-arsenal-field-guide.html",
+  },
 ];
 
 export default function Home() {
