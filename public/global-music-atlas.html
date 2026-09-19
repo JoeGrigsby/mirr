@@ -260,6 +260,12 @@ footer{position:absolute;left:0;bottom:2px;width:100%;text-align:center;font-siz
 
 dialog#mapNotes{color:var(--ink);background:#faf3e1;border:1px solid var(--line);border-radius:12px;width:min(760px,92vw);max-height:86dvh;padding:22px}
 dialog#mapNotes::backdrop{background:#2a200fcc}
+#videoModal{color:var(--ink);background:#faf3e1;border:1px solid var(--line);border-radius:12px;width:min(880px,92vw);padding:22px}
+#videoModal::backdrop{background:#2a200fcc}
+#videoModalClose{float:right}
+#videoModalTitle{margin:0 0 12px;padding-right:70px}
+#videoModalFrame{position:relative;width:100%;aspect-ratio:16/9;margin-top:4px;background:#000;border-radius:8px;overflow:hidden}
+#videoModalFrame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 #mapNotes h2{margin:0 0 10px;font-family:'Oswald',sans-serif}
 #notesClose{float:right}
 #mapNotes input{padding:8px;width:100%;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:5px;margin:10px 0}
@@ -384,6 +390,12 @@ body.panels-hidden #sidebarStack,body.panels-hidden #detail,body.panels-hidden #
   <p>Country geometry is real Natural Earth boundary data rendered with d3-geo on a rotatable orthographic globe.</p>
   <input id="auditSearch" type="text" placeholder="Search songs, artists, cities…" aria-label="Search catalog">
   <div class="rows"><table><thead><tr><th>Song</th><th>Genre</th><th>Year</th><th>Hometown</th></tr></thead><tbody id="auditRows"></tbody></table></div>
+</dialog>
+
+<dialog id="videoModal" aria-labelledby="videoModalTitle">
+  <button id="videoModalClose">Close</button>
+  <h2 id="videoModalTitle">Now playing</h2>
+  <div id="videoModalFrame"></div>
 </dialog>
 
 <script>
@@ -920,7 +932,10 @@ function focusSong(s){
  loadAlbumArt(s);
  document.getElementById('detailText').textContent=s.text;
  document.getElementById('detailFact').textContent=s.note||('Peaked at #'+s.peak+' · '+s.weeks+' week'+(s.weeks===1?'':'s')+' at that peak');
- document.getElementById('detailYoutube').href=youtubeSearchUrl(s.t,s.a);
+ const ytLink=document.getElementById('detailYoutube');
+ ytLink.href=youtubeSearchUrl(s.t,s.a);
+ ytLink.textContent=YT_IDS[s.id]?'▶ Watch here':'▶ Watch on YouTube';
+ ytLink.onclick=e=>{e.preventDefault();openVideo(s)};
  status(s.t.toUpperCase()+' · '+s.c.toUpperCase()+', '+s.s);
 }
 document.getElementById('detailClose').onclick=()=>{detail.classList.add('hidden');selectedSongId=null;refreshPins()};
@@ -976,6 +991,23 @@ document.getElementById('homeBtn').onclick=()=>{document.getElementById('backBtn
 const mapNotes=document.getElementById('mapNotes');
 document.getElementById('notesOpenBtn').onclick=()=>{stopTour();renderAudit();mapNotes.showModal()};
 document.getElementById('notesClose').onclick=()=>mapNotes.close();
+// Curated YouTube video IDs, keyed by song id (SONGS[i].id). A song with no
+// curated match falls back to opening a YouTube search in a new tab instead
+// of guessing at an embed, since YouTube search results can't be embedded.
+const YT_IDS={s0:'E5ONTXHS2mM',s1:'0zGcUoRlhmw',s2:'zXDAYlhdkyg',s3:'pXRviuL6vMY',s4:'kJQP7kiw5Fk',s5:'tvTRZJ-4EyI',s6:'PEGccV-NOm8',s7:'pBkHHoOIIn8',s8:'zDo0H8Fm7d0',s9:'6ONRf7h3Mdk',s10:'xTlNMmZKwpA',s11:'IPXIgEAGe4U',s12:'w2Ov5jzm3j8',s13:'ZD6rXLXZOEI',s14:'P00HMxdsVZI',s15:'ApXoWvfEYVU',s16:'mxFstYSbBmc',s17:'pok8H_KF1FA',s18:'Y2E71oe0aSM',s19:'wXhTHyIgQ_U',s20:'ZmDBbnmKpqQ',s21:'6swmTBVI83k',s22:'zX3IyFUM5xc',s23:'gNi_6U5Pm_o',s24:'b1kbLwvqugk',s25:'rP09GUQFDFk',s26:'bLzUmfLckEw',s27:'1gYxoEzhF2c',s28:'8qy4O_QVdbU',s29:'G7KNmW9a75Y',s30:'MSRcC626prw',s31:'WKWAePTTOs0',s32:'QtODwEuDAvI',s33:'cF1Na4AIecM',s34:'c82oYGeWTx4',s35:'qyQY3SDuhSM',s36:'Zf1d8SGuxfs',s37:'4QIZE708gJ4',s38:'aoV9eVGhVoQ',s39:'sNY_2TEmzho',s40:'ko70cExuzZM',s41:'YT57RMxA-Eo',s42:'RMmoyP_cpEg',s43:'kPa7bsKwL-c',s44:'iAbnEUA0wpA',s45:'JGwWNGJdvx8',s46:'q0hyYWKXF0Q',s47:'tbneQDc2H3I',s48:'p8HoEvDh70Y',s49:'4NRXx6U8ABQ',s50:'gdZLi9oWNZg',s51:'E07s5ZYygMg',s52:'WMweEpGlu_U',s53:'TUVcZfQe-Kw',s54:'jipQpjUA_o8',s55:'hFCjGiawJi4',s56:'WcIcVapfqXw',s57:'Jqhos69iHg8',s58:'6Whgn_iE5uc',s59:'ygVgxGSQIsw',s60:'OPf0YbXqDm0',s61:'MUFasKZcH_c',s62:'KQ6zr6kCPj8',s63:'uSD4vsh1zDA',s64:'qxa9C2ESdrc',s67:'A_MjCqQoLLA',s70:'GxBSyx85Kp8',s78:'aXgSHL7efKg',s79:'XpqqjU7u5Yc',s80:'btPJPFnesV4',s81:'tg00YEETFzg',s82:'U2waT9TxPU0',s83:'VHLnJNku710',s84:'kwEZRPkAAu8',s85:'OMOGaugKpzs',s86:'8UVNT4wvIGY',s87:'ILWSp0m9G2U',s88:'rYEDA3JcQqw',s89:'Uc1ieaingQk',s90:'mjXM6x_0KZk',s91:'UXxRyNvTPr8',s92:'WQnAxOQxQIU',s93:'5kcLx8IVQFk',s94:'AqPBfbLoF_M',s95:'-ihs-vT9T3Q',s96:'rY0WxgSXdEE',s97:'iSRbINhFqGE',s98:'Aiay8I5IPB8',s99:'PxG9XFqHSFw',s100:'Y_DWxUb0vjs',s101:'TcomnaiF680',s102:'awGgULTK2v0',s103:'RmYmKyAG-DQ',s104:'yyDUC1LUXSU',s105:'sxb0GeS4gL8',s106:'rywUS-ohqeE',s107:'3JWTaaS7LdU',s108:'zDKO6XYXioc',s109:'4m48GqaOz90',s110:'TGS2AlSDdpQ',s111:'H64QG4UsrGI',s112:'I_izvAbhExY',s113:'0T1J8JuTtR8',s114:'iP6XpLQM2Cs',s115:'AZYPlNuljHE',s116:'6vwNcNOTVzY',s117:'mmvXld-Po_w',s118:'iqu132vTl5Y',s119:'BqDjMZKf-wg',s120:'7PCkvCPvDXk',s121:'pZCxyOcvp5A',s122:'wYSDGtv0W7A',s123:'qSIOp_K5GMw',s124:'Xc1uQI2XmZs',s125:'A4cFIzr85cU',s126:'MQOQqn1qH4o',s127:'ceviTVZyaEw',s128:'iEPTlhBmwRg',s129:'seOXmQ1vlNc',s130:'fSeqJBIrZWo',s131:'HyTpu6BmE88',s132:'ZbZSe6N_BXs',s133:'Po0BbGMSX4g',s134:'Nmhof47Cry0',s135:'LjhCEhWiKXk',s136:'8WYHDfJDPDc',s137:'IyKZtN33Wxs',s138:'KNZH-emehxA',s139:'Zi_XLOBDo_Y',s140:'pE5MCdUQ4KQ',s141:'UceaB4D0jpo',s142:'SQCSxqScSVQ',s143:'tY8B0uQpwZs',s144:'2Vv-BfVoq4g',s145:'cleCtBP0o5Y',s146:'BHcYFxU4fMo',s147:'Rw53MccSeHM',s148:'bbr60I0u2Ng',s149:'HjuVUjLJTkw',s150:'0-EF60neguk',s151:'cVpvlaKfLQc',s152:'znlFu_lemsU',s153:'5jhocSCSZzk',s65:'vWz9VN40nCA',s66:'AOShEUn0aA4',s68:'0habxsuXW4g',s69:'p2Rch6WvPJE',s71:'EPOIS5taqA8',s72:'ubrfaD9DIus',s73:'IZr6AE-u2UM',s74:'UNoouLa7uxA',s75:'Y0pdQU87dc8',s76:'fV8vB1BB2qc',s77:'fRV0yHiEua8'};
+const videoModal=document.getElementById('videoModal');
+const videoModalFrame=document.getElementById('videoModalFrame');
+function stopVideo(){videoModalFrame.innerHTML=''}
+document.getElementById('videoModalClose').onclick=()=>videoModal.close();
+videoModal.addEventListener('close',stopVideo);
+function openVideo(s){
+ const id=YT_IDS[s.id];
+ if(!id){window.open(youtubeSearchUrl(s.t,s.a),'_blank','noopener');return}
+ document.getElementById('videoModalTitle').textContent=s.t+' — '+s.a;
+ const frameTitle=(s.t+' — '+s.a).replace(/"/g,'&quot;');
+ videoModalFrame.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="'+frameTitle+'" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+ videoModal.showModal();
+}
 function renderAudit(){
  const q=document.getElementById('auditSearch').value.toLowerCase();
  const rows=document.getElementById('auditRows');rows.innerHTML='';
