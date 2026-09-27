@@ -1,3 +1,8 @@
 [build]
   publish = "public"
   command = "echo 'Static site, no build needed'"
+
+# The site is plain static HTML in public/; the Next.js scaffold is not built.
+# Skip the Next.js runtime plugin (installed via the UI / auto-detected).
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
