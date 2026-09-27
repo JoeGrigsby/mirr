@@ -1014,7 +1014,7 @@ a:hover{color:var(--link-hover)}
 .review-score .stars{color:var(--ss-coral-deep);letter-spacing:.04em;font-size:15px}
 .review-score .count{font-size:12px;color:var(--text-secondary)}
 .review-card a{font-weight:700;font-size:12px}
-.review-date{margin-top:6px;font-size:11px;color:var(--text-secondary)}
+.sound-text{margin-top:6px;font:13px/1.5 var(--font-sans);color:var(--ss-ink)}.review-date{margin-top:6px;font-size:11px;color:var(--text-secondary)}
 .panel-wrap{position:absolute;top:28px;right:28px;z-index:700;width:min(370px,calc(100vw - 24px));max-height:calc(100vh - 56px);overflow-y:auto;border:2px solid var(--ss-ink);border-radius:var(--radius-md);box-shadow:0 12px 28px -8px color-mix(in oklch, var(--ss-ink) 45%, transparent);background:var(--ss-paper)}
 .panel-wrap > *{border:none !important}
 .panel-wrap > :not(.panel-drag){width:100% !important}
@@ -37434,6 +37434,7 @@ const VENUES = [{
   type: "Artist Hometown",
   size: "N/A",
   desc: "Hometown context node: Wesley Hanna grew up in Magnolia before Texas A&M and later basing his music career in Fort Worth.",
+  sound: "Dancehall honky-tonk with a Western swing heart: neo-traditional country in the Bob Wills line, carried by fiddle, upright bass and pedal steel, and a smooth baritone that sits comfortably next to George Strait.",
   artists: [{
     name: "Wesley Hanna",
     date: "hometown / formative location"
@@ -37451,6 +37452,7 @@ const VENUES = [{
   type: "Artist Hometown",
   size: "N/A",
   desc: "South Texas home-base context node closely tied to Jamie Lin Wilson's songwriting identity and private/local performances.",
+  sound: "Plainspoken Texas country and Americana: spare, mostly acoustic arrangements built around a warm twang and frank, story-first songs about family, home and hard choices, with the close-harmony instincts of her years in The Trishas.",
   artists: [{
     name: "Jamie Lin Wilson",
     date: "home base"
@@ -37469,6 +37471,7 @@ const VENUES = [{
   type: "Artist Hometown",
   size: "N/A",
   desc: "North Texas home-region context node reflecting Patton's strong Stephenville/Weatherford ties and local songwriter community.",
+  sound: "Soulful classic country with a folk songwriter's eye: quiet, acoustic-led arrangements and a lived-in Texas twang delivering personal, open-book songs about love, heartache and ordinary life.",
   artists: [{
     name: "Courtney Patton",
     date: "home-region context"
@@ -37486,6 +37489,7 @@ const VENUES = [{
   type: "Artist Hometown",
   size: "N/A",
   desc: "Jackson, Missouri is the hometown listed by singer-songwriter Chris Welch on his artist page. This stop adds a Southeast Missouri connection to his songwriting trail.",
+  sound: "Story-driven roots country with folk, blues and red dirt in the mix: road-worn, often solo-acoustic songs about restlessness, resilience and the quiet moments in between.",
   artists: [{
     name: "Chris Welch"
   }],
@@ -39182,9 +39186,9 @@ function App() {
     className: "review-card"
   }, /*#__PURE__*/React.createElement("div", {
     className: "review-label"
-  }, "Artist hometown"), /*#__PURE__*/React.createElement("div", {
-    className: "review-date"
-  }, "This map point is an artist location, not a venue with Google reviews.")), (selected.src1 || selected.src2) && /*#__PURE__*/React.createElement("div", {
+  }, selected.artists[0] ? `The sound \u00B7 ${selected.artists[0].name}` : "The sound"), /*#__PURE__*/React.createElement("div", {
+    className: "sound-text"
+  }, selected.sound || "")), (selected.src1 || selected.src2) && /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 12
     }
