@@ -37979,7 +37979,13 @@ function computeLayout(us, forbids) {
     b: [n.x - 30, n.y - 30, n.x + 30, n.y + 30]
   }));
   const placed = {},
-    badgeBoxes = [];
+    badgeBoxes = [],
+    boxById = {};
+  // extra breathing room between specific neighbouring badges, and badges kept tight to their stop
+  const KEEP_APART = [[1, 9, 34], [1, 17, 24], [9, 17, 20]];
+  const MAX_REACH = {16: 160, 9: 190, 17: 260};
+  const KEEP_ON_LAND = new Set([9, 17]);
+  const nationGeo = topojson.merge(us, geoms);
   function score(box, id, cx, cy) {
     let s = 0;
     const [nx, ny] = pos[id];
@@ -37994,6 +38000,15 @@ function computeLayout(us, forbids) {
       });
     });
     labels.forEach(l => s += boxOverlap(box, l.box) * (l.trail ? 18 : 4));
+    KEEP_APART.forEach(([a, b, pad]) => {
+      const other = id === a ? b : id === b ? a : null;
+      const ob = other != null && boxById[other];
+      if (ob) s += boxOverlap(box, [ob[0] - pad, ob[1] - pad, ob[2] + pad, ob[3] + pad]) * 80;
+    });
+    if (KEEP_ON_LAND.has(id)) {
+      const ll = proj.invert([cx, cy]);
+      if (!ll || !d3.geoContains(nationGeo, ll)) s += 4000;
+    }
     for (let t = 0.15; t < 0.95; t += 0.1) {
       const lx = nx + (cx - nx) * t,
         ly = ny + (cy - ny) * t;
@@ -38012,7 +38027,7 @@ function computeLayout(us, forbids) {
   order.forEach(id => {
     const [x, y] = pos[id];
     let best = null;
-    for (let d = 75; d <= (id === 16 ? 160 : id === 9 ? 190 : 620); d += 15) for (let ang = 0; ang < 360; ang += 12) {
+    for (let d = 75; d <= (MAX_REACH[id] || 620); d += 15) for (let ang = 0; ang < 360; ang += 12) {
       const cx = x + Math.cos(ang * Math.PI / 180) * d,
         cy = y + Math.sin(ang * Math.PI / 180) * d;
       const box = [cx - 61, cy - 42, cx + 61, cy + 42];
@@ -38024,6 +38039,7 @@ function computeLayout(us, forbids) {
     }
     placed[id] = [Math.round(best.box[0]), Math.round(best.box[1])];
     badgeBoxes.push(best.box);
+    boxById[id] = best.box;
   });
   const landmarks = [{
     key: 'california',
