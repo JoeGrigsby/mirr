@@ -38066,7 +38066,7 @@ function computeLayout(us, forbids) {
   }, {
     key: 'nevada',
     name: 'NEVADA',
-    at: [-116.3, 39.0]
+    at: [-115.7, 37.3]
   }, {
     key: 'colorado',
     name: 'COLORADO',
@@ -38078,7 +38078,7 @@ function computeLayout(us, forbids) {
   }, {
     key: 'florida',
     name: 'FLORIDA',
-    at: [-81.2, 27.9]
+    at: [-81.0, 26.9]
   }].map(l => ({
     ...l,
     xy: proj(l.at)
@@ -38224,8 +38224,10 @@ function MapLandmark({
     stroke: "var(--ss-paper)",
     strokeWidth: "3",
     paintOrder: "stroke"
-  }, item.name));
+  }, NO_LANDMARK_LABEL.has(item.key) ? null : item.name));
 }
+// Landmarks whose caption would just repeat the state label (or, for NYC, add clutter)
+const NO_LANDMARK_LABEL = new Set(['nevada', 'florida', 'newyork']);
 function HometownStamp({
   v
 }) {
