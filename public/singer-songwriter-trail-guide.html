@@ -38248,7 +38248,7 @@ function computeLayout(us, forbids, hidden = new Set()) {
   }, {
     key: 'colorado',
     name: 'COLORADO',
-    at: [-105.8, 39.1]
+    at: [-105.6, 37.75]
   }, {
     key: 'newyork',
     name: 'NEW YORK CITY',
@@ -38405,7 +38405,7 @@ function MapLandmark({
   }, NO_LANDMARK_LABEL.has(item.key) ? null : item.name));
 }
 // Landmarks whose caption would just repeat the state label (or, for NYC, add clutter)
-const NO_LANDMARK_LABEL = new Set(['nevada', 'florida', 'newyork']);
+const NO_LANDMARK_LABEL = new Set(['nevada', 'florida', 'newyork', 'colorado']);
 function HometownStamp({
   v
 }) {
