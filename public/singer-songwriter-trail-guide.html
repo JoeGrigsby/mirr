@@ -973,13 +973,13 @@ a:hover{color:var(--link-hover)}
 .stamp-art{display:block;width:122px;height:83px}
 .badge-caption{height:20px;display:flex;align-items:center;justify-content:center;padding:0 4px;font-family:var(--font-display);font-size:11px;letter-spacing:0.03em;color:var(--ss-paper);text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .map-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:13px;letter-spacing:var(--tracking-label);text-transform:uppercase;color:var(--text-secondary)}
-.chrome-col{position:absolute;left:28px;bottom:var(--credit-space,64px);z-index:680;width:380px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 100px)}
-.masthead-card{background:var(--ss-paper);border:2px solid var(--ss-ink);border-radius:10px;padding:13px 15px 15px;box-shadow:5px 5px 0 color-mix(in oklch,var(--ss-ink) 17%,transparent)}
+.chrome-col{position:absolute;left:28px;top:20px;bottom:auto;z-index:680;width:380px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 100px)}
+.masthead-card{order:-1;background:var(--ss-paper);border:2px solid var(--ss-ink);border-radius:10px;padding:13px 15px 15px;box-shadow:5px 5px 0 color-mix(in oklch,var(--ss-ink) 17%,transparent)}
 .trail-logo{display:block;width:100%;height:auto;overflow:visible}
 .trail-logo .logo-script{font-family:'Fraunces Trail',Georgia,serif;font-weight:900;letter-spacing:-0.045em}
 .trail-logo .logo-serif{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-0.045em}
 .trail-logo .logo-small{font-family:'Archivo',Arial,sans-serif;font-weight:700;letter-spacing:0.15em}
-.instructions{margin:0;padding:9px 5px 0;border-top:1px solid color-mix(in oklch,var(--ss-ink) 30%,transparent);font-family:var(--font-sans);font-size:12px;color:var(--text-secondary);letter-spacing:0.01em;line-height:1.35}
+.home-link{display:inline-block;margin:0 0 9px 3px;font:700 12px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ss-coral-deep);text-decoration:none}.home-link:hover{color:var(--ss-ink);text-decoration:underline}.instructions{margin:0;padding:9px 5px 0;border-top:1px solid color-mix(in oklch,var(--ss-ink) 30%,transparent);font-family:var(--font-sans);font-size:12px;color:var(--text-secondary);letter-spacing:0.01em;line-height:1.35}
 .filter-area{position:relative}
 .filter-toolbar{display:flex;align-items:stretch;gap:7px}
 .filter-trigger,.filter-reset{border:2px solid var(--ss-ink);border-radius:7px;background:var(--ss-paper);color:var(--ss-ink);font-family:var(--font-sans);font-size:12px;font-weight:700;cursor:pointer}
@@ -987,7 +987,7 @@ a:hover{color:var(--link-hover)}
 .filter-trigger[aria-expanded="true"]{background:var(--ss-ink);color:var(--ss-paper)}
 .filter-trigger .filter-summary{font-size:10px;font-weight:700;white-space:nowrap;opacity:.8}
 .filter-reset{padding:0 10px;color:var(--ss-coral-deep)}
-.filter-popover{position:absolute;bottom:calc(100% + 8px);left:0;width:100%;max-height:min(44vh,340px);display:flex;flex-direction:column;background:var(--ss-paper);border:2px solid var(--ss-ink);border-radius:9px;box-shadow:6px 6px 0 color-mix(in oklch,var(--ss-ink) 18%,transparent);overflow:hidden}
+.filter-popover{position:absolute;top:calc(100% + 8px);bottom:auto;left:0;width:100%;max-height:min(44vh,340px);display:flex;flex-direction:column;background:var(--ss-paper);border:2px solid var(--ss-ink);border-radius:9px;box-shadow:6px 6px 0 color-mix(in oklch,var(--ss-ink) 18%,transparent);overflow:hidden}
 .filter-popover-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 14px;border-bottom:1px solid color-mix(in oklch,var(--ss-ink) 25%,transparent);font-family:var(--font-sans);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .filter-popover-head button{padding:3px 7px;border:0;background:none;color:var(--ss-coral-deep);font-weight:700;cursor:pointer}
 .filter-search{margin:10px 12px 3px;width:calc(100% - 24px);padding:8px 10px;border:1px solid var(--ss-ink);border-radius:5px;background:#fff;color:var(--ss-ink);font:13px var(--font-sans)}
@@ -1025,9 +1025,9 @@ a:hover{color:var(--link-hover)}
 .credit-line{white-space:normal}
 @media (max-height:720px){.chrome-col{zoom:0.78}.instructions{display:none}.filter-popover{max-height:38vh}}
 @media (max-width:760px){
-.chrome-col{left:12px;right:12px;bottom:var(--credit-space,70px);width:auto;zoom:0.85;max-height:calc(100vh - 90px)}
+.chrome-col{left:12px;right:12px;top:12px;bottom:auto;width:auto;zoom:0.85;max-height:calc(100vh - 90px)}
 .panel-wrap{top:12px;left:12px;right:auto;max-height:65vh}
-.zoom-controls{top:12px;bottom:auto;right:12px}
+.zoom-controls{top:auto;bottom:calc(var(--credit-space,70px) + 8px);right:12px}
 .credit{padding:6px 10px;font-size:9px;text-align:center}
 .credit-line{min-width:0}
 }
@@ -38012,7 +38012,7 @@ function computeLayout(us, forbids) {
   order.forEach(id => {
     const [x, y] = pos[id];
     let best = null;
-    for (let d = 75; d <= (id === 16 ? 160 : 620); d += 15) for (let ang = 0; ang < 360; ang += 12) {
+    for (let d = 75; d <= (id === 16 ? 160 : id === 9 ? 190 : 620); d += 15) for (let ang = 0; ang < 360; ang += 12) {
       const cx = x + Math.cos(ang * Math.PI / 180) * d,
         cy = y + Math.sin(ang * Math.PI / 180) * d;
       const box = [cx - 61, cy - 42, cx + 61, cy + 42];
@@ -38420,11 +38420,23 @@ function App() {
     const vp = viewportRef.current;
     const w = vp.clientWidth,
       h = vp.clientHeight;
-    const k = Math.min(w / MAP_W, h / MAP_H) * 0.96;
+    // Open a little zoomed out, with the map starting just right of the title column (top-left)
+    // so the title card never covers the Pacific Northwest. Narrow screens keep the centred fit.
+    const cr = chromeRef.current && w > 760 ? chromeRef.current.getBoundingClientRect().right - vp.getBoundingClientRect().left : 0;
+    if (cr > 0) {
+      const k = Math.min((w - cr - 20) / (MAP_W - 150), h / MAP_H) * 0.97;
+      return {
+        k,
+        x: cr + 12 - 80 * k,
+        y: (h - MAP_H * k) / 2 + 18
+      };
+    }
+    const k = Math.min(w / MAP_W, h / MAP_H) * 0.9;
+    const cb = chromeRef.current ? chromeRef.current.getBoundingClientRect().bottom - vp.getBoundingClientRect().top : 0;
     return {
       k,
       x: (w - MAP_W * k) / 2,
-      y: (h - MAP_H * k) / 2
+      y: Math.max((h - MAP_H * k) / 2, cb + 8 - 50 * k)
     };
   }
   function fitView() {
@@ -38927,9 +38939,12 @@ function App() {
     "aria-label": "Reset all filters"
   }, "Reset"))), /*#__PURE__*/React.createElement("div", {
     className: "masthead-card"
-  }, /*#__PURE__*/React.createElement("svg", {
+  }, /*#__PURE__*/React.createElement("a", {
+    className: "home-link",
+    href: "https://joegrigsby.github.io/mirr/"
+  }, "\u2190 All Field Guides"), /*#__PURE__*/React.createElement("svg", {
     className: "trail-logo",
-    viewBox: "0 0 650 280",
+    viewBox: "0 0 650 318",
     role: "img",
     "aria-labelledby": "trail-logo-title",
     xmlns: "http://www.w3.org/2000/svg"
@@ -38963,7 +38978,7 @@ function App() {
     lengthAdjust: "spacing"
   }, "SINGER-SONGWRITER"), /*#__PURE__*/React.createElement("rect", {
     x: "25",
-    y: "123",
+    y: "141",
     width: "600",
     height: "113",
     rx: "16",
@@ -38972,7 +38987,7 @@ function App() {
     strokeWidth: "3"
   }), /*#__PURE__*/React.createElement("rect", {
     x: "32",
-    y: "130",
+    y: "148",
     width: "586",
     height: "99",
     rx: "11",
@@ -38980,14 +38995,14 @@ function App() {
     stroke: "var(--ss-ink)",
     strokeWidth: "2"
   }), /*#__PURE__*/React.createElement("path", {
-    d: "M72 171h18M81 162v18M580 171h18M589 162v18",
+    d: "M72 189h18M81 180v18M580 189h18M589 180v18",
     stroke: "var(--ss-coral-deep)",
     strokeWidth: "2.5",
     strokeLinecap: "round"
   }), /*#__PURE__*/React.createElement("text", {
     className: "logo-script",
     x: "80",
-    y: "209",
+    y: "227",
     fontSize: "105",
     fill: "var(--ss-coral-deep)",
     textLength: "225",
@@ -38995,24 +39010,24 @@ function App() {
   }, "Trail"), /*#__PURE__*/React.createElement("text", {
     className: "logo-serif",
     x: "319",
-    y: "211",
+    y: "229",
     fontSize: "91",
     fill: "var(--ss-ink)",
     textLength: "274",
     lengthAdjust: "spacingAndGlyphs"
   }, "GUIDE"), /*#__PURE__*/React.createElement("path", {
-    d: "M28 245 H198 M454 245 H622",
+    d: "M28 283 H198 M454 283 H622",
     fill: "none",
     stroke: "var(--ss-ink)",
     strokeWidth: "2.5",
     strokeLinecap: "round"
   }), /*#__PURE__*/React.createElement("path", {
-    d: "M187 245 l10 -5 10 5 -10 5 Z M444 245 l10 -5 10 5 -10 5 Z",
+    d: "M187 283 l10 -5 10 5 -10 5 Z M444 283 l10 -5 10 5 -10 5 Z",
     fill: "var(--ss-coral-deep)"
   }), /*#__PURE__*/React.createElement("text", {
     className: "logo-small",
     x: "326",
-    y: "251",
+    y: "289",
     textAnchor: "middle",
     fontSize: "16",
     fill: "var(--ss-ink)"
