@@ -990,6 +990,22 @@ a:hover{color:var(--link-hover)}
 .reveal-rise{animation:revealRise 560ms cubic-bezier(.2,.8,.3,1) both}
 @keyframes revealRise{from{transform:translateY(14px) scale(.92);filter:opacity(0)}to{transform:none;filter:none}}
 @media (prefers-reduced-motion:reduce){.reveal-draw,.reveal-pop,.reveal-fade,.reveal-rise{animation:none;stroke-dashoffset:0}}
+.layer-card{order:0;display:grid;gap:2px;padding:8px 12px;background:var(--ss-paper);border:2px solid var(--ss-ink);border-radius:9px;box-shadow:3px 3px 0 color-mix(in oklch,var(--ss-ink) 15%,transparent)}
+.layer-toggle{position:relative;display:flex;align-items:center;gap:10px;padding:6px 2px;cursor:pointer;font:700 13px var(--font-sans);color:var(--ss-ink)}
+.layer-toggle + .layer-toggle{border-top:1px solid color-mix(in oklch,var(--ss-ink) 18%,transparent)}
+.layer-toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.layer-label{flex:1;display:flex;align-items:baseline;gap:7px}
+.layer-label small{font-weight:600;font-size:11px;color:var(--text-secondary)}
+.layer-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--ss-ink);flex:none}
+.layer-dot-venues{background:var(--ss-coral)}
+.layer-dot-hometowns{background:var(--ss-paper);border-style:dashed}
+.layer-switch{position:relative;flex:none;width:38px;height:22px;border-radius:11px;border:2px solid var(--ss-ink);background:color-mix(in oklch,var(--ss-ink) 12%,var(--ss-paper));transition:background .2s}
+.layer-switch:after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--ss-ink);transition:transform .2s}
+.layer-toggle.on .layer-switch{background:var(--ss-coral)}
+.layer-toggle.on .layer-switch:after{transform:translateX(16px);background:var(--ss-paper)}
+.layer-toggle input:focus-visible ~ .layer-switch{outline:2px solid var(--ss-coral-deep);outline-offset:2px}
+.filter-area{order:1}
+.reveal-done .reveal-draw,.reveal-done .reveal-pop,.reveal-done .reveal-fade,.reveal-done .reveal-rise{animation:none;stroke-dashoffset:0}
 .home-link{display:inline-block;margin:0 0 9px 3px;font:700 12px/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ss-coral-deep);text-decoration:none}.home-link:hover{color:var(--ss-ink);text-decoration:underline}.instructions{margin:0;padding:9px 5px 0;border-top:1px solid color-mix(in oklch,var(--ss-ink) 30%,transparent);font-family:var(--font-sans);font-size:12px;color:var(--text-secondary);letter-spacing:0.01em;line-height:1.35}
 .filter-area{position:relative}
 .filter-toolbar{display:flex;align-items:stretch;gap:7px}
@@ -38012,7 +38028,7 @@ function mapRng(seed) {
   };
 }
 const boxOverlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
-function computeLayout(us, forbids) {
+function computeLayout(us, forbids, hidden = new Set()) {
   const geoms = us.objects.states.geometries.filter(g => !EXCLUDE.has(g.id));
   const fc = {
     type: 'FeatureCollection',
@@ -38194,7 +38210,7 @@ function computeLayout(us, forbids) {
   // Reserve a nearby spot for Cheatham's illustrated sign before placing the other badges.
   // venues claim spots first (densest first), then the hometown stamps fill in around them
   const order = [16, ...nodes.map(n => n.id).filter(id => id !== 16).sort((a, b) => isHome(a) - isHome(b) || density(b) - density(a))];
-  order.forEach(id => {
+  order.filter(id => !hidden.has(id)).forEach(id => {
     const [x, y] = pos[id];
     let best = null;
     for (let d = 75; d <= (MAX_REACH[id] || 330); d += 15) for (let ang = 0; ang < 360; ang += 12) {
@@ -38573,6 +38589,15 @@ function App() {
     hometown: true
   });
   const [activeArtists, setActiveArtists] = React.useState({});
+  // Map layers: music venues on, artist hometowns off by default
+  const [showVenues, setShowVenues] = React.useState(true);
+  const [showHometowns, setShowHometowns] = React.useState(false);
+  const isVisible = v => v.tier === 'hometown' ? showHometowns : showVenues;
+  const [revealDone, setRevealDone] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setRevealDone(true), 4200);
+    return () => clearTimeout(t);
+  }, []);
   const [filterOpen, setFilterOpen] = React.useState(null);
   const [artistQuery, setArtistQuery] = React.useState('');
   const [selected, setSelected] = React.useState(null);
@@ -38603,8 +38628,8 @@ function App() {
   }
   const anyArtistActive = Object.values(activeArtists).some(Boolean);
   const selectedArtistCount = Object.values(activeArtists).filter(Boolean).length;
-  const selectedTierCount = Object.values(activeTiers).filter(Boolean).length;
-  const filtersChanged = selectedTierCount !== 4 || anyArtistActive;
+  const selectedTierCount = ['anchor', 'route', 'house'].filter(k => activeTiers[k]).length;
+  const filtersChanged = selectedTierCount !== 3 || anyArtistActive;
   function matches(v) {
     return activeTiers[v.tier] && (!anyArtistActive || v.artists.some(a => activeArtists[a.name]));
   }
@@ -38705,7 +38730,11 @@ function App() {
     observer.observe(footer);
     return () => observer.disconnect();
   }, []);
-  const layout = React.useMemo(() => us ? computeLayout(us, forbids) : null, [us, forbids]);
+  const hiddenIds = React.useMemo(() => new Set(VENUES.filter(v => !(v.tier === 'hometown' ? showHometowns : showVenues)).map(v => v.id)), [showVenues, showHometowns]);
+  const layout = React.useMemo(() => us ? computeLayout(us, forbids, hiddenIds) : null, [us, forbids, hiddenIds]);
+  React.useEffect(() => {
+    if (selected && !isVisible(selected)) setSelected(null);
+  }, [showVenues, showHometowns]);
   // First-load reveal: roads, stops and badges switch on from south to north.
   const REVEAL_MS = 2600;
   const revealY = React.useMemo(() => {
@@ -38755,7 +38784,8 @@ function App() {
   VENUES.forEach(v => byId[v.id] = v);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
     id: "viewport",
-    ref: viewportRef
+    ref: viewportRef,
+    className: revealDone ? 'reveal-done' : undefined
   }, /*#__PURE__*/React.createElement("div", {
     id: "diagram",
     ref: layerRef
@@ -39064,6 +39094,7 @@ function App() {
     });
   }), Object.entries(layout.pos).map(([id, [x, y]]) => {
     const v = byId[id];
+    if (!isVisible(v)) return null;
     const on = matches(v);
     return /*#__PURE__*/React.createElement("g", {
       key: id,
@@ -39135,6 +39166,26 @@ function App() {
     className: "chrome-col",
     ref: chromeRef
   }, /*#__PURE__*/React.createElement("div", {
+    className: "layer-card",
+    role: "group",
+    "aria-label": "Map stops to show"
+  }, [['venues', 'Music Venue Stops', showVenues, setShowVenues, VENUES.length - tierCounts.hometown], ['hometowns', 'Artist Hometown Stops', showHometowns, setShowHometowns, tierCounts.hometown]].map(([k, label, on, set, n]) => /*#__PURE__*/React.createElement("label", {
+    key: k,
+    className: 'layer-toggle' + (on ? ' on' : '')
+  }, /*#__PURE__*/React.createElement("span", {
+    className: 'layer-dot layer-dot-' + k,
+    "aria-hidden": "true"
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "layer-label"
+  }, label, /*#__PURE__*/React.createElement("small", null, n)), /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    role: "switch",
+    checked: on,
+    onChange: () => set(!on)
+  }), /*#__PURE__*/React.createElement("span", {
+    className: "layer-switch",
+    "aria-hidden": "true"
+  })))), /*#__PURE__*/React.createElement("div", {
     className: "filter-area",
     ref: filterRef
   }, filterOpen && /*#__PURE__*/React.createElement("div", {
@@ -39160,7 +39211,7 @@ function App() {
     "aria-label": "Find an artist"
   }), /*#__PURE__*/React.createElement("div", {
     className: "filter-options"
-  }, filterOpen === 'venues' ? ['anchor', 'route', 'house', 'hometown'].map(k => /*#__PURE__*/React.createElement("label", {
+  }, filterOpen === 'venues' ? ['anchor', 'route', 'house'].map(k => /*#__PURE__*/React.createElement("label", {
     className: "filter-option",
     key: k
   }, /*#__PURE__*/React.createElement("input", {
@@ -39183,7 +39234,7 @@ function App() {
     onClick: () => setFilterOpen(filterOpen === 'venues' ? null : 'venues')
   }, /*#__PURE__*/React.createElement("span", null, "Venue Type"), /*#__PURE__*/React.createElement("span", {
     className: "filter-summary"
-  }, selectedTierCount, "/4 \u25BE")), /*#__PURE__*/React.createElement("button", {
+  }, selectedTierCount, "/3 \u25BE")), /*#__PURE__*/React.createElement("button", {
     type: "button",
     className: "filter-trigger",
     "aria-expanded": filterOpen === 'artists',
