@@ -38028,6 +38028,12 @@ function mapRng(seed) {
   };
 }
 const boxOverlap = (a, b) => Math.max(0, Math.min(a[2], b[2]) - Math.max(a[0], b[0])) * Math.max(0, Math.min(a[3], b[3]) - Math.max(a[1], b[1]));
+const LAYOUT_CACHE = new Map();
+function computeLayoutCached(us, forbids, hidden = new Set()) {
+  const key = JSON.stringify(forbids.map(b => b.map(Math.round))) + '|' + [...hidden].sort((a, b) => a - b).join(',');
+  if (!LAYOUT_CACHE.has(key)) LAYOUT_CACHE.set(key, computeLayout(us, forbids, hidden));
+  return LAYOUT_CACHE.get(key);
+}
 function computeLayout(us, forbids, hidden = new Set()) {
   const geoms = us.objects.states.geometries.filter(g => !EXCLUDE.has(g.id));
   const fc = {
@@ -38170,7 +38176,10 @@ function computeLayout(us, forbids, hidden = new Set()) {
   const BADGE_NUDGE = {9: [30, 16]};
   const KEEP_ON_LAND = new Set([9, 17]);
   const isHome = id => VENUES[id] && VENUES[id].tier === 'hometown';
-  const nationGeo = topojson.merge(us, geoms);
+  // fast point-in-land test in map coordinates (native Path2D hit test instead of spherical geoContains)
+  const landPath = new Path2D(nationD),
+    landCtx = document.createElement('canvas').getContext('2d');
+  const onLand = (x, y) => landCtx.isPointInPath(landPath, x, y);
   function score(box, id, cx, cy) {
     let s = 0;
     const [nx, ny] = pos[id];
@@ -38191,8 +38200,7 @@ function computeLayout(us, forbids, hidden = new Set()) {
       if (ob) s += boxOverlap(box, [ob[0] - pad, ob[1] - pad, ob[2] + pad, ob[3] + pad]) * 80;
     });
     if (KEEP_ON_LAND.has(id) || isHome(id)) {
-      const ll = proj.invert([cx, cy]);
-      if (!ll || !d3.geoContains(nationGeo, ll)) s += 60000;
+      if (!onLand(cx, cy)) s += 60000;
     }
     for (let t = 0.15; t < 0.95; t += 0.1) {
       const lx = nx + (cx - nx) * t,
@@ -38731,7 +38739,20 @@ function App() {
     return () => observer.disconnect();
   }, []);
   const hiddenIds = React.useMemo(() => new Set(VENUES.filter(v => !(v.tier === 'hometown' ? showHometowns : showVenues)).map(v => v.id)), [showVenues, showHometowns]);
-  const layout = React.useMemo(() => us ? computeLayout(us, forbids, hiddenIds) : null, [us, forbids, hiddenIds]);
+  const layout = React.useMemo(() => us ? computeLayoutCached(us, forbids, hiddenIds) : null, [us, forbids, hiddenIds]);
+  // After the first paint, quietly pre-build the other toggle combinations so switching is instant
+  React.useEffect(() => {
+    if (!us || !forbids.length) return;
+    const combos = [[true, true], [true, false], [false, true]].map(([v, h]) => new Set(VENUES.filter(x => !(x.tier === 'hometown' ? h : v)).map(x => x.id)));
+    let i = 0, timer;
+    const next = () => {
+      if (i >= combos.length) return;
+      computeLayoutCached(us, forbids, combos[i++]);
+      timer = setTimeout(next, 60);
+    };
+    timer = setTimeout(next, 4800);
+    return () => clearTimeout(timer);
+  }, [us, forbids]);
   React.useEffect(() => {
     if (selected && !isVisible(selected)) setSelected(null);
   }, [showVenues, showHometowns]);
