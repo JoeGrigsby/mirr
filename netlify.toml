@@ -6,3 +6,14 @@
 # Skip the Next.js runtime plugin (installed via the UI / auto-detected).
 [build.environment]
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+# Images and third-party libraries rarely change; let browsers reuse them.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
