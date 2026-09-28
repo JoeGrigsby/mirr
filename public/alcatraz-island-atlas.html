@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head><script>window.__resources = {};</script><title>Alcatraz Island Atlas · 3D Field Guide</title>
+<html lang="en"><head>
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png"><script>window.__resources = {};</script><title>Alcatraz Island Atlas · 3D Field Guide</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>/**
@@ -2375,7 +2376,7 @@ body{margin:0}.model-tools button{background:#17292de8;border:1px solid #476068;
     <sc-if value="{{selected.imageSrc}}">
      <figure style="margin:14px 0 0">
       <div role="button" tabindex="0" sc-camel-on-click="{{onOpenMedia}}" title="Open in viewer" style="display:block;background:#182024;border:1px solid #454c52;border-radius:6px;overflow:hidden;cursor:pointer">
-       <img src="{{selected.imageSrc}}" alt="{{selected.imageAlt}}" style="display:block;width:100%;height:280px;object-fit:contain" decoding="async">
+       <img sc-camel-src="{{selected.imageSrc}}" alt="{{selected.imageAlt}}" style="display:block;width:100%;height:280px;object-fit:contain" decoding="async">
       </div>
       <figcaption style="font-size:11px;line-height:1.5;color:#bbc1bb;margin-top:7px">
        <div style="font-size:9px;letter-spacing:1.2px;color:#d1a24a;margin-bottom:4px">{{selected.imageKind}}</div>
@@ -2457,11 +2458,11 @@ body{margin:0}.model-tools button{background:#17292de8;border:1px solid #476068;
    <button sc-camel-on-click="{{onCloseMedia}}" aria-label="Close viewer" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 14px;cursor:pointer;flex:none;font-size:13px">Close ×</button>
   </div>
   <sc-if value="{{mediaIsPdf}}" hint-placeholder-val="{{false}}">
-   <iframe src="{{mediaUrl}}" title="{{mediaCaption}}" style="flex:1;border:0;background:#fff"></iframe>
+   <iframe sc-camel-src="{{mediaUrl}}" title="{{mediaCaption}}" style="flex:1;border:0;background:#fff"></iframe>
   </sc-if>
   <sc-if value="{{mediaIsImage}}" hint-placeholder-val="{{false}}">
    <div ref="{{mediaViewportRef}}" style="flex:1;overflow:hidden;position:relative;cursor:grab;background:#0d1114;touch-action:none">
-    <img ref="{{mediaImgRef}}" src="{{mediaUrl}}" alt="{{mediaAlt}}" draggable="false" style="position:absolute;top:50%;left:50%;max-width:none;transform:translate(-50%,-50%) scale(1);transform-origin:center;user-select:none;pointer-events:none">
+    <img ref="{{mediaImgRef}}" sc-camel-src="{{mediaUrl}}" alt="{{mediaAlt}}" draggable="false" style="position:absolute;top:50%;left:50%;max-width:none;transform:translate(-50%,-50%) scale(1);transform-origin:center;user-select:none;pointer-events:none">
    </div>
    <div style="display:flex;align-items:center;justify-content:center;gap:8px;padding:10px;background:#20262b;border-top:1px solid #454c52;flex:none;flex-wrap:wrap">
     <button sc-camel-on-click="{{onMediaZoomOut}}" aria-label="Zoom out" style="background:#262c30;border:1px solid #454c52;color:#e8e3d6;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:15px;line-height:1">−</button>
