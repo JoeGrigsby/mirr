@@ -1,6 +1,6 @@
 /* UI — state, mode panels, movie card, search, timeline. */
 const $=id=>document.getElementById(id);
-const S={mode:'explore',x:'budget',y:'ww',color:'genre',size:'budget',split:'genre',bench:'budget',tmetric:'budget',yr:[2001,2025],yrPrev:null,
+const S={mode:'explore',x:'year',y:'intl',color:'genre',size:'budget',split:'genre',bench:'budget',tmetric:'budget',yr:[2001,2025],yrPrev:null,
  hide:{genre:new Set(),studio:new Set(),era:new Set(),mpa:new Set()},
  layers:{trend:true,labels:false,outl:false,context:true,ghosts:true},sel:null,nb:null,focus:null,panel:innerWidth>=1100,relT:.25,
  nbDims:new Set(['budget','genre','tomato','popcorn','ww']),stat:null,bstat:null,playing:null};
