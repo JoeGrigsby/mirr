@@ -115,13 +115,13 @@ function mediaFor(f){const tt=((f.imdbUrl||'').match(/tt\d+/)||[])[0];if(!tt)ret
   const art=rows.find(r=>r.article)?.article.value||'',tr=rows.find(r=>r.yt&&r.role&&/\/Q622550$/.test(r.role.value));
   const out={article:art,trailer:tr?tr.yt.value:null,poster:null,file:null};
   const title=art?decodeURIComponent(art.split('/wiki/')[1]||''):'';
-  if(title){const w=await fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail|name&pithumbsize=360&pilicense=any&titles='+encodeURIComponent(title)).then(r=>r.ok?r.json():null).catch(()=>null);
-   const pg=w&&Object.values(w.query?.pages||{})[0];if(pg&&pg.thumbnail){out.poster=pg.thumbnail.source;out.file=pg.pageimage||null}}
+  if(title){const w=await fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail|original|name&pithumbsize=360&pilicense=any&titles='+encodeURIComponent(title)).then(r=>r.ok?r.json():null).catch(()=>null);
+   const pg=w&&Object.values(w.query?.pages||{})[0];if(pg&&pg.thumbnail){out.poster=pg.thumbnail.source;out.full=pg.original?.source||pg.thumbnail.source;out.file=pg.pageimage||null}}
   return out}).catch(()=>null);
  MEDIA.set(tt,p);return p}
 function applyMedia(f){mediaFor(f).then(m=>{if(S.sel!==f||!m)return;
  const po=card.querySelector('.poster');
- if(m.poster&&po&&!po.querySelector('img')){const img=new Image();img.alt='Poster for '+f.title;img.decoding='async';img.onload=()=>{if(S.sel===f){po.replaceChildren(img);po.classList.add('has')}};img.src=m.poster}
+ if(m.poster&&po&&!po.querySelector('img')){const img=new Image();img.alt='Poster for '+f.title;img.decoding='async';img.onload=()=>{if(S.sel===f){po.replaceChildren(img);po.classList.add('has');po.tabIndex=0;po.setAttribute('role','button');po.setAttribute('aria-label','View larger poster for '+f.title);po.title='View larger poster'}};img.src=m.poster}
  const tl=card.querySelector('[data-trailer]');if(m.trailer&&tl){tl.href='https://www.youtube.com/watch?v='+encodeURIComponent(m.trailer);tl.textContent='▶ Watch the trailer on YouTube ↗'}
  const cr=card.querySelector('[data-postercredit]');if(m.poster&&m.file&&cr){const a=document.createElement('a');a.href='https://en.wikipedia.org/wiki/File:'+encodeURIComponent(m.file.replace(/ /g,'_'));a.target='_blank';a.rel='noopener noreferrer';a.textContent='Poster: Wikipedia ↗';cr.replaceChildren(' · ',a)}})}
 function renderCard(){const f=S.sel;card.classList.toggle('open',(!!f||S.people.length>0)&&S.mode!=='rel');if(!f){if(S.people.length)renderPeopleCard();return}
@@ -236,8 +236,16 @@ document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',
 $('ptog').addEventListener('click',()=>{S.panel=!S.panel;commit()});
 $('clearf').addEventListener('click',()=>{S.focus=null;S.nb=null;S.people=[];if(S.sel&&!S.sel)S.sel=null;resetZoom();commit()});
 $('zc').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const z=b.dataset.z;if(z==='reset')resetZoom();else zoomAt((P.x0+P.x1)/2,(P.y0+P.y1)/2,z==='in'?1.6:1/1.6)});
-$('notesBtn').addEventListener('click',()=>$('notes').showModal());$('notesX').addEventListener('click',()=>$('notes').close());
-addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(e.key==='/'){e.preventDefault();q.focus()}else if(e.key==='Escape'&&S.sel)clearSel();else if(e.key==='Escape'&&(S.focus||S.people.length)){S.focus=null;S.people=[];commit()}});
+$('notesBtn').addEventListener('click',()=>$('notes').showModal());
+/* Poster viewer: click the card poster to see it large. */
+const pv=$('pview');
+async function openPoster(){const f=S.sel;if(!f)return;const m=await mediaFor(f);if(!m||!m.poster||S.sel!==f)return;const img=$('pvImg');img.alt='Poster for '+f.title;img.src=m.poster;
+ if(m.full&&m.full!==m.poster){const hi=new Image();hi.onload=()=>{if(pv.open&&S.sel===f)img.src=m.full};hi.src=m.full}
+ $('pvCap').textContent=f.title+' ('+f.year+')';const cr=$('pvCredit');if(m.file){cr.href='https://en.wikipedia.org/wiki/File:'+encodeURIComponent(m.file.replace(/ /g,'_'));cr.hidden=false}else cr.hidden=true;pv.showModal()}
+card.addEventListener('click',e=>{if(e.target.closest('.poster.has'))openPoster()});
+card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.poster.has')){e.preventDefault();openPoster()}});
+$('pvX').addEventListener('click',()=>pv.close());$('pvX2').addEventListener('click',()=>pv.close());pv.addEventListener('click',e=>{if(e.target===pv||e.target.id==='pvImgWrap')pv.close()});$('notesX').addEventListener('click',()=>$('notes').close());
+addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea')||document.querySelector('dialog[open]'))return;if(e.key==='/'){e.preventDefault();q.focus()}else if(e.key==='Escape'&&S.sel)clearSel();else if(e.key==='Escape'&&(S.focus||S.people.length)){S.focus=null;S.people=[];commit()}});
 addEventListener('resize',()=>{resize();renderPanel()});
 resize();commit();requestAnimationFrame(frame);
 if(document.fonts)document.fonts.ready.then(()=>{need=3});
