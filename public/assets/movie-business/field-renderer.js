@@ -5,7 +5,7 @@ const P={x0:0,y0:0,x1:1,y1:1},PT={x0:0,y0:0,x1:1,y1:1},VZ={k:1,cx:.5,cy:.5},VT={
 const CTXB=[[2008,2009,'Great Recession'],[2020,2021,'Pandemic'],[2023,2023,'Strikes']];
 const TX='#F2EBDD',TX2='#BFB5A4',MU='#908677',AM='#E8A83E';
 const isScatter=()=>S.mode==='explore'||S.mode==='time';
-const REVENUE=new Set(['open','dom','intl','ww','ratio','legs']);
+const REVENUE=new Set(['open','dom','intl','ww','ratio','legs']);for(const k of REVENUE)if(VARS[k])VARS[k].rev=true;
 const REL_VARS=['budget','open','dom','intl','ww','tomato','popcorn','imdb','oscars','runtime','reviews'];
 const BENCH={budget:'production budget',open:'opening weekend',genre:'genre'};
 
@@ -16,7 +16,7 @@ const u0=()=>VZ.cx-.5/VZ.k,v0=()=>VZ.cy-.5/VZ.k;
 const sx=u=>P.x0+(u-u0())*VZ.k*(P.x1-P.x0),sy=v=>P.y1-(v-v0())*VZ.k*(P.y1-P.y0);
 const ux=px=>(px-P.x0)/((P.x1-P.x0)*VZ.k)+u0(),vy=py=>(P.y1-py)/((P.y1-P.y0)*VZ.k)+v0();
 function tv(V,f){const x=V.f(f);if(x==null||!isFinite(x))return NaN;if(V.log)return x>0?Math.log10(x):NaN;return x}
-function corr(list,X,Y){let n=0,a=0,b=0,aa=0,bb=0,ab=0;for(const f of list){const p=tv(X,f),q=tv(Y,f);if(!isFinite(p)||!isFinite(q))continue;n++;a+=p;b+=q;aa+=p*p;bb+=q*q;ab+=p*q}
+function corr(list,X,Y){let n=0,a=0,b=0,aa=0,bb=0,ab=0;for(const f of list){if(f.streaming&&(X.rev||Y.rev))continue;const p=tv(X,f),q=tv(Y,f);if(!isFinite(p)||!isFinite(q))continue;n++;a+=p;b+=q;aa+=p*p;bb+=q*q;ab+=p*q}
  if(n<3)return null;const vx=aa-a*a/n,vyy=bb-b*b/n,c=ab-a*b/n;if(vx<=1e-12||vyy<=1e-12)return {r:0,n,b:0,a:b/n};const sl=c/vx;return {r:c/Math.sqrt(vx*vyy),n,b:sl,a:(b-sl*a)/n}}
 function passes(f,skip){for(const k in S.hide){if(k!==skip&&S.hide[k].size&&S.hide[k].has(catOf(k,f)))return false}return true}
 const median=a=>{const s=a.filter(v=>v!=null&&isFinite(v)).sort((x,y)=>x-y);if(!s.length)return NaN;const m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2};
@@ -32,7 +32,7 @@ function retarget(){plotTarget();const m=S.mode,C=COLORBY[S.color];VIS=[];PANELS
    let al=ok&&f.ok?(f.win?.86:(m==='time'&&S.layers.ghosts?.07:0)):0;if(m==='rel')al=ok&&f.ok&&f.win?.06:0;f.ta=al;if(ok&&f.ok&&f.win)VIS.push(f)}
   S.stat=corr(VIS,X,Y);TREND=S.stat;
   if(S.stat)for(const f of VIS)f.res=tv(Y,f)-(S.stat.a+S.stat.b*tv(X,f));
-  OUTR=VIS.filter(f=>isFinite(f.res)).sort((a,b)=>Math.abs(b.res)-Math.abs(a.res)).slice(0,6);
+  OUTR=VIS.filter(f=>isFinite(f.res)&&!f.streaming).sort((a,b)=>Math.abs(b.res)-Math.abs(a.res)).slice(0,6);
   if(m==='rel')relPairs()}
  else if(m==='compare'){const D=COLORBY[S.split],gs=D.cats.map((c,i)=>({c,col:D.colors[i],fs:[]}));
   for(const f of FILMS){f.ta=0;if(!f.ok||!f.win)continue;const a=tv(X,f),b=tv(Y,f);if(!isFinite(a)||!isFinite(b))continue;const g=gs[D.cats.indexOf(catOf(S.split,f))];if(g)g.fs.push(f)}
@@ -42,7 +42,7 @@ function retarget(){plotTarget();const m=S.mode,C=COLORBY[S.color];VIS=[];PANELS
   G.forEach((g,i)=>{const col=i%cols,row=Math.floor(i/cols),pu0=col*(w+gu),top=row*(h+gv)+gv,pv1=1-top,pv0=pv1-h;
    const st=corr(g.fs,X,Y);PANELS.push({c:g.c,col:g.col,n:g.fs.length,u0:pu0,u1:pu0+w,v0:pv0,v1:pv1,st});
    for(const f of g.fs){f.tu=pu0+(tv(X,f)-dx[0])/(dx[1]-dx[0])*w;f.tv=pv0+(tv(Y,f)-dy[0])/(dy[1]-dy[0])*h;f.tr=S.size==='none'?2:1+5.5*Math.sqrt(Math.max(0,VARS[S.size].f(f)||0)/(SZMAX[S.size]||1));f.ta=.85;VIS.push(f)}})}
- else if(m==='outliers'){const ok=FILMS.filter(f=>f.ok&&f.win&&f.ww>0),lw=f=>Math.log10(f.ww);
+ else if(m==='outliers'){const ok=FILMS.filter(f=>f.ok&&f.win&&f.ww>0&&!f.streaming),lw=f=>Math.log10(f.ww);
   for(const f of FILMS){f.res=NaN;f.ta=0}
   if(S.bench==='genre'){const mu={};for(const g of GENRES){const a=ok.filter(f=>f.genre===g).map(lw);mu[g]=a.reduce((s,v)=>s+v,0)/(a.length||1)}for(const f of ok)f.res=lw(f)-mu[f.genre]}
   else{const B=VARS[S.bench],st=corr(ok,B,VARS.ww);S.bstat=st;if(st)for(const f of ok){const b=tv(B,f);if(isFinite(b))f.res=lw(f)-(st.a+st.b*b)}}
@@ -115,7 +115,7 @@ function draw(){g2.setTransform(DPR,0,0,DPR,0,0);g2.clearRect(0,0,W,H);const m=S
  if(m==='compare'&&S.layers.trend)for(const p of PANELS){g2.save();g2.beginPath();g2.rect(sx(p.u0),sy(p.v1),sx(p.u1)-sx(p.u0),sy(p.v0)-sy(p.v1));g2.clip();drawTrend(p.st,p.u0,p.u1,p.v0,p.v1);g2.restore()}
  const zk=isScatter()?Math.min(2.2,Math.sqrt(VZ.k)):1;
  for(const f of ORDER){f.sr=0;if(f.a<.012)continue;const x=sx(f.u),y=sy(f.v),r=Math.max(.6,f.r*zk);if(x<P.x0-30||x>P.x1+30||y<P.y0-30||y>P.y1+30)continue;f.sx=x;f.sy=y;f.sr=r;
-  g2.globalAlpha=f.a;g2.fillStyle=f.col;g2.beginPath();g2.arc(x,y,r,0,6.2832);g2.fill();if(r>3.4){g2.strokeStyle='rgba(14,12,11,.6)';g2.lineWidth=.8;g2.stroke()}}
+  g2.globalAlpha=f.a;if(f.streaming){const lw=Math.max(1.3,r*.34);g2.strokeStyle=f.col;g2.lineWidth=lw;g2.beginPath();g2.arc(x,y,Math.max(1,r-lw/2),0,6.2832);g2.stroke()}else{g2.fillStyle=f.col;g2.beginPath();g2.arc(x,y,r,0,6.2832);g2.fill();if(r>3.4){g2.strokeStyle='rgba(14,12,11,.6)';g2.lineWidth=.8;g2.stroke()}}}
  g2.globalAlpha=1;
  if(isScatter()&&S.layers.outl)for(const f of OUTR){if(!f.sr)continue;g2.strokeStyle=AM;g2.lineWidth=1.3;g2.beginPath();g2.arc(f.sx,f.sy,f.sr+5,0,7);g2.stroke()}
  const sel=S.sel;
