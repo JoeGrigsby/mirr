@@ -9,7 +9,7 @@ const REVENUE=new Set(['open','dom','intl','ww','ratio','legs']);for(const k of 
 const REL_VARS=['budget','open','dom','intl','ww','tomato','popcorn','imdb','oscars','runtime','reviews'];
 const BENCH={budget:'production budget',open:'opening weekend',genre:'genre'};
 
-function plotTarget(){const nar=W<900,side=S.panel&&!nar?376:0,card=S.sel&&!nar&&S.mode!=='rel'?392:0;
+function plotTarget(){const nar=W<900,side=S.panel&&!nar?376:0,card=(S.sel||S.people.length)&&!nar&&S.mode!=='rel'?392:0;
  const l=side+(S.mode==='outliers'?86:S.mode==='compare'?40:82),r=W-card-(S.mode==='compare'?24:34),t=S.mode==='compare'?100:88,b=H-104-(S.mode==='compare'?34:50);
  PT.x0=l;PT.x1=Math.max(l+220,r);PT.y0=t;PT.y1=Math.max(t+160,b)}
 const u0=()=>VZ.cx-.5/VZ.k,v0=()=>VZ.cy-.5/VZ.k;
