@@ -323,7 +323,7 @@ details.sec[open]>summary{margin-bottom:4px}
 .credit .ctx2{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis}
 .credit b{color:var(--am);font-weight:800;letter-spacing:.12em}
 .credit button{all:unset;cursor:pointer;color:var(--am2);font-weight:700}
-.credit button:hover{text-decoration:underline}
+.credit button:hover{text-decoration:underline}.credit .ver{color:var(--mu);flex:none}
 #notes{max-width:640px;width:calc(100vw - 32px);max-height:calc(100vh - 60px);border:1px solid var(--line2);border-radius:10px;background:#171412;color:var(--tx);padding:26px 30px;box-shadow:0 30px 60px -20px #000;font-size:14px}
 #notes::backdrop{background:rgba(8,7,6,.7)}
 #notes h2{font-family:Anton,sans-serif;font-weight:400;font-size:32px;text-transform:uppercase;margin:4px 0 14px;line-height:1}
@@ -366,7 +366,7 @@ details.sec[open]>summary{margin-bottom:4px}
 <div class="tlr"><div class="k" id="tlk">Years</div><b id="tlread">2001–2025</b></div>
 </div>
 <div id="tip"></div>
-<footer class="credit"><b>WORKBOOK DATA</b><span class="ctx2">2,496 films · 2001–2025 · Nominal USD · Missing fields stay blank · Domestic means North America · Correlation is not causation · Research snapshot Sep 2026</span><button id="notesBtn">Sources &amp; method</button></footer>
+<footer class="credit"><b>WORKBOOK DATA</b><span class="ctx2">2,496 films · 2001–2025 · Nominal USD · Missing fields stay blank · Domestic means North America · Correlation is not causation · Research snapshot Sep 2026</span><span class="ver">v0.1 - updated 09/28/26</span><button id="notesBtn">Sources &amp; method</button></footer>
 <dialog id="notes">
 <button class="btn alt sm" id="notesX">Close</button>
 <div class="kick">Field Guide № 008</div>
@@ -378,9 +378,19 @@ details.sec[open]>summary{margin-bottom:4px}
 <ul><li>2,318 films have production budgets; 2,406 have opening-weekend grosses; 1,979 have both Rotten Tomatoes scores. Scores, dates and worldwide grosses reflect the different source snapshots recorded in the workbook.</li><li>Marketing budget, total budget, studio/distributor, parent company and film universe have no populated data. No values are estimated to fill those gaps. “Lead production company” is the first production company listed, not a verified distributor.</li><li>The color key prioritizes Animation, Sci-Fi and Horror tags, then uses the first broad genre in the source list. All genre tags are visible on the card. Oscar counts come from a title/year match to the Academy Awards extract; zero means no nomination was matched.</li></ul>
 <h3>How to read the charts</h3>
 <ul><li>Domestic means the North American theatrical market, not US-only. Worldwide is recorded worldwide theatrical gross. Box office is ticket revenue, not studio profit. Gross ÷ production budget is a ratio, not return on investment.</li><li>Pearson’s r and the least-squares trend use films with both selected values recorded. Dollar measures and positive counts use logarithms. Outlier “expected” values describe the fitted trend for the visible sample, not a forecast.</li><li>Current audience scores and later awards cannot explain earlier box-office results. The years and historical events shown are context, not causal evidence.</li></ul>
-<h3>Research sources</h3>
-<p><a href="https://www.kaggle.com/datasets/raedaddala/top-500-600-movies-of-each-year-from-1960-to-2024" target="_blank" rel="noopener noreferrer">IMDb-popular extract</a> · <a href="https://www.the-numbers.com/box-office-records/domestic/all-movies/cumulative/released-in-2025" target="_blank" rel="noopener noreferrer">The Numbers 2025 chart</a> · <a href="https://www.kaggle.com/datasets/alanvourch/tmdb-movies-daily-updates" target="_blank" rel="noopener noreferrer">TMDb snapshot extract</a> · <a href="https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset" target="_blank" rel="noopener noreferrer">RT 2001–2020 extract</a> · <a href="https://www.reddit.com/r/datasets/comments/1ecj6m2/dataset_for_rotten_tomatoes_movies_1970_2024/" target="_blank" rel="noopener noreferrer">RT 2021–2024 extract</a> · <a href="https://www.kaggle.com/datasets/unanimad/the-oscar-award" target="_blank" rel="noopener noreferrer">Academy Awards extract</a>.</p>
-<p>See the workbook’s <strong>About and sources</strong> tab and each film’s source links for provenance and data gaps. Check source licenses before redistributing this embedded dataset on a public site.</p>
+<h3>Data sources</h3>
+<ul>
+<li><strong>Film list, budgets, grosses and IMDb ratings, 2001–2024</strong> — <a href="https://www.kaggle.com/datasets/raedaddala/top-500-600-movies-of-each-year-from-1960-to-2024" target="_blank" rel="noopener noreferrer">Top 500–600 movies of each year, 1960–2024</a>, compiled from IMDb by raedaddala on Kaggle (the “IMDb popular film extract”).</li>
+<li><strong>2025 films and grosses</strong> — <a href="https://www.the-numbers.com/box-office-records/domestic/all-movies/cumulative/released-in-2025" target="_blank" rel="noopener noreferrer">The Numbers, domestic box office for films released in 2025</a> (Nash Information Services).</li>
+<li><strong>Supplementary budgets and release details</strong> — <a href="https://www.kaggle.com/datasets/alanvourch/tmdb-movies-daily-updates" target="_blank" rel="noopener noreferrer">TMDB movies, daily updates</a> by alanvourch on Kaggle, drawn from The Movie Database (TMDB). This guide uses TMDB data but is not endorsed or certified by TMDB.</li>
+<li><strong>Rotten Tomatoes scores, 2001–2020</strong> — <a href="https://www.kaggle.com/datasets/stefanoleone992/rotten-tomatoes-movies-and-critic-reviews-dataset" target="_blank" rel="noopener noreferrer">Rotten Tomatoes movies and critic reviews dataset</a> by stefanoleone992 on Kaggle.</li>
+<li><strong>Rotten Tomatoes scores, 2021–2024</strong> — <a href="https://www.reddit.com/r/datasets/comments/1ecj6m2/dataset_for_rotten_tomatoes_movies_1970_2024/" target="_blank" rel="noopener noreferrer">Dataset for Rotten Tomatoes movies, 1970–2024</a>, shared on Reddit’s r/datasets.</li>
+<li><strong>Academy Award nominations and wins</strong> — <a href="https://www.kaggle.com/datasets/unanimad/the-oscar-award" target="_blank" rel="noopener noreferrer">The Oscar Award dataset</a> by unanimad on Kaggle, from the Academy of Motion Picture Arts and Sciences’ awards records.</li>
+<li><strong>Film pages</strong> — each film card links to its source record and to its <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">IMDb</a> and <a href="https://www.rottentomatoes.com/" target="_blank" rel="noopener noreferrer">Rotten Tomatoes</a> pages.</li>
+<li><strong>Timeline context bands</strong> — Great Recession dates from the <a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions" target="_blank" rel="noopener noreferrer">NBER U.S. business-cycle chronology</a>; the COVID-19 pandemic as declared by the <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank" rel="noopener noreferrer">World Health Organization</a>; the 2023 <a href="https://www.wga.org/" target="_blank" rel="noopener noreferrer">Writers Guild of America</a> and <a href="https://www.sagaftra.org/" target="_blank" rel="noopener noreferrer">SAG-AFTRA</a> strikes.</li>
+<li><strong>Compiled workbook</strong> — <em>Movie Dataset 2001-2025.xlsx</em>, assembled for this guide from the sources above (research snapshot September 2026).</li>
+</ul>
+<p>See each film’s source links for provenance and data gaps. Titles, ratings and figures remain the property of their respective sources.</p>
 </dialog>
 </div>
 <script src="assets/movie-business/films-data.js"></script>
