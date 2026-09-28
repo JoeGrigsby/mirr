@@ -103,20 +103,40 @@ function whyText(f){const X=VARS[S.x],Y=VARS[S.y],nm=esc(f.title||'This record')
  let s;if(Y.log){const p=Math.round((10**res-1)*100);s=Math.abs(p)<8?`${nm} sits close to the trend — its ${Y.label.toLowerCase()} is about what films with a comparable ${X.label.toLowerCase()} show in this view.`:`${nm} sits ${Math.abs(p).toLocaleString()}% ${p>0?'above':'below'} the ${Y.label.toLowerCase()} the trend predicts for films with a comparable ${X.label.toLowerCase()}.`}
  else{const d=Math.round(res*10)/10;s=`${nm} sits ${Math.abs(d)} ${S.y==='tomato'||S.y==='popcorn'||S.y==='gap'?'points':'units'} ${d>0?'above':'below'} the ${Y.label} the trend predicts for films with a comparable ${X.label.toLowerCase()}.`}
  const xv=X.f(f),pct=Math.round(VIS.filter(o=>X.f(o)<xv).length/(VIS.length||1)*100);return s+` Its ${X.label.toLowerCase()} is higher than ${pct}% of films in view.`}
+// Poster art and trailers. A film's IMDb ID is matched on Wikidata to its English Wikipedia article (the poster is
+// the article's lead image) and to any YouTube video ID recorded there with the role "trailer". Lookups run only
+// when a card opens and are kept for the visit; without a match the card keeps its placeholder and a YouTube search.
+const MEDIA=new Map();
+function mediaFor(f){const tt=((f.imdbUrl||'').match(/tt\d+/)||[])[0];if(!tt)return Promise.resolve(null);if(MEDIA.has(tt))return MEDIA.get(tt);
+ const q=`SELECT ?article ?yt ?role WHERE{?film wdt:P345 "${tt}".OPTIONAL{?article schema:about ?film;schema:isPartOf <https://en.wikipedia.org/>}OPTIONAL{?film p:P1651 ?st.?st ps:P1651 ?yt.OPTIONAL{?st pq:P3831 ?role}}}LIMIT 20`;
+ const p=fetch('https://query.wikidata.org/sparql?format=json&query='+encodeURIComponent(q)).then(r=>r.ok?r.json():null).then(async j=>{
+  const rows=j?.results?.bindings||[];if(!rows.length)return null;
+  const art=rows.find(r=>r.article)?.article.value||'',tr=rows.find(r=>r.yt&&r.role&&/\/Q622550$/.test(r.role.value));
+  const out={article:art,trailer:tr?tr.yt.value:null,poster:null,file:null};
+  const title=art?decodeURIComponent(art.split('/wiki/')[1]||''):'';
+  if(title){const w=await fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail|name&pithumbsize=360&pilicense=any&titles='+encodeURIComponent(title)).then(r=>r.ok?r.json():null).catch(()=>null);
+   const pg=w&&Object.values(w.query?.pages||{})[0];if(pg&&pg.thumbnail){out.poster=pg.thumbnail.source;out.file=pg.pageimage||null}}
+  return out}).catch(()=>null);
+ MEDIA.set(tt,p);return p}
+function applyMedia(f){mediaFor(f).then(m=>{if(S.sel!==f||!m)return;
+ const po=card.querySelector('.poster');
+ if(m.poster&&po&&!po.querySelector('img')){const img=new Image();img.alt='Poster for '+f.title;img.decoding='async';img.onload=()=>{if(S.sel===f){po.replaceChildren(img);po.classList.add('has')}};img.src=m.poster}
+ const tl=card.querySelector('[data-trailer]');if(m.trailer&&tl){tl.href='https://www.youtube.com/watch?v='+encodeURIComponent(m.trailer);tl.textContent='▶ Watch the trailer on YouTube ↗'}
+ const cr=card.querySelector('[data-postercredit]');if(m.poster&&m.file&&cr){const a=document.createElement('a');a.href='https://en.wikipedia.org/wiki/File:'+encodeURIComponent(m.file.replace(/ /g,'_'));a.target='_blank';a.rel='noopener noreferrer';a.textContent='Poster: Wikipedia ↗';cr.replaceChildren(' · ',a)}})}
 function renderCard(){const f=S.sel;card.classList.toggle('open',!!f&&S.mode!=='rel');if(!f)return;
  const n=(l,v)=>`<div class="nm"><dt>${l}</dt><dd>${v}</dd></div>`;
  const val=v=>v?esc(v):'—';
  const link=(url,label)=>/^https:\/\//.test(url)?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`:'';
  const why=whyText(f);
  card.innerHTML=`<button class="x" data-close="1" aria-label="Close">×</button>
-<div class="ch"><div class="poster">${f.year}<br>FILM</div><div><div class="kick">${f.date||f.year} · Domestic rank ${f.rank} in source</div><h2 class="ct">${esc(f.title)}</h2><div class="csub">${esc(f.genre)} · ${esc(f.studio)}</div></div></div>
+<div class="ch"><div class="poster">${f.year}<br>FILM</div><div><div class="kick">${f.date||f.year} · Domestic rank ${f.rank} in source</div><h2 class="ct">${esc(f.title)}</h2><div class="csub">${esc(f.genre)} · ${esc(f.studio)}</div><a class="trailer" data-trailer="1" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+' '+f.year+' official trailer')}" target="_blank" rel="noopener noreferrer">▶ Find the trailer on YouTube ↗</a></div></div>
 <div class="sec"><div class="k">The numbers · nominal USD</div><dl class="nums">${n('Production budget',fmtM(f.budget))}${n('Marketing budget','—')}${n('Total budget','—')}${n('Worldwide box office',fmtM(f.ww))}${n('Opening weekend',fmtM(f.open))}${n('Domestic',fmtM(f.dom))}${n('International',fmtM(f.intl)+(f.intlShare!=null?' <small>'+Math.round(f.intlShare)+'%</small>':''))}${n('Tomatometer',VARS.tomato.fmt(f.tomato))}${n('Popcornmeter',VARS.popcorn.fmt(f.popcorn))}${n('IMDb rating',VARS.imdb.fmt(f.imdb))}${n('Gross ÷ production budget',VARS.ratio.fmt(f.ratio))}</dl></div>
 ${why?`<div class="sec why2"><div class="k">Why is it here?</div><p>${why}</p></div>`:''}
 <div class="sec"><div class="k">The context</div><dl class="cx"><dt>Genre tags</dt><dd>${val(f.genres)}</dd><dt>Production companies</dt><dd>${val(f.companies)}</dd><dt>Director</dt><dd>${val(f.directors)}</dd><dt>Top-billed cast</dt><dd>${val(f.stars)}</dd><dt>Movie universe</dt><dd>—</dd><dt>Parent company</dt><dd>—</dd><dt>MPA rating</dt><dd>${esc(f.mpa)}</dd><dt>Runtime</dt><dd>${f.runtime==null?'—':f.runtime+' min'}</dd><dt>Oscar nominations / wins</dt><dd>${f.oscars} / ${f.wins}</dd>${f.award?`<dt>Winning categories</dt><dd>${esc(f.award)}</dd>`:''}</dl></div>
 <div class="sec"><div class="k">Find its neighbors</div><p class="fine">Films statistically closest across the traits you choose.</p><div class="chips">${Object.keys(NBD).map(k=>`<button class="chip${S.nbDims.has(k)?' on':''}" data-nbd="${k}">${NBD[k]}</button>`).join('')}</div>
 <div class="brow"><button class="btn" data-nb="1">${S.nb?'Update neighbors':'Show similar films'}</button>${S.nb?'<button class="btn alt" data-nbclear="1">Clear</button>':''}</div>
 ${S.nb?`<div class="olist">${S.nb.map(o=>`<button data-pick="${o.id}"><i class="dot" style="background:${o.col}"></i><span>${esc(nameOf(o))}</span><small>${o.year} · ${o.genre}</small></button>`).join('')}</div>`:''}</div>
-<div class="sec"><div class="k">Sources for this record</div><p class="fine">Budget: ${val(f.budgetSource)}${f.budgetStatus?' ('+esc(f.budgetStatus)+')':''} · Domestic: ${val(f.domesticSource)} · Worldwide: ${val(f.worldwideSource)}${f.rtDate?' · RT snapshot: '+esc(f.rtDate):''}.</p>${f.dataNotes?`<p class="fine">${esc(f.dataNotes)}</p>`:''}<p class="fine">${[link(f.sourceUrl,'Film source'),link(f.rtUrl,'Rotten Tomatoes'),link(f.imdbUrl,'IMDb')].filter(Boolean).join(' · ')}</p></div>`}
+<div class="sec"><div class="k">Sources for this record</div><p class="fine">Budget: ${val(f.budgetSource)}${f.budgetStatus?' ('+esc(f.budgetStatus)+')':''} · Domestic: ${val(f.domesticSource)} · Worldwide: ${val(f.worldwideSource)}${f.rtDate?' · RT snapshot: '+esc(f.rtDate):''}.</p>${f.dataNotes?`<p class="fine">${esc(f.dataNotes)}</p>`:''}<p class="fine">${[link(f.sourceUrl,'Film source'),link(f.rtUrl,'Rotten Tomatoes'),link(f.imdbUrl,'IMDb')].filter(Boolean).join(' · ')}<span data-postercredit="1"></span></p></div>`;applyMedia(f)}
 card.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
  if(d.close)clearSel();else if(d.pick!==undefined)selectFilm(FILMS[+d.pick],!!S.nb);
  else if(d.nbd){S.nbDims.has(d.nbd)?S.nbDims.delete(d.nbd):S.nbDims.add(d.nbd);if(!S.nbDims.size)S.nbDims.add('genre');if(S.nb)runNb();else renderCard()}

@@ -276,7 +276,7 @@ details.sec[open]>summary{margin-bottom:4px}
 .ch{display:grid;grid-template-columns:88px minmax(0,1fr);gap:14px;align-items:start;padding-right:18px}
 .poster{aspect-ratio:2/3;border:1px solid var(--line2);border-radius:4px;background:repeating-linear-gradient(135deg,rgba(236,224,196,.07) 0 5px,transparent 5px 10px);display:grid;place-items:center;text-align:center;font-size:9px;font-weight:800;letter-spacing:.14em;color:var(--mu);text-transform:uppercase;line-height:1.6}
 .ct{font-family:Anton,sans-serif;font-weight:400;font-size:30px;line-height:1.02;text-transform:uppercase;margin:6px 0 6px;text-wrap:balance;letter-spacing:.005em}
-.csub{font-size:13px;color:var(--tx2);line-height:1.4}
+.csub{font-size:13px;color:var(--tx2);line-height:1.4}.poster img{display:block;width:100%;height:100%;object-fit:cover;border-radius:3px}.poster.has{background:none}.trailer{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--am2);text-decoration:none}.trailer:hover{text-decoration:underline}
 .banner{font-size:12px;line-height:1.5;color:var(--tx2);border:1px dashed var(--line2);border-radius:6px;padding:8px 10px}
 .banner b{color:var(--am2);font-weight:800;letter-spacing:.06em}
 .nums{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin:0}
@@ -371,7 +371,7 @@ details.sec[open]>summary{margin-bottom:4px}
 <button class="btn alt sm" id="notesX">Close</button>
 <div class="kick">Field Guide № 008</div>
 <h2>Sources &amp; Method</h2>
-<p>This standalone page embeds 2,496 real film records from <strong>Movie Dataset 2001-2025.xlsx</strong>. Every dot represents a named film. Values are nominal, and the page works offline.</p>
+<p>This standalone page embeds 2,496 real film records from <strong>Movie Dataset 2001-2025.xlsx</strong>. Every dot represents a named film. Values are nominal, and the data works offline; poster art and trailer links need a connection.</p>
 <h3>Which films are included?</h3>
 <ul><li>For 2001–2024, 100 films per year are ranked by North American gross <strong>within an IMDb-popular extract</strong>. This is a sample, not an exhaustive top-100 theatrical chart.</li><li>For 2025, 96 entries from The Numbers’ released-in-year domestic chart were matched after catalog and episodic items were excluded. Selection by gross favors successful theatrical films and affects box-office relationships.</li><li>Gross figures are lifetime totals in their source snapshots, not year-of-release receipts. Release dates come from the source records and may not be North American opening dates.</li></ul>
 <h3>What is measured?</h3>
@@ -387,6 +387,7 @@ details.sec[open]>summary{margin-bottom:4px}
 <li><strong>Rotten Tomatoes scores, 2021–2024</strong> — <a href="https://www.reddit.com/r/datasets/comments/1ecj6m2/dataset_for_rotten_tomatoes_movies_1970_2024/" target="_blank" rel="noopener noreferrer">Dataset for Rotten Tomatoes movies, 1970–2024</a>, shared on Reddit’s r/datasets.</li>
 <li><strong>Academy Award nominations and wins</strong> — <a href="https://www.kaggle.com/datasets/unanimad/the-oscar-award" target="_blank" rel="noopener noreferrer">The Oscar Award dataset</a> by unanimad on Kaggle, from the Academy of Motion Picture Arts and Sciences’ awards records.</li>
 <li><strong>Film pages</strong> — each film card links to its source record and to its <a href="https://www.imdb.com/" target="_blank" rel="noopener noreferrer">IMDb</a> and <a href="https://www.rottentomatoes.com/" target="_blank" rel="noopener noreferrer">Rotten Tomatoes</a> pages.</li>
+<li><strong>Poster art and trailers</strong> — each film’s IMDb ID is matched on <a href="https://www.wikidata.org/" target="_blank" rel="noopener noreferrer">Wikidata</a> to its English <a href="https://en.wikipedia.org/" target="_blank" rel="noopener noreferrer">Wikipedia</a> article, whose lead image is shown as the poster (credited on each card; posters remain the property of their studios and are shown for identification). Trailer links use the YouTube video ID Wikidata records as the film’s trailer, or a <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a> search when none is recorded. These are looked up when a card opens.</li>
 <li><strong>Timeline context bands</strong> — Great Recession dates from the <a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions" target="_blank" rel="noopener noreferrer">NBER U.S. business-cycle chronology</a>; the COVID-19 pandemic as declared by the <a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019" target="_blank" rel="noopener noreferrer">World Health Organization</a>; the 2023 <a href="https://www.wga.org/" target="_blank" rel="noopener noreferrer">Writers Guild of America</a> and <a href="https://www.sagaftra.org/" target="_blank" rel="noopener noreferrer">SAG-AFTRA</a> strikes.</li>
 <li><strong>Compiled workbook</strong> — <em>Movie Dataset 2001-2025.xlsx</em>, assembled for this guide from the sources above (research snapshot September 2026).</li>
 </ul>
