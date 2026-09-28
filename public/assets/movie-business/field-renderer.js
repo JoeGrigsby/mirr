@@ -114,9 +114,13 @@ function draw(){g2.setTransform(DPR,0,0,DPR,0,0);g2.clearRect(0,0,W,H);const m=S
  if(isScatter()&&S.layers.trend){const e=drawTrend(TREND,0,1,0,1);}
  if(m==='compare'&&S.layers.trend)for(const p of PANELS){g2.save();g2.beginPath();g2.rect(sx(p.u0),sy(p.v1),sx(p.u1)-sx(p.u0),sy(p.v0)-sy(p.v1));g2.clip();drawTrend(p.st,p.u0,p.u1,p.v0,p.v1);g2.restore()}
  const zk=isScatter()?Math.min(2.2,Math.sqrt(VZ.k)):1;
+ // career paths: each selected person's films joined in release order
+ if(isScatter()&&S.people&&S.people.length)S.people.forEach((p,i)=>{const fs=p.ids.map(id=>FILMS[id]).filter(f=>f.a>.3).sort((a,b)=>(a.date||'').localeCompare(b.date||'')||a.year-b.year);if(fs.length<2)return;
+  g2.save();g2.globalAlpha=.5;g2.strokeStyle=PCOL[i];g2.lineWidth=1.3;g2.beginPath();fs.forEach((f,k)=>{const x=sx(f.u),y=sy(f.v);k?g2.lineTo(x,y):g2.moveTo(x,y)});g2.stroke();g2.restore()});
  for(const f of ORDER){f.sr=0;if(f.a<.012)continue;const x=sx(f.u),y=sy(f.v),r=Math.max(.6,f.r*zk);if(x<P.x0-30||x>P.x1+30||y<P.y0-30||y>P.y1+30)continue;f.sx=x;f.sy=y;f.sr=r;
   g2.globalAlpha=f.a;if(f.streaming){const lw=Math.max(1.3,r*.34);g2.strokeStyle=f.col;g2.lineWidth=lw;g2.beginPath();g2.arc(x,y,Math.max(1,r-lw/2),0,6.2832);g2.stroke()}else{g2.fillStyle=f.col;g2.beginPath();g2.arc(x,y,r,0,6.2832);g2.fill();if(r>3.4){g2.strokeStyle='rgba(14,12,11,.6)';g2.lineWidth=.8;g2.stroke()}}}
  g2.globalAlpha=1;
+ if(S.people&&S.people.length)S.people.forEach((p,i)=>{for(const id of p.ids){const f=FILMS[id];if(!f.sr||f.a<.3)continue;const both=S.people.length>1&&S.people[1-i].ids.includes(id);g2.strokeStyle=both?'#F2EBDD':PCOL[i];g2.lineWidth=1.8;g2.beginPath();g2.arc(f.sx,f.sy,f.sr+2.6+(i&&both?2.4:0),0,7);g2.stroke()}});
  if(isScatter()&&S.layers.outl)for(const f of OUTR){if(!f.sr)continue;g2.strokeStyle=AM;g2.lineWidth=1.3;g2.beginPath();g2.arc(f.sx,f.sy,f.sr+5,0,7);g2.stroke()}
  const sel=S.sel;
  if(sel&&S.nb&&isScatter())for(const n of S.nb){if(!n.sr||!sel.sr)continue;g2.strokeStyle='rgba(232,168,62,.55)';g2.lineWidth=1.1;ln(sel.sx,sel.sy,n.sx,n.sy);g2.strokeStyle=AM;g2.beginPath();g2.arc(n.sx,n.sy,n.sr+3,0,7);g2.stroke()}
@@ -124,7 +128,8 @@ function draw(){g2.setTransform(DPR,0,0,DPR,0,0);g2.clearRect(0,0,W,H);const m=S
   chip(VARS[S.x].fmt(VARS[S.x].f(sel)),sel.sx,P.y1-11,'center');chip(VARS[S.y].fmt(VARS[S.y].f(sel)),P.x0+4,sel.sy,'left')}
  if(sel&&sel.sr){g2.strokeStyle='#fff';g2.lineWidth=2;g2.beginPath();g2.arc(sel.sx,sel.sy,sel.sr+3.5,0,7);g2.stroke()}
  if(hov&&hov.sr&&hov!==sel){g2.strokeStyle='rgba(255,255,255,.8)';g2.lineWidth=1.4;g2.beginPath();g2.arc(hov.sx,hov.sy,hov.sr+3,0,7);g2.stroke()}
- if(S.layers.labels||sel){let L=[];if(sel)L.push(sel);if(S.nb)L=L.concat(S.nb);
+ const ppl=S.people&&S.people.length?S.people.flatMap(p=>p.ids.map(id=>FILMS[id])).sort((a,b)=>(b.ww||0)-(a.ww||0)):null;
+ if(S.layers.labels||sel||ppl){let L=[];if(sel)L.push(sel);if(S.nb)L=L.concat(S.nb);if(ppl)L=L.concat(ppl);
   if(S.layers.labels){const nm=ORDER.filter(f=>f.named&&(!S.focus||S.focus.has(f.id))).reverse();if(m==='outliers')L=L.concat(OUTR.filter(f=>f.named).slice(0,4),OUTR.filter(f=>f.named).slice(-4).reverse(),nm);else if(isScatter()){if(S.layers.outl)L=L.concat(OUTR);L=L.concat(nm)}}
   drawLabels(L,m==='compare'?6:m==='outliers'?14:36)}
  g2.restore()}

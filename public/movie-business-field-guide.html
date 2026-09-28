@@ -251,6 +251,7 @@ details.sec[open]>summary{margin-bottom:4px}
 .top{position:fixed;top:14px;left:390px;right:14px;z-index:15;display:flex;align-items:center;gap:10px;transition:left .35s;pointer-events:none}
 .top>*{pointer-events:auto}
 .app.nopanel .top{left:14px}
+.top:focus-within{z-index:30}
 .pill{all:unset;cursor:pointer;font-size:12px;font-weight:700;padding:9px 14px;border-radius:999px;background:var(--pan);border:1px solid var(--line);white-space:nowrap;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .pill:hover{border-color:var(--line2);background:rgba(40,34,29,.95)}
 .pill.amb{border-color:var(--am);color:var(--am2)}
@@ -267,7 +268,7 @@ details.sec[open]>summary{margin-bottom:4px}
 .qr button{all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:8px 10px;border-radius:6px;font-size:14px}
 .qr button b{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .qr button:hover,.qr button.on{background:rgba(232,168,62,.14)}
-.qr small{color:var(--mu);white-space:nowrap}
+.qr small{color:var(--mu);white-space:nowrap}.qh{font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);padding:8px 10px 3px}.backp{align-self:flex-start;margin:-4px 0 -6px}.pchips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}.pchip{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);color:var(--tx)}.pchip span{color:var(--mu)}.pchip:hover{border-color:var(--am)}.pchip:hover span{color:var(--tx)}.amp{font-family:Archivo,sans-serif;font-style:normal;font-size:.6em;color:var(--am);vertical-align:middle}.ptab{width:100%;border-collapse:collapse;font-size:12.5px;font-variant-numeric:tabular-nums}.ptab th{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2);text-align:right;padding:0 0 6px 8px;white-space:nowrap}.ptab th .dot{margin-right:5px}.ptab td{padding:5px 0 5px 8px;border-top:1px solid var(--line);text-align:right;vertical-align:top}.ptab td:first-child,.ptab th:first-child{text-align:left;padding-left:0;color:var(--tx2)}.ptab td small{color:var(--mu);font-size:11px}.ptab .mu,.mu{color:var(--mu)}.pfl button{grid-template-columns:minmax(0,1fr) auto auto 46px}.rb{display:block;height:5px;border-radius:3px;background:rgba(236,224,196,.1);overflow:hidden}.rb b{display:block;height:100%;min-width:2px}.kh{font-size:10px;letter-spacing:.1em;color:var(--mu);font-weight:600}
 .qr p{padding:8px 10px}
 .card{position:fixed;top:72px;right:14px;bottom:106px;width:370px;z-index:22;overflow-y:auto;overscroll-behavior:contain;background:var(--pan);border:1px solid var(--line);border-radius:10px;padding:20px 22px 18px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transform:translateX(calc(100% + 24px));opacity:0;pointer-events:none;transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .3s;display:flex;flex-direction:column;gap:14px;scrollbar-width:thin;scrollbar-color:rgba(236,224,196,.2) transparent}
 .card.open{transform:none;opacity:1;pointer-events:auto}
@@ -331,6 +332,15 @@ details.sec[open]>summary{margin-bottom:4px}
 #notes p,#notes li{font-size:14px;line-height:1.6;color:var(--tx2)}
 #notes ul{margin:0;padding-left:18px}
 #notesX{float:right}
+.poster.has{cursor:zoom-in;transition:border-color .2s}.poster.has:hover,.poster.has:focus-visible{border-color:var(--am);outline:none}
+#pview{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;overflow:hidden}
+#pview[open]{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+#pview::backdrop{background:rgba(8,7,6,.88)}
+#pvImgWrap{flex:0 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;width:100%;cursor:zoom-out}
+#pvImg{display:block;max-width:calc(100vw - 32px);max-height:calc(100vh - 110px);height:calc(100vh - 110px);width:auto;aspect-ratio:auto;object-fit:contain;border-radius:6px;box-shadow:0 30px 60px -20px #000;cursor:default}
+.pvbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;padding:0 16px;font-size:13px;color:var(--tx2)}
+#pview .pvx{all:unset;position:fixed;top:14px;right:16px;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;font-size:26px;line-height:1;color:var(--tx);background:rgba(27,23,20,.8);border:1px solid var(--line2);cursor:pointer}#pview .pvx:hover,#pview .pvx:focus-visible{border-color:var(--am)}
+#pvCap{font-weight:700;color:var(--tx)}#pvCredit{color:var(--am2);text-decoration:none;font-size:12px}#pvCredit:hover{text-decoration:underline}
 @media (max-width:1240px){.tabs button{padding:8px 10px;letter-spacing:.08em;font-size:11px}.top{gap:8px}.pill{padding:9px 12px}}
 @media (max-width:899px){.side{width:calc(100vw - 28px);top:66px}.top{left:14px!important}.tl{left:14px!important}.card{width:calc(100vw - 28px)}.app.cardopen .zc{right:30px}.tlr{min-width:70px}}
 </style>
@@ -356,7 +366,7 @@ details.sec[open]>summary{margin-bottom:4px}
 <button class="pill" id="ptog">Hide panel</button>
 <div class="tabs" role="tablist"><button data-m="explore" class="on">EXPLORE</button><button data-m="rel">RELATIONSHIPS</button><button data-m="outliers">OUTLIERS</button><button data-m="compare">COMPARE</button><button data-m="time">TIME</button></div>
 <button class="pill amb" id="clearf" hidden="">Clear focus</button>
-<div class="find"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="4.5"></circle><path d="M9.5 9.5L13 13"></path></svg><input id="q" type="search" placeholder="FIND A FILM" autocomplete="off" aria-label="Find a film"><kbd>/</kbd><div class="qr" id="qr" hidden=""></div></div>
+<div class="find"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="4.5"></circle><path d="M9.5 9.5L13 13"></path></svg><input id="q" type="search" placeholder="FIND A FILM OR PERSON" autocomplete="off" aria-label="Find a film, director or actor"><kbd>/</kbd><div class="qr" id="qr" hidden=""></div></div>
 </nav>
 <aside class="card" id="card" aria-label="Movie card"></aside>
 <div class="zc" id="zc"><button data-z="in" aria-label="Zoom in">+</button><button data-z="out" aria-label="Zoom out">−</button><button data-z="reset">Reset</button></div>
@@ -367,6 +377,7 @@ details.sec[open]>summary{margin-bottom:4px}
 </div>
 <div id="tip"></div>
 <footer class="credit"><b>WORKBOOK DATA</b><span class="ctx2">2,496 films · 2001–2025 · Nominal USD · Missing fields stay blank · Domestic means North America · Correlation is not causation · Research snapshot Sep 2026</span><span class="ver">v0.1 - updated 09/28/26</span><button id="notesBtn">Sources &amp; method</button></footer>
+<dialog id="pview" aria-label="Poster"><button class="pvx" id="pvX2" aria-label="Close poster">×</button><div id="pvImgWrap"><img id="pvImg" alt=""></div><div class="pvbar"><span id="pvCap"></span><a id="pvCredit" target="_blank" rel="noopener noreferrer">Poster: Wikipedia ↗</a><button class="btn alt sm" id="pvX">Close</button></div></dialog>
 <dialog id="notes">
 <button class="btn alt sm" id="notesX">Close</button>
 <div class="kick">Field Guide № 008</div>
@@ -378,6 +389,8 @@ details.sec[open]>summary{margin-bottom:4px}
 <ul><li>2,318 films have production budgets; 2,406 have opening-weekend grosses; 1,979 have both Rotten Tomatoes scores. Scores, dates and worldwide grosses reflect the different source snapshots recorded in the workbook.</li><li>Marketing budget, total budget, studio/distributor, parent company and film universe have no populated data. No values are estimated to fill those gaps. “Lead production company” is the first production company listed, not a verified distributor.</li><li>The color key prioritizes Animation, Sci-Fi and Horror tags, then uses the first broad genre in the source list. All genre tags are visible on the card. Oscar counts come from a title/year match to the Academy Awards extract; zero means no nomination was matched.</li></ul>
 <h3>Data adjustments</h3>
 <ul><li><strong>Streaming-first releases</strong> — KPop Demon Hunters and Glass Onion (Netflix), Soul (Disney+) and The SpongeBob Movie: Sponge on the Run (Paramount+ and Netflix) premiered mainly on streaming, so their box office covers only a limited cinema run. They are drawn as rings and left out of box-office trend lines, r values and outliers.</li><li><strong>Streaming outside North America</strong> — Uncut Gems, Isn’t It Romantic, Shaft (2019), News of the World and Love and Monsters played North American cinemas but premiered on Netflix elsewhere, so international box office is left blank rather than shown as $0.</li><li><strong>Mixed-source grosses</strong> — where domestic and worldwide grosses come from different sources (mostly 2025 films), international gross (worldwide minus domestic) is not reliable and is left blank.</li></ul>
+<h3>Directors and cast</h3>
+<ul><li>Search a director or actor to see how their films performed, or pick two to compare them and see the films they made together. Cast means the first five billed names in the source data. Co-directed films count for each director.</li><li>The sample holds only each year’s top-grossing films, so flops and small releases are mostly missing. Hit rates and medians therefore look better than a full career would. A hit here means worldwide gross of at least 2.5× the production budget, a common rough break-even rule once marketing and cinema shares are counted.</li></ul>
 <h3>How to read the charts</h3>
 <ul><li>Domestic means the North American theatrical market, not US-only. Worldwide is recorded worldwide theatrical gross. Box office is ticket revenue, not studio profit. Gross ÷ production budget is a ratio, not return on investment.</li><li>Pearson’s r and the least-squares trend use films with both selected values recorded. Dollar measures and positive counts use logarithms. Outlier “expected” values describe the fitted trend for the visible sample, not a forecast.</li><li>Current audience scores and later awards cannot explain earlier box-office results. The years and historical events shown are context, not causal evidence.</li></ul>
 <h3>Data sources</h3>

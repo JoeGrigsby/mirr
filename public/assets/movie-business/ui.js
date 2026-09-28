@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 const S={mode:'explore',x:'year',y:'intl',color:'genre',size:'budget',split:'genre',bench:'budget',tmetric:'budget',yr:[2001,2025],yrPrev:null,
  hide:{genre:new Set(),studio:new Set(),era:new Set(),mpa:new Set()},
  layers:{trend:true,labels:false,outl:false,context:true,ghosts:true},sel:null,nb:null,focus:null,panel:innerWidth>=1100,relT:.25,
- nbDims:new Set(['budget','genre','tomato','popcorn','ww']),stat:null,bstat:null,playing:null};
+ nbDims:new Set(['budget','genre','tomato','popcorn','ww']),stat:null,bstat:null,playing:null,people:[]};
 const AXES=['budget','open','dom','intl','ww','tomato','popcorn','imdb','runtime','oscars','reviews','intlShare','gap','ratio','legs','year'];
 const SIZES={budget:'Production Budget',ww:'Worldwide Gross',open:'Opening Weekend',reviews:'RT Critic Reviews',none:'Same size'};
 const percent=v=>isFinite(v)?Math.round(v)+'%':'—';
@@ -20,11 +20,11 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const nameOf=f=>f.title||('Record '+f.rec);
 
 function commit(){retarget();if(S.mode==='rel')buildRel();renderPanel();renderTL();renderCard();syncChrome()}
-function syncChrome(){app.classList.toggle('nopanel',!S.panel);app.classList.toggle('cardopen',!!S.sel&&S.mode!=='rel');relSvg.classList.toggle('on',S.mode==='rel');
- document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.m===S.mode));$('zc').hidden=!isScatter();$('ptog').textContent=S.panel?'Hide panel':'Panel';$('clearf').hidden=!S.focus}
+function syncChrome(){app.classList.toggle('nopanel',!S.panel);app.classList.toggle('cardopen',(!!S.sel||S.people.length>0)&&S.mode!=='rel');relSvg.classList.toggle('on',S.mode==='rel');
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.m===S.mode));$('zc').hidden=!isScatter();$('ptog').textContent=S.panel?'Hide panel':'Panel';$('clearf').hidden=!S.focus&&!S.people.length}
 function setMode(m){if(m===S.mode)return;if(S.mode==='time'){stopPlay();if(S.yrPrev){S.yr=S.yrPrev;S.yrPrev=null}}
  if(m==='time'&&S.yr[0]===2001&&S.yr[1]===2025){S.yrPrev=S.yr.slice();S.yr=[2001,2005]}
- if(!['explore','time'].includes(m))resetZoom();if(m==='rel'){S.sel=null;S.nb=null;S.focus=null}S.mode=m;hideTip();commit()}
+ if(!['explore','time'].includes(m))resetZoom();if(m==='rel'){S.sel=null;S.nb=null;S.focus=null;S.people=[]}S.mode=m;hideTip();commit()}
 
 /* ---------- mode panels ---------- */
 function legendHTML(dim,title){const D=COLORBY[dim],cnt={};for(const f of FILMS)if(f.win&&passes(f,dim)){const c=catOf(dim,f);cnt[c]=(cnt[c]||0)+1}
@@ -115,22 +115,22 @@ function mediaFor(f){const tt=((f.imdbUrl||'').match(/tt\d+/)||[])[0];if(!tt)ret
   const art=rows.find(r=>r.article)?.article.value||'',tr=rows.find(r=>r.yt&&r.role&&/\/Q622550$/.test(r.role.value));
   const out={article:art,trailer:tr?tr.yt.value:null,poster:null,file:null};
   const title=art?decodeURIComponent(art.split('/wiki/')[1]||''):'';
-  if(title){const w=await fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail|name&pithumbsize=360&pilicense=any&titles='+encodeURIComponent(title)).then(r=>r.ok?r.json():null).catch(()=>null);
-   const pg=w&&Object.values(w.query?.pages||{})[0];if(pg&&pg.thumbnail){out.poster=pg.thumbnail.source;out.file=pg.pageimage||null}}
+  if(title){const w=await fetch('https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail|original|name&pithumbsize=360&pilicense=any&titles='+encodeURIComponent(title)).then(r=>r.ok?r.json():null).catch(()=>null);
+   const pg=w&&Object.values(w.query?.pages||{})[0];if(pg&&pg.thumbnail){out.poster=pg.thumbnail.source;out.full=pg.original?.source||pg.thumbnail.source;out.file=pg.pageimage||null}}
   return out}).catch(()=>null);
  MEDIA.set(tt,p);return p}
 function applyMedia(f){mediaFor(f).then(m=>{if(S.sel!==f||!m)return;
  const po=card.querySelector('.poster');
- if(m.poster&&po&&!po.querySelector('img')){const img=new Image();img.alt='Poster for '+f.title;img.decoding='async';img.onload=()=>{if(S.sel===f){po.replaceChildren(img);po.classList.add('has')}};img.src=m.poster}
+ if(m.poster&&po&&!po.querySelector('img')){const img=new Image();img.alt='Poster for '+f.title;img.decoding='async';img.onload=()=>{if(S.sel===f){po.replaceChildren(img);po.classList.add('has');po.tabIndex=0;po.setAttribute('role','button');po.setAttribute('aria-label','View larger poster for '+f.title);po.title='View larger poster'}};img.src=m.poster}
  const tl=card.querySelector('[data-trailer]');if(m.trailer&&tl){tl.href='https://www.youtube.com/watch?v='+encodeURIComponent(m.trailer);tl.textContent='▶ Watch the trailer on YouTube ↗'}
  const cr=card.querySelector('[data-postercredit]');if(m.poster&&m.file&&cr){const a=document.createElement('a');a.href='https://en.wikipedia.org/wiki/File:'+encodeURIComponent(m.file.replace(/ /g,'_'));a.target='_blank';a.rel='noopener noreferrer';a.textContent='Poster: Wikipedia ↗';cr.replaceChildren(' · ',a)}})}
-function renderCard(){const f=S.sel;card.classList.toggle('open',!!f&&S.mode!=='rel');if(!f)return;
+function renderCard(){const f=S.sel;card.classList.toggle('open',(!!f||S.people.length>0)&&S.mode!=='rel');if(!f){if(S.people.length)renderPeopleCard();return}
  const n=(l,v)=>`<div class="nm"><dt>${l}</dt><dd>${v}</dd></div>`;
  const val=v=>v?esc(v):'—';
  const link=(url,label)=>/^https:\/\//.test(url)?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label} ↗</a>`:'';
  const why=whyText(f);
  card.innerHTML=`<button class="x" data-close="1" aria-label="Close">×</button>
-<div class="ch"><div class="poster">${f.year}<br>FILM</div><div><div class="kick">${f.date||f.year} · Domestic rank ${f.rank} in source</div><h2 class="ct">${esc(f.title)}</h2><div class="csub">${esc(f.genre)} · ${esc(f.studio)}</div><a class="trailer" data-trailer="1" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+' '+f.year+' official trailer')}" target="_blank" rel="noopener noreferrer">▶ Find the trailer on YouTube ↗</a></div></div>
+${S.people.length?`<button class="linkb backp" data-backp="1">← Back to ${S.people.map(p=>esc(p.name)).join(' & ')}</button>`:''}<div class="ch"><div class="poster">${f.year}<br>FILM</div><div><div class="kick">${f.date||f.year} · Domestic rank ${f.rank} in source</div><h2 class="ct">${esc(f.title)}</h2><div class="csub">${esc(f.genre)} · ${esc(f.studio)}</div><a class="trailer" data-trailer="1" href="https://www.youtube.com/results?search_query=${encodeURIComponent(f.title+' '+f.year+' official trailer')}" target="_blank" rel="noopener noreferrer">▶ Find the trailer on YouTube ↗</a></div></div>
 ${f.streaming?`<div class="sec note"><div class="k">Streaming-first release</div><p>Released mainly on ${esc(f.streaming)}. Box office reflects only a limited cinema run, not the film's audience, so it is left out of box-office trends and outliers.</p></div>`:''}<div class="sec"><div class="k">The numbers · nominal USD</div><dl class="nums">${n('Production budget',fmtM(f.budget))}${n('Marketing budget','—')}${n('Total budget','—')}${n('Worldwide box office',fmtM(f.ww))}${n('Opening weekend',fmtM(f.open))}${n('Domestic',fmtM(f.dom))}${n('International',fmtM(f.intl)+(f.intlShare!=null?' <small>'+Math.round(f.intlShare)+'%</small>':''))}${f.intlNote?'</dl><p class="fine intlnote">International: '+esc(f.intlNote)+'</p><dl class="nums">':''}${n('Tomatometer',VARS.tomato.fmt(f.tomato))}${n('Popcornmeter',VARS.popcorn.fmt(f.popcorn))}${n('IMDb rating',VARS.imdb.fmt(f.imdb))}${n('Gross ÷ production budget',VARS.ratio.fmt(f.ratio))}</dl></div>
 ${why?`<div class="sec why2"><div class="k">Why is it here?</div><p>${why}</p></div>`:''}
 <div class="sec"><div class="k">The context</div><dl class="cx"><dt>Genre tags</dt><dd>${val(f.genres)}</dd><dt>Production companies</dt><dd>${val(f.companies)}</dd><dt>Director</dt><dd>${val(f.directors)}</dd><dt>Top-billed cast</dt><dd>${val(f.stars)}</dd><dt>Movie universe</dt><dd>—</dd><dt>Parent company</dt><dd>—</dd><dt>MPA rating</dt><dd>${esc(f.mpa)}</dd><dt>Runtime</dt><dd>${f.runtime==null?'—':f.runtime+' min'}</dd><dt>Oscar nominations / wins</dt><dd>${f.oscars} / ${f.wins}</dd>${f.award?`<dt>Winning categories</dt><dd>${esc(f.award)}</dd>`:''}</dl></div>
@@ -139,25 +139,75 @@ ${why?`<div class="sec why2"><div class="k">Why is it here?</div><p>${why}</p></
 ${S.nb?`<div class="olist">${S.nb.map(o=>`<button data-pick="${o.id}"><i class="dot" style="background:${o.col}"></i><span>${esc(nameOf(o))}</span><small>${o.year} · ${o.genre}</small></button>`).join('')}</div>`:''}</div>
 <div class="sec"><div class="k">Sources for this record</div><p class="fine">Budget: ${val(f.budgetSource)}${f.budgetStatus?' ('+esc(f.budgetStatus)+')':''} · Domestic: ${val(f.domesticSource)} · Worldwide: ${val(f.worldwideSource)}${f.rtDate?' · RT snapshot: '+esc(f.rtDate):''}.</p>${f.dataNotes?`<p class="fine">${esc(f.dataNotes)}</p>`:''}<p class="fine">${[link(f.sourceUrl,'Film source'),link(f.rtUrl,'Rotten Tomatoes'),link(f.imdbUrl,'IMDb')].filter(Boolean).join(' · ')}<span data-postercredit="1"></span></p></div>`;applyMedia(f)}
 card.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const d=b.dataset;
- if(d.close)clearSel();else if(d.pick!==undefined)selectFilm(FILMS[+d.pick],!!S.nb);
+ if(d.close)clearSel();else if(d.backp){S.sel=null;peopleFocus();commit();card.scrollTop=0}else if(d.pdrop!==undefined)dropPerson(+d.pdrop);else if(d.pick!==undefined)selectFilm(FILMS[+d.pick],!!S.nb);
  else if(d.nbd){S.nbDims.has(d.nbd)?S.nbDims.delete(d.nbd):S.nbDims.add(d.nbd);if(!S.nbDims.size)S.nbDims.add('genre');if(S.nb)runNb();else renderCard()}
  else if(d.nb)runNb();else if(d.nbclear){S.nb=null;S.focus=null;commit()}});
 function runNb(){const f=S.sel;if(!isScatter())setMode('explore');S.nb=neighbors(f);S.focus=new Set([f.id,...S.nb.map(o=>o.id)]);commit()}
-function selectFilm(f,keepNb){S.sel=f;if(keepNb&&S.nb&&S.nb.includes(f)){}else{S.nb=null;if(S.focus&&!S.focus.has(f.id))S.focus=null}commit();card.scrollTop=0}
-function clearSel(){S.sel=null;S.nb=null;S.focus=null;commit()}
+function selectFilm(f,keepNb){S.sel=f;if(keepNb&&S.nb&&S.nb.includes(f)){}else{S.nb=null;if(S.people.length&&!S.people.some(p=>p.ids.includes(f.id)))S.people=[];if(S.focus&&!S.focus.has(f.id))S.focus=null}commit();card.scrollTop=0}
+function clearSel(){if(S.sel&&S.people.length){S.sel=null;S.nb=null;peopleFocus();commit();return}S.sel=null;S.nb=null;S.people=[];S.focus=null;commit()}
 function flyTo(f){if(!f.ok||!f.win){for(const k in S.hide)S.hide[k].clear();S.yr=S.mode==='time'?[f.year,Math.min(2025,f.year+4)]:[2001,2025]}
  if(!isFinite(tv(VARS[S.x],f))||!isFinite(tv(VARS[S.y],f))){S.x='year';S.y='dom';resetZoom()}
- if(!isScatter())setMode('explore');S.sel=f;S.nb=null;S.focus=new Set([f.id]);commit();VT.k=3.2;VT.cx=clamp(f.tu,0,1);VT.cy=clamp(f.tv,0,1);need=3}
+ if(!isScatter())setMode('explore');S.sel=f;S.nb=null;S.people=[];S.focus=new Set([f.id]);commit();VT.k=3.2;VT.cx=clamp(f.tu,0,1);VT.cy=clamp(f.tv,0,1);need=3}
+
+/* ---------- people: directors and top-billed cast ---------- */
+// Every director and top-billed actor (first five billed) with the films they have in this sample. Pick one to focus
+// their films on the chart and open a career card; pick a second to compare the two, or to see their films together.
+const PEOPLE=(()=>{const m=new Map(),add=(role,name,f)=>{const k=role+'|'+name;let p=m.get(k);if(!p)m.set(k,p={key:k,role,name,lname:name.toLowerCase(),ids:[]});if(!p.ids.includes(f.id))p.ids.push(f.id)};
+ for(const f of FILMS){for(const n of (f.directors||'').split(', '))if(n.trim())add('Director',n.trim(),f);for(const n of (f.stars||'').split(', '))if(n.trim())add('Cast',n.trim(),f)}
+ return [...m.values()]})();
+const PCOL=['#E8A83E','#6FD3E6'];
+function peopleFocus(){S.focus=S.people.length?new Set(S.people.flatMap(p=>p.ids)):null}
+function pickPerson(p){if(S.people.some(x=>x.key===p.key))return;if(S.people.length>=2)S.people[1]=p;else S.people.push(p);
+ S.sel=null;S.nb=null;peopleFocus();if(S.mode==='rel')setMode('explore');commit();card.scrollTop=0}
+function dropPerson(i){S.people.splice(i,1);peopleFocus();commit()}
+const HIT=2.5;
+function careerStats(list){const box=list.filter(f=>!f.streaming),r=box.filter(f=>f.budget>0&&f.ww>0),ys=list.map(f=>f.year),sum=a=>a.reduce((s,v)=>s+v,0);
+ const ww=box.filter(f=>f.ww>0);
+ return {n:list.length,y0:Math.min(...ys),y1:Math.max(...ys),total:ww.length?sum(ww.map(f=>f.ww)):NaN,mww:median(box.map(f=>f.ww)),mbud:median(list.map(f=>f.budget)),
+  mratio:median(r.map(f=>f.ratio)),hitK:r.filter(f=>f.ratio>=HIT).length,hitN:r.length,tomato:median(list.map(f=>f.tomato)),popcorn:median(list.map(f=>f.popcorn)),imdb:median(list.map(f=>f.imdb)),
+  noms:sum(list.map(f=>f.oscars||0)),wins:sum(list.map(f=>f.wins||0)),best:ww.slice().sort((a,b)=>b.ww-a.ww)[0]||null,worst:r.slice().sort((a,b)=>a.ratio-b.ratio)[0]||null}}
+let ALLSTATS=null;
+function renderPeopleCard(){const P=S.people,lists=P.map(p=>p.ids.map(id=>FILMS[id])),st=lists.map(careerStats);ALLSTATS=ALLSTATS||careerStats(FILMS);const A=ALLSTATS;
+ const both=P.length===2?lists[0].filter(f=>P[1].ids.includes(f.id)):[];
+ const fx=v=>isFinite(v)?(Math.round(v*10)/10)+'×':'—',pc=v=>isFinite(v)?Math.round(v)+'%':'—',im=v=>isFinite(v)?v.toFixed(1):'—',tot=v=>isFinite(v)?fmtM(v):'—';
+ const rows=[['Films in this sample',s=>s.n.toLocaleString(),'2,496'],['Years',s=>s.y0===s.y1?s.y0:s.y0+'–'+s.y1,'2001–2025'],['Total worldwide gross',s=>tot(s.total),'—'],
+  ['Median worldwide gross',s=>tot(s.mww)],['Median production budget',s=>tot(s.mbud)],['Median gross ÷ budget',s=>fx(s.mratio)],
+  [`Hit rate · grossed ≥ ${HIT}× budget`,s=>s.hitN?Math.round(s.hitK/s.hitN*100)+'% <small>'+s.hitK+' of '+s.hitN+'</small>':'—'],
+  ['Median Tomatometer',s=>pc(s.tomato)],['Median Popcornmeter',s=>pc(s.popcorn)],['Median IMDb rating',s=>im(s.imdb)],['Oscar nominations / wins',s=>s.noms+' / '+s.wins,'—']];
+ const head=`<tr><th></th>${P.map((p,i)=>`<th><i class="dot" style="background:${PCOL[i]}"></i>${esc(p.name.split(' ').slice(-1)[0])}</th>`).join('')}<th>All films</th></tr>`;
+ const body=rows.map(([l,fn,all])=>`<tr><td>${l}</td>${st.map(s=>`<td>${fn(s)}</td>`).join('')}<td class="mu">${all??fn(A)}</td></tr>`).join('');
+ const fl=[...new Set(lists.flat())].sort((a,b)=>(a.date||String(a.year)).localeCompare(b.date||String(b.year)));
+ const mx=Math.max(...fl.map(f=>f.ratio||0),HIT*2);
+ const frow=f=>{const inA=P[0].ids.includes(f.id),inB=P[1]&&P[1].ids.includes(f.id),c=inA&&inB?'#F2EBDD':inB?PCOL[1]:PCOL[0];
+  return `<button data-pick="${f.id}"><span><i class="dot" style="background:${c}"></i>${esc(nameOf(f))}${f.streaming?' <em class="mu">streaming</em>':''}</span><small>${f.year}</small><small>${f.ww>0?fmtM(f.ww):'—'}</small><i class="rb" title="Gross ÷ production budget: ${fx(f.ratio)}"><b style="width:${f.ratio?Math.min(100,f.ratio/mx*100):0}%;background:${f.ratio>=HIT?'#6FD0A8':'#F08A5E'}"></b></i></button>`};
+ const title=P.length===2?`${esc(P[0].name)} <em class="amp">&amp;</em> ${esc(P[1].name)}`:esc(P[0].name);
+ const hl=(s,i)=>s.best?`<p><i class="dot" style="background:${PCOL[i]}"></i> Biggest hit: <button class="linkb" data-pick="${s.best.id}">${esc(nameOf(s.best))}</button> (${fmtM(s.best.ww)})${s.worst&&s.worst!==s.best?` · Weakest return: <button class="linkb" data-pick="${s.worst.id}">${esc(nameOf(s.worst))}</button> (${fx(s.worst.ratio)} budget)`:''}</p>`:'';
+ card.innerHTML=`<button class="x" data-close="1" aria-label="Close">×</button>
+<div><div class="kick">${P.map(p=>p.role).join(' & ')} · career in this sample</div><h2 class="ct">${title}</h2>
+<div class="pchips">${P.map((p,i)=>`<button class="pchip" data-pdrop="${i}" title="Remove ${esc(p.name)}"><i class="dot" style="background:${PCOL[i]}"></i>${esc(p.name)} · ${p.role} <span>×</span></button>`).join('')}</div>
+<p class="fine">${P.length<2?'Search another director or actor to compare them, or to see their films together.':'Search another name to replace the second person.'}</p></div>
+${P.length===2?`<div class="sec"><div class="k">Together</div><p>${both.length?`${both.length} film${both.length>1?'s':''} with both: `+both.map(f=>`<button class="linkb" data-pick="${f.id}">${esc(nameOf(f))}</button>`).join(', ')+'.':'No films with both in this sample.'}</p></div>`:''}
+<div class="sec"><div class="k">How their films performed · nominal USD</div><table class="ptab">${head}${body}</table>${st.map(hl).join('')}</div>
+<div class="sec"><div class="k row">Their films<span class="kh">Gross ÷ budget</span></div><div class="olist pfl">${fl.map(frow).join('')}</div></div>
+<div class="sec"><p class="fine">Only each year's top-grossing films are in this sample, so flops and small releases are mostly missing and hit rates look better than full careers. Cast means the first five billed names. Co-directed films count for each director. Streaming-first films are left out of box-office figures.</p></div>`}
 
 /* ---------- search ---------- */
 const q=$('q'),qr=$('qr');let qi=0,qres=[];
-function renderQ(){const s=q.value.trim().toLowerCase();if(!s){qr.hidden=true;return}qres=FILMS.filter(f=>f.title&&f.title.toLowerCase().includes(s)).slice(0,8);qi=Math.min(qi,Math.max(0,qres.length-1));
- qr.innerHTML=qres.length?qres.map((f,i)=>`<button data-id="${f.id}" class="${i===qi?'on':''}"><b>${esc(f.title)}</b><small>${f.year} · ${esc(f.genre)}</small></button>`).join(''):`<p class="fine">No film matches this title in the ${FILMS.length.toLocaleString()}-film dataset.</p>`;qr.hidden=false}
+function renderQ(){const s=q.value.trim().toLowerCase();if(!s){qr.hidden=true;return}
+ const films=FILMS.filter(f=>f.title&&f.title.toLowerCase().includes(s)).slice(0,5).map(f=>({f}));
+ const who=s.length<2?[]:PEOPLE.filter(p=>p.lname.includes(s)).sort((a,b)=>(b.lname.startsWith(s)||b.lname.includes(' '+s))-(a.lname.startsWith(s)||a.lname.includes(' '+s))||b.ids.length-a.ids.length);
+ const dirs=who.filter(p=>p.role==='Director').slice(0,4).map(p=>({p})),cast=who.filter(p=>p.role==='Cast').slice(0,4).map(p=>({p}));
+ const top=l=>l.length?l[0].p.ids.length:0,grp=[['Films',films]].concat(top(cast)>top(dirs)?[['Top-billed cast',cast],['Directors',dirs]]:[['Directors',dirs],['Top-billed cast',cast]]);
+ qres=grp.flatMap(g=>g[1]);qi=Math.min(qi,Math.max(0,qres.length-1));
+ const row=(r,i)=>r.f?`<button data-i="${i}" class="${i===qi?'on':''}"><b>${esc(r.f.title)}</b><small>${r.f.year} · ${esc(r.f.genre)}</small></button>`
+  :`<button data-i="${i}" class="${i===qi?'on':''}"><b>${esc(r.p.name)}</b><small>${r.p.ids.length} film${r.p.ids.length>1?'s':''}</small></button>`;
+ let h='',i=0;for(const [lab,list] of grp){if(!list.length)continue;h+=`<div class="qh">${lab}</div>`+list.map(r=>row(r,i++)).join('')}
+ qr.innerHTML=h||`<p class="fine">No film, director or top-billed actor matches this in the ${FILMS.length.toLocaleString()}-film dataset.</p>`;qr.hidden=false}
 q.addEventListener('input',()=>{qi=0;renderQ()});q.addEventListener('focus',renderQ);
 q.addEventListener('keydown',e=>{if(e.key==='ArrowDown'){qi=Math.min(qi+1,qres.length-1);renderQ();e.preventDefault()}else if(e.key==='ArrowUp'){qi=Math.max(0,qi-1);renderQ();e.preventDefault()}else if(e.key==='Enter'&&qres[qi]){pickQ(qres[qi])}else if(e.key==='Escape'){q.blur();qr.hidden=true}});
-qr.addEventListener('pointerdown',e=>{const b=e.target.closest('button');if(b){e.preventDefault();pickQ(FILMS[+b.dataset.id])}});
+qr.addEventListener('pointerdown',e=>{const b=e.target.closest('button');if(b){e.preventDefault();pickQ(qres[+b.dataset.i])}});
 q.addEventListener('blur',()=>setTimeout(()=>qr.hidden=true,120));
-function pickQ(f){q.value=f.title;qr.hidden=true;q.blur();flyTo(f)}
+function pickQ(r){qr.hidden=true;q.blur();if(r.p){q.value='';pickPerson(r.p)}else{q.value=r.f.title;flyTo(r.f)}}
 
 /* ---------- timeline ---------- */
 const tlt=$('tlt');
@@ -184,10 +234,18 @@ $('play').addEventListener('click',()=>S.playing?stopPlay():startPlay());
 /* ---------- chrome ---------- */
 document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.m)));
 $('ptog').addEventListener('click',()=>{S.panel=!S.panel;commit()});
-$('clearf').addEventListener('click',()=>{S.focus=null;S.nb=null;resetZoom();commit()});
+$('clearf').addEventListener('click',()=>{S.focus=null;S.nb=null;S.people=[];if(S.sel&&!S.sel)S.sel=null;resetZoom();commit()});
 $('zc').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const z=b.dataset.z;if(z==='reset')resetZoom();else zoomAt((P.x0+P.x1)/2,(P.y0+P.y1)/2,z==='in'?1.6:1/1.6)});
-$('notesBtn').addEventListener('click',()=>$('notes').showModal());$('notesX').addEventListener('click',()=>$('notes').close());
-addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea'))return;if(e.key==='/'){e.preventDefault();q.focus()}else if(e.key==='Escape'&&S.sel)clearSel();else if(e.key==='Escape'&&S.focus){S.focus=null;commit()}});
+$('notesBtn').addEventListener('click',()=>$('notes').showModal());
+/* Poster viewer: click the card poster to see it large. */
+const pv=$('pview');
+async function openPoster(){const f=S.sel;if(!f)return;const m=await mediaFor(f);if(!m||!m.poster||S.sel!==f)return;const img=$('pvImg');img.alt='Poster for '+f.title;img.src=m.poster;
+ if(m.full&&m.full!==m.poster){const hi=new Image();hi.onload=()=>{if(pv.open&&S.sel===f)img.src=m.full};hi.src=m.full}
+ $('pvCap').textContent=f.title+' ('+f.year+')';const cr=$('pvCredit');if(m.file){cr.href='https://en.wikipedia.org/wiki/File:'+encodeURIComponent(m.file.replace(/ /g,'_'));cr.hidden=false}else cr.hidden=true;pv.showModal()}
+card.addEventListener('click',e=>{if(e.target.closest('.poster.has'))openPoster()});
+card.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('.poster.has')){e.preventDefault();openPoster()}});
+$('pvX').addEventListener('click',()=>pv.close());$('pvX2').addEventListener('click',()=>pv.close());pv.addEventListener('click',e=>{if(e.target===pv||e.target.id==='pvImgWrap')pv.close()});$('notesX').addEventListener('click',()=>$('notes').close());
+addEventListener('keydown',e=>{if(e.target.matches('input,select,textarea')||document.querySelector('dialog[open]'))return;if(e.key==='/'){e.preventDefault();q.focus()}else if(e.key==='Escape'&&S.sel)clearSel();else if(e.key==='Escape'&&(S.focus||S.people.length)){S.focus=null;S.people=[];commit()}});
 addEventListener('resize',()=>{resize();renderPanel()});
 resize();commit();requestAnimationFrame(frame);
 if(document.fonts)document.fonts.ready.then(()=>{need=3});
