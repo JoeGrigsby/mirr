@@ -21,6 +21,18 @@ const FILMS=RAW.map((a,id)=>{
   ratio:ww>0&&budget>0?ww/budget:null,legs:dom>0&&open>0?dom/open:null,
   jit:((id*7919%997)/997-.5)*.72,u:.5,v:.5,r:0,a:0,sp:.07+(id*1237%127)/127*.09,tu:.5,tv:.5,tr:0,ta:0};
 });
+// Data review, Sep 2026.
+// Streaming-first releases: the main release was on a streaming service, so cinema grosses reflect only a limited
+// theatrical run. They stay on the chart (as rings) but are left out of box-office trends, r and outliers.
+const STREAMING_FIRST={tt14205554:'Netflix',tt11564570:'Netflix',tt2948372:'Disney+',tt4823776:'Paramount+ and Netflix'};
+// Films that premiered on Netflix outside North America: $0 international is not a box-office result.
+const STREAMING_ABROAD={tt5727208:'Netflix',tt2452244:'Netflix',tt4463894:'Netflix',tt6878306:'Netflix',tt2222042:'Netflix'};
+for(const f of FILMS){
+ if(STREAMING_FIRST[f.movieId])f.streaming=STREAMING_FIRST[f.movieId];
+ const abroad=STREAMING_ABROAD[f.movieId],mixed=/different sources/i.test(f.dataNotes);
+ if(abroad){f.streamingAbroad=abroad;f.intlNote='Outside North America this film premiered on '+abroad+', so it had no international box office to report.'}
+ else if(mixed&&f.intl!=null)f.intlNote='Domestic and worldwide grosses come from different sources, so international (worldwide minus domestic) is not reliable and is left blank.';
+ if(abroad||mixed){f.intl=null;f.intlShare=null}}
 function fmtM(m,short){if(m==null||!isFinite(m))return '—';if(m>=1000){const b=m/1000;return '$'+(short?(b>=10?Math.round(b):+b.toFixed(1)):b.toFixed(2))+'B'}if(m>=1)return '$'+(m>=10||short?Math.round(m):+m.toFixed(1))+'M';return '$'+Math.round(m*1000)+'K'}
 function fmtN(n){if(n==null||!isFinite(n))return '—';if(n>=1e6)return +(n/1e6).toFixed(1)+'M';if(n>=1e4)return Math.round(n/1e3)+'K';return Math.round(n).toLocaleString()}
 const sgn=v=>(v>0?'+':v<0?'−':'')+Math.abs(v);
