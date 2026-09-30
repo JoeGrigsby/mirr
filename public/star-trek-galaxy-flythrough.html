@@ -339,6 +339,9 @@ const places=[{"id": "earth", "name": "Earth", "p": [0.0, 0.6, 260.0], "f": "fed
  gp.canonNote=GORN_CANON_NOTE;}
 Object.assign(places.find(p=>p.id==='dominion'),{placement:'Regional estimate',locationNote:factions.find(f=>f.id==='dominion').locationNote});
 places.push(
+ {id:'regula',name:'Regula',p:[19.5,0.6,313.5],f:'fed',placement:'Regional estimate',locationNote:'Placed near the Mutara Nebula as story geography for Star Trek II. Shakaar’s Alpha/Beta Map v3.3 charts Regula I elsewhere, closer to Earth near Tarsus IV; canon gives no coordinates, so this position is approximate.',
+  facts:[['Installation','Regula I space laboratory'],['Also','Regula planetoid · Genesis Cave']],
+  text:"The Regula system, home of the Regula I space laboratory where Carol and David Marcus developed Project Genesis. Khan massacred the station's scientists, and the planetoid below hid the lush Genesis Cave where Kirk learned David was his son.",watch:'Star Trek II: The Wrath of Khan'},
  {id:'veridian',name:'Veridian III',p:[24,0.6,331],f:'fed',placement:'Regional estimate',locationNote:'On the Federation–Klingon frontier. Exact coordinates are not established.',
   text:"A barren world in the Veridian system where Soran tried to destroy the star to steer the Nexus ribbon toward him. The Enterprise-D crash-landed here, and Kirk died helping Picard stop Soran.",watch:'Star Trek Generations'},
  {id:'farpoint',name:'Farpoint Station / Deneb IV',p:[-36,0.6,356],f:'fed',placement:'Regional estimate',locationNote:'At the edge of explored Federation space in 2364. Exact coordinates are not established.',
