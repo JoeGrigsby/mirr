@@ -1,4 +1,6 @@
 (async function(){
+// Shorter film labels for the Films list so every row fits on one line; cards keep the full titles.
+const SHORT_TITLE={'Planes, Trains and Automobiles':'Planes, Trains & Autos','Home Alone 2: Lost in New York':'Home Alone 2','National Lampoon’s Vacation':'Vacation','National Lampoon’s Christmas Vacation':'Christmas Vacation'};
 const MEDIA=(window.__HMEDIA||fetch('assets/hughes/media.json').then(r=>r.json())).catch(()=>({}));let MI={},MF={};MEDIA.then(j=>{MI=j.items||{};MF=j.films||{};try{if(S.card)renderCard()}catch(_){}});
 const [data,geo]=await Promise.all([window.__HDATA||fetch('assets/hughes/data.json').then(r=>r.json()),window.__HGEO||fetch('assets/hughes/geo.json').then(r=>r.json())]);data.geo=geo;
 const {el,glyph}=HMap;
@@ -118,7 +120,7 @@ rng.addEventListener('input',()=>setLayer(+rng.value));
 document.querySelectorAll('.lstop').forEach((b,i)=>b.onclick=()=>setLayer(i));
 
 const cnt=f=>L.filter(l=>l.films.some(a=>a.f===f)).length;
-function renderFilms(){$('#films').innerHTML=data.films.map(f=>`<div class="fl${S.films.has(f.id)?'':' off'}${S.focus===f.id?' foc':''}"><button class="fsw" role="switch" data-t="${f.id}" aria-checked="${S.films.has(f.id)}" aria-label="Show ${esc(f.title)} locations" style="--c:${f.color}"></button><button class="fname" data-t="${f.id}" title="Show or hide on the map"><span>${esc(f.title)}</span><small>${f.year} · ${cnt(f.id)}</small></button><button class="finfo" data-o="${f.id}" aria-label="${esc(f.title)} details" title="Film details">i</button></div>`).join('');
+function renderFilms(){$('#films').innerHTML=data.films.map(f=>`<div class="fl${S.films.has(f.id)?'':' off'}${S.focus===f.id?' foc':''}"><button class="fsw" role="switch" data-t="${f.id}" aria-checked="${S.films.has(f.id)}" aria-label="Show ${esc(f.title)} locations" style="--c:${f.color}"></button><button class="fname" data-t="${f.id}" title="${esc(f.title)} — show or hide on the map"><span>${esc(SHORT_TITLE[f.title]||f.title)}</span><small>${f.year} · ${cnt(f.id)}</small></button><button class="finfo" data-o="${f.id}" aria-label="${esc(f.title)} details" title="Film details">i</button></div>`).join('');
 $('#films').querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{const id=b.dataset.t;S.films.has(id)?S.films.delete(id):S.films.add(id);renderFilms();layout(true)});
 $('#films').querySelectorAll('[data-o]').forEach(b=>b.onclick=()=>openFilm(b.dataset.o))}
 $('#fall').onclick=()=>{data.films.forEach(f=>S.films.add(f.id));renderFilms();layout(true)};
