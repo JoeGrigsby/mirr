@@ -94,12 +94,12 @@ function mascot(){const SAU='#D2553C',SD='#A63E2B',GOLD='#F2BE4A',GD='#D9952B',S
 <g class="wave"><path d="M44.6 45C52 41 54.5 33 53 26" stroke="${INK}" stroke-width="2.8" fill="none" stroke-linecap="round"/>${glove(53,21,-12)}</g>
 </g></g>`}
 
-const RIVERS={'Des Plaines River':{w:3.6,label:'Des Plaines River',at:[42.0,-87.875]},'North Branch Chicago River':{w:3,label:'North Branch · Chicago River',at:[42.07,-87.79]},'Chicago River':{w:4.2},'South Branch Chicago River':{w:3.4,label:'South Branch',at:[41.85,-87.655]},'North Shore Channel':{w:2.6,label:'North Shore Channel',at:[42.03,-87.71]},'Chicago Sanitary and Ship Canal':{w:3.4,label:'Sanitary & Ship Canal',at:[41.80,-87.82]},'Fox River':{w:3.6,label:'Fox River',at:[42.05,-88.29]}};
+const RIVERS={'Des Plaines River':{w:3.6,label:'Des Plaines River',at:[41.94,-87.85]},'North Branch Chicago River':{w:3,label:'North Branch · Chicago River',at:[42.07,-87.79]},'Chicago River':{w:4.2},'South Branch Chicago River':{w:3.4,label:'South Branch',at:[41.842,-87.672]},'North Shore Channel':{w:2.6,label:'North Shore Channel',at:[41.995,-87.712]},'Chicago Sanitary and Ship Canal':{w:3.4,label:'Sanitary & Ship Canal',at:[41.80,-87.82]},'Fox River':{w:3.6,label:'Fox River',at:[42.05,-88.29]}};
 const SHIELDS=[['94',42.035,-87.752],['94',41.76,-87.628],['90',41.985,-87.845],['290',41.872,-87.86],['55',41.81,-87.73],['294',42.09,-87.862],['88',41.835,-88.0],['355',41.87,-88.035],['190',41.982,-87.88],['57',41.68,-87.665],['80',41.56,-87.75],['94',42.23,-87.93]];
 const PARKS=[[42.149,-87.79,13],[42.035,-88.0,26],[41.816,-88.069,26],[41.70,-87.86,42],[41.905,-87.701,9],[41.8845,-87.717,8],[41.792,-87.617,11],[41.783,-87.583,14]];
 const BUBBLES=[
 {id:'b-rd',x:300,y:322,w:118,lines:['Shermer Rd.','is a real road'],tx:432,ty:238},
-{id:'b-lib',x:190,y:392,w:112,lines:['That library?','A set built','in the gym'],tx:345,ty:425},
+{id:'b-lib',x:190,y:392,w:128,lines:['That library?','A set built in','Maine North’s gym'],tx:329,ty:489},
 {id:'b-dbl',x:1000,y:930,w:124,lines:['Chicago played','New York and','St. Louis too'],tx:850,ty:880}
 ];
 function bubble(g,b){const lh=16,h=b.lines.length*lh,w=b.w;const x0=b.x-w/2,y0=b.y-h/2;const wet=b.x>shoreX(b.y);
@@ -159,19 +159,26 @@ el('g',{transform:'translate(1062,30)'},world,`<path d="${Array.from({length:22}
 el('text',{x:962,y:690,class:'lg','font-size':44,fill:'#3E7E9C','text-anchor':'middle','letter-spacing':'.06em',transform:'rotate(-4 962 690)'},world,'LAKE');el('text',{x:968,y:730,class:'lg','font-size':44,fill:'#3E7E9C','text-anchor':'middle','letter-spacing':'.06em',transform:'rotate(-4 968 730)'},world,'MICHIGAN');
 // rivers
 const rv=el('g',{class:'rivers'},world);const lab0=el('g',{class:'pathlabels'},world);let lid=0;
-const pathLabel=(chains,at,text,attrs,vert)=>{const n=nearest(chains,pt(...at));if(!n)return;const c=orient(n.c,vert);const i=c.indexOf(n.p);const id='lp'+(lid++);el('path',{id,d:pd(c),fill:'none',stroke:'none'},lab0);const t=el('text',Object.assign({class:'bg','text-anchor':'middle'},attrs),lab0);el('textPath',{href:'#'+id,startOffset:arcTo(c,i).toFixed(1)},t,text)};
+// Labels sit on a straight chord of the river or road around the anchor point (not on every kink), so letters never bunch up.
+const pointAt=(c,s)=>{let acc=0;for(let k=1;k<c.length;k++){const L=Math.hypot(c[k][0]-c[k-1][0],c[k][1]-c[k-1][1]);if(acc+L>=s){const u=L?(s-acc)/L:0;return[c[k-1][0]+(c[k][0]-c[k-1][0])*u,c[k-1][1]+(c[k][1]-c[k-1][1])*u]}acc+=L}return c[c.length-1]};
+const pathLabel=(chains,at,text,attrs,vert)=>{const n=nearest(chains,pt(...at));if(!n)return;const c=orient(n.c,vert),q=pt(...at),total=arcTo(c,c.length-1);let mid=0,bd=1e18,acc=0;for(let k=1;k<c.length;k++){const A=c[k-1],B=c[k],dx=B[0]-A[0],dy=B[1]-A[1],L2=dx*dx+dy*dy,L=Math.sqrt(L2),u=L2?Math.max(0,Math.min(1,((q[0]-A[0])*dx+(q[1]-A[1])*dy)/L2)):0,d=(A[0]+dx*u-q[0])**2+(A[1]+dy*u-q[1])**2;if(d<bd){bd=d;mid=acc+u*L}acc+=L}
+ const fs=+attrs['font-size']||11,half=(text.length*fs*.66)/2+6,s0=Math.max(0,mid-half),s1=Math.min(total,mid+half);let a=pointAt(c,s0),b=pointAt(c,s1);
+ if(b[0]<a[0]||(Math.abs(b[0]-a[0])<1e-6&&b[1]<a[1]))[a,b]=[b,a];const ux=(b[0]-a[0]),uy=(b[1]-a[1]),L=Math.hypot(ux,uy)||1,ext=Math.max(0,half*2-L)/2+8;
+ a=[a[0]-ux/L*ext,a[1]-uy/L*ext];b=[b[0]+ux/L*ext,b[1]+uy/L*ext];const id='lp'+(lid++);el('path',{id,d:pd([a,b]),fill:'none',stroke:'none'},lab0);
+ const t=el('text',Object.assign({class:'bg','text-anchor':'middle'},attrs),lab0);el('textPath',{href:'#'+id,startOffset:'50%'},t,text)};
 Object.entries(GEO.rivers).forEach(([n,chains])=>{const R=RIVERS[n]||{w:3};chains.forEach(c=>{el('path',{d:pd(c),fill:'none',stroke:'#7DBBD3','stroke-width':R.w,'stroke-linecap':'round','stroke-linejoin':'round'},rv);sampA(c)});if(R.label)pathLabel(chains,R.at,R.label,{'font-size':11,fill:'#3B7895','letter-spacing':'.06em',dy:-5})});
 // interstates + Lake Shore Drive
 const rd=el('g',{class:'roads'},world);const allRd=GEO.mw.flatMap(m=>m.d).concat(GEO.lsd);
 el('path',{d:allRd.map(pd).join(''),fill:'none',stroke:EDGE,'stroke-width':9,'stroke-linecap':'round','stroke-linejoin':'round'},rd);
 el('path',{d:allRd.map(pd).join(''),fill:'none',stroke:'#FFFFFF','stroke-width':6.5,'stroke-linecap':'round','stroke-linejoin':'round'},rd);allRd.forEach(sampA);
-// Shermer Road (real, Northbrook)
+// Shermer Road (real, Northbrook): join the source's two pieces into one line and drop its short duplicate spur.
+GEO.shermer=[GEO.shermer[0].slice(0,6).concat(GEO.shermer[1])];
 el('path',{d:GEO.shermer.map(pd).join(''),fill:'none',stroke:'#9E8769','stroke-width':4.5,'stroke-linecap':'round'},world);GEO.shermer.forEach(sampA);
-pathLabel(GEO.shermer,[42.115,-87.84],'Shermer Rd.',{'font-size':11.5,fill:'#6B5A42','letter-spacing':'.06em',dy:-7});
+pathLabel(GEO.shermer,[42.062,-87.812],'Shermer Rd.',{'font-size':11.5,fill:'#6B5A42','letter-spacing':'.06em',dy:-7});
 // Metra (UP-N and UP-NW)
 const rails=GEO.metra.upn.concat(GEO.metra.upnw);
 el('path',{d:rails.map(pd).join(''),fill:'none',stroke:'#8C7B6B','stroke-width':5,'stroke-dasharray':'1.2 4.8'},world);el('path',{d:rails.map(pd).join(''),fill:'none',stroke:'#8C7B6B','stroke-width':1.2},world);rails.forEach(sampA);
-pathLabel(GEO.metra.upn,[42.075,-87.70],'Metra · Union Pacific North',{'font-size':11,fill:'#6E5E4E','letter-spacing':'.08em',dy:-7});
+pathLabel(GEO.metra.upn,[41.978,-87.668],'Metra · UP North',{'font-size':11,fill:'#6E5E4E','letter-spacing':'.08em',dy:-7});
 const onLine=(chains,la,lo)=>{const n=nearest(chains,pt(la,lo));const c=n.c,i=Math.min(n.i,c.length-2),a=c[i],b=c[i+1];let ang=Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI;if(ang>90)ang-=180;if(ang<-90)ang+=180;return `translate(${n.p[0].toFixed(1)},${n.p[1].toFixed(1)}) rotate(${ang.toFixed(1)})`};
 MOVERS.push({kind:'path',pts:orient(GEO.metra.upn.slice().sort((a,b)=>b.length-a.length)[0],'up'),speed:22,off:900,sym:true,g:el('g',{transform:onLine(GEO.metra.upn,42.205,-87.81)},world,`<ellipse cy="6.6" rx="44" ry="2" fill="#000" opacity=".12"/><rect x="-41" y="-8.4" width="39" height="13.4" rx="2.6" fill="#DDE2E7"/><rect x="0" y="-8.4" width="33" height="13.4" rx="2.6" fill="#DDE2E7"/><path d="M33-8.4h3.6l4.4 5.6V5H33Z" fill="#3A6EA5"/><path d="M36.4-7.2l3 3.8h-3Z" fill="#9FC3D6"/><rect x="-41" y="-8.4" width="74" height="1.4" fill="#fff" opacity=".6"/>${Array.from({length:8},(_,k)=>`<rect x="${-39+k*4.6}" y="-6" width="3" height="2.4" rx=".4" fill="#3D4B59"/><rect x="${-39+k*4.6}" y="-2.2" width="3" height="2.4" rx=".4" fill="#3D4B59"/>`).join('')}${Array.from({length:6},(_,k)=>`<rect x="${2+k*4.6}" y="-6" width="3" height="2.4" rx=".4" fill="#3D4B59"/><rect x="${2+k*4.6}" y="-2.2" width="3" height="2.4" rx=".4" fill="#3D4B59"/>`).join('')}<rect x="-41" y="1.4" width="82" height="1.6" fill="#3A6EA5"/><rect x="-41" y="3" width="82" height="2" fill="#A3ADB6"/>${[-34,-10,6,28].map(x=>`<circle cx="${x}" cy="5.6" r="1.5" fill="#2B3A4A"/>`).join('')}`)});
 const i290=GEO.mw.filter(m=>m.n.includes('290')).flatMap(m=>m.d);
