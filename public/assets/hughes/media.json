@@ -1,0 +1,1234 @@
+{
+ "src": "Location photos: Wikimedia Commons / Wikipedia (free licenses, credited). Posters: Wikipedia (non-free, studio copyright). Retrieved 2026-10-03.",
+ "items": {
+  "niles-east": {
+   "now": {
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/77/Niles_East_High_School%2C_1965.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Niles_East_High_School,_1965.jpg",
+    "title": "Niles East High School, 1965",
+    "artist": "",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "1965",
+    "match": "name"
+   }
+  },
+  "new-trier": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/New_Trier_high_school_-_Winnetka_Illinois_-_aerial.jpg/960px-New_Trier_high_school_-_Winnetka_Illinois_-_aerial.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:New_Trier_high_school_-_Winnetka_Illinois_-_aerial.jpg",
+    "title": "New Trier high school - Winnetka Illinois - aerial",
+    "artist": "Tedder",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "date": "2025-07-26",
+    "match": "name+geo"
+   }
+  },
+  "northbrook-court": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Northbrook_Court_Closed_Apple_Store.jpg/960px-Northbrook_Court_Closed_Apple_Store.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Northbrook_Court_Closed_Apple_Store.jpg",
+    "title": "Northbrook Court Closed Apple Store",
+    "artist": "CL Minecraft",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2025-07-12",
+    "match": "name+geo"
+   }
+  },
+  "glenbrook-north": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/GlenbrookNorth2.jpg/960px-GlenbrookNorth2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:GlenbrookNorth2.jpg",
+    "title": "GlenbrookNorth2",
+    "artist": "Dustin Batt",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2015-01-26",
+    "match": "name"
+   }
+  },
+  "sears": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Chicago_Sears_Tower.jpg/960px-Chicago_Sears_Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Sears_Tower.jpg",
+    "title": "Chicago Sears Tower",
+    "artist": "Daniel Schwen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2008-08-17",
+    "match": "name"
+   }
+  },
+  "wrigley": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Wrigley_Field_construction%2C_Chicago_%2816399661309%29.jpg/960px-Wrigley_Field_construction%2C_Chicago_%2816399661309%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Wrigley_Field_construction,_Chicago_(16399661309).jpg",
+    "title": "Wrigley Field construction, Chicago (16399661309)",
+    "artist": "Erwin Bernal",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "date": "2015-02-17",
+    "match": "name"
+   }
+  },
+  "merc": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Chicago_Mercantile_Exchange_1.jpg/960px-Chicago_Mercantile_Exchange_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Mercantile_Exchange_1.jpg",
+    "title": "Chicago Mercantile Exchange 1",
+    "artist": "liz_noise",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "date": "30 марта 2",
+    "match": "name"
+   }
+  },
+  "glencoe-metra": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Glencoe_Metra_Station_20120722.jpg/960px-Glencoe_Metra_Station_20120722.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Glencoe_Metra_Station_20120722.jpg",
+    "title": "Glencoe Metra Station 20120722",
+    "artist": "User:JeremyA",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2012-07-22",
+    "match": "name"
+   }
+  },
+  "lasalle-cta": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/CTA_LaSalle.jpg/960px-CTA_LaSalle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:CTA_LaSalle.jpg",
+    "title": "CTA LaSalle",
+    "artist": "Daniel Schwen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2009-04-18",
+    "match": "name+geo"
+   }
+  },
+  "field-museum": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Field_Museum_of_Natural_History.jpg/960px-Field_Museum_of_Natural_History.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Field_Museum_of_Natural_History.jpg",
+    "title": "Field Museum of Natural History",
+    "artist": "Joe Ravi",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2011-05-10",
+    "match": "name+geo"
+   }
+  },
+  "excalibur": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Excalibur_Nightclub.JPG/960px-Excalibur_Nightclub.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Excalibur_Nightclub.JPG",
+    "title": "Excalibur Nightclub",
+    "artist": "Goldnpuppy",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2011-03-04",
+    "match": "name"
+   }
+  },
+  "trinity-umc": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Trinity_United_Methodist_Church_%281928%29_%288612730001%29.jpg/960px-Trinity_United_Methodist_Church_%281928%29_%288612730001%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Trinity_United_Methodist_Church_(1928)_(8612730001).jpg",
+    "title": "Trinity United Methodist Church (1928) (8612730001)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2013-03-21",
+    "match": "name+geo"
+   }
+  },
+  "grace-episcopal": {
+   "now": {
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Grace_Church_Oak_Park.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Grace_Church_Oak_Park.jpg",
+    "title": "Grace Church Oak Park",
+    "artist": "Mike Hayes",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2010",
+    "match": "name"
+   }
+  },
+  "hw-metra": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Hubbard_Woods_Station_-_October_2015.jpg/960px-Hubbard_Woods_Station_-_October_2015.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Hubbard_Woods_Station_-_October_2015.jpg",
+    "title": "Hubbard Woods Station - October 2015",
+    "artist": "Adam Moss",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2015-10-12",
+    "match": "name"
+   }
+  },
+  "ohare": {
+   "now": {
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/f/f4/O%27Hare_International_Airport_%28USGS%29.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:O%27Hare_International_Airport_(USGS).png",
+    "title": "O'Hare International Airport (USGS)",
+    "artist": "This image is in the public domain in the United States because it only contains",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "2011-10-13",
+    "match": "name"
+   }
+  },
+  "meigs": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Meigs_Field-Chicago-Tower.jpg/960px-Meigs_Field-Chicago-Tower.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Meigs_Field-Chicago-Tower.jpg",
+    "title": "Meigs Field-Chicago-Tower",
+    "artist": "Tobias Rad",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "date": "04.10.2006",
+    "match": "name"
+   }
+  },
+  "leo-burnett": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Leo_Burnett_Building%2C_55_and_77_West_Wacker_and_OneEleven%2C_Chicago_-_01.jpg/960px-Leo_Burnett_Building%2C_55_and_77_West_Wacker_and_OneEleven%2C_Chicago_-_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Leo_Burnett_Building,_55_and_77_West_Wacker_and_OneEleven,_Chicago_-_01.jpg",
+    "title": "Leo Burnett Building, 55 and 77 West Wacker and OneEleven, Chicago - 01",
+    "artist": "NorbertNagel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "date": "2026-08-12",
+    "match": "name+geo"
+   }
+  },
+  "hilton": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Chicago_Hilton_Hotel.jpg/960px-Chicago_Hilton_Hotel.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Hilton_Hotel.jpg",
+    "title": "Chicago Hilton Hotel",
+    "artist": "Zol87 from Chicago, IL US",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "2008-10-19",
+    "match": "name"
+   }
+  },
+  "uptown": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Balaban_and_Katz_Uptown_Theatre_2.JPG/960px-Balaban_and_Katz_Uptown_Theatre_2.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Balaban_and_Katz_Uptown_Theatre_2.JPG",
+    "title": "Balaban and Katz Uptown Theatre 2",
+    "artist": "Thshriver",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "2012-03-25",
+    "match": "name"
+   }
+  },
+  "hinsdale-downtown": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Downtown_Hinsdale_Block.JPG/960px-Downtown_Hinsdale_Block.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Hinsdale_Block.JPG",
+    "title": "Downtown Hinsdale Block",
+    "artist": "Teemu08 at en.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "date": "28 July 20",
+    "match": "name"
+   }
+  },
+  "cantigny": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Wheaton_-_%22Cantigny%22_%284288139494%29.jpg/960px-Wheaton_-_%22Cantigny%22_%284288139494%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Wheaton_-_%22Cantigny%22_(4288139494).jpg",
+    "title": "Wheaton - \"Cantigny\" (4288139494)",
+    "artist": "Roger W from Sarasota, Florida, U.S.A.",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "date": "1972-05-21",
+    "match": "name+geo"
+   }
+  },
+  "wabash-randolph": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/ChicagoLoopWabash-RandolphS.jpg/960px-ChicagoLoopWabash-RandolphS.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:ChicagoLoopWabash-RandolphS.jpg",
+    "title": "ChicagoLoopWabash-RandolphS",
+    "artist": "Charles Voogd",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "date": "Taken in S",
+    "match": "name"
+   }
+  },
+  "four-seasons": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Chicago_Four_Seasons_Hotel_Lobby_%2815612358442%29.jpg/960px-Chicago_Four_Seasons_Hotel_Lobby_%2815612358442%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Four_Seasons_Hotel_Lobby_(15612358442).jpg",
+    "title": "Chicago Four Seasons Hotel Lobby (15612358442)",
+    "artist": "Lou Stejskal",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "date": "2014-10-22",
+    "match": "name+geo"
+   }
+  },
+  "bryce-cliff": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Downtown_Northbrook%2C_IL.jpg/960px-Downtown_Northbrook%2C_IL.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Northbrook,_IL.jpg",
+    "title": "Downtown_Northbrook,_IL",
+    "artist": "CL Minecraft",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Northbrook, Illinois",
+    "private": true
+   }
+  },
+  "niles-north": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Skokie%2C_Illinois_%289179544141%29.jpg/960px-Skokie%2C_Illinois_%289179544141%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Skokie,_Illinois_(9179544141).jpg",
+    "title": "Skokie,_Illinois_(9179544141)",
+    "artist": "Ken Lund from Reno, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Skokie, Illinois",
+    "private": false
+   }
+  },
+  "park-ridge-field": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/ParkRidgePickwick.jpg/960px-ParkRidgePickwick.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:ParkRidgePickwick.jpg",
+    "title": "ParkRidgePickwick",
+    "artist": "Kelly Martin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "match": "town",
+    "place": "Park Ridge, Illinois",
+    "private": false
+   }
+  },
+  "baker-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "maine-north": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Maine_North_HS_Building_-_banner_%28restored%29.jpg/960px-Maine_North_HS_Building_-_banner_%28restored%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Maine_North_HS_Building_-_banner_(restored).jpg",
+    "title": "Maine_North_HS_Building_-_banner_(restored)",
+    "artist": "Brett Clark, APR",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "match": "wiki",
+    "place": "Maine North High School",
+    "private": false
+   }
+  },
+  "glencoe-union": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Glencoe%2C_IL%2C_USA_-_panoramio_%281%29.jpg/960px-Glencoe%2C_IL%2C_USA_-_panoramio_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Glencoe,_IL,_USA_-_panoramio_(1).jpg",
+    "title": "Glencoe,_IL,_USA_-_panoramio_(1)",
+    "artist": "bogdanstepniak",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "match": "town",
+    "place": "Glencoe, Illinois",
+    "private": false
+   }
+  },
+  "ryan-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": true
+   }
+  },
+  "hilly-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": false
+   }
+  },
+  "wyatt-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": false
+   }
+  },
+  "gary-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": true
+   }
+  },
+  "deb-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": true
+   }
+  },
+  "ben-rose": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": true
+   }
+  },
+  "butternut": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Downtown_Northbrook%2C_IL.jpg/960px-Downtown_Northbrook%2C_IL.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Northbrook,_IL.jpg",
+    "title": "Downtown_Northbrook,_IL",
+    "artist": "CL Minecraft",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Northbrook, Illinois",
+    "private": false
+   }
+  },
+  "glencoe-beach": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Glencoe%2C_IL%2C_USA_-_panoramio_%281%29.jpg/960px-Glencoe%2C_IL%2C_USA_-_panoramio_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Glencoe,_IL,_USA_-_panoramio_(1).jpg",
+    "title": "Glencoe,_IL,_USA_-_panoramio_(1)",
+    "artist": "bogdanstepniak",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "match": "town",
+    "place": "Glencoe, Illinois",
+    "private": false
+   }
+  },
+  "katie-office": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": false
+   }
+  },
+  "st-johns-chase": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg/960px-Highland_Park%2C_IL_City_Hall_%288678519504%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Highland_Park,_IL_City_Hall_(8678519504).jpg",
+    "title": "Highland_Park,_IL_City_Hall_(8678519504)",
+    "artist": "Teemu008 from Palatine, Illinois",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Highland Park, Illinois",
+    "private": false
+   }
+  },
+  "chez-quis": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "woodstock-square": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Woodstock_Illinois_02.jpg/960px-Woodstock_Illinois_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Woodstock_Illinois_02.jpg",
+    "title": "Woodstock_Illinois_02",
+    "artist": "No machine-readable author provided. Cosmo1976 assumed (based on copyright claim",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "match": "town",
+    "place": "Woodstock, Illinois",
+    "private": false
+   }
+  },
+  "parade": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "el-rancho": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Mother_Rudd_Home.jpg/960px-Mother_Rudd_Home.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Mother_Rudd_Home.jpg",
+    "title": "Mother_Rudd_Home",
+    "artist": "Kman2005",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Gurnee, Illinois",
+    "private": false
+   }
+  },
+  "art-institute": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "randolph-bus": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "neal-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Kenilworth_Club_3.JPG/960px-Kenilworth_Club_3.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Kenilworth_Club_3.JPG",
+    "title": "Kenilworth_Club_3",
+    "artist": "Thshriver",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Kenilworth, Illinois",
+    "private": true
+   }
+  },
+  "briggs-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Skokie%2C_Illinois_%289179544141%29.jpg/960px-Skokie%2C_Illinois_%289179544141%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Skokie,_Illinois_(9179544141).jpg",
+    "title": "Skokie,_Illinois_(9179544141)",
+    "artist": "Ken Lund from Reno, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Skokie, Illinois",
+    "private": true
+   }
+  },
+  "sunset-foods": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Downtown_Northbrook%2C_IL.jpg/960px-Downtown_Northbrook%2C_IL.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Northbrook,_IL.jpg",
+    "title": "Downtown_Northbrook,_IL",
+    "artist": "CL Minecraft",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Northbrook, Illinois",
+    "private": false
+   }
+  },
+  "winnetka-cong": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": false
+   }
+  },
+  "braidwood-inn": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/IL53nUS66wSignsRoad-BraidwoodIL_%2840156968241%29.jpg/960px-IL53nUS66wSignsRoad-BraidwoodIL_%2840156968241%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:IL53nUS66wSignsRoad-BraidwoodIL_(40156968241).jpg",
+    "title": "IL53nUS66wSignsRoad-BraidwoodIL_(40156968241)",
+    "artist": "formulanone from Huntsville, United States",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Braidwood, Illinois",
+    "private": false
+   }
+  },
+  "evanston-hospital": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": false
+   }
+  },
+  "russell-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "murphy-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": true
+   }
+  },
+  "mccallister": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": true
+   }
+  },
+  "romona": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette%2C_Illinois%3B_exterior_and_gardens%2C_photographed_on_August_10%2C_2021_%281558294651%29.jpg/960px-Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette%2C_Illinois%3B_exterior_and_gardens%2C_photographed_on_August_10%2C_2021_%281558294651%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette,_Illinois;_exterior_and_gardens,_photographed_on_August_10,_2021_(1558294651).jpg",
+    "title": "Bahá'í_House_of_Worship_in_Wilmette,_Illinois;_exterior_and_gardens,_photographed_on_August_10,_2021_(1558294651)",
+    "artist": "Soueric",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Wilmette, Illinois",
+    "private": false
+   }
+  },
+  "dam-no1": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Wheeling%2C_IL%2C_USA_-_panoramio.jpg/960px-Wheeling%2C_IL%2C_USA_-_panoramio.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Wheeling,_IL,_USA_-_panoramio.jpg",
+    "title": "Wheeling,_IL,_USA_-_panoramio",
+    "artist": "bogdanstepniak",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "match": "town",
+    "place": "Wheeling, Illinois",
+    "private": false
+   }
+  },
+  "windy-city-bowl": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/J._Sterling_Morton_High_School_East_Auditorium.jpg/960px-J._Sterling_Morton_High_School_East_Auditorium.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:J._Sterling_Morton_High_School_East_Auditorium.jpg",
+    "title": "J._Sterling_Morton_High_School_East_Auditorium",
+    "artist": "Teemu08",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Cicero, Illinois",
+    "private": false
+   }
+  },
+  "milwaukee-pub": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "hw-pharmacy": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": false
+   }
+  },
+  "hw-park": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": false
+   }
+  },
+  "haven": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": false
+   }
+  },
+  "wilson-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "dennis-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "grand-food": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/27/Henry_Demarest_Lloyd_House.jpg/960px-Henry_Demarest_Lloyd_House.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Henry_Demarest_Lloyd_House.jpg",
+    "title": "Henry_Demarest_Lloyd_House",
+    "artist": "Zol87",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Winnetka, Illinois",
+    "private": false
+   }
+  },
+  "new-trier-west": {
+   "now": {
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/3/30/Northfield_Logo.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Northfield_Logo.gif",
+    "title": "Northfield_Logo",
+    "artist": "Village of Northfield",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "match": "town",
+    "place": "Northfield, Illinois",
+    "private": false
+   }
+  },
+  "margaret-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette%2C_Illinois%3B_exterior_and_gardens%2C_photographed_on_August_10%2C_2021_%281558294651%29.jpg/960px-Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette%2C_Illinois%3B_exterior_and_gardens%2C_photographed_on_August_10%2C_2021_%281558294651%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Bah%C3%A1%27%C3%AD_House_of_Worship_in_Wilmette,_Illinois;_exterior_and_gardens,_photographed_on_August_10,_2021_(1558294651).jpg",
+    "title": "Bahá'í_House_of_Worship_in_Wilmette,_Illinois;_exterior_and_gardens,_photographed_on_August_10,_2021_(1558294651)",
+    "artist": "Soueric",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Wilmette, Illinois",
+    "private": true
+   }
+  },
+  "duncans": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "miami-woods": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Leaning_Tower_of_Niles.jpg/960px-Leaning_Tower_of_Niles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Leaning_Tower_of_Niles.jpg",
+    "title": "Leaning_Tower_of_Niles",
+    "artist": "Miroslaw Mucha",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "match": "town",
+    "place": "Niles, Illinois",
+    "private": false
+   }
+  },
+  "rosemont-travelodge": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/River_Road%2C_Rosemont%2C_Illinois.JPG/960px-River_Road%2C_Rosemont%2C_Illinois.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:River_Road,_Rosemont,_Illinois.JPG",
+    "title": "River_Road,_Rosemont,_Illinois",
+    "artist": "Aneekr at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "match": "town",
+    "place": "Rosemont, Illinois",
+    "private": false
+   }
+  },
+  "elgin-trestle": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Downtown_Elgin_aerial_view%2C_2018.jpg/960px-Downtown_Elgin_aerial_view%2C_2018.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Elgin_aerial_view,_2018.jpg",
+    "title": "Downtown_Elgin_aerial_view,_2018",
+    "artist": "SounderBruce",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Elgin, Illinois",
+    "private": false
+   }
+  },
+  "lincoln-apt": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Chicago_community_areas_map.svg/960px-Chicago_community_areas_map.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_community_areas_map.svg",
+    "title": "Chicago_community_areas_map",
+    "artist": "Peter Fitzgerald",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Community areas of Chicago",
+    "private": false
+   }
+  },
+  "hinsdale-garden": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Downtown_Hinsdale_Illinois.jpg/960px-Downtown_Hinsdale_Illinois.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Hinsdale_Illinois.jpg",
+    "title": "Downtown_Hinsdale_Illinois",
+    "artist": "Dennisyerger84",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Hinsdale, Illinois",
+    "private": false
+   }
+  },
+  "michigan-congress": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "pruitt-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "ovaltine": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Ardmore_Avenue_Train_Station_%28Villa_Park%2C_Illinois%29_07.JPG/960px-Ardmore_Avenue_Train_Station_%28Villa_Park%2C_Illinois%29_07.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Ardmore_Avenue_Train_Station_(Villa_Park,_Illinois)_07.JPG",
+    "title": "Ardmore_Avenue_Train_Station_(Villa_Park,_Illinois)_07",
+    "artist": "G LeTourneau",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "match": "town",
+    "place": "Villa Park, Illinois",
+    "private": false
+   }
+  },
+  "burns-field": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Downtown_Hinsdale_Illinois.jpg/960px-Downtown_Hinsdale_Illinois.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Downtown_Hinsdale_Illinois.jpg",
+    "title": "Downtown_Hinsdale_Illinois",
+    "artist": "Dennisyerger84",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Hinsdale, Illinois",
+    "private": false
+   }
+  },
+  "hess-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": true
+   }
+  },
+  "state-st": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Chicago_Loop.png/960px-Chicago_Loop.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_Loop.png",
+    "title": "Chicago_Loop",
+    "artist": "Euphoria42",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Chicago Loop",
+    "private": false
+   }
+  },
+  "noyes-hideout": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Fountain_Square_Evanston.jpg/960px-Fountain_Square_Evanston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Fountain_Square_Evanston.jpg",
+    "title": "Fountain_Square_Evanston",
+    "artist": "Madcoverboy (talk)",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Evanston, Illinois",
+    "private": false
+   }
+  },
+  "touhy-stages": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Skokie%2C_Illinois_%289179544141%29.jpg/960px-Skokie%2C_Illinois_%289179544141%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Skokie,_Illinois_(9179544141).jpg",
+    "title": "Skokie,_Illinois_(9179544141)",
+    "artist": "Ken Lund from Reno, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Skokie, Illinois",
+    "private": false
+   }
+  },
+  "s-and-c": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Chicago_community_areas_map.svg/960px-Chicago_community_areas_map.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Chicago_community_areas_map.svg",
+    "title": "Chicago_community_areas_map",
+    "artist": "Peter Fitzgerald",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "match": "town",
+    "place": "Community areas of Chicago",
+    "private": false
+   }
+  },
+  "pruitt-bank": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Skokie%2C_Illinois_%289179544141%29.jpg/960px-Skokie%2C_Illinois_%289179544141%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Skokie,_Illinois_(9179544141).jpg",
+    "title": "Skokie,_Illinois_(9179544141)",
+    "artist": "Ken Lund from Reno, Nevada, USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "match": "town",
+    "place": "Skokie, Illinois",
+    "private": false
+   }
+  },
+  "south-side-96": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Midway_Airport_Airfield.jpg/960px-Midway_Airport_Airfield.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Midway_Airport_Airfield.jpg",
+    "title": "Midway_Airport_Airfield",
+    "artist": "The original uploader was Sox23 at English Wikipedia.",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+    "match": "town",
+    "place": "South Side, Chicago",
+    "private": false
+   }
+  },
+  "nlv-lsd": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Typical_Summer_Afternoon_on_Lake_Shore_Drive.jpg/960px-Typical_Summer_Afternoon_on_Lake_Shore_Drive.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Typical_Summer_Afternoon_on_Lake_Shore_Drive.jpg",
+    "title": "Typical_Summer_Afternoon_on_Lake_Shore_Drive",
+    "artist": "Rhett Sutphin",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "match": "wiki",
+    "place": "Lake Shore Drive",
+    "private": false
+   }
+  },
+  "nlv-ryan": {
+   "now": {
+    "thumb": "https://upload.wikimedia.org/wikipedia/commons/7/71/Dan_Ryan_Expressway-1970.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "page": "https://commons.wikimedia.org/wiki/File:Dan_Ryan_Expressway-1970.jpeg",
+    "title": "Dan_Ryan_Expressway-1970",
+    "artist": "",
+    "license": "Public domain",
+    "licenseUrl": "",
+    "match": "wiki",
+    "place": "Dan Ryan Expressway",
+    "private": false
+   }
+  },
+  "nlv-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Gate_4_Warner_Bros._Studios.jpg/960px-Gate_4_Warner_Bros._Studios.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Gate_4_Warner_Bros._Studios.jpg",
+    "title": "Gate_4_Warner_Bros._Studios",
+    "artist": "Coolcaesar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Warner Bros. Studios Burbank",
+    "private": true
+   }
+  },
+  "ncv-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Gate_4_Warner_Bros._Studios.jpg/960px-Gate_4_Warner_Bros._Studios.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Gate_4_Warner_Bros._Studios.jpg",
+    "title": "Gate_4_Warner_Bros._Studios",
+    "artist": "Coolcaesar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Warner Bros. Studios Burbank",
+    "private": false
+   }
+  },
+  "pip-home": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Gate_4_Warner_Bros._Studios.jpg/960px-Gate_4_Warner_Bros._Studios.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Gate_4_Warner_Bros._Studios.jpg",
+    "title": "Gate_4_Warner_Bros._Studios",
+    "artist": "Coolcaesar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Warner Bros. Studios Burbank",
+    "private": true
+   }
+  },
+  "pip-school": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Gate_4_Warner_Bros._Studios.jpg/960px-Gate_4_Warner_Bros._Studios.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Gate_4_Warner_Bros._Studios.jpg",
+    "title": "Gate_4_Warner_Bros._Studios",
+    "artist": "Coolcaesar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "match": "town",
+    "place": "Warner Bros. Studios Burbank",
+    "private": false
+   }
+  },
+  "bueller-house": {
+   "now": {
+    "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Long_beach3_%28cropped%29.jpg/960px-Long_beach3_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "page": "https://commons.wikimedia.org/wiki/File:Long_beach3_(cropped).jpg",
+    "title": "Long_beach3_(cropped)",
+    "artist": "himefrias",
+    "license": "Copyrighted free use",
+    "licenseUrl": "",
+    "match": "town",
+    "place": "Long Beach, California",
+    "private": true
+   }
+  }
+ },
+ "films": {
+  "bc": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/d/d1/The_Breakfast_Club_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/The_Breakfast_Club",
+   "file": "The_Breakfast_Club_poster.jpg"
+  },
+  "ha3": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/c/cc/Home_Alone_3_film.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Home_Alone_3",
+   "file": "Home_Alone_3_film.jpg"
+  },
+  "ha2": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/5/50/Home_Alone_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Home_Alone_2:_Lost_in_New_York",
+   "file": "Home_Alone_2.jpg"
+  },
+  "fb": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/9/9b/Ferris_Bueller%27s_Day_Off.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Ferris_Bueller%27s_Day_Off",
+   "file": "Ferris_Bueller's_Day_Off.jpg"
+  },
+  "shab": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/9/92/She%27sbabyposter.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/She%27s_Having_a_Baby",
+   "file": "She'sbabyposter.jpg"
+  },
+  "dm": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/b/b0/Dennis_the_menace.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Dennis_the_Menace_(film)",
+   "file": "Dennis_the_menace.jpg"
+  },
+  "ha": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/7/76/Home_alone_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Home_Alone",
+   "file": "Home_alone_poster.jpg"
+  },
+  "ws": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/d/d6/Movie_poster_for_Weird_Science_%281985%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Weird_Science_(film)",
+   "file": "Movie_poster_for_Weird_Science_(1985).jpg"
+  },
+  "sc": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/3/34/Sixteen_Candles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Sixteen_Candles",
+   "file": "Sixteen_Candles.jpg"
+  },
+  "bdo": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/3/35/Babys_day_out_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Baby%27s_Day_Out",
+   "file": "Babys_day_out_poster.jpg"
+  },
+  "pip": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/Pretty_In_Pink_poster.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Pretty_in_Pink",
+   "file": "Pretty_In_Pink_poster.jpg"
+  },
+  "cs": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/7/7c/Curly_Sue_%28movie_poster%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Curly_Sue",
+   "file": "Curly_Sue_(movie_poster).jpg"
+  },
+  "pta": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/d/d6/Planes_trains_and_automobiles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Planes,_Trains_and_Automobiles",
+   "file": "Planes_trains_and_automobiles.jpg"
+  },
+  "ub": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/8/8c/Uncle_buck.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/Uncle_Buck",
+   "file": "Uncle_buck.jpg"
+  },
+  "ncv": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/5/53/NationalLampoonsChristmasVacationPoster.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/National_Lampoon%27s_Christmas_Vacation",
+   "file": "NationalLampoonsChristmasVacationPoster.JPG"
+  },
+  "nlv": {
+   "poster": "https://upload.wikimedia.org/wikipedia/en/a/a8/Vacation1983.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+   "page": "https://en.wikipedia.org/wiki/National_Lampoon%27s_Vacation",
+   "file": "Vacation1983.jpg"
+  }
+ }
+}

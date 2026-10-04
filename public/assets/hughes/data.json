@@ -1,0 +1,3494 @@
+{
+ "meta": {
+  "title": "The Geography of Shermer",
+  "kicker": "John Hughes’ Chicagoland",
+  "guide": "009",
+  "version": "0.1",
+  "source": "uploads/john-hughes-chicago-cinematic-universe.md (compiled research list, v1)",
+  "status": "Compiled list · not yet checked against production records, location permits or contemporaneous press",
+  "viewBox": [
+   1100,
+   1300
+  ],
+  "note": "In several Hughes films the fictional suburb of Shermer, Illinois acts as a composite of real Chicago-area places, especially Northbrook, Highland Park, Winnetka, Evanston, Glencoe, Skokie, Des Plaines and Wilmette. Shermer Road is a real road in Northbrook, and Glenbrook North High School sits at 2300 Shermer Road.",
+  "basis": {
+   "dataset": "Stated in the compiled location list.",
+   "editorial": "Added by the guide editors from general knowledge. Unconfirmed — verify before publication."
+  },
+  "projection": "x=(lon+88.06)*1859, y=(42.22-lat)*2500 (equirectangular at 41.95°N); off-scale places in callouts"
+ },
+ "films": [
+  {
+   "id": "sc",
+   "title": "Sixteen Candles",
+   "year": 1984,
+   "role": "Writer / Director",
+   "world": "shermer",
+   "story": "Fictional Shermer, Illinois",
+   "color": "#E5528A",
+   "note": "One of the foundational films for the Hughes North Shore geography.",
+   "sig": "A strong early example of the Hughes North Shore visual world: Evanston → Skokie → Highland Park → Glencoe."
+  },
+  {
+   "id": "bc",
+   "title": "The Breakfast Club",
+   "year": 1985,
+   "role": "Writer / Director",
+   "world": "shermer",
+   "story": "Almost entirely Shermer High School, fictional Shermer, Illinois",
+   "color": "#E09A12",
+   "note": "Shermer High is effectively a composite of multiple suburban schools.",
+   "sig": "Shermer High can be read as one fictional destination with two primary real-world anchors: Des Plaines and Northbrook."
+  },
+  {
+   "id": "ws",
+   "title": "Weird Science",
+   "year": 1985,
+   "role": "Writer / Director",
+   "world": "shermer",
+   "story": "Another version of suburban Shermer",
+   "color": "#7A58D1",
+   "note": "",
+   "sig": "Highland Park is essentially the residential center of the film."
+  },
+  {
+   "id": "fb",
+   "title": "Ferris Bueller’s Day Off",
+   "year": 1986,
+   "role": "Writer / Director",
+   "world": "shermer",
+   "story": "Shermer / North Shore suburbs plus downtown Chicago",
+   "color": "#F0731C",
+   "note": "Probably the richest single Hughes film for a Chicago location map: the plot explicitly connects suburbia to downtown. Also: various Loop and downtown streets.",
+   "sig": "The clearest suburbs-to-city journey in the Hughes universe."
+  },
+  {
+   "id": "pta",
+   "title": "Planes, Trains and Automobiles",
+   "year": 1987,
+   "role": "Writer / Director",
+   "world": "road",
+   "story": "New York → the Midwest → the Chicago suburbs",
+   "color": "#12988A",
+   "note": "Expands the map well beyond the North Shore.",
+   "sig": "Pulls the cinematic world outward into greater Illinois and the Midwest."
+  },
+  {
+   "id": "shab",
+   "title": "She’s Having a Baby",
+   "year": 1988,
+   "role": "Writer / Director",
+   "world": "suburb",
+   "story": "Commuter suburb and downtown Chicago",
+   "color": "#3A86D6",
+   "note": "Combines suburban life with recognizable downtown Chicago locations.",
+   "sig": "Shows commuter-suburb life and Metra geography inside the Hughes universe."
+  },
+  {
+   "id": "ub",
+   "title": "Uncle Buck",
+   "year": 1989,
+   "role": "Writer / Director",
+   "world": "suburb",
+   "story": "Chicago’s northern suburbs",
+   "color": "#3FA04A",
+   "note": "One of the most geographically scattered North Shore Hughes films. Additional production around Northbrook, Skokie, Glencoe, Riverwoods and Northfield.",
+   "sig": "Practically a tour of the northern suburbs."
+  },
+  {
+   "id": "ha",
+   "title": "Home Alone",
+   "year": 1990,
+   "role": "Writer / Producer",
+   "dir": "Chris Columbus",
+   "world": "suburb",
+   "story": "A Chicago North Shore suburb",
+   "color": "#D42F2C",
+   "note": "One of the strongest Hughes-associated films for identifiable suburban geography.",
+   "sig": "Creates an especially strong Winnetka / Hubbard Woods micro-map."
+  },
+  {
+   "id": "cs",
+   "title": "Curly Sue",
+   "year": 1991,
+   "role": "Writer / Director",
+   "world": "chicago",
+   "story": "Downtown Chicago",
+   "color": "#B0368C",
+   "note": "Notably more urban than the classic Hughes teen films. Also: Loop and downtown street locations.",
+   "sig": "Adds a downtown professional / office Chicago layer."
+  },
+  {
+   "id": "ha2",
+   "title": "Home Alone 2: Lost in New York",
+   "year": 1992,
+   "role": "Writer / Producer",
+   "world": "elsewhere",
+   "story": "Mostly New York City",
+   "color": "#2C4BA6",
+   "note": "Most of the story occurs in New York, but significant Chicago-area production belongs on a Hughes map.",
+   "sig": "Distinguishes Chicago locations that are Chicago in the story from Chicago locations doubling for New York."
+  },
+  {
+   "id": "dm",
+   "title": "Dennis the Menace",
+   "year": 1993,
+   "role": "Writer / Producer",
+   "world": "suburb",
+   "story": "A Chicago-area suburb",
+   "color": "#7FAE2C",
+   "note": "Another very strong suburban Illinois film. Additional scenes in the Cook County Forest Preserve.",
+   "sig": "Hinsdale brings the Hughes suburban aesthetic into the western suburbs."
+  },
+  {
+   "id": "bdo",
+   "title": "Baby’s Day Out",
+   "year": 1994,
+   "role": "Writer / Producer",
+   "world": "chicago",
+   "story": "Chicago as the baby’s playground",
+   "color": "#1FA9D2",
+   "note": "A highly Chicago-centric film. Also: various downtown streets and buildings.",
+   "sig": "Chicago itself effectively becomes the baby’s giant playground."
+  },
+  {
+   "id": "ha3",
+   "title": "Home Alone 3",
+   "year": 1997,
+   "role": "Writer / Producer",
+   "world": "suburb",
+   "story": "A Chicago-area suburb",
+   "color": "#A5602A",
+   "note": "Later Hughes, but geographically very relevant.",
+   "sig": "Adds another concentrated Evanston residential cluster."
+  },
+  {
+   "id": "nlv",
+   "title": "National Lampoon’s Vacation",
+   "year": 1983,
+   "role": "Writer",
+   "dir": "Harold Ramis",
+   "world": "chicago",
+   "story": "The Griswolds set out from suburban Chicago",
+   "color": "#4E7FA8",
+   "note": "Opening drive uses Chicago expressway and lakefront imagery; most of the production happened outside Illinois.",
+   "sig": "A short Chicago prologue — Lake Shore Drive and the Dan Ryan — before the road trip leaves the map."
+  },
+  {
+   "id": "pip",
+   "title": "Pretty in Pink",
+   "year": 1986,
+   "role": "Writer",
+   "dir": "Howard Deutch",
+   "world": "shermer",
+   "story": "An unnamed Hughes suburb",
+   "color": "#D96FA6",
+   "note": "Part of the broader Shermer-style suburban world, but primarily shot around Los Angeles. Placement here is a best guess.",
+   "sig": "Plotted inside the Shermer composite on screen; annotated as a Los Angeles shoot."
+  },
+  {
+   "id": "ncv",
+   "title": "National Lampoon’s Christmas Vacation",
+   "year": 1989,
+   "role": "Writer",
+   "dir": "Jeremiah S. Chechik",
+   "world": "chicago",
+   "story": "The Griswold house, suburban Chicago",
+   "color": "#1F7A4C",
+   "note": "Generally understood as a Chicago-area Griswold story; much of it was shot on California backlots. Placement is a best guess.",
+   "sig": "A story-world suburb only — the house itself stands on a California backlot."
+  }
+ ],
+ "secondTier": [
+  {
+   "title": "Some Kind of Wonderful",
+   "year": 1987,
+   "note": "Hughes suburban tone, but not a strong actual Chicago filming-location candidate."
+  },
+  {
+   "title": "Career Opportunities",
+   "year": 1991,
+   "note": "Feels very Hughes; primarily shot in Georgia."
+  }
+ ],
+ "cards": [
+  {
+   "id": "road",
+   "name": "On the road",
+   "sub": "The Midwest",
+   "xy": [
+    115,
+    1120
+   ]
+  },
+  {
+   "id": "stlouis",
+   "name": "St. Louis",
+   "sub": "Missouri",
+   "xy": [
+    285,
+    1120
+   ]
+  },
+  {
+   "id": "newyork",
+   "name": "New York",
+   "sub": "New York",
+   "xy": [
+    455,
+    1120
+   ]
+  },
+  {
+   "id": "longbeach",
+   "name": "Long Beach",
+   "sub": "California",
+   "xy": [
+    115,
+    1235
+   ]
+  },
+  {
+   "id": "backlot",
+   "name": "Hollywood",
+   "sub": "California backlots",
+   "xy": [
+    285,
+    1235
+   ]
+  }
+ ],
+ "places": [
+  {
+   "id": "gurnee",
+   "name": "Gurnee",
+   "xy": [
+    372,
+    40
+   ],
+   "geo": [
+    42.37,
+    -87.902
+   ],
+   "region": "outer",
+   "col": "#12988A",
+   "edge": "↑ north, off scale"
+  },
+  {
+   "id": "woodstock",
+   "name": "Woodstock",
+   "xy": [
+    96,
+    74
+   ],
+   "geo": [
+    42.315,
+    -88.448
+   ],
+   "region": "outer",
+   "col": "#12988A",
+   "edge": "↖ northwest, off scale"
+  },
+  {
+   "id": "highland-park",
+   "name": "Highland Park",
+   "xy": [
+    483,
+    95
+   ],
+   "geo": [
+    42.182,
+    -87.8
+   ],
+   "region": "north",
+   "col": "#7A58D1"
+  },
+  {
+   "id": "riverwoods",
+   "name": "Riverwoods",
+   "xy": [
+    303,
+    132
+   ],
+   "geo": [
+    42.167,
+    -87.897
+   ],
+   "region": "north",
+   "col": "#3FA04A"
+  },
+  {
+   "id": "wheeling",
+   "name": "Wheeling",
+   "xy": [
+    244,
+    202
+   ],
+   "geo": [
+    42.139,
+    -87.929
+   ],
+   "region": "north",
+   "col": "#3FA04A"
+  },
+  {
+   "id": "northbrook",
+   "name": "Northbrook",
+   "xy": [
+    429,
+    232
+   ],
+   "geo": [
+    42.127,
+    -87.829
+   ],
+   "region": "north",
+   "col": "#E09A12"
+  },
+  {
+   "id": "glencoe",
+   "name": "Glencoe",
+   "xy": [
+    561,
+    213
+   ],
+   "geo": [
+    42.135,
+    -87.758
+   ],
+   "region": "north",
+   "col": "#E5528A"
+  },
+  {
+   "id": "hubbard-woods",
+   "name": "Hubbard Woods",
+   "xy": [
+    584,
+    255
+   ],
+   "geo": [
+    42.118,
+    -87.746
+   ],
+   "region": "north",
+   "col": "#D42F2C"
+  },
+  {
+   "id": "northfield",
+   "name": "Northfield",
+   "xy": [
+    519,
+    300
+   ],
+   "geo": [
+    42.1,
+    -87.781
+   ],
+   "region": "north",
+   "col": "#A5602A"
+  },
+  {
+   "id": "winnetka",
+   "name": "Winnetka",
+   "xy": [
+    602,
+    280
+   ],
+   "geo": [
+    42.108,
+    -87.736
+   ],
+   "region": "north",
+   "col": "#D42F2C"
+  },
+  {
+   "id": "kenilworth",
+   "name": "Kenilworth",
+   "xy": [
+    638,
+    335
+   ],
+   "geo": [
+    42.086,
+    -87.717
+   ],
+   "region": "north",
+   "col": "#12988A"
+  },
+  {
+   "id": "wilmette",
+   "name": "Wilmette",
+   "xy": [
+    626,
+    370
+   ],
+   "geo": [
+    42.072,
+    -87.723
+   ],
+   "region": "north",
+   "col": "#3A86D6"
+  },
+  {
+   "id": "skokie",
+   "name": "Skokie",
+   "xy": [
+    608,
+    467
+   ],
+   "geo": [
+    42.033,
+    -87.733
+   ],
+   "region": "north",
+   "col": "#B0368C"
+  },
+  {
+   "id": "evanston",
+   "name": "Evanston",
+   "xy": [
+    692,
+    437
+   ],
+   "geo": [
+    42.045,
+    -87.688
+   ],
+   "region": "north",
+   "col": "#F0731C"
+  },
+  {
+   "id": "niles",
+   "name": "Niles",
+   "xy": [
+    478,
+    503
+   ],
+   "geo": [
+    42.019,
+    -87.803
+   ],
+   "region": "north",
+   "col": "#7FAE2C"
+  },
+  {
+   "id": "des-plaines",
+   "name": "Des Plaines",
+   "xy": [
+    329,
+    467
+   ],
+   "geo": [
+    42.033,
+    -87.883
+   ],
+   "region": "north",
+   "col": "#E09A12"
+  },
+  {
+   "id": "park-ridge",
+   "name": "Park Ridge",
+   "xy": [
+    409,
+    522
+   ],
+   "geo": [
+    42.011,
+    -87.84
+   ],
+   "region": "north",
+   "col": "#7A58D1"
+  },
+  {
+   "id": "rosemont",
+   "name": "Rosemont",
+   "xy": [
+    327,
+    563
+   ],
+   "geo": [
+    41.995,
+    -87.884
+   ],
+   "region": "west",
+   "col": "#7FAE2C"
+  },
+  {
+   "id": "ohare",
+   "name": "O’Hare",
+   "xy": [
+    290,
+    605
+   ],
+   "geo": [
+    41.978,
+    -87.904
+   ],
+   "region": "west",
+   "col": "#2C4BA6"
+  },
+  {
+   "id": "elgin",
+   "name": "Elgin",
+   "xy": [
+    70,
+    500
+   ],
+   "geo": [
+    42.037,
+    -88.281
+   ],
+   "region": "outer",
+   "col": "#7FAE2C",
+   "edge": "← west, off scale"
+  },
+  {
+   "id": "north-side",
+   "name": "North Side",
+   "xy": [
+    744,
+    675
+   ],
+   "geo": [
+    41.95,
+    -87.66
+   ],
+   "region": "chicago",
+   "col": "#2C4BA6"
+  },
+  {
+   "id": "loop",
+   "name": "The Loop",
+   "xy": [
+    803,
+    845
+   ],
+   "geo": [
+    41.882,
+    -87.628
+   ],
+   "region": "chicago",
+   "col": "#D42F2C"
+  },
+  {
+   "id": "oak-park",
+   "name": "Oak Park",
+   "xy": [
+    513,
+    838
+   ],
+   "geo": [
+    41.885,
+    -87.784
+   ],
+   "region": "west",
+   "col": "#D42F2C"
+  },
+  {
+   "id": "cicero",
+   "name": "Cicero",
+   "xy": [
+    569,
+    935
+   ],
+   "geo": [
+    41.846,
+    -87.754
+   ],
+   "region": "west",
+   "col": "#3FA04A"
+  },
+  {
+   "id": "villa-park",
+   "name": "Villa Park",
+   "xy": [
+    132,
+    827
+   ],
+   "geo": [
+    41.889,
+    -87.989
+   ],
+   "region": "west",
+   "col": "#1FA9D2"
+  },
+  {
+   "id": "wheaton",
+   "name": "Wheaton",
+   "xy": [
+    96,
+    930
+   ],
+   "geo": [
+    41.866,
+    -88.107
+   ],
+   "region": "outer",
+   "col": "#1FA9D2",
+   "edge": "← west, off scale"
+  },
+  {
+   "id": "hinsdale",
+   "name": "Hinsdale",
+   "xy": [
+    229,
+    1050
+   ],
+   "geo": [
+    41.8,
+    -87.937
+   ],
+   "region": "west",
+   "col": "#7FAE2C"
+  },
+  {
+   "id": "south-side",
+   "name": "South Side",
+   "xy": [
+    781,
+    1250
+   ],
+   "geo": [
+    41.72,
+    -87.64
+   ],
+   "region": "chicago",
+   "col": "#A5602A"
+  },
+  {
+   "id": "braidwood",
+   "name": "Braidwood",
+   "xy": [
+    560,
+    1262
+   ],
+   "geo": [
+    41.265,
+    -88.212
+   ],
+   "region": "outer",
+   "col": "#12988A",
+   "edge": "↓ southwest, off scale"
+  }
+ ],
+ "locations": [
+  {
+   "id": "baker-house",
+   "name": "Samantha Baker house",
+   "addr": "3022 Payne Street",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "The Baker family home"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The Baker house, Shermer",
+    "xy": [
+     365,
+     221
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "ryan-house",
+   "name": "Jake Ryan house",
+   "addr": "1407 Waverly Road",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Jake Ryan’s house and the party"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The Ryan house, Shermer",
+    "xy": [
+     418,
+     200
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.182,
+    -87.8,
+    "town"
+   ]
+  },
+  {
+   "id": "niles-east",
+   "name": "Niles East High School",
+   "addr": "7700 Lincoln Avenue",
+   "place": "skokie",
+   "type": "school",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Primary high-school location"
+    },
+    {
+     "f": "ws",
+     "scene": "Shermer High"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High School",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "demolished",
+    "basis": "dataset",
+    "note": "Demolished. What stands on the site today has not been verified."
+   },
+   "geo": [
+    42.026,
+    -87.746,
+    "street"
+   ]
+  },
+  {
+   "id": "niles-north",
+   "name": "Niles North High School",
+   "addr": "Skokie",
+   "place": "skokie",
+   "type": "school",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Additional school interiors"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High School (interiors)",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating public high school. Visit only as the school allows."
+   },
+   "geo": [
+    42.05,
+    -87.75,
+    "town"
+   ]
+  },
+  {
+   "id": "glencoe-union",
+   "name": "Glencoe Union Church",
+   "addr": "263 Park Avenue",
+   "place": "glencoe",
+   "type": "church",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Wedding and church scenes"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The wedding church, Shermer",
+    "xy": [
+     549,
+     345
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Believed standing. Verify."
+   },
+   "geo": [
+    42.135,
+    -87.758,
+    "town"
+   ]
+  },
+  {
+   "id": "bryce-cliff",
+   "name": "Bryce and Cliff house",
+   "addr": "1411 Sycamore Lane",
+   "place": "northbrook",
+   "type": "house",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Bryce and Cliff’s house"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Bryce and Cliff’s house, Shermer",
+    "xy": [
+     467,
+     207
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.127,
+    -87.829,
+    "town"
+   ]
+  },
+  {
+   "id": "new-trier",
+   "name": "New Trier High School",
+   "addr": "Winnetka",
+   "place": "winnetka",
+   "type": "school",
+   "films": [
+    {
+     "f": "sc",
+     "scene": "Additional production location"
+    },
+    {
+     "f": "ws",
+     "scene": "Additional school exterior material"
+    },
+    {
+     "f": "ub",
+     "scene": "School scenes"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High School (exteriors)",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating public high school. Visit only as the school allows."
+   },
+   "geo": [
+    42.108,
+    -87.736,
+    "town"
+   ]
+  },
+  {
+   "id": "maine-north",
+   "name": "Maine North High School",
+   "addr": "9511 Harrison Street",
+   "place": "des-plaines",
+   "type": "school",
+   "films": [
+    {
+     "f": "bc",
+     "scene": "Exteriors, hallways and school scenes"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High School",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "No longer operating as a high school; the building has been repurposed. Current use: verify."
+   },
+   "myth": "The famous library is not Maine North’s library. It was a larger set built in the gym, inspired by the real one.",
+   "geo": [
+    42.05,
+    -87.87,
+    "street"
+   ]
+  },
+  {
+   "id": "glenbrook-north",
+   "name": "Glenbrook North High School",
+   "addr": "2300 Shermer Road",
+   "place": "northbrook",
+   "type": "school",
+   "films": [
+    {
+     "f": "bc",
+     "scene": "Additional interiors"
+    },
+    {
+     "f": "fb",
+     "scene": "Shermer High exteriors"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High School",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating public high school. Visit only as the school allows."
+   },
+   "myth": "Shermer is fictional, but Shermer Road is real: this school, which Hughes attended, sits on it.",
+   "geo": [
+    42.14,
+    -87.84,
+    "street"
+   ]
+  },
+  {
+   "id": "park-ridge-field",
+   "name": "Football field",
+   "addr": "Park Ridge (unconfirmed)",
+   "place": "park-ridge",
+   "type": "field",
+   "films": [
+    {
+     "f": "bc",
+     "scene": "Football-field material"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Shermer High football field",
+    "xy": [
+     427,
+     337
+    ]
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Location not identified."
+   },
+   "flags": [
+    "disputed"
+   ],
+   "myth": "The source only says this material “has been associated with” Park Ridge. Treat as unconfirmed until a production record places it.",
+   "geo": [
+    42.011,
+    -87.84,
+    "town"
+   ]
+  },
+  {
+   "id": "northbrook-court",
+   "name": "Northbrook Court",
+   "addr": "2290 Northbrook Court",
+   "place": "northbrook",
+   "type": "shop",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Mall scenes"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The mall, Shermer",
+    "xy": [
+     503,
+     400
+    ]
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "The mall has been substantially redeveloped in recent years. Extent: verify."
+   },
+   "geo": [
+    42.142,
+    -87.838,
+    "street"
+   ]
+  },
+  {
+   "id": "wyatt-house",
+   "name": "Wyatt’s house",
+   "addr": "280 Cedar Avenue",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Wyatt’s house, where Lisa is made"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Wyatt’s house, Shermer",
+    "xy": [
+     313,
+     295
+    ]
+   },
+   "now": {
+    "s": "demolished",
+    "basis": "dataset",
+    "note": "Demolished."
+   },
+   "geo": [
+    42.182,
+    -87.8,
+    "town"
+   ]
+  },
+  {
+   "id": "gary-house",
+   "name": "Gary’s house",
+   "addr": "1200 Linden Avenue",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Gary’s house"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Gary’s house, Shermer",
+    "xy": [
+     311,
+     349
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.182,
+    -87.8,
+    "town"
+   ]
+  },
+  {
+   "id": "hilly-house",
+   "name": "Hilly’s house",
+   "addr": "1445 Sheridan Road",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Hilly’s house"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Hilly’s house, Shermer",
+    "xy": [
+     336,
+     398
+    ]
+   },
+   "now": {
+    "s": "demolished",
+    "basis": "dataset",
+    "note": "Demolished."
+   },
+   "geo": [
+    42.182,
+    -87.8,
+    "town"
+   ]
+  },
+  {
+   "id": "deb-house",
+   "name": "Deb’s house",
+   "addr": "1150 Linden Avenue",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Deb’s house"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Deb’s house, Shermer",
+    "xy": [
+     380,
+     423
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.182,
+    -87.8,
+    "town"
+   ]
+  },
+  {
+   "id": "st-johns-chase",
+   "name": "St. Johns & Central avenues",
+   "addr": "Downtown Highland Park",
+   "place": "highland-park",
+   "type": "street",
+   "films": [
+    {
+     "f": "ws",
+     "scene": "Car-chase material"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Downtown Shermer",
+    "xy": [
+     433,
+     452
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public streets."
+   },
+   "geo": [
+    42.186,
+    -87.797,
+    "street"
+   ]
+  },
+  {
+   "id": "butternut",
+   "name": "Butternut Lane",
+   "addr": "Northbrook",
+   "place": "northbrook",
+   "type": "street",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Ferris running home"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Ferris’s run home, Shermer",
+    "xy": [
+     515,
+     188
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "A residential street. Respect the residents."
+   },
+   "geo": [
+    42.127,
+    -87.829,
+    "town"
+   ]
+  },
+  {
+   "id": "ben-rose",
+   "name": "Ben Rose House",
+   "addr": "370 Beech Street",
+   "place": "highland-park",
+   "type": "house",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Cameron Frye’s house and the glass Ferrari garage"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The Frye house, Shermer",
+    "xy": [
+     541,
+     274
+    ]
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Standing; privately owned. View from the public way only."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.165,
+    -87.775,
+    "street"
+   ]
+  },
+  {
+   "id": "glencoe-beach",
+   "name": "Glencoe Beach",
+   "addr": "Glencoe lakefront",
+   "place": "glencoe",
+   "type": "beach",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Cameron’s lakeside scene"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The lakefront, Shermer",
+    "xy": [
+     589,
+     299
+    ]
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public beach. Seasonal access rules: verify."
+   },
+   "xy": [
+    573,
+    202
+   ],
+   "geo": [
+    42.139,
+    -87.752,
+    "landmark"
+   ]
+  },
+  {
+   "id": "katie-office",
+   "name": "Katie Bueller’s office",
+   "addr": "583 Chestnut Street",
+   "place": "winnetka",
+   "type": "shop",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Katie Bueller’s real-estate office"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Katie Bueller’s real-estate office, Shermer",
+    "xy": [
+     477,
+     446
+    ]
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current occupant not verified."
+   },
+   "geo": [
+    42.108,
+    -87.736,
+    "town"
+   ]
+  },
+  {
+   "id": "bueller-house",
+   "name": "The Bueller house",
+   "addr": "Exterior filmed in Long Beach, California",
+   "place": null,
+   "type": "house",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Ferris’s house exterior"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The Bueller house, Shermer",
+    "xy": [
+     484,
+     247
+    ]
+   },
+   "shot": {
+    "card": "longbeach"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence in California. Not a Chicago-area location."
+   },
+   "flags": [
+    "annotated",
+    "private"
+   ],
+   "myth": "Fans routinely look for the Bueller house on the North Shore. The exterior was filmed in Long Beach, California — it is annotated here, not plotted in Illinois.",
+   "geo": null
+  },
+  {
+   "id": "art-institute",
+   "name": "Art Institute of Chicago",
+   "addr": "111 S. Michigan Avenue",
+   "place": "loop",
+   "type": "museum",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "The museum sequence"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Art Institute of Chicago"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Open to the public."
+   },
+   "xy": [
+    811,
+    851
+   ],
+   "geo": [
+    41.8796,
+    -87.6237,
+    "landmark"
+   ]
+  },
+  {
+   "id": "wrigley",
+   "name": "Wrigley Field",
+   "addr": "1060 W. Addison Street",
+   "place": "north-side",
+   "type": "stadium",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "The Cubs game"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Wrigley Field"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Standing; renovated since 1986."
+   },
+   "xy": [
+    752,
+    679
+   ],
+   "geo": [
+    41.9484,
+    -87.6553,
+    "landmark"
+   ]
+  },
+  {
+   "id": "sears",
+   "name": "Sears Tower",
+   "addr": "233 S. Wacker Drive",
+   "place": "loop",
+   "type": "tower",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "The Skydeck ledge"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Sears Tower"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Renamed Willis Tower in 2009."
+   },
+   "xy": [
+    788,
+    853
+   ],
+   "geo": [
+    41.8789,
+    -87.6359,
+    "landmark"
+   ]
+  },
+  {
+   "id": "parade",
+   "name": "Dearborn & Adams",
+   "addr": "Dearborn Street at Adams Street",
+   "place": "loop",
+   "type": "street",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "The parade sequence"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The parade route"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public streets."
+   },
+   "xy": [
+    801,
+    852
+   ],
+   "geo": [
+    41.8794,
+    -87.6292,
+    "street"
+   ]
+  },
+  {
+   "id": "merc",
+   "name": "Chicago Mercantile Exchange",
+   "addr": "The Loop",
+   "place": "loop",
+   "type": "civic",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "The trading floor"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Chicago Mercantile Exchange"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Most open-outcry trading pits have since closed. Verify which floor was used and its status."
+   },
+   "xy": [
+    786,
+    845
+   ],
+   "geo": [
+    41.882,
+    -87.637,
+    "town"
+   ]
+  },
+  {
+   "id": "chez-quis",
+   "name": "22 W. Schiller Street",
+   "addr": "22 W. Schiller Street",
+   "place": "loop",
+   "type": "shop",
+   "films": [
+    {
+     "f": "fb",
+     "scene": "Exterior used for Chez Quis"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Chez Quis (fictional restaurant)"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Exterior only. Current use not verified."
+   },
+   "myth": "Chez Quis never existed. Only the exterior is a real building.",
+   "xy": [
+    800,
+    781
+   ],
+   "geo": [
+    41.9077,
+    -87.6299,
+    "street"
+   ]
+  },
+  {
+   "id": "neal-house",
+   "name": "Neal Page house",
+   "addr": "230 Oxford Road",
+   "place": "kenilworth",
+   "type": "house",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "Neal’s home, the end of the journey"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Page house, Chicago suburbs"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.086,
+    -87.717,
+    "town"
+   ]
+  },
+  {
+   "id": "braidwood-inn",
+   "name": "Sun Motel",
+   "addr": "140 S. Hickory Street",
+   "place": "braidwood",
+   "type": "motel",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "The Braidwood Inn"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "The Braidwood Inn, on the road",
+    "card": "road"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "myth": "The film’s “Braidwood Inn” shares its name with the real Illinois town where it was shot.",
+   "geo": [
+    41.265,
+    -88.212,
+    "street"
+   ]
+  },
+  {
+   "id": "el-rancho",
+   "name": "El Rancho Motel",
+   "addr": "Gurnee",
+   "place": "gurnee",
+   "type": "motel",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "The El Rancho Motel sequence"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "The El Rancho Motel, on the road",
+    "card": "road"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "geo": [
+    42.37,
+    -87.902,
+    "town"
+   ]
+  },
+  {
+   "id": "woodstock-square",
+   "name": "Old Courthouse area",
+   "addr": "Downtown Woodstock",
+   "place": "woodstock",
+   "type": "civic",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "Courthouse area and downtown streets"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "A Midwestern town square, on the road",
+    "card": "road"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Historic town square. Verify specific buildings used."
+   },
+   "geo": [
+    42.315,
+    -88.448,
+    "town"
+   ]
+  },
+  {
+   "id": "randolph-bus",
+   "name": "20 E. Randolph Street",
+   "addr": "Around 20 E. Randolph Street",
+   "place": "loop",
+   "type": "station",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "The supposed St. Louis bus station"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "St. Louis bus station",
+    "card": "stlouis"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current use not verified."
+   },
+   "flags": [
+    "doubling"
+   ],
+   "myth": "The St. Louis bus station is in Chicago’s Loop.",
+   "xy": [
+    806,
+    838
+   ],
+   "geo": [
+    41.8846,
+    -87.6262,
+    "street"
+   ]
+  },
+  {
+   "id": "lasalle-cta",
+   "name": "LaSalle / Van Buren CTA station",
+   "addr": "LaSalle Street at Van Buren Street",
+   "place": "loop",
+   "type": "station",
+   "films": [
+    {
+     "f": "pta",
+     "scene": "Near the end of the film"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "LaSalle / Van Buren ‘L’ station"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating elevated station."
+   },
+   "xy": [
+    796,
+    858
+   ],
+   "geo": [
+    41.8768,
+    -87.6318,
+    "landmark"
+   ]
+  },
+  {
+   "id": "briggs-house",
+   "name": "Briggs house",
+   "addr": "56 Salem Lane",
+   "place": "skokie",
+   "type": "house",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "Jake and Kristy’s house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Briggs house, the suburbs"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.033,
+    -87.733,
+    "town"
+   ]
+  },
+  {
+   "id": "winnetka-cong",
+   "name": "Winnetka Congregational Church",
+   "addr": "725 Pine Street",
+   "place": "winnetka",
+   "type": "church",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "The wedding"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The wedding church"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Believed standing. Verify."
+   },
+   "geo": [
+    42.108,
+    -87.736,
+    "town"
+   ]
+  },
+  {
+   "id": "glencoe-metra",
+   "name": "Glencoe Metra station",
+   "addr": "Glencoe",
+   "place": "glencoe",
+   "type": "station",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "Commuter scenes"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The commuter station"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating Metra Union Pacific North station."
+   },
+   "geo": [
+    42.135,
+    -87.758,
+    "landmark"
+   ]
+  },
+  {
+   "id": "sunset-foods",
+   "name": "Sunset Foods area",
+   "addr": "Northbrook",
+   "place": "northbrook",
+   "type": "shop",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "Suburban errands"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The suburban grocery"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Exact location within Northbrook not identified."
+   },
+   "geo": [
+    42.127,
+    -87.829,
+    "town"
+   ]
+  },
+  {
+   "id": "evanston-hospital",
+   "name": "Hospital scenes",
+   "addr": "Evanston (building not identified)",
+   "place": "evanston",
+   "type": "civic",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "The birth"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The hospital"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Building not identified in the source."
+   },
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "field-museum",
+   "name": "Field Museum",
+   "addr": "Museum Campus",
+   "place": "loop",
+   "type": "museum",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "Museum scenes"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Field Museum"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Open to the public."
+   },
+   "xy": [
+    824,
+    884
+   ],
+   "geo": [
+    41.8663,
+    -87.617,
+    "landmark"
+   ]
+  },
+  {
+   "id": "excalibur",
+   "name": "Excalibur nightclub",
+   "addr": "632 N. Dearborn Street",
+   "place": "loop",
+   "type": "shop",
+   "films": [
+    {
+     "f": "shab",
+     "scene": "Nightclub scenes"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "A downtown nightclub"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "The building stands; the club’s current status has not been verified."
+   },
+   "xy": [
+    800,
+    816
+   ],
+   "geo": [
+    41.8936,
+    -87.6294,
+    "street"
+   ]
+  },
+  {
+   "id": "russell-house",
+   "name": "Russell family house",
+   "addr": "2602 Lincoln Street",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "ub",
+     "scene": "The Russell house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Russell house"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "romona",
+   "name": "Romona Elementary School",
+   "addr": "600 Romona Road",
+   "place": "wilmette",
+   "type": "school",
+   "films": [
+    {
+     "f": "ub",
+     "scene": "Maizy’s school"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Maizy’s school"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating elementary school."
+   },
+   "geo": [
+    42.072,
+    -87.723,
+    "town"
+   ]
+  },
+  {
+   "id": "dam-no1",
+   "name": "Dam No. 1 Woods",
+   "addr": "Forest preserve, Wheeling",
+   "place": "wheeling",
+   "type": "forest",
+   "films": [
+    {
+     "f": "ub",
+     "scene": "Forest-preserve scenes"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The woods"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public forest preserve."
+   },
+   "geo": [
+    42.139,
+    -87.929,
+    "town"
+   ]
+  },
+  {
+   "id": "windy-city-bowl",
+   "name": "Windy City Bowling Alley",
+   "addr": "Cicero",
+   "place": "cicero",
+   "type": "bowl",
+   "films": [
+    {
+     "f": "ub",
+     "scene": "The bowling alley"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The bowling alley"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "geo": [
+    41.846,
+    -87.754,
+    "town"
+   ]
+  },
+  {
+   "id": "milwaukee-pub",
+   "name": "495 N. Milwaukee Avenue",
+   "addr": "495 N. Milwaukee Avenue",
+   "place": "loop",
+   "type": "shop",
+   "films": [
+    {
+     "f": "ub",
+     "scene": "The pub scene"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The pub"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current occupant not verified."
+   },
+   "xy": [
+    760,
+    822
+   ],
+   "geo": [
+    41.8913,
+    -87.6513,
+    "street"
+   ]
+  },
+  {
+   "id": "mccallister",
+   "name": "McCallister house",
+   "addr": "671 Lincoln Avenue",
+   "place": "winnetka",
+   "type": "house",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "The McCallister house"
+    },
+    {
+     "f": "ha2",
+     "scene": "The McCallister house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The McCallister house"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Standing; privately owned. View from the public way only."
+   },
+   "flags": [
+    "private"
+   ],
+   "myth": "Much of the house seen on screen is not this house. Large interior sets were built in the former New Trier West High School in Northfield.",
+   "geo": [
+    42.108,
+    -87.736,
+    "town"
+   ]
+  },
+  {
+   "id": "murphy-house",
+   "name": "Mitch Murphy house",
+   "addr": "656 Lincoln Avenue",
+   "place": "winnetka",
+   "type": "house",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Mitch Murphy’s house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Murphy house, across the street"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.108,
+    -87.736,
+    "town"
+   ]
+  },
+  {
+   "id": "hw-pharmacy",
+   "name": "Hubbard Woods pharmacy",
+   "addr": "940 Green Bay Road",
+   "place": "hubbard-woods",
+   "type": "shop",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "The toothbrush scene"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The pharmacy"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current occupant not verified."
+   },
+   "geo": [
+    42.118,
+    -87.746,
+    "street"
+   ]
+  },
+  {
+   "id": "hw-park",
+   "name": "Hubbard Woods Park",
+   "addr": "Hubbard Woods",
+   "place": "hubbard-woods",
+   "type": "park",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Park scenes"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The park"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public park."
+   },
+   "geo": [
+    42.118,
+    -87.746,
+    "landmark"
+   ]
+  },
+  {
+   "id": "hw-metra",
+   "name": "Hubbard Woods Metra station",
+   "addr": "Hubbard Woods",
+   "place": "hubbard-woods",
+   "type": "station",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Station and rail bridge"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The train bridge"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating Metra station."
+   },
+   "geo": [
+    42.118,
+    -87.746,
+    "landmark"
+   ]
+  },
+  {
+   "id": "grand-food",
+   "name": "Grand Food Center",
+   "addr": "606 Green Bay Road",
+   "place": "winnetka",
+   "type": "shop",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Kevin’s grocery shopping"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The grocery store"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "geo": [
+    42.108,
+    -87.736,
+    "street"
+   ]
+  },
+  {
+   "id": "trinity-umc",
+   "name": "Trinity United Methodist Church",
+   "addr": "1024 W. Lake Avenue",
+   "place": "wilmette",
+   "type": "church",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Church exterior"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The church (exterior)"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Believed standing. Verify."
+   },
+   "myth": "On screen it is one church. Its exterior is in Wilmette; its interior is Grace Episcopal in Oak Park.",
+   "geo": [
+    42.072,
+    -87.723,
+    "town"
+   ]
+  },
+  {
+   "id": "grace-episcopal",
+   "name": "Grace Episcopal Church",
+   "addr": "924 Lake Street",
+   "place": "oak-park",
+   "type": "church",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Church interior"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The church (interior)"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Believed standing. Verify."
+   },
+   "myth": "On screen it is one church. Its interior is in Oak Park; its exterior is Trinity United Methodist in Wilmette.",
+   "geo": [
+    41.888,
+    -87.789,
+    "street"
+   ]
+  },
+  {
+   "id": "new-trier-west",
+   "name": "Former New Trier West High School",
+   "addr": "Northfield",
+   "place": "northfield",
+   "type": "stage",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Large interior sets, including much of the McCallister house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Inside the McCallister house"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Reported to have returned to school use as a New Trier campus. Verify."
+   },
+   "geo": [
+    42.1,
+    -87.781,
+    "town"
+   ]
+  },
+  {
+   "id": "ohare",
+   "name": "O’Hare International Airport",
+   "addr": "Chicago",
+   "place": "ohare",
+   "type": "plane",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "Airport scenes"
+    },
+    {
+     "f": "ha2",
+     "scene": "Chicago airport scenes; also doubled for portions of JFK"
+    },
+    {
+     "f": "ha3",
+     "scene": "Airport sequences"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "O’Hare — and, in Home Alone 2, partly JFK"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Operating airport; terminals much altered since."
+   },
+   "flags": [
+    "doubling"
+   ],
+   "geo": [
+    41.9786,
+    -87.9048,
+    "landmark"
+   ]
+  },
+  {
+   "id": "meigs",
+   "name": "Meigs Field",
+   "addr": "Northerly Island",
+   "place": "loop",
+   "type": "plane",
+   "films": [
+    {
+     "f": "ha",
+     "scene": "John Candy’s polka-band material"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The airfield"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "The airport closed in 2003. The site is now Northerly Island, a lakefront park."
+   },
+   "xy": [
+    840,
+    902
+   ],
+   "geo": [
+    41.859,
+    -87.608,
+    "landmark"
+   ]
+  },
+  {
+   "id": "leo-burnett",
+   "name": "Leo Burnett Building",
+   "addr": "35 W. Wacker Drive",
+   "place": "loop",
+   "type": "tower",
+   "films": [
+    {
+     "f": "cs",
+     "scene": "Grey’s office"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Grey’s law office"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Standing office tower."
+   },
+   "xy": [
+    800,
+    834
+   ],
+   "geo": [
+    41.8865,
+    -87.6295,
+    "landmark"
+   ]
+  },
+  {
+   "id": "haven",
+   "name": "Haven Middle School",
+   "addr": "2417 Prairie Avenue",
+   "place": "evanston",
+   "type": "school",
+   "films": [
+    {
+     "f": "cs",
+     "scene": "School scenes"
+    },
+    {
+     "f": "ha2",
+     "scene": "Kevin’s school"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Kevin’s school"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "An operating middle school."
+   },
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "hilton",
+   "name": "Hilton Chicago",
+   "addr": "720 S. Michigan Avenue",
+   "place": "loop",
+   "type": "hotel",
+   "films": [
+    {
+     "f": "ha2",
+     "scene": "Some Plaza Hotel interiors"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "The Plaza Hotel, New York",
+    "card": "newyork"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Operating hotel."
+   },
+   "flags": [
+    "doubling"
+   ],
+   "myth": "Some of Kevin’s Plaza Hotel is on Michigan Avenue.",
+   "xy": [
+    810,
+    869
+   ],
+   "geo": [
+    41.8724,
+    -87.6245,
+    "landmark"
+   ]
+  },
+  {
+   "id": "four-seasons",
+   "name": "Four Seasons Chicago",
+   "addr": "Gold Coast",
+   "place": "loop",
+   "type": "hotel",
+   "films": [
+    {
+     "f": "ha2",
+     "scene": "Pool material"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "The Plaza Hotel pool, New York",
+    "card": "newyork"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "The hotel’s current operating status has not been verified."
+   },
+   "flags": [
+    "doubling"
+   ],
+   "xy": [
+    809,
+    801
+   ],
+   "geo": [
+    41.8996,
+    -87.6249,
+    "street"
+   ]
+  },
+  {
+   "id": "duncans",
+   "name": "209 S. LaSalle Street",
+   "addr": "209 S. LaSalle Street",
+   "place": "loop",
+   "type": "civic",
+   "films": [
+    {
+     "f": "ha2",
+     "scene": "Some Duncan’s Toy Chest-associated material"
+    }
+   ],
+   "screen": {
+    "world": "elsewhere",
+    "as": "Duncan’s Toy Chest, New York",
+    "card": "newyork"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "This is the address of the Rookery Building. Which interior was used: verify."
+   },
+   "flags": [
+    "doubling"
+   ],
+   "xy": [
+    795,
+    852
+   ],
+   "geo": [
+    41.8792,
+    -87.6322,
+    "street"
+   ]
+  },
+  {
+   "id": "uptown",
+   "name": "Uptown Theatre",
+   "addr": "Uptown",
+   "place": "north-side",
+   "type": "theater",
+   "films": [
+    {
+     "f": "ha2",
+     "scene": "Additional production"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Additional production (scene not identified)"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Long closed to the public; restoration has been proposed. Verify."
+   },
+   "xy": [
+    745,
+    626
+   ],
+   "geo": [
+    41.9695,
+    -87.659,
+    "landmark"
+   ]
+  },
+  {
+   "id": "wilson-house",
+   "name": "Mr. Wilson house",
+   "addr": "1618 Ashland Avenue",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Mr. Wilson’s house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Wilson house, next door"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "dennis-house",
+   "name": "Dennis Mitchell house",
+   "addr": "1624 Ashland Avenue",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "The Mitchell house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Mitchell house"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "margaret-house",
+   "name": "Margaret’s house",
+   "addr": "1246 Gregory Avenue",
+   "place": "wilmette",
+   "type": "house",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Margaret’s house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Margaret’s house"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.072,
+    -87.723,
+    "town"
+   ]
+  },
+  {
+   "id": "miami-woods",
+   "name": "Miami Woods",
+   "addr": "Forest preserve, Niles",
+   "place": "niles",
+   "type": "forest",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Tree-house sequences"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The tree house"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public forest preserve."
+   },
+   "geo": [
+    42.019,
+    -87.803,
+    "town"
+   ]
+  },
+  {
+   "id": "hinsdale-garden",
+   "name": "Garden Club",
+   "addr": "134 S. Park Avenue",
+   "place": "hinsdale",
+   "type": "civic",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "The garden club"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The garden club"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current use not verified."
+   },
+   "geo": [
+    41.8,
+    -87.937,
+    "street"
+   ]
+  },
+  {
+   "id": "burns-field",
+   "name": "Burns Field Park",
+   "addr": "Hinsdale",
+   "place": "hinsdale",
+   "type": "park",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Park scenes"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The park"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public park."
+   },
+   "geo": [
+    41.8,
+    -87.937,
+    "landmark"
+   ]
+  },
+  {
+   "id": "hinsdale-downtown",
+   "name": "Downtown Hinsdale",
+   "addr": "Hinsdale",
+   "place": "hinsdale",
+   "type": "street",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Downtown streets"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Downtown"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public streets."
+   },
+   "geo": [
+    41.8,
+    -87.937,
+    "town"
+   ]
+  },
+  {
+   "id": "elgin-trestle",
+   "name": "Railroad bridge / trestle",
+   "addr": "Elgin",
+   "place": "elgin",
+   "type": "bridge",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "Railroad bridge area"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The railroad trestle"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Exact structure not identified."
+   },
+   "geo": [
+    42.037,
+    -88.281,
+    "town"
+   ]
+  },
+  {
+   "id": "rosemont-travelodge",
+   "name": "Travelodge",
+   "addr": "Rosemont",
+   "place": "rosemont",
+   "type": "motel",
+   "films": [
+    {
+     "f": "dm",
+     "scene": "The motel"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The motel"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "geo": [
+    41.995,
+    -87.884,
+    "town"
+   ]
+  },
+  {
+   "id": "cantigny",
+   "name": "Cantigny Park",
+   "addr": "Wheaton",
+   "place": "wheaton",
+   "type": "museum",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "The Cotwell mansion"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Cotwell mansion"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public park and museum estate."
+   },
+   "geo": [
+    41.856,
+    -88.161,
+    "landmark"
+   ]
+  },
+  {
+   "id": "ovaltine",
+   "name": "Ovaltine complex",
+   "addr": "Villa Park",
+   "place": "villa-park",
+   "type": "factory",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "Factory scenes"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "A Chicago factory"
+   },
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Reported converted to residences. Verify."
+   },
+   "geo": [
+    41.889,
+    -87.989,
+    "street"
+   ]
+  },
+  {
+   "id": "lincoln-apt",
+   "name": "Lincoln Avenue apartment",
+   "addr": "Lincoln Avenue",
+   "place": "north-side",
+   "type": "house",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "The criminals’ apartment"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The kidnappers’ apartment"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Specific address not given in the source."
+   },
+   "xy": [
+    725,
+    700
+   ],
+   "geo": [
+    41.94,
+    -87.67,
+    "town"
+   ]
+  },
+  {
+   "id": "michigan-congress",
+   "name": "Michigan Ave & Congress Pkwy",
+   "addr": "Michigan Avenue at Congress Parkway",
+   "place": "loop",
+   "type": "street",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "Street sequences"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Downtown Chicago"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public streets."
+   },
+   "xy": [
+    810,
+    861
+   ],
+   "geo": [
+    41.8757,
+    -87.6244,
+    "street"
+   ]
+  },
+  {
+   "id": "wabash-randolph",
+   "name": "Wabash & Randolph",
+   "addr": "Wabash Avenue at Randolph Street",
+   "place": "loop",
+   "type": "street",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "Street sequences"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Downtown Chicago"
+   },
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public streets."
+   },
+   "xy": [
+    807,
+    838
+   ],
+   "geo": [
+    41.8846,
+    -87.626,
+    "street"
+   ]
+  },
+  {
+   "id": "state-st",
+   "name": "State Street department stores",
+   "addr": "State Street",
+   "place": "loop",
+   "type": "shop",
+   "films": [
+    {
+     "f": "bdo",
+     "scene": "Department-store sequences"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The department store"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Specific store not identified in the source."
+   },
+   "xy": [
+    803,
+    845
+   ],
+   "geo": [
+    41.882,
+    -87.6278,
+    "street"
+   ]
+  },
+  {
+   "id": "pruitt-house",
+   "name": "Pruitt house",
+   "addr": "3026 Normandy Place",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "The Pruitt house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The Pruitt house"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "hess-house",
+   "name": "Mrs. Hess house",
+   "addr": "3025 Normandy Place",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "Mrs. Hess’s house"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Mrs. Hess’s house, across the street"
+   },
+   "now": {
+    "s": "private",
+    "basis": "editorial",
+    "note": "Private residence. Current condition not verified."
+   },
+   "flags": [
+    "private"
+   ],
+   "geo": [
+    42.045,
+    -87.688,
+    "town"
+   ]
+  },
+  {
+   "id": "noyes-hideout",
+   "name": "Criminal hideout",
+   "addr": "Around Noyes Street",
+   "place": "evanston",
+   "type": "house",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "The criminals’ hideout"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The hideout"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Specific address not given in the source."
+   },
+   "geo": [
+    42.058,
+    -87.684,
+    "town"
+   ]
+  },
+  {
+   "id": "pruitt-bank",
+   "name": "Mrs. Pruitt’s bank",
+   "addr": "4747 Dempster Street",
+   "place": "skokie",
+   "type": "civic",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "Mrs. Pruitt’s bank"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "The bank"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current occupant not verified."
+   },
+   "geo": [
+    42.041,
+    -87.747,
+    "street"
+   ]
+  },
+  {
+   "id": "touhy-stages",
+   "name": "Production stages",
+   "addr": "Around Touhy Avenue",
+   "place": "skokie",
+   "type": "stage",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "Studio stages"
+    }
+   ],
+   "screen": {
+    "world": "suburb",
+    "as": "Studio sets"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Facility not identified in the source."
+   },
+   "geo": [
+    42.012,
+    -87.74,
+    "town"
+   ]
+  },
+  {
+   "id": "south-side-96",
+   "name": "South Side / 96th Street",
+   "addr": "96th Street area",
+   "place": "south-side",
+   "type": "street",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "South Side material"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Chicago’s South Side"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "dataset",
+    "note": "Specific location not given in the source."
+   },
+   "geo": [
+    41.72,
+    -87.64,
+    "town"
+   ]
+  },
+  {
+   "id": "s-and-c",
+   "name": "S&C Electric area",
+   "addr": "Chicago (placement uncertain)",
+   "place": "north-side",
+   "type": "factory",
+   "films": [
+    {
+     "f": "ha3",
+     "scene": "Industrial material"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Industrial Chicago"
+   },
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Placement uncertain."
+   },
+   "flags": [
+    "disputed"
+   ],
+   "myth": "The source lists this beside South Side material, but S&C Electric’s headquarters is on the North Side. Plotted provisionally; verify.",
+   "xy": [
+    693,
+    552
+   ],
+   "geo": [
+    41.999,
+    -87.687,
+    "town"
+   ]
+  },
+  {
+   "flags": [],
+   "now": {
+    "s": "standing",
+    "basis": "editorial",
+    "note": "Public roadway. Reconfigured in places since 1983."
+   },
+   "id": "nlv-lsd",
+   "name": "Lake Shore Drive (opening drive)",
+   "addr": "Lake Shore Drive, Chicago",
+   "place": "north-side",
+   "type": "street",
+   "films": [
+    {
+     "f": "nlv",
+     "scene": "Chicago imagery as the Griswolds head out"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Leaving Chicago"
+   },
+   "geo": [
+    41.925,
+    -87.632,
+    "street"
+   ],
+   "xy": [
+    796,
+    738
+   ]
+  },
+  {
+   "flags": [],
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "Public expressway; rebuilt and widened in 2006–07."
+   },
+   "id": "nlv-ryan",
+   "name": "Dan Ryan Expressway",
+   "addr": "I-90/94, South Side, Chicago",
+   "place": "south-side",
+   "type": "street",
+   "films": [
+    {
+     "f": "nlv",
+     "scene": "Expressway imagery on the way out of town"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "Leaving Chicago"
+   },
+   "geo": [
+    41.83,
+    -87.631,
+    "street"
+   ],
+   "xy": [
+    798,
+    975
+   ]
+  },
+  {
+   "flags": [
+    "annotated",
+    "disputed",
+    "private"
+   ],
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "id": "nlv-house",
+   "name": "The Griswold house (1983)",
+   "addr": "Exterior location not confirmed — outside Illinois",
+   "place": null,
+   "type": "house",
+   "films": [
+    {
+     "f": "nlv",
+     "scene": "The Griswold family home"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The Griswold house, suburban Chicago",
+    "xy": [
+     204,
+     925
+    ]
+   },
+   "shot": {
+    "card": "backlot"
+   },
+   "myth": "The film places the Griswolds in suburban Chicago, but the house was not filmed there. Exact location unverified.",
+   "geo": null
+  },
+  {
+   "flags": [
+    "annotated",
+    "disputed"
+   ],
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "id": "pip-school",
+   "name": "Andie’s high school",
+   "addr": "John Marshall High School, Los Angeles (best guess)",
+   "place": null,
+   "type": "school",
+   "films": [
+    {
+     "f": "pip",
+     "scene": "The high school"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "The high school, an unnamed Hughes suburb",
+    "xy": [
+     402,
+     262
+    ]
+   },
+   "shot": {
+    "card": "backlot"
+   },
+   "myth": "Often folded into Shermer by fans. The film never names its town, and it was shot in Los Angeles.",
+   "geo": null
+  },
+  {
+   "flags": [
+    "annotated",
+    "disputed",
+    "private"
+   ],
+   "now": {
+    "s": "unknown",
+    "basis": "editorial",
+    "note": "Current status not verified."
+   },
+   "id": "pip-home",
+   "name": "Andie’s house",
+   "addr": "Los Angeles area (not confirmed)",
+   "place": null,
+   "type": "house",
+   "films": [
+    {
+     "f": "pip",
+     "scene": "Andie and Jack’s house"
+    }
+   ],
+   "screen": {
+    "world": "shermer",
+    "as": "Andie’s house, an unnamed Hughes suburb",
+    "xy": [
+     508,
+     378
+    ]
+   },
+   "shot": {
+    "card": "backlot"
+   },
+   "geo": null
+  },
+  {
+   "flags": [
+    "annotated",
+    "disputed"
+   ],
+   "now": {
+    "s": "changed",
+    "basis": "editorial",
+    "note": "A backlot facade. Backlot streets are redressed often; current appearance not verified."
+   },
+   "id": "ncv-house",
+   "name": "The Griswold house (1989)",
+   "addr": "Warner Bros. backlot, Burbank, California",
+   "place": null,
+   "type": "house",
+   "films": [
+    {
+     "f": "ncv",
+     "scene": "The Griswold house and the lights"
+    }
+   ],
+   "screen": {
+    "world": "chicago",
+    "as": "The Griswold house, suburban Chicago",
+    "xy": [
+     139,
+     900
+    ]
+   },
+   "shot": {
+    "card": "backlot"
+   },
+   "myth": "Fans look for the Christmas Vacation house in the Chicago suburbs. It is a studio-backlot facade in California.",
+   "geo": null
+  }
+ ],
+ "tour": {
+  "title": "Ferris’s day off",
+  "film": "fb",
+  "steps": [
+   {
+    "id": "glenbrook-north",
+    "text": "Morning at Shermer High. The real school sits on the real Shermer Road."
+   },
+   {
+    "id": "ben-rose",
+    "text": "Cameron’s house in Highland Park, and the glass garage."
+   },
+   {
+    "id": "sears",
+    "text": "Downtown: the Skydeck ledge."
+   },
+   {
+    "id": "merc",
+    "text": "The trading floor."
+   },
+   {
+    "id": "chez-quis",
+    "text": "Lunch at a restaurant that never existed."
+   },
+   {
+    "id": "wrigley",
+    "text": "An afternoon game at Wrigley."
+   },
+   {
+    "id": "art-institute",
+    "text": "The Art Institute."
+   },
+   {
+    "id": "parade",
+    "text": "The parade at Dearborn and Adams."
+   },
+   {
+    "id": "butternut",
+    "text": "The run home through Northbrook."
+   },
+   {
+    "id": "bueller-house",
+    "text": "And home — which, in the real world, is in California."
+   }
+  ]
+ }
+}
