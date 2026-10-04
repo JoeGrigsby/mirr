@@ -115,7 +115,7 @@ const LAYERS=[{k:'On screen',d:'Places as the films present them. Shermer’s lo
 {k:'Where shot',d:'Filming locations as listed in the source.'},
 {k:'There now',d:'The same places today. Demolished sites are drawn as outlines; changed sites are marked; anything not yet confirmed says so.'}];
 const rng=$('#layer');
-function setLayer(n,opts={}){if(opts.init){S.layer=n;rng.value=n;document.querySelectorAll('.lstop').forEach((b,i)=>b.classList.toggle('on',i===n));{const ld=$('#ldesc');if(ld)ld.textContent=LAYERS[n].d}$('#lname').textContent=LAYERS[n].k;renderKey();return}S.layer=n;localStorage.setItem('hughes.layer',n);rng.value=n;document.querySelectorAll('.lstop').forEach((b,i)=>b.classList.toggle('on',i===n));{const ld=$('#ldesc');if(ld)ld.textContent=LAYERS[n].d}$('#lname').textContent=LAYERS[n].k;renderKey();layout(true);if(S.sel)setTimeout(()=>hdBeside(S.sel),opts.quick?0:60);if(S.card)renderCard()}
+function setLayer(n,opts={}){if(opts.init){S.layer=n;rng.value=n;document.querySelectorAll('.lstop').forEach((b,i)=>b.classList.toggle('on',i===n));{const ld=$('#ldesc');if(ld)ld.textContent=LAYERS[n].d}{const ln=$('#lname');if(ln)ln.textContent=LAYERS[n].k}renderKey();return}S.layer=n;localStorage.setItem('hughes.layer',n);rng.value=n;document.querySelectorAll('.lstop').forEach((b,i)=>b.classList.toggle('on',i===n));{const ld=$('#ldesc');if(ld)ld.textContent=LAYERS[n].d}{const ln=$('#lname');if(ln)ln.textContent=LAYERS[n].k}renderKey();layout(true);if(S.sel)setTimeout(()=>hdBeside(S.sel),opts.quick?0:60);if(S.card)renderCard()}
 rng.addEventListener('input',()=>setLayer(+rng.value));
 document.querySelectorAll('.lstop').forEach((b,i)=>b.onclick=()=>setLayer(i));
 
