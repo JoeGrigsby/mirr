@@ -215,7 +215,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:
 <div class="year"><span class="no">N<span>o</span></span><span id="ft">000</span></div>
 </header>
 <section class="notes" id="notes" aria-live="polite"></section>
-<div class="sketch" data-ft="140" aria-hidden="true"></div><div class="sketch" data-ft="290" aria-hidden="true"></div><div class="sketch" data-ft="440" aria-hidden="true"></div><div class="sketch" data-ft="590" aria-hidden="true"></div><div class="sketch" data-ft="740" aria-hidden="true"></div><div class="sketch" data-ft="890" aria-hidden="true"></div><div class="sketch" data-ft="1040" aria-hidden="true"></div><div class="sketch" data-ft="1190" aria-hidden="true"></div>
+<div class="sketch" data-ft="140" aria-hidden="true"></div><div class="sketch" data-ft="290" aria-hidden="true"></div><div class="sketch" data-ft="440" aria-hidden="true"></div><div class="sketch" data-ft="590" aria-hidden="true"></div><div class="sketch" data-ft="740" aria-hidden="true"></div><div class="sketch" data-ft="890" aria-hidden="true"></div><div class="sketch" data-ft="1040" aria-hidden="true"></div><div class="sketch" data-ft="1190" aria-hidden="true"></div><div class="sketch" data-ft="1340" aria-hidden="true"></div>
 <nav class="walk" aria-label="Trail">
 <div class="ruler" id="ruler"><span class="mark" id="mark"></span></div>
 <div class="meta"><span id="here">Trailhead</span><span id="dist">0 / 1180 ft</span></div>
@@ -231,7 +231,7 @@ canvas{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:
 
 <script>
 const $=id=>document.getElementById(id);
-const END=1340;
+const END=1490;
 const WP=[
 {ft:0,no:'000',name:'Trailhead',kick:'Story Field Guide Projects',ttl:'Go Exploring.',lines:['Each Story Field Guide is a subject','turned into a place you can wander.']},
 {ft:140,no:'001',url:'star-trek-galaxy-flythrough.html',name:'Star Trek Galactic Atlas',lines:['Explore the fictional universe; across','locations, civilizations, and phenomena','charted across the Milky Way.']},
@@ -242,7 +242,8 @@ const WP=[
 {ft:890,no:'006',url:'singer-songwriter-trail-guide.html',name:'Singer-Songwriter Trail Guide',lines:['A road map of listening rooms;','the venues, towns and highways where','songwriters play their own songs.']},
 {ft:1040,no:'007',url:'mid-90s-alt-rock-field-guide.html',name:'Mid ’90s Alt Rock Mix Tape',lines:['Sixty-eight mid-’90s alt rock songs','mapped by energy and mood;','click your way to a mix tape.']},
 {ft:1190,no:'008',url:'movie-business-field-guide.html',name:'The Movie Business',lines:['Twenty-five years of box-office hits','and misses; 2,496 real films plotted','by budget, gross, critics and awards.']},
-{ft:1340,no:'100',url:'trail-end-map.html',name:'Trail End Map',ttl:'Trail’s end',lines:['The whole trail, seen from above;','every stop plotted on a moving map,','each guide one click away.']}];
+{ft:1340,no:'009',url:'john-hughes-chicagoland-field-guide.html',name:'John Hughes’ Chicagoland',lines:['Sixteen John Hughes films, mapped','across Chicago and the North Shore;','where it’s set, shot, and stands now.']},
+{ft:1490,no:'100',url:'trail-end-map.html',name:'Trail End Map',ttl:'Trail’s end',lines:['The whole trail, seen from above;','every stop plotted on a moving map,','each guide one click away.']}];
 function hash(a,b){let x=Math.imul(a|0,0x27d4eb2d)^Math.imul((b|0)+0x165667b1,0x9e3779b1);x^=x>>>15;x=Math.imul(x,0x85ebca6b);x^=x>>>13;x=Math.imul(x,0xc2b2ae35);x^=x>>>16;return(x>>>0)/4294967296}
 function rng(s){return()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 function mk(w,h){const c=document.createElement('canvas');c.width=w;c.height=h;return c}
