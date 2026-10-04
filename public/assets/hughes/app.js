@@ -42,7 +42,7 @@ pts.forEach(p=>{if(p.fixed){p.x=p.tx;p.y=p.ty;return}const kk=p.loop?.012:.035;p
 const out={},tgt={};pts.forEach(p=>{out[p.id]=[p.x,p.y];if(!p.fixed)tgt[p.id]=[p.tx,p.ty]});Object.keys(T).forEach(id=>{if(!out[id])out[id]=[T[id][0],T[id][1]]});return {pos:out,cards,tgt,oncard:Object.keys(T).filter(id=>T[id][2])};}
 
 // ---------- state ----------
-const S={layer:1,films:new Set(data.films.map(f=>f.id)),sel:null,focus:null,card:null,panel:true,tour:null};
+const S={layer:0,films:new Set(data.films.map(f=>f.id)),sel:null,focus:null,card:null,panel:true,tour:null};
 if(!(S.layer>=0&&S.layer<=2))S.layer=1;
 const cur={};let POS={};
 const visIds=()=>new Set(L.filter(l=>l.films.some(a=>S.films.has(a.f))).map(l=>l.id));
