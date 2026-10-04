@@ -236,6 +236,12 @@ p{margin:0;font-size:14px;line-height:1.55;text-wrap:pretty}
 .fchk:focus-visible,.fname:focus-visible{outline:2px solid var(--am);outline-offset:2px}
 .fname{all:unset;cursor:pointer;display:flex;align-items:baseline;gap:6px;padding:5px 6px;margin-left:-6px;border-radius:5px;font-size:13.5px;min-width:0}
 .fname span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.flock{animation:flockCircle 26s ease-in-out infinite}.flock.f1{animation-duration:31s;animation-delay:-9s}.flock.f2{animation-duration:23s;animation-delay:-4s}
+@keyframes flockCircle{0%{transform:translate(0,0)}25%{transform:translate(34px,-10px)}50%{transform:translate(64px,2px)}75%{transform:translate(30px,12px)}100%{transform:translate(0,0)}}
+.bird{animation:birdFlap .9s ease-in-out infinite alternate}@keyframes birdFlap{from{transform:scaleY(1)}to{transform:scaleY(.45)}}
+.lakewave{animation:waveSway 7s ease-in-out infinite}.lakewave.w1{animation-duration:8.5s;animation-delay:-3s}.lakewave.w2{animation-duration:6.2s;animation-delay:-5s}
+@keyframes waveSway{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,1px)}}
+@media (prefers-reduced-motion:reduce){.flock,.bird,.lakewave{animation:none}}
 .fname small{color:var(--mu);font-size:11.5px;font-variant-numeric:tabular-nums;white-space:nowrap;flex:none}
 .fname:hover{background:#EFE4CF}
 .fl.off .fname span{color:var(--mu)}
@@ -367,7 +373,6 @@ details.sec:not([open]) summary::after{transform:rotate(-45deg);margin-top:0}
 <div class="span" id="span"></div>
 <a class="back" href="./">← All Field Guides</a>
 </header>
-<details class="box"><summary><span id="lname">Where shot</span></summary><div class="instr">Drag to pan · scroll to zoom · pick a place</div></details>
 <div class="find"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="4.5"></circle><path d="M9.5 9.5L13 13"></path></svg><input id="q" type="search" placeholder="FIND A PLACE OR FILM" autocomplete="off" aria-label="Find a place or film"><kbd>/</kbd><div class="qr" id="qr" hidden=""></div></div>
 <details class="box"><summary>Films</summary><div class="fbar"><span class="instr">Toggle locations</span><span><button class="linkb" id="fall">All</button> · <button class="linkb" id="fnone">None</button></span></div><div id="films"></div></details>
 <details class="box"><summary>Go to</summary>
