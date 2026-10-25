@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Owns the Aisle · Story Field Guide № 010</title>
+<meta name="description" content="Who owns the grocery aisle: 55 consumer-goods companies and 670 US brands on a chart, a floor plan, a brand wheel and a cluster map, with the ownership deals of 2023–2026.">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>window.__resources=Object.assign(window.__resources||{},{"https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js","https://unpkg.com/@babel/standalone@7.29.0/babel.min.js":"vendor/babel.min.js"})</script>
+<script src="assets/cpg/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="modulepreload" href="assets/cpg/cpg-data.js">
+<link rel="modulepreload" href="assets/cpg/logos-co.js">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:oklch(0.965 0.012 85);color:oklch(0.22 0.012 60);font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:oklch(0.22 0.012 60);text-decoration:underline;text-decoration-color:oklch(0.75 0.02 70);text-underline-offset:3px}
+a:hover{color:oklch(0.5 0.14 40);text-decoration-color:currentColor}
+input::placeholder{color:oklch(0.55 0.012 60)}
+</style>
+</helmet>
+<div style="max-width:1480px;margin:0 auto;padding:36px clamp(16px,3vw,40px) 64px;display:flex;flex-direction:column;gap:28px">
+
+  <nav style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60);margin-bottom:-12px">
+    <a href="./" style="text-decoration:none;color:oklch(0.22 0.012 60)">← All Field Guides</a>
+  </nav>
+  <header style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;border-bottom:1px solid oklch(0.22 0.012 60);padding-bottom:20px">
+    <div style="display:flex;flex-direction:column;gap:8px;max-width:760px">
+      <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">Field Guide № 010 - A Story Field Guide Project</div>
+      <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6vw,84px);line-height:0.95;letter-spacing:-0.01em">Who Owns the <em>Aisle</em></h1>
+      
+      </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+    <div style="display:flex;align-items:center;gap:4px;padding:4px;border:1px solid oklch(0.82 0.012 80);border-radius:999px;background:oklch(0.985 0.006 85);max-width:100%;overflow-x:auto;scrollbar-width:none">
+      <button onClick="{{ setModeChart }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ modeChartBg }};color:{{ modeChartFg }}">Chart</button>
+      <button onClick="{{ setModePlan }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ modePlanBg }};color:{{ modePlanFg }}">Floor Plan</button>
+      <button onClick="{{ setModeUni }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ modeUniBg }};color:{{ modeUniFg }}">Brand Wheel</button>
+      <button onClick="{{ setModeClu }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ modeCluBg }};color:{{ modeCluFg }}">Cluster</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:4px;padding:4px;border:1px solid oklch(0.82 0.012 80);border-radius:999px;background:oklch(0.985 0.006 85);max-width:100%;overflow-x:auto;scrollbar-width:none">
+      <button onClick="{{ setScopeAll }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ scopeAllBg }};color:{{ scopeAllFg }}">All 55 Companies</button>
+      <button onClick="{{ setScopeOrig }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ scopeOrigBg }};color:{{ scopeOrigFg }}">Original 11</button>
+      <button onClick="{{ setScopeTop }}" style="border:0;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:8px 16px;border-radius:999px;white-space:nowrap;background:{{ scopeTopBg }};color:{{ scopeTopFg }}">Top 5</button>
+    </div>
+    </div>
+  </header>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60);margin-right:6px">Category</span>
+    <button onClick="{{ clearCats }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:7px 12px;border-radius:999px;border:1px solid {{ allBorder }};background:{{ allBg }};color:{{ allFg }}" style-hover="border-color:oklch(0.22 0.012 60)">
+      <span>All</span>
+      <span style="font-family:'Geist Mono',monospace;font-size:11px;opacity:0.7">{{ allCount }}</span>
+    </button>
+    <sc-for list="{{ chips }}" as="ch" hint-placeholder-count="8">
+      <button onClick="{{ ch.toggle }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:7px 12px;border-radius:999px;border:1px solid {{ ch.border }};background:{{ ch.bg }};color:oklch(0.22 0.012 60);opacity:{{ ch.opacity }}" style-hover="border-color:oklch(0.22 0.012 60)">
+        <span style="width:10px;height:10px;border-radius:2px;background:{{ ch.color }}"></span>
+        <span style="white-space:nowrap">{{ ch.name }}</span>
+        <span style="font-family:'Geist Mono',monospace;font-size:11px;color:oklch(0.48 0.012 60)">{{ ch.count }}</span>
+      </button>
+    </sc-for>
+  </div>
+
+  <main style="display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start">
+    <div ref="{{ vpRef }}" tabindex="0" style="flex:1.35 1 520px;min-width:0;position:relative;overflow:hidden;outline:none;cursor:{{ vpCursor }};touch-action:{{ vpTouch }}" onPointerDown="{{ panDown }}" onPointerMove="{{ panMove }}" onPointerUp="{{ panUp }}" onPointerLeave="{{ panUp }}" onClickCapture="{{ panClick }}">
+      <div style="position:absolute;top:0;right:0;z-index:3;display:flex;align-items:center;gap:2px;padding:3px;border:1px solid oklch(0.82 0.012 80);border-radius:999px;background:oklch(0.985 0.006 85)" onPointerDown="{{ stop }}">
+        <button onClick="{{ zoomOut }}" title="Zoom out (−)" style="border:0;cursor:pointer;background:transparent;font:500 13px 'Geist',sans-serif;color:oklch(0.22 0.012 60);padding:6px 10px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:6px" style-hover="background:oklch(0.93 0.012 85)">−</button>
+        <button onClick="{{ zoomReset }}" title="Reset view (0)" style="border:0;cursor:pointer;background:transparent;font:500 13px 'Geist',sans-serif;color:oklch(0.22 0.012 60);padding:6px 10px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:6px;font-family:'Geist Mono',monospace;font-size:12px;min-width:52px;justify-content:center" style-hover="background:oklch(0.93 0.012 85)">{{ zoomPct }}</button>
+        <button onClick="{{ zoomIn }}" title="Zoom in (+)" style="border:0;cursor:pointer;background:transparent;font:500 13px 'Geist',sans-serif;color:oklch(0.22 0.012 60);padding:6px 10px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:6px" style-hover="background:oklch(0.93 0.012 85)">+</button>
+        <span style="width:1px;height:18px;background:oklch(0.86 0.012 80);margin:0 2px"></span>
+        <button onClick="{{ download }}" title="Download PNG" style="border:0;cursor:pointer;background:transparent;font:500 13px 'Geist',sans-serif;color:oklch(0.22 0.012 60);padding:6px 10px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:6px" style-hover="background:oklch(0.93 0.012 85)"><svg viewBox="0 0 20 20" style="width:14px;height:14px"><path d="M10 3v10m-4-4l4 4 4-4M4 16h12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><span>PNG</span></button>
+      </div>
+      <div style="position:{{ chartPos }};top:0;left:0;right:0;opacity:{{ chartOp }};transform:{{ chartTf }};pointer-events:{{ chartPE }};transform-origin:50% 35%;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+      <div style="position:relative;width:100%;max-width:{{ chartMax }};aspect-ratio:10 / 9.4;margin:0 auto;container-type:inline-size;transform:{{ zoomTf }};transform-origin:50% 50%;transition:transform .18s ease-out;" onMouseLeave="{{ leave }}">
+        <svg ref="{{ svgCRef }}" viewBox="-500 -440 1000 940" style="width:100%;height:100%;display:block;overflow:visible">
+          <circle cx="0" cy="0" r="157" fill="#ffffff"></circle>
+          <sc-for list="{{ cells }}" as="c" hint-placeholder-count="0">
+            <path d="{{ c.d }}" fill="{{ c.fill }}" stroke="{{ c.stroke }}" stroke-width="{{ c.sw }}" onMouseEnter="{{ c.enter }}" onClick="{{ c.click }}" style="cursor:pointer"></path>
+          </sc-for>
+          <sc-if value="{{ hoverWedge }}" hint-placeholder-val="{{ false }}">
+            <path d="{{ hoverWedge }}" fill="none" stroke="oklch(0.55 0.012 60)" stroke-width="1.5" style="pointer-events:none"></path>
+          </sc-if>
+          <sc-if value="{{ selWedge }}" hint-placeholder-val="{{ false }}">
+            <path d="{{ selWedge }}" fill="none" stroke="oklch(0.22 0.012 60)" stroke-width="2.5" style="pointer-events:none"></path>
+          </sc-if>
+          <g>{{ svgEls }}</g>
+          <g>{{ centerEls }}</g>
+        </svg>
+        <div style="position:absolute;left:0;right:0;top:-6.38%;height:106.38%;display:flex;align-items:center;justify-content:center;pointer-events:none">
+          <sc-if value="{{ cShow }}" hint-placeholder-val="{{ false }}">
+          <div style="width:26cqw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.7cqw">
+            <sc-if value="{{ cLogo }}" hint-placeholder-val="{{ false }}">
+              <div style="width:6.5cqw;height:6.5cqw;border-radius:50%;background:#fff;border:1px solid oklch(0.86 0.012 80);display:flex;align-items:center;justify-content:center;overflow:hidden"><img data-lsrc="{{ cLogo }}" data-fb="{{ cLogoFb }}" alt="" onError="{{ hideImg }}" style="width:62%;height:62%;object-fit:contain"></div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:0.8cqw;font-family:'Geist Mono',monospace;font-size:max(10px,1.15cqw);letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">
+              <sc-if value="{{ centerDot }}" hint-placeholder-val="{{ false }}"><span style="width:1.1cqw;height:1.1cqw;border-radius:2px;background:{{ centerDot }}"></span></sc-if>
+              <span>{{ cKicker }}</span>
+            </div>
+            <div style="font-family:'Instrument Serif',serif;font-size:max(20px,{{ cTitleSize }}cqw);line-height:1;text-wrap:balance">{{ cTitle }}</div>
+            <div style="font-size:max(11px,1.45cqw);line-height:1.4;color:oklch(0.35 0.012 60);text-wrap:balance">{{ cSub }}</div>
+            <sc-if value="{{ cMeta }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:max(10px,1.2cqw);line-height:1.45;color:oklch(0.48 0.012 60);text-wrap:balance">{{ cMeta }}</div>
+            </sc-if>
+          </div>
+          </sc-if>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:12px;font-size:12px;color:oklch(0.48 0.012 60)">
+        <span>Clockwise from top: {{ orderNote }}</span>
+        <span>Hover a cell to see its brands · click to open the company</span>
+        <span>Zoom: +/− or ⌘/Ctrl + scroll · Pan: drag or arrow keys</span>
+      </div>
+      </div>
+
+      <div style="position:{{ planPos }};top:0;left:0;right:0;opacity:{{ planOp }};transform:{{ planTf }};pointer-events:{{ planPE }};transform-origin:50% 35%;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+        <div style="width:100%;max-width:{{ planMax }};margin:0 auto;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:flex-start">
+            <button onClick="{{ togglePlanIcons }}" style="display:flex;align-items:center;gap:8px;cursor:pointer;font:500 13px 'Geist',sans-serif;padding:7px 12px;border-radius:999px;border:1px solid {{ piBorder }};background:{{ piBg }};color:{{ piFg }}" style-hover="border-color:oklch(0.22 0.012 60)">
+              <span style="width:26px;height:14px;border-radius:999px;background:{{ piTrack }};position:relative;flex:none"><span style="position:absolute;top:2px;left:{{ piKnob }};width:10px;height:10px;border-radius:50%;background:#fff;transition:left .2s"></span></span>
+              <span>Show Icons</span>
+            </button>
+          </div>
+          <div onMouseLeave="{{ leavePlan }}" style="padding:clamp(4px,1vw,8px) 0;transform:{{ zoomTf }};transform-origin:50% 50%;transition:transform .18s ease-out;">
+            <svg ref="{{ svgPRef }}" viewBox="0 0 680 456" style="width:100%;display:block;overflow:visible">
+              <rect x="20" y="20" width="640" height="420" fill="none" stroke="oklch(0.22 0.012 60)" stroke-width="1"></rect>
+              <rect x="108" y="296" width="142" height="84" fill="oklch(0.985 0.006 85)" stroke="oklch(0.86 0.012 80)" stroke-width="0.6"></rect>
+              <rect x="254" y="384" width="46" height="52" fill="oklch(0.985 0.006 85)" stroke="oklch(0.86 0.012 80)" stroke-width="0.6"></rect>
+              <sc-for list="{{ zones }}" as="z" hint-placeholder-count="0">
+                <rect x="{{ z.x }}" y="{{ z.y }}" width="{{ z.w }}" height="{{ z.h }}" rx="{{ z.rx }}" fill="{{ z.fill }}" stroke="{{ z.stroke }}" stroke-width="{{ z.sw }}" onMouseEnter="{{ z.enter }}" onClick="{{ z.click }}" style="cursor:{{ z.cursor }};transition:fill .35s ease"></rect>
+              </sc-for>
+              <g style="pointer-events:none">{{ planEls }}</g>
+            </svg>
+          </div>
+          <sc-if value="{{ pBox }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:8px;min-height:74px;padding:12px 14px;border:1px solid oklch(0.86 0.012 80);border-radius:4px;background:oklch(0.985 0.006 85)">
+            <sc-if value="{{ pHas }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px">
+                <span style="font-family:'Instrument Serif',serif;font-size:24px;line-height:1.1">{{ pTitle }}</span>
+                <span style="font-size:13px;color:oklch(0.48 0.012 60)">{{ pSub }}</span>
+              </div>
+              <div style="display:flex;flex-wrap:wrap;gap:6px">
+                <sc-for list="{{ pMicros }}" as="m" hint-placeholder-count="3">
+                  <span style="display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 8px;border-radius:3px;background:oklch(0.94 0.012 85);color:oklch(0.3 0.012 60)"><span style="width:8px;height:8px;border-radius:2px;background:{{ m.color }}"></span>{{ m.name }}<span style="font-family:'Geist Mono',monospace;color:oklch(0.48 0.012 60)">{{ m.n }}</span></span>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ pNone }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;font-size:13px;line-height:1.5;color:oklch(0.4 0.012 60)">
+                <span style="flex:1 1 280px">{{ pHint }}</span>
+                <sc-if value="{{ pCo }}" hint-placeholder-val="{{ false }}">
+                  <button onClick="{{ clearCo }}" style="border:1px solid oklch(0.22 0.012 60);background:transparent;border-radius:999px;cursor:pointer;font:500 12px 'Geist',sans-serif;padding:6px 12px;color:oklch(0.22 0.012 60)" style-hover="background:oklch(0.22 0.012 60);color:oklch(0.965 0.012 85)">Show All Companies</button>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+          </sc-if>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;font-size:12px;color:oklch(0.48 0.012 60)">
+            <span>Colour: The Zone’s Main Category · Shade: Brands Per Zone (1–2, 3–5, 6–9, 10+)</span>
+            <span>Click an aisle to list its brands by micro category</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="position:{{ uniPos }};top:0;left:0;right:0;opacity:{{ uniOp }};transform:{{ uniTf }};pointer-events:{{ uniPE }};transform-origin:50% 35%;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+        <div style="position:relative;width:100%;max-width:min({{ chartMax }}, calc(100vh - 60px));aspect-ratio:1;margin:0 auto;container-type:inline-size;transform:{{ zoomTf }};transform-origin:50% 50%;transition:transform .18s ease-out;" onMouseLeave="{{ leave }}">
+          <svg ref="{{ svgURef }}" viewBox="-500 -500 1000 1000" style="width:100%;height:100%;display:block;overflow:visible">
+            <g>{{ uniEls }}</g>
+          </svg>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none">
+          <sc-if value="{{ cShow }}" hint-placeholder-val="{{ false }}">
+          <div style="width:26cqw;display:flex;flex-direction:column;align-items:center;text-align:center;gap:0.7cqw">
+            <sc-if value="{{ cLogo }}" hint-placeholder-val="{{ false }}">
+              <div style="width:6.5cqw;height:6.5cqw;border-radius:50%;background:#fff;border:1px solid oklch(0.86 0.012 80);display:flex;align-items:center;justify-content:center;overflow:hidden"><img data-lsrc="{{ cLogo }}" data-fb="{{ cLogoFb }}" alt="" onError="{{ hideImg }}" style="width:62%;height:62%;object-fit:contain"></div>
+            </sc-if>
+            <div style="display:flex;align-items:center;gap:0.8cqw;font-family:'Geist Mono',monospace;font-size:max(10px,1.15cqw);letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">
+              <sc-if value="{{ centerDot }}" hint-placeholder-val="{{ false }}"><span style="width:1.1cqw;height:1.1cqw;border-radius:2px;background:{{ centerDot }}"></span></sc-if>
+              <span>{{ cKicker }}</span>
+            </div>
+            <div style="font-family:'Instrument Serif',serif;font-size:max(20px,{{ cTitleSize }}cqw);line-height:1;text-wrap:balance">{{ cTitle }}</div>
+            <div style="font-size:max(11px,1.45cqw);line-height:1.4;color:oklch(0.35 0.012 60);text-wrap:balance">{{ cSub }}</div>
+            <sc-if value="{{ cMeta }}" hint-placeholder-val="{{ false }}">
+              <div style="font-size:max(10px,1.2cqw);line-height:1.45;color:oklch(0.48 0.012 60);text-wrap:balance">{{ cMeta }}</div>
+            </sc-if>
+          </div>
+          </sc-if>
+        </div>
+      
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:12px;font-size:12px;color:oklch(0.48 0.012 60)">
+          <span>Wedges sized by number of brands</span>
+          <span>Hover a logo to identify it · click to open its owner</span>
+        </div>
+      </div>
+
+      <div style="position:{{ cluPos }};top:0;left:0;right:0;opacity:{{ cluOp }};transform:{{ cluTf }};pointer-events:{{ cluPE }};transform-origin:50% 35%;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)">
+        <div style="position:relative;width:100%;max-width:{{ chartMax }};aspect-ratio:1;margin:0 auto">
+          <canvas ref="{{ clRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab"></canvas>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:12px;font-size:12px;color:oklch(0.48 0.012 60)">
+          <span>Drag to rotate · Shift/right-drag to pan · Scroll or pinch to zoom</span>
+          <span>Click a category label to focus · click a brand or company to open it</span>
+        </div>
+      </div>
+    </div>
+
+    <aside style="flex:{{ asideFlex }};min-width:0;max-height:{{ asideMaxH }};position:{{ asidePos }};top:20px;display:flex;flex-direction:column;border:1px solid oklch(0.82 0.012 80);background:oklch(0.985 0.006 85);border-radius:4px">
+      <sc-if value="{{ panelClosed }}" hint-placeholder-val="{{ true }}">
+        <button onClick="{{ togglePanel }}" title="Show company details" style="min-height:{{ stripMinH }};border:0;background:transparent;cursor:pointer;display:flex;flex-direction:{{ stripDir }};align-items:center;gap:14px;padding:{{ stripPad }};color:oklch(0.22 0.012 60)" style-hover="background:oklch(0.94 0.014 85)">
+          <svg viewBox="0 0 20 20" style="width:16px;height:16px"><path d="M12.5 5l-5 5 5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span style="writing-mode:{{ stripWM }};font:500 13px 'Geist',sans-serif;letter-spacing:0.02em">Company Details &amp; Search</span>
+        </button>
+      </sc-if>
+      <sc-if value="{{ panelOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;flex:1;min-height:0">
+      <div style="padding:14px 16px;border-bottom:1px solid oklch(0.86 0.012 80);display:flex;align-items:center;gap:10px">
+        <svg viewBox="0 0 20 20" style="width:16px;height:16px;flex:none"><circle cx="8.5" cy="8.5" r="6" fill="none" stroke="oklch(0.48 0.012 60)" stroke-width="1.6"></circle><path d="M13 13l5 5" stroke="oklch(0.48 0.012 60)" stroke-width="1.6" stroke-linecap="round"></path></svg>
+        <input value="{{ query }}" onChange="{{ onQuery }}" placeholder="Search 670 brands or 55 companies" style="flex:1;min-width:0;border:0;outline:none;background:transparent;font:400 15px 'Geist',sans-serif;color:oklch(0.22 0.012 60)">
+        <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}">
+          <button onClick="{{ clearQuery }}" style="border:0;background:none;cursor:pointer;font:500 12px 'Geist',sans-serif;color:oklch(0.48 0.012 60)">Clear</button>
+        </sc-if>
+        <button onClick="{{ togglePanel }}" title="Collapse panel" style="border:0;background:none;cursor:pointer;padding:4px;margin-right:-4px;display:flex;color:oklch(0.48 0.012 60)" style-hover="color:oklch(0.22 0.012 60)"><svg viewBox="0 0 20 20" style="width:16px;height:16px"><path d="M7.5 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+      </div>
+      <div ref="{{ panelRef }}" style="overflow:auto;flex:1;min-height:0">
+
+        <sc-if value="{{ showSearch }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:12px 16px 6px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">{{ searchHead }}</div>
+          <sc-for list="{{ coMatches }}" as="r" hint-placeholder-count="0">
+            <div onClick="{{ r.click }}" style="display:flex;align-items:center;gap:12px;padding:10px 16px;cursor:pointer;border-bottom:1px solid oklch(0.92 0.01 80)" style-hover="background:oklch(0.94 0.014 85)">
+              <span style="width:10px;height:10px;border-radius:2px;background:oklch(0.22 0.012 60);flex:none"></span>
+              <span style="flex:1;font-weight:500;font-size:14px">{{ r.name }}</span>
+              <span style="font-family:'Geist Mono',monospace;font-size:12px;color:oklch(0.48 0.012 60)">{{ r.meta }}</span>
+            </div>
+          </sc-for>
+          <sc-for list="{{ brMatches }}" as="r" hint-placeholder-count="0">
+            <div onClick="{{ r.click }}" style="display:flex;align-items:center;gap:12px;padding:10px 16px;cursor:pointer;border-bottom:1px solid oklch(0.92 0.01 80)" style-hover="background:oklch(0.94 0.014 85)">
+              <span style="width:10px;height:10px;border-radius:2px;background:{{ r.color }};flex:none"></span>
+              <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                <span style="font-weight:500;font-size:14px">{{ r.name }}</span>
+                <span style="font-size:12px;color:oklch(0.48 0.012 60)">{{ r.sub }}</span>
+              </span>
+              <span style="font-size:12px;color:oklch(0.35 0.012 60);text-align:right">{{ r.co }}</span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:24px 16px;font-size:14px;color:oklch(0.48 0.012 60)">No brand or company matches “{{ query }}” in this view.</div>
+          </sc-if>
+        </sc-if>
+
+        <sc-if value="{{ showList }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:12px 16px 8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">
+            <span>{{ listHead }}</span><span>FY2025 Revenue · USD</span>
+          </div>
+          <sc-for list="{{ coRows }}" as="r" hint-placeholder-count="12">
+            <div onClick="{{ r.click }}" onMouseEnter="{{ r.enter }}" style="display:flex;flex-direction:column;gap:7px;padding:10px 16px 11px;cursor:pointer;border-top:1px solid oklch(0.92 0.01 80);opacity:{{ r.opacity }}" style-hover="background:oklch(0.94 0.014 85)">
+              <div style="display:flex;align-items:baseline;gap:10px">
+                <span style="font-weight:500;font-size:14px">{{ r.name }}</span>
+                <sc-if value="{{ r.orig }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:oklch(0.48 0.012 60);border:1px solid oklch(0.82 0.012 80);padding:1px 5px;border-radius:3px">Orig. 11</span></sc-if>
+                <span style="flex:1"></span>
+                <span style="font-family:'Geist Mono',monospace;font-size:12px;color:{{ r.revColor }}">{{ r.rev }}</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="display:flex;height:6px;gap:1px;width:{{ r.barW }}%">
+                  <sc-for list="{{ r.segs }}" as="s" hint-placeholder-count="3"><span style="flex:{{ s.n }} 1 0;background:{{ s.color }}"></span></sc-for>
+                </div>
+                <span style="font-family:'Geist Mono',monospace;font-size:11px;color:oklch(0.48 0.012 60)">{{ r.count }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </sc-if>
+
+        <sc-if value="{{ showZone }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:14px 18px 16px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid oklch(0.86 0.012 80)">
+            <button onClick="{{ back }}" style="align-self:flex-start;border:0;background:none;cursor:pointer;padding:0;font:500 12px 'Geist',sans-serif;color:oklch(0.48 0.012 60)" style-hover="color:oklch(0.22 0.012 60)">{{ zBackLabel }}</button>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="width:44px;height:44px;flex:none;border-radius:6px;background:{{ z.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Geist Mono',monospace;font-size:14px;font-weight:500">{{ z.code }}</div>
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                <div style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1">{{ z.name }}</div>
+                <div style="font-size:12px;color:oklch(0.48 0.012 60)">{{ z.where }}</div>
+              </div>
+            </div>
+            <div style="font-size:13px;line-height:1.5;color:oklch(0.35 0.012 60)">{{ z.summary }}</div>
+          </div>
+          <sc-for list="{{ zGroups }}" as="g" hint-placeholder-count="3">
+            <div style="padding:14px 16px 4px;display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.35 0.012 60)">
+              <span style="width:10px;height:10px;border-radius:2px;background:{{ g.color }}"></span>{{ g.name }}<span style="color:oklch(0.55 0.012 60)">{{ g.n }}</span>
+            </div>
+            <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+              <div onClick="{{ it.click }}" style="display:flex;align-items:center;gap:12px;padding:8px 16px;cursor:pointer;opacity:{{ it.op }}" style-hover="background:oklch(0.94 0.014 85)">
+                <div style="position:relative;width:30px;height:30px;flex:none;border-radius:5px;background:{{ it.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;overflow:hidden">
+                  <span>{{ it.mono }}</span>
+                  <sc-if value="{{ it.logo }}" hint-placeholder-val="{{ false }}"><img data-lsrc="{{ it.logo }}" data-fb="{{ it.logoFb }}" alt="" loading="lazy" onError="{{ hideImg }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:14%;box-sizing:border-box"></sc-if>
+                </div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+                  <span style="font-size:14px;font-weight:500">{{ it.name }}</span>
+                  <span style="font-size:12px;color:oklch(0.48 0.012 60)">{{ it.sub }}</span>
+                </div>
+                <div title="{{ it.co }}" style="position:relative;width:30px;height:30px;flex:none;border-radius:50%;background:#fff;border:1px solid oklch(0.86 0.012 80);color:oklch(0.22 0.012 60);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:11px;overflow:hidden">
+                  <span>{{ it.coMono }}</span>
+                  <sc-if value="{{ it.coLogo }}" hint-placeholder-val="{{ false }}"><img data-lsrc="{{ it.coLogo }}" data-fb="{{ it.coLogoFb }}" alt="{{ it.co }}" loading="lazy" onError="{{ hideImg }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:19%;box-sizing:border-box;border-radius:50%"></sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </sc-for>
+          <div style="height:12px"></div>
+        </sc-if>
+
+        <sc-if value="{{ showDetail }}" hint-placeholder-val="{{ false }}">
+          <div style="padding:14px 18px 16px;display:flex;flex-direction:column;gap:14px;border-bottom:1px solid oklch(0.86 0.012 80)">
+            <button onClick="{{ back }}" style="align-self:flex-start;border:0;background:none;cursor:pointer;padding:0;font:500 12px 'Geist',sans-serif;color:oklch(0.48 0.012 60)" style-hover="color:oklch(0.22 0.012 60)">← All Companies</button>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div style="position:relative;width:44px;height:44px;flex:none;border-radius:6px;background:oklch(0.22 0.012 60);color:oklch(0.965 0.012 85);display:flex;align-items:center;justify-content:center;font-family:'Instrument Serif',serif;font-size:24px;overflow:hidden">
+                <span>{{ d.mono }}</span>
+                <sc-if value="{{ d.logo }}" hint-placeholder-val="{{ false }}"><img data-lsrc="{{ d.logo }}" data-fb="{{ d.logoFb }}" alt="" onError="{{ hideImg }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:14%;box-sizing:border-box"></sc-if>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                <div style="font-family:'Instrument Serif',serif;font-size:30px;line-height:1">{{ d.name }}</div>
+                <div style="font-size:12px;color:oklch(0.48 0.012 60)">{{ d.tier }} · {{ d.focus }}</div>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:oklch(0.86 0.012 80);border:1px solid oklch(0.86 0.012 80)">
+              <div style="background:oklch(0.985 0.006 85);padding:10px 12px;display:flex;flex-direction:column;gap:3px">
+                <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">Revenue · USD</span>
+                <span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">{{ d.rev }}</span>
+                <span style="font-size:11px;color:oklch(0.48 0.012 60)">{{ d.revPer }}</span>
+              </div>
+              <div style="background:oklch(0.985 0.006 85);padding:10px 12px;display:flex;flex-direction:column;gap:3px">
+                <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">Brands Listed</span>
+                <span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">{{ d.count }}</span>
+                <span style="font-size:11px;color:oklch(0.48 0.012 60)">{{ d.catCount }}</span>
+              </div>
+              <sc-if value="{{ d.us }}" hint-placeholder-val="{{ false }}">
+                <div style="background:oklch(0.985 0.006 85);padding:10px 12px;display:flex;flex-direction:column;gap:3px">
+                  <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">US Revenue</span>
+                  <span style="font-family:'Instrument Serif',serif;font-size:28px;line-height:1.05">{{ d.us }}</span>
+                  <span style="font-size:11px;color:oklch(0.48 0.012 60)">{{ d.usBasis }}</span>
+                </div>
+              </sc-if>
+            </div>
+            <sc-if value="{{ d.parentLine }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:oklch(0.35 0.012 60)">{{ d.parentLine }}</div></sc-if>
+            <sc-if value="{{ d.notes }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:13px;line-height:1.5;color:oklch(0.35 0.012 60);text-wrap:pretty">{{ d.notes }}</p></sc-if>
+            <sc-if value="{{ d.revNote }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:12px;line-height:1.5;color:oklch(0.48 0.012 60)">Revenue: {{ d.revNote }} <a href="{{ d.revUrl }}" target="_blank" rel="noopener">Source</a></p></sc-if>
+            <sc-if value="{{ d.hasShare }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">US Category Share Evidence</span>
+                <sc-for list="{{ d.shares }}" as="s" hint-placeholder-count="1">
+                  <div style="display:flex;gap:12px;align-items:baseline">
+                    <span style="font-family:'Instrument Serif',serif;font-size:24px;min-width:58px">{{ s.pct }}</span>
+                    <span style="font-size:12px;line-height:1.45;color:oklch(0.35 0.012 60)">{{ s.label }} · <a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.pub }}</a></span>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+            <sc-if value="{{ d.hasDeals }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:6px">
+                <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.48 0.012 60)">Recent Ownership Changes</span>
+                <sc-for list="{{ d.deals }}" as="x" hint-placeholder-count="1">
+                  <div style="font-size:12px;line-height:1.45;color:oklch(0.35 0.012 60)"><strong style="font-weight:600;color:oklch(0.22 0.012 60)">{{ x.t }}</strong> · {{ x.status }} · {{ x.impact }}</div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ hasBrand }}" hint-placeholder-val="{{ false }}">
+            <div style="margin:14px 14px 4px;padding:14px;border:1px solid oklch(0.22 0.012 60);border-radius:4px;background:oklch(0.995 0.003 85);display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:12px">
+                <div style="position:relative;width:40px;height:40px;flex:none;border-radius:6px;background:{{ b.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px;overflow:hidden">
+                  <span>{{ b.mono }}</span>
+                  <sc-if value="{{ b.logo }}" hint-placeholder-val="{{ false }}"><img data-lsrc="{{ b.logo }}" data-fb="{{ b.logoFb }}" alt="" onError="{{ hideImg }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:14%;box-sizing:border-box"></sc-if>
+                </div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <div style="font-family:'Instrument Serif',serif;font-size:26px;line-height:1">{{ b.name }}</div>
+                  <div style="font-size:12px;color:oklch(0.48 0.012 60)">{{ b.cat }} · {{ b.sub }}</div>
+                </div>
+                <button onClick="{{ closeBrand }}" style="border:0;background:none;cursor:pointer;font-size:18px;color:oklch(0.48 0.012 60);padding:4px 6px">×</button>
+              </div>
+              <div style="font-size:13px;color:oklch(0.35 0.012 60)">{{ b.rel }}</div>
+              <div onClick="{{ b.toShelf }}" style="font-size:13px;color:oklch(0.35 0.012 60);cursor:pointer;text-decoration:underline;text-decoration-color:oklch(0.75 0.02 70);text-underline-offset:3px">Shelf: {{ b.shelf }}</div>
+              <sc-if value="{{ b.hasMicros }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;flex-wrap:wrap;gap:4px">
+                  <sc-for list="{{ b.micros }}" as="m" hint-placeholder-count="2"><span style="font-size:11px;padding:2px 7px;border-radius:3px;background:oklch(0.94 0.012 85);color:oklch(0.35 0.012 60)">{{ m.name }}</span></sc-for>
+                </div>
+              </sc-if>
+              <sc-if value="{{ b.logoNote }}" hint-placeholder-val="{{ false }}"><div style="font-size:11px;color:oklch(0.48 0.012 60)">{{ b.logoNote }}</div></sc-if>
+              <sc-if value="{{ b.notes }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:13px;line-height:1.5;color:oklch(0.35 0.012 60)">{{ b.notes }}</p></sc-if>
+              <sc-if value="{{ b.hasPerf }}" hint-placeholder-val="{{ false }}">
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;padding-top:8px;border-top:1px solid oklch(0.9 0.01 80)">
+                  <sc-if value="{{ b.sales }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'Instrument Serif',serif;font-size:24px">{{ b.sales }}</span><span style="font-size:11px;color:oklch(0.48 0.012 60)">US Retail Sales</span></div></sc-if>
+                  <sc-if value="{{ b.share }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'Instrument Serif',serif;font-size:24px">{{ b.share }}</span><span style="font-size:11px;color:oklch(0.48 0.012 60)">{{ b.shareOf }}</span></div></sc-if>
+                </div>
+                <div style="font-size:11px;line-height:1.45;color:oklch(0.48 0.012 60)">{{ b.perfNote }} <a href="{{ b.perfUrl }}" target="_blank" rel="noopener">Source</a></div>
+              </sc-if>
+              <sc-if value="{{ b.url }}" hint-placeholder-val="{{ false }}"><a href="{{ b.url }}" target="_blank" rel="noopener" style="font-size:12px">Ownership Source ↗</a></sc-if>
+            </div>
+          </sc-if>
+
+          <sc-for list="{{ groups }}" as="g" hint-placeholder-count="2">
+            <div style="background:{{ g.bg }}">
+              <div style="padding:14px 16px 4px;display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:oklch(0.35 0.012 60)">
+                <span style="width:10px;height:10px;border-radius:2px;background:{{ g.color }}"></span>{{ g.cat }}<span style="color:oklch(0.55 0.012 60)">{{ g.n }}</span>
+              </div>
+              <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+                <div onClick="{{ it.click }}" style="display:flex;align-items:center;gap:12px;padding:8px 16px;cursor:pointer;background:{{ it.bg }}" style-hover="background:oklch(0.94 0.014 85)">
+                  <div style="position:relative;width:30px;height:30px;flex:none;border-radius:5px;background:{{ g.color }};color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:12px;overflow:hidden">
+                    <span>{{ it.mono }}</span>
+                    <sc-if value="{{ it.logo }}" hint-placeholder-val="{{ false }}"><img data-lsrc="{{ it.logo }}" data-fb="{{ it.logoFb }}" alt="" loading="lazy" onError="{{ hideImg }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:14%;box-sizing:border-box"></sc-if>
+                  </div>
+                  <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px">
+                    <span style="font-size:14px;font-weight:500">{{ it.name }}</span>
+                    <span style="font-size:12px;color:oklch(0.48 0.012 60)">{{ it.sub }}</span>
+                  </div>
+                  <sc-if value="{{ it.rel }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;color:oklch(0.42 0.1 60);border:1px solid oklch(0.82 0.06 70);padding:2px 6px;border-radius:3px;text-align:right">{{ it.rel }}</span></sc-if>
+                  <sc-if value="{{ it.perf }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Geist Mono',monospace;font-size:11px;color:oklch(0.35 0.012 60)">{{ it.perf }}</span></sc-if>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+          <div style="height:12px"></div>
+        </sc-if>
+      </div>
+      </div>
+      </sc-if>
+    </aside>
+  </main>
+
+  
+  <section style="display:flex;flex-direction:column;gap:14px;padding-top:12px">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;border-bottom:1px solid oklch(0.22 0.012 60);padding-bottom:10px">
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1">Ownership Changes, 2023–2026</h2>
+      <span style="font-size:13px;color:oklch(0.48 0.012 60)">Completed deals are reflected in the atlas; pending ones are not.</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));column-gap:40px">
+      <sc-for list="{{ deals }}" as="x" hint-placeholder-count="6">
+        <div style="display:grid;grid-template-columns:92px minmax(0,1fr);gap:4px 16px;padding:14px 0;border-bottom:1px solid oklch(0.88 0.01 80)">
+          <span style="font-family:'Geist Mono',monospace;font-size:12px;color:oklch(0.48 0.012 60);padding-top:2px">{{ x.date }}</span>
+          <div style="display:flex;flex-direction:column;gap:5px">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px">
+              <span style="font-weight:600;font-size:15px">{{ x.t }}</span>
+              <a href="{{ x.url }}" target="_blank" rel="noopener" title="View source" style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.06em;text-transform:uppercase;padding:2px 6px;border-radius:3px;text-decoration:none;color:{{ x.fg }};background:{{ x.bg }}">{{ x.status }} ↗</a>
+            </div>
+            <span style="font-size:13px;line-height:1.5;color:oklch(0.35 0.012 60);text-wrap:pretty">{{ x.impact }} <a href="{{ x.url }}" target="_blank" rel="noopener">Source</a></span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <footer style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:16px 40px;padding-top:16px;border-top:1px solid oklch(0.86 0.012 80);font-size:12px;line-height:1.55;color:oklch(0.48 0.012 60)">
+    <p style="margin:0">One row per notable US brand — not per SKU, variant or trademark registration. Illustrative major brands only; selection is not ranked by revenue or share. Alcohol, tobacco, private label and foodservice are out of scope.</p>
+    <p style="margin:0">Revenue is worldwide FY2025 group sales, converted to USD at 2025 IRS annual-average exchange rates; fiscal year-ends still differ, so treat cross-company comparisons as approximate. Blanks mean not publicly verified, not zero. Brand retail sales ≠ manufacturer net revenue.</p>
+    <p style="margin:0">Logos are third-party trademarks, pre-cached from HD domain-based candidates (falling back to earlier tiles) and may show the wrong mark; brands without a sourced logo show initials. Source: US CPG Parent Company &amp; Brand Atlas, last checked Oct 24, 2026.</p>
+    <p style="margin:0;grid-column:1/-1">Story Field Guide № 010 · not affiliated with any company shown · v1.0 · updated 10/25/26 · Built with AI assistance (Anthropic Claude)</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;order&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;brands&quot;,&quot;revenue&quot;,&quot;tier&quot;,&quot;alpha&quot;],&quot;default&quot;:&quot;brands&quot;,&quot;tsType&quot;:&quot;'brands'|'revenue'|'tier'|'alpha'&quot;},&quot;showCounts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showLogos&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const CATS=[["Food","oklch(0.62 0.13 42)","Food"],["Snacks & Confectionery","oklch(0.75 0.13 80)","Snacks"],["Beverages","oklch(0.57 0.11 245)","Beverages"],["Household","oklch(0.6 0.08 190)","Household"],["Personal Care","oklch(0.58 0.11 305)","Personal"],["Beauty","oklch(0.67 0.12 5)","Beauty"],["Consumer Health","oklch(0.5 0.05 265)","Health"],["Pet Care","oklch(0.64 0.11 140)","Pet"]];
+const CAT_COLOR=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+const CAT_ORDER=Object.fromEntries(CATS.map((c,i)=>[c[0],i]));
+const INK="oklch(0.22 0.012 60)",PAPER="oklch(0.965 0.012 85)",EMPTY="oklch(0.985 0.006 85)",GRID="oklch(0.86 0.012 80)",DIM="oklch(0.9 0.008 80)";
+const SHORT={"Procter & Gamble (P&G)":"P&G","The Coca-Cola Company":"Coca-Cola","Mars, Incorporated":"Mars","Mondelēz International":"Mondelēz","Ferrero Group":"Ferrero","L'Oréal Groupe":"L'Oréal","The Estée Lauder Companies":"Estée Lauder","The Campbell's Company":"Campbell's","The Clorox Company":"Clorox","The Hershey Company":"Hershey","The J.M. Smucker Co.":"J.M. Smucker","The Magnum Ice Cream Company":"Magnum Ice Cream","Smithfield Foods (WH Group)":"Smithfield","Essential Home (Advent)":"Essential Home","Georgia-Pacific (Koch)":"Georgia-Pacific","McCormick & Company":"McCormick","Reynolds Consumer Products":"Reynolds","Edgewell Personal Care":"Edgewell","Kao Corporation":"Kao","Celsius Holdings":"Celsius","Monster Beverage":"Monster","Perfetti Van Melle":"Perfetti","Keurig Dr Pepper":"KDP"};
+const SYM={USD:"$",EUR:"€",GBP:"£",CHF:"CHF "};
+const TAU=Math.PI*2,GAP=Math.PI/6,A0=GAP/2,SPAN=TAU-GAP;
+const W55=SPAN/55,RAD=(()=>{const r=[158];for(let k=0;k<8;k++)r.push(r[k]*(1+W55*0.97));return r;})();
+const R_OUT=RAD[8],R_LOGO=R_OUT+17,R_LAB=R_OUT+38;
+const tc=t=>String(t).replace(/(^|[\s\-\/(&])([a-z])/g,(m,p,c)=>p+c.toUpperCase());
+const ZONES=[
+ {id:"frozen-cases",name:"Frozen cases",x:24,y:24,w:176,h:40,where:"Back wall, left"},
+ {id:"frozen-wall",name:"Frozen",x:24,y:68,w:70,h:224,where:"Left wall"},
+ {id:"dairy",name:"Dairy",x:204,y:24,w:262,h:40,where:"Back wall, centre"},
+ {id:"meat",name:"Meat & seafood",x:470,y:24,w:186,h:96,where:"Back-right corner"},
+ {id:"bakery",name:"Bakery",x:470,y:124,w:90,h:82,where:"Fresh departments"},
+ {id:"cheese",name:"Cheese shop",x:564,y:124,w:92,h:42,where:"Beside the sushi counter"},
+ {id:"deli",name:"Deli",x:470,y:210,w:90,h:82,where:"Fresh departments"},
+ {id:"produce",name:"Produce",x:564,y:170,w:92,h:266,where:"Right wall, by the entrance"},
+ {id:"floral",name:"Floral",x:470,y:296,w:90,h:68,where:"Front right"},
+ {id:"coffee",name:"Coffee bar",x:470,y:368,w:90,h:68,where:"Front right"},
+ {id:"check",name:"Checklanes",x:304,y:296,w:162,h:140,where:"Front centre"},
+ {id:"rx",name:"Pharmacy",x:24,y:296,w:80,h:140,where:"Front left"},
+ {id:"guest",name:"Guest care",x:108,y:384,w:142,h:52,where:"Front left"},
+ ...["Frozen meals & pizza","Frozen vegetables & sides","Baby","Seasonal","Pet","Paper & plastics","Cleaning & laundry","Breakfast","Baking & spices","Pasta & international","Canned & condiments","Salty snacks","Sweet snacks","Soft drinks & water","Coffee, tea & juice","Beer & wine"].map((n,i)=>({id:"a"+(i+1),code:String(i+1),name:n,aisle:true,x:100+i*22,y:76,w:16,h:200,where:"Center aisle "+(i+1)})),
+ ...["Pain & cold","Wellness","Specialty health","Cosmetics","Skin & hair","Personal care"].map((n,i)=>({id:"h"+(i+1),code:"H"+(i+1),name:n,hb:true,x:118+i*21,y:322,w:16,h:52,where:"Health & beauty, aisle H"+(i+1)})),
+ {id:"prestige",name:"Off the grocery floor",x:20,y:512,w:640,h:66,off:true,code:"—",where:"Prestige, salon & fine fragrance — sold through department, beauty-specialty and salon channels"}
+];
+ZONES.forEach(z=>{z.name=tc(z.name);});
+const ZL=Object.fromEntries(ZONES.map(z=>[z.id,z]));
+const zLabel=z=>z.aisle?`Aisle ${z.code} · ${z.name}`:z.hb?`${z.code} · ${z.name}`:z.off?"Off-floor · prestige & salon":z.name;
+const bin=n=>n>=10?3:n>=6?2:n>=3?1:0;
+const SHADE=[38,62,84,100];
+
+class Component extends DCLogic {
+  state={mobile:typeof matchMedia!=="undefined"&&matchMedia("(max-width: 760px)").matches,zoom:1,px:0,py:0,panning:false,planIcons:false,mode:"chart",hz:null,selZone:null,panelOpen:false,ready:false,scope:"all",cats:[],query:"",selCo:null,selCat:null,selBrand:null,hover:null};
+  componentDidMount(){
+    const ld=f=>import(new URL("assets/cpg/"+f,document.baseURI).href).then(m=>m.default).catch(()=>({}));const coP=ld("logos-co.js");
+    const brP=new Promise(r=>{const go=()=>r(ld("logos.js"));window.requestIdleCallback?requestIdleCallback(go,{timeout:1500}):setTimeout(go,400);});
+    import(new URL("assets/cpg/cpg-data.js",document.baseURI).href).then(m=>{
+      const D=m.default;
+      const LL={},applyLogos=L=>{Object.assign(LL,L);D.companies.forEach((c,i)=>{c.logo=LL["c"+i]||null;c.logoFb=null;});D.brands.forEach((b,i)=>{b.logo=LL["b"+i]||null;b.logoFb=null;});};
+      applyLogos({});
+      coP.then(L=>{applyLogos(L);if(this.D)this.forceUpdate();});brP.then(L=>{applyLogos(L);if(this.D)this.forceUpdate();});
+      D.brands.forEach(b=>{if(b.mc)b.mc=tc(b.mc);});
+      D.companies.forEach((c,i)=>{c.i=i;c.short=SHORT[c.n]||c.n;c.brands=[];c.byCat={};});
+      D.brands.forEach((b,i)=>{b.i=i;const c=D.companies[b.c];c.brands.push(i);(c.byCat[b.cat]=c.byCat[b.cat]||[]).push(i);});
+      D.companies.forEach(c=>{c.brands.sort((a,b)=>(CAT_ORDER[D.brands[a].cat]-CAT_ORDER[D.brands[b].cat])||D.brands[a].n.localeCompare(D.brands[b].n));Object.values(c.byCat).forEach(l=>l.sort((a,b)=>D.brands[a].n.localeCompare(D.brands[b].n)));});
+      this.D=D;this.setState({ready:true});
+    });
+    this.onKey=e=>{if(e.key==="Escape"){this.back();return;}
+      const t=e.target;if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.isContentEditable))return;
+      const vp=this.vp;if(!vp)return;const r=vp.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+      const k=e.key,step=80;
+      if(this.state.mode==="clu"&&this.cl){const C=this.cl;if(k==="+"||k==="="){e.preventDefault();C.zoomBy(1.25);}else if(k==="-"||k==="_"){e.preventDefault();C.zoomBy(0.8);}else if(k==="0")C.reset();
+        else if(k.startsWith("Arrow")){e.preventDefault();const d={ArrowLeft:[-0.15,0],ArrowRight:[0.15,0],ArrowUp:[0,0.1],ArrowDown:[0,-0.1]}[k];C.rotate(d[0],d[1]);}this.forceUpdate();return;}
+      if(k==="+"||k==="="){e.preventDefault();this.zoomBy(1.25);}
+      else if(k==="-"||k==="_"){e.preventDefault();this.zoomBy(0.8);}
+      else if(k==="0"){this.setState({zoom:1,px:0,py:0});}
+      else if(this.state.zoom>1&&k.startsWith("Arrow")){e.preventDefault();const d={ArrowLeft:[step,0],ArrowRight:[-step,0],ArrowUp:[0,step],ArrowDown:[0,-step]}[k];this.panBy(d[0],d[1]);}};
+    window.addEventListener("keydown",this.onKey);
+    if(window.matchMedia){this.mq=matchMedia("(max-width: 760px)");this.onMq=()=>this.setState({mobile:this.mq.matches});this.mq.addEventListener?this.mq.addEventListener("change",this.onMq):this.mq.addListener(this.onMq);}
+  }
+  clampPan(z,x,y){const vp=this.vp;if(!vp)return [x,y];const w=vp.clientWidth,h=vp.clientHeight,mx=w*(z-1)/2+40,my=h*(z-1)/2+40;return [Math.max(-mx,Math.min(mx,x)),Math.max(-my,Math.min(my,y))];}
+  zoomBy(f,cx,cy){this.setState(s=>{const z=Math.max(1,Math.min(6,s.zoom*f));if(z===1)return {zoom:1,px:0,py:0};
+    let x=s.px,y=s.py;if(cx!=null&&this.vp){const r=this.vp.getBoundingClientRect(),ox=cx-r.left-r.width/2,oy=cy-r.top-r.height/2,k=z/s.zoom;x=ox-(ox-x)*k;y=oy-(oy-y)*k;}else{const k=z/s.zoom;x*=k;y*=k;}
+    const [a,b]=this.clampPan(z,x,y);return {zoom:z,px:a,py:b};});}
+  panBy(dx,dy){this.setState(s=>{const [a,b]=this.clampPan(s.zoom,s.px+dx,s.py+dy);return {px:a,py:b};});}
+  setVp=el=>{if(this.vp===el)return;if(this.vp&&this.onWheel)this.vp.removeEventListener("wheel",this.onWheel);this.vp=el;
+    if(el){this.onWheel=e=>{if(this.state.mode==="clu"||!(e.ctrlKey||e.metaKey||this.state.zoom>1))return;e.preventDefault();if(e.ctrlKey||e.metaKey||Math.abs(e.deltaY)>Math.abs(e.deltaX)*1.5&&!e.shiftKey&&(e.ctrlKey||e.metaKey)){this.zoomBy(Math.exp(-e.deltaY*0.0025),e.clientX,e.clientY);}else this.panBy(-e.deltaX,-e.deltaY);};
+      el.addEventListener("wheel",this.onWheel,{passive:false});}};
+  async downloadPng(){if(this.state.mode==="clu"&&this.cl){const bl=await this.cl.toBlob("#f7f4ee");const a=document.createElement("a");a.href=URL.createObjectURL(bl);a.download=`cpg-brand-atlas-cluster-${this.state.scope}.png`;document.body.appendChild(a);a.click();a.remove();return;}
+    const m=this.state.mode,svg=m==="plan"?this.svgP:m==="uni"?this.svgU:this.svgC;if(!svg)return;
+    const vb=svg.viewBox.baseVal,S=3,W=Math.round(vb.width*S),H=Math.round(vb.height*S),NS="http://www.w3.org/2000/svg";
+    const cl=svg.cloneNode(true);cl.setAttribute("xmlns",NS);cl.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");cl.setAttribute("width",W);cl.setAttribute("height",H);cl.removeAttribute("style");
+    const bg=document.createElementNS(NS,"rect");[["x",vb.x],["y",vb.y],["width",vb.width],["height",vb.height],["fill","#f7f4ee"]].forEach(([k,v])=>bg.setAttribute(k,v));cl.insertBefore(bg,cl.firstChild);
+    const st=document.createElementNS(NS,"style");st.textContent="text{font-family:Geist,Helvetica,Arial,sans-serif}";cl.insertBefore(st,cl.firstChild);
+    const url=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(cl)],{type:"image/svg+xml;charset=utf-8"}));
+    try{const img=new Image();img.src=url;await img.decode();const c=document.createElement("canvas");c.width=W;c.height=H;const g=c.getContext("2d");g.drawImage(img,0,0,W,H);
+      const blob=await new Promise(r=>c.toBlob(r,"image/png"));const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+      a.download=`cpg-brand-atlas-${{chart:"chart",plan:"floor-plan",uni:"brand-wheel"}[m]}-${this.state.scope}${this.state.selCo!=null?"-"+this.D.companies[this.state.selCo].short.replace(/[^a-z0-9]+/gi,"-").toLowerCase():""}.png`;
+      document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}
+    finally{URL.revokeObjectURL(url);}}
+  setCl=el=>{if(el===this.clEl)return;this.clEl=el;const go=()=>{if(!this.cl)return;if(el)this.cl.attach(el);else this.cl.detach();};
+    if(this.cl)go();else import(new URL("assets/cpg/cluster-graph.js",document.baseURI).href).then(m=>{this.cl=m.createCluster({
+      cats:CATS,ink:"oklch(0.22 0.012 60)",paper:"#f7f4ee",grid:"oklch(0.86 0.012 80)",
+      getView:()=>this._clv,isActive:()=>this.state.mode==="clu",
+      onBrand:bi=>{const b=this.D.brands[bi];this.openCo(b.c,b.cat,bi);},onCompany:ci=>this.openCo(ci),onEmpty:()=>{if(this.state.selCo!=null)this.back();}});go();});};
+  componentWillUnmount(){if(this.mq&&this.onMq){this.mq.removeEventListener?this.mq.removeEventListener("change",this.onMq):this.mq.removeListener(this.onMq);}if(this.cl)this.cl.detach();if(this.vp&&this.onWheel)this.vp.removeEventListener("wheel",this.onWheel);window.removeEventListener("keydown",this.onKey);}
+  componentDidUpdate(){document.querySelectorAll("img[data-lsrc]").forEach(img=>{const u=img.getAttribute("data-lsrc");const cur=img.getAttribute("src");if(u&&/^(https?:|data:)/.test(u)&&cur!==u&&!(cur&&cur===img.getAttribute("data-fb"))){img.style.display="";img.setAttribute("src",u);}});}
+
+  cos(){
+    const order=this.props.order??"brands",D=this.D;
+    const sc=this.state.scope,top=sc==="top5"?new Set(D.companies.slice().sort((a,b)=>b.brands.length-a.brands.length||a.short.localeCompare(b.short)).slice(0,5).map(c=>c.i)):null;
+    let cos=D.companies.filter(c=>sc==="all"||(sc==="orig"&&c.tier==="Original 11")||(top&&top.has(c.i)));
+    const tierRank=t=>t==="Original 11"?0:t==="Priority addition"?1:2;
+    if(order==="alpha")cos.sort((a,b)=>a.short.localeCompare(b.short));
+    else if(order==="revenue")cos.sort((a,b)=>(b.usd??-1)-(a.usd??-1)||b.brands.length-a.brands.length);
+    else if(order==="tier")cos.sort((a,b)=>tierRank(a.tier)-tierRank(b.tier)||b.brands.length-a.brands.length);
+    else cos.sort((a,b)=>b.brands.length-a.brands.length||a.short.localeCompare(b.short));
+    return cos;
+  }
+  openCo(ci,cat,bi){
+    if(this.state.scope!=="all"&&!this.cos().some(c=>c.i===ci))this.setState({scope:"all"});
+    this.setState({selCo:ci,selCat:cat??null,selBrand:bi??null,query:"",panelOpen:true,selZone:null});
+    if(this.panel)this.panel.scrollTop=0;
+  }
+  back=()=>{if(this.state.selZone){this.setState({selZone:null});return;}this.setState({selCo:null,selCat:null,selBrand:null});};
+  openZone(id){this.setState({selZone:id,panelOpen:true,query:""});if(this.panel)this.panel.scrollTop=0;}
+  setScope(s){if(s!==this.state.scope)this.setState({scope:s,selCo:null,selCat:null,selBrand:null,hover:null});}
+  arc(r0,r1,a0,a1){
+    const la=a1-a0>Math.PI?1:0,p=(r,a)=>(r*Math.sin(a)).toFixed(2)+" "+(-r*Math.cos(a)).toFixed(2);
+    return `M${p(r1,a0)}A${r1} ${r1} 0 ${la} 1 ${p(r1,a1)}L${p(r0,a1)}A${r0} ${r0} 0 ${la} 0 ${p(r0,a0)}Z`;
+  }
+  uniLayout(cos,grouped){
+    const key=(grouped?"g":"")+cos.map(c=>c.i).join(",");if(this._U&&this._U.key===key)return this._U;
+    const R2=228,LIM=492,D=this.D;let res=null,last=null;
+    const place=(a0,a1,need,p,ts)=>{const hwK=ts*0.72,pos=[],r0=R2+3+ts*0.72;
+      if((a1-a0)-2*hwK/r0<0)return pos;
+      for(let r=r0;pos.length<need&&r<=LIM;r+=p){const hw=hwK/r,u=(a1-a0)-2*hw;if(u<0)continue;
+        const n=Math.floor(u*r/p)+1;
+        for(let j=0;j<n&&pos.length<need;j++){const t=n===1?(a0+a1)/2:a0+hw+u*j/(n-1),x=r*Math.sin(t),y=-r*Math.cos(t);if(Math.hypot(x,y)<=LIM-ts*0.72)pos.push([x,y]);}}
+      return pos;};
+    const units=[];cos.forEach((co,ci)=>{if(grouped){CATS.forEach(([cat])=>{const l=co.byCat[cat];if(l&&l.length)units.push({ci,cat,n:l.length});});}else units.push({ci,cat:null,n:co.brands.length});});
+    for(let p=44;p>=10&&!res;p-=0.5){
+      const ts=p*0.86,w=units.map(u=>u.n+2);
+      for(let it=0;it<40;it++){const W=w.reduce((t,x)=>t+x,0);let ang=0,short=false;const ug=[];
+        units.forEach((u,i)=>{const a0=ang,a1=ang+TAU*w[i]/W;ang=a1;const pos=place(a0,a1,u.n,p,ts);if(pos.length<u.n){short=true;w[i]*=pos.length?1.15+0.8*(u.n-pos.length)/u.n:1.35;}ug.push({...u,a0,a1,pos});});
+        const secs=cos.map((co,ci)=>{const g=ug.filter(u=>u.ci===ci);return {co,a0:g[0].a0,a1:g[g.length-1].a1,pos:g.flatMap(u=>u.pos),groups:grouped?g.map(u=>({cat:u.cat,a0:u.a0,a1:u.a1,rMax:Math.max(...u.pos.map(q=>Math.hypot(q[0],q[1])),R2)})):[]};});
+        last={key,p,ts,secs};if(!short){res=last;break;}}
+    }
+    this._U=res||last;return this._U;
+  }
+  usd(co){if(co.usd!=null)return "$"+(co.usd/1000).toFixed(1)+"B";return null;}
+  fmtRev(v,cur){if(v==null)return null;return (SYM[cur]??(cur+" "))+(v/1000).toFixed(1)+"B";}
+  mono(n){const w=n.replace(/^The /,"").split(/[\s&\-]+/).filter(Boolean);return (w.length>1?w[0][0]+w[1][0]:w[0].slice(0,2)).toUpperCase();}
+
+  renderVals(){
+    const st=this.state,showLogos=this.props.showLogos??true,showCounts=this.props.showCounts??false;
+    const base={
+      setScopeAll:()=>this.setScope("all"),setScopeOrig:()=>this.setScope("orig"),setScopeTop:()=>this.setScope("top5"),
+      scopeTopBg:st.scope==="top5"?INK:"transparent",scopeTopFg:st.scope==="top5"?PAPER:INK,
+      scopeAllBg:st.scope==="all"?INK:"transparent",scopeAllFg:st.scope==="all"?PAPER:INK,
+      scopeOrigBg:st.scope==="orig"?INK:"transparent",scopeOrigFg:st.scope==="orig"?PAPER:INK,
+      query:st.query,onQuery:e=>this.setState({query:e.target.value}),clearQuery:()=>this.setState({query:""}),hasQuery:!!st.query,
+      hasCatFilter:st.cats.length>0,allBg:st.cats.length?"transparent":INK,allFg:st.cats.length?INK:PAPER,allBorder:st.cats.length?"oklch(0.82 0.012 80)":INK,allCount:"",clearCats:()=>{this.setState({cats:[],query:"",selCo:null,selCat:null,selBrand:null,selZone:null,hover:null,hz:null});if(this.panel)this.panel.scrollTop=0;},
+      leave:()=>this.setState({hover:null}),back:this.back,
+      hideImg:e=>{const i=e.currentTarget,fb=i.getAttribute("data-fb");if(fb&&fb.startsWith("http")&&i.getAttribute("src")!==fb)i.setAttribute("src",fb);else i.style.display="none";},closeBrand:()=>this.setState({selBrand:null}),
+      panelRef:el=>this.panel=el,vpRef:this.setVp,svgCRef:el=>this.svgC=el,svgPRef:el=>this.svgP=el,svgURef:el=>this.svgU=el,
+      zoomTf:`translate(${st.px.toFixed(1)}px,${st.py.toFixed(1)}px) scale(${st.zoom.toFixed(3)})`,zoomPct:st.mode==="clu"?(this.cl?this.cl.zoomPct():"100%"):Math.round(st.zoom*100)+"%",
+      zoomIn:()=>{if(this.state.mode==="clu"){this.cl&&this.cl.zoomBy(1.25);this.forceUpdate();}else this.zoomBy(1.25);},zoomOut:()=>{if(this.state.mode==="clu"){this.cl&&this.cl.zoomBy(0.8);this.forceUpdate();}else this.zoomBy(0.8);},zoomReset:()=>{if(this.state.mode==="clu"){this.cl&&this.cl.reset();this.forceUpdate();}else this.setState({zoom:1,px:0,py:0});},download:()=>this.downloadPng(),stop:e=>e.stopPropagation(),
+      vpCursor:st.panning?"grabbing":st.zoom>1?"grab":"default",vpTouch:st.zoom>1?"none":"pan-x pan-y pinch-zoom",
+      stripDir:st.mobile?"row":"column",stripWM:st.mobile?"horizontal-tb":"vertical-rl",stripMinH:st.mobile?"48px":"260px",stripPad:st.mobile?"12px 16px":"16px 0",
+      asideMaxH:st.mobile?"80vh":"min(900px,calc(100vh - 40px))",asidePos:st.mobile?"relative":"sticky",
+      panDown:e=>{if(this.state.zoom<=1||e.button!==0)return;this.drag={x:e.clientX,y:e.clientY,px:this.state.px,py:this.state.py,moved:false};},
+      panMove:e=>{const d=this.drag;if(!d)return;const dx=e.clientX-d.x,dy=e.clientY-d.y;if(!d.moved&&Math.hypot(dx,dy)<4)return;if(!d.moved){d.moved=true;this.setState({panning:true});}const [a,b]=this.clampPan(this.state.zoom,d.px+dx,d.py+dy);this.setState({px:a,py:b});},
+      panUp:()=>{const d=this.drag;if(!d)return;this.drag=null;this.justDragged=d.moved;if(d.moved)this.setState({panning:false});},
+      panClick:e=>{if(this.justDragged){e.stopPropagation();e.preventDefault();this.justDragged=false;}},
+      isChart:st.mode==="chart",isPlan:st.mode==="plan",setModeChart:()=>this.setState({mode:"chart",hz:null,zoom:1,px:0,py:0}),setModePlan:()=>this.setState({mode:"plan",hover:null,zoom:1,px:0,py:0}),setModeUni:()=>this.setState({mode:"uni",hover:null,hz:null,zoom:1,px:0,py:0}),isUni:st.mode==="uni",
+      modeUniBg:st.mode==="uni"?INK:"transparent",modeUniFg:st.mode==="uni"?PAPER:INK,
+      setModeClu:()=>this.setState({mode:"clu",hover:null,hz:null,zoom:1,px:0,py:0},()=>this.cl&&this.cl.kick()),modeCluBg:st.mode==="clu"?INK:"transparent",modeCluFg:st.mode==="clu"?PAPER:INK,
+      cluPos:st.mode==="clu"?"relative":"absolute",cluOp:st.mode==="clu"?1:0,cluTf:st.mode==="clu"?"none":"scale(0.96)",cluPE:st.mode==="clu"?"auto":"none",clRef:this.setCl,
+      uniPos:st.mode==="uni"?"relative":"absolute",uniOp:st.mode==="uni"?1:0,uniTf:st.mode==="uni"?"none":"scale(0.94) rotate(6deg)",uniPE:st.mode==="uni"?"auto":"none",
+      modeChartBg:st.mode==="chart"?INK:"transparent",modeChartFg:st.mode==="chart"?PAPER:INK,modePlanBg:st.mode==="plan"?INK:"transparent",modePlanFg:st.mode==="plan"?PAPER:INK,
+      chartPos:st.mode==="chart"?"relative":"absolute",chartOp:st.mode==="chart"?1:0,chartTf:st.mode==="chart"?"none":"scale(0.92) rotate(-8deg)",chartPE:st.mode==="chart"?"auto":"none",
+      planPos:st.mode==="plan"?"relative":"absolute",planOp:st.mode==="plan"?1:0,planTf:st.mode==="plan"?"none":"scale(1.04) translateY(12px)",planPE:st.mode==="plan"?"auto":"none",
+      planMax:st.panelOpen?"900px":"1100px",leavePlan:()=>this.setState({hz:null}),togglePlanIcons:()=>this.setState(s=>({planIcons:!s.planIcons})),
+      piBorder:st.planIcons?INK:"oklch(0.82 0.012 80)",piBg:st.planIcons?INK:"transparent",piFg:st.planIcons?PAPER:INK,piTrack:st.planIcons?"oklch(0.62 0.13 42)":"oklch(0.8 0.012 80)",piKnob:st.planIcons?"14px":"2px",clearCo:()=>this.setState({selCo:null,selCat:null,selBrand:null}),togglePanel:()=>this.setState(s=>({panelOpen:!s.panelOpen})),
+      panelOpen:st.panelOpen,panelClosed:!st.panelOpen,asideFlex:st.mobile?"1 1 100%":st.panelOpen?"1 1 360px":"0 0 48px",chartMax:st.panelOpen?"900px":"1280px",orderNote:{revenue:"highest to lowest FY2025 revenue (USD); undisclosed last",brands:"most to fewest brands",tier:"original 11 first, then additions",alpha:"A to Z"}[this.props.order??"brands"]
+    };
+    if(!st.ready)return {...base,chips:CATS.map(([n,c])=>({name:n,color:c,count:"",border:GRID,bg:"transparent",opacity:1})),cells:[],svgEls:null,uniEls:null,centerEls:null,zones:[],planEls:null,pHas:false,pNone:true,pHint:"Loading…",pCo:false,pMicros:[],deals:[],coRows:[],top5:[],catMix:[],showList:true,showLegend:true,cKicker:"Loading",cTitle:"Brand atlas",cTitleSize:3.4,cSub:"",cMeta:null,cLogo:null,hoverWedge:null,selWedge:null};
+    const D=this.D,cos=this.cos(),n=cos.length,w=SPAN/n;
+    const q=st.query.trim().toLowerCase(),catOn=c=>!st.cats.length||st.cats.includes(c);
+    const qMatch=b=>!q||b.n.toLowerCase().includes(q)||b.micros.some(m=>m.toLowerCase().includes(q))||D.companies[b.c].n.toLowerCase().includes(q)||D.companies[b.c].short.toLowerCase().includes(q);
+    const hv=st.hover,failed=this.failed||(this.failed=new Set());
+    const pos=(a,r)=>[r*Math.sin(a),-r*Math.cos(a)];
+
+    const cells=[],els=[];let hoverWedge=null,selWedge=null;
+    (st.mode==="chart"?cos:[]).forEach((co,ix)=>{
+      const a0=A0+ix*w,a1=a0+w,ci=co.i;
+      const colMatch=co.brands.some(i=>{const b=D.brands[i];return catOn(b.cat)&&qMatch(b);});
+      CATS.forEach(([cat,col],k)=>{
+        const list=co.byCat[cat]||[],cnt=list.length,m=list.filter(i=>qMatch(D.brands[i])).length;
+        const on=cnt&&catOn(cat)&&(!q||m),isH=hv&&hv.ci===ci&&hv.cat===cat,isS=st.selCo===ci&&st.selCat===cat;
+        const fill=!cnt?EMPTY:on?`color-mix(in oklch, ${col} ${SHADE[bin(cnt)]}%, ${PAPER})`:DIM;
+        cells.push({d:this.arc(RAD[k],RAD[k+1],a0,a1),fill,stroke:isH||isS?INK:cnt?PAPER:GRID,sw:isH||isS?2:cnt?1.2:0.6,
+          enter:()=>this.setState({hover:{ci,cat}}),click:()=>this.openCo(ci,cnt?cat:null)});
+        if(showCounts&&cnt){const [x,y]=pos((a0+a1)/2,(RAD[k]+RAD[k+1])/2);
+          els.push(React.createElement("text",{key:"n"+ci+k,x:x.toFixed(1),y:y.toFixed(1),textAnchor:"middle",dominantBaseline:"central",fill:bin(cnt)>=2&&on?"#fff":INK,style:{pointerEvents:"none",fontFamily:"'Geist Mono',monospace",fontSize:Math.min(11,(RAD[k+1]-RAD[k])*0.55)+"px"}},cnt));}
+      });
+      if(hv&&hv.ci===ci)hoverWedge=this.arc(RAD[0],R_OUT,a0,a1);
+      if(st.selCo===ci)selWedge=this.arc(RAD[0],R_OUT,a0,a1);
+      const mid=(a0+a1)/2,hot=(hv&&hv.ci===ci)||st.selCo===ci;
+      const rr=Math.min(13,w*R_LOGO*0.38),[lx,ly]=pos(mid,R_LOGO),url=[co.logo,co.logoFb].find(u=>u&&!failed.has(u)),ok=showLogos&&!!url,sz=rr*1.25;
+      els.push(React.createElement("g",{key:"l"+ci,transform:`translate(${lx.toFixed(1)},${ly.toFixed(1)})`,opacity:colMatch?1:0.35,style:{cursor:"pointer"},onMouseEnter:()=>this.setState({hover:{ci,cat:null}}),onClick:()=>this.openCo(ci)},
+        React.createElement("circle",{r:rr,fill:"#fff",stroke:hot?INK:GRID,strokeWidth:hot?1.5:1}),
+        ok?React.createElement("image",{href:url,x:-sz/2,y:-sz/2,width:sz,height:sz,preserveAspectRatio:"xMidYMid meet",onError:()=>{failed.add(url);this.forceUpdate();}})
+          :React.createElement("text",{textAnchor:"middle",dominantBaseline:"central",fill:INK,style:{fontFamily:"'Geist',sans-serif",fontWeight:600,fontSize:(rr*0.75).toFixed(1)+"px"}},this.mono(co.short))));
+      const deg=mid*180/Math.PI,flip=deg>180;
+      els.push(React.createElement("text",{key:"t"+ci,transform:`rotate(${(deg-90).toFixed(2)}) translate(${R_LAB},0)${flip?" rotate(180)":""}`,textAnchor:flip?"end":"start",dominantBaseline:"central",fill:colMatch?INK:"oklch(0.7 0.012 70)",
+        onMouseEnter:()=>this.setState({hover:{ci,cat:null}}),onClick:()=>this.openCo(ci),
+        style:{cursor:"pointer",fontFamily:"'Geist',sans-serif",fontSize:"13px",fontWeight:hot?600:400}},co.short));
+    });
+    (st.mode==="chart"?CATS:[]).forEach(([cat,col,short],k)=>{
+      const y=-(RAD[k]+RAD[k+1])/2,on=catOn(cat),hh=RAD[k+1]-RAD[k];
+      els.push(React.createElement("rect",{key:"rh"+k,x:-40,y:(y-hh/2).toFixed(1),width:80,height:hh.toFixed(1),fill:"transparent",style:{cursor:"pointer"},onClick:()=>this.setState(s=>({cats:s.cats.includes(cat)?s.cats.filter(x=>x!==cat):[...s.cats,cat]}))}));
+      els.push(React.createElement("text",{key:"r"+k,x:0,y:y.toFixed(1),textAnchor:"middle",dominantBaseline:"central",fill:on?col:"oklch(0.75 0.012 70)",onClick:()=>this.setState(s=>({cats:s.cats.includes(cat)?s.cats.filter(x=>x!==cat):[...s.cats,cat]})),style:{cursor:"pointer",textDecoration:st.cats.includes(cat)?"underline":"none",fontFamily:"'Geist Mono',monospace",fontWeight:600,fontSize:Math.min(11,(RAD[k+1]-RAD[k])*0.6)+"px",letterSpacing:"0.04em",textTransform:"uppercase"}},short));
+    });
+    {const a=A0-0.012,[x0,y0]=pos(a,RAD[0]-6),[x1,y1]=pos(a,R_OUT+4),[x2,y2]=pos(TAU-A0+0.012,RAD[0]-6),[x3,y3]=pos(TAU-A0+0.012,R_OUT+4);
+      els.push(React.createElement("path",{key:"g1",d:`M${x0} ${y0}L${x1} ${y1}M${x2} ${y2}L${x3} ${y3}`,stroke:"oklch(0.72 0.012 70)",strokeWidth:1}));
+      const rows=[];for(let k=1;k<8;k++){const r=RAD[k],[sx,sy]=pos(TAU-A0+0.012,r),[ex,ey]=pos(a,r);rows.push(`M${sx.toFixed(1)} ${sy.toFixed(1)}A${r} ${r} 0 0 1 ${ex.toFixed(1)} ${ey.toFixed(1)}`);}
+      els.unshift(React.createElement("path",{key:"g2",d:rows.join(""),fill:"none",stroke:"oklch(0.9 0.01 80)",strokeWidth:0.8,style:{pointerEvents:"none"}}));}
+
+    const uniEls=[];
+    if(st.mode==="uni"){
+      const grouped=st.scope!=="all",U=this.uniLayout(cos,grouped),edge=()=>496;
+      const E=React.createElement;let hot=null;
+      uniEls.push(E("defs",{key:"d"},E("filter",{id:"uni-sh",x:"-50%",y:"-50%",width:"200%",height:"200%"},E("feDropShadow",{dx:0,dy:2,stdDeviation:3,floodColor:"#000",floodOpacity:0.22})),E("clipPath",{id:"uni-clip"},E("rect",{x:-496,y:-496,width:992,height:992}))));
+      const sepLines=[];
+      U&&U.secs.forEach((sec,si)=>{
+        const hue=Math.round((si*137.508+18)%360),wc=`oklch(0.5 0.13 ${hue})`;
+        const co=sec.co,ci=co.i,isH=hv&&hv.ci===ci&&hv.bi==null,isS=st.selCo===ci,{a0,a1}=sec,mid=(a0+a1)/2;
+        const anyOn=co.brands.some(i=>{const b=D.brands[i];return catOn(b.cat)&&qMatch(b);});
+        const dim=st.selCo!=null&&!isS,LINE="oklch(0.78 0.012 70)";
+        uniEls.push(E("path",{key:"bg"+ci,d:this.arc(228,496,a0,a1),fill:"#fff",fillOpacity:dim?0.55:1,clipPath:"url(#uni-clip)",style:{pointerEvents:"none"}}));
+        uniEls.push(E("path",{key:"w"+ci,d:this.arc(150,228,a0,a1),fill:isS?"oklch(0.94 0.02 80)":isH?"oklch(0.96 0.012 85)":"#fff",stroke:LINE,strokeWidth:1,style:{cursor:"pointer",transition:"fill .2s"},onMouseEnter:()=>this.setState({hover:{ci,cat:null}}),onClick:()=>this.openCo(ci)}));
+        const [rx0,ry0]=pos(a0,150),[rx1,ry1]=pos(a0,edge(a0));
+        sepLines.push(E("line",{key:"r"+ci,x1:rx0,y1:ry0,x2:rx1,y2:ry1,stroke:LINE,strokeWidth:1,style:{pointerEvents:"none"}}));
+        const nm=co.short,deg=mid*180/Math.PI,ev={style:{pointerEvents:"none",fontFamily:"'Geist',sans-serif"}},tcol=anyOn?(st.scope==="all"?"oklch(0.5 0.012 60)":INK):"oklch(0.75 0.012 70)",fsc=st.scope==="all"?0.8:1;
+        const useLogo=st.scope!=="all"&&showLogos&&co.logo;
+        if(useLogo){let sz=56;while(sz>16&&(a1-a0)*(189-sz*0.71)<sz*1.08)sz-=2;const [bx,by]=pos(mid,189),cid="wc"+ci,e=2/228;
+          uniEls.push(E("clipPath",{key:"cp"+ci,id:cid},E("path",{d:this.arc(153,225,a0+e,a1-e)})));
+          uniEls.push(E("image",{key:"b"+ci,href:co.logo,x:(bx-sz/2).toFixed(1),y:(by-sz/2).toFixed(1),width:sz,height:sz,opacity:anyOn?1:0.35,clipPath:`url(#${cid})`,preserveAspectRatio:"xMidYMid meet",style:{pointerEvents:"none"}}));}
+        else if((a1-a0)*176>=nm.length*7+18){const [x,y]=pos(mid,189),bot=deg>90&&deg<270;
+          uniEls.push(E("text",{key:"n"+ci,transform:`translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${(bot?deg+180:deg).toFixed(1)})`,textAnchor:"middle",dominantBaseline:"central",fill:tcol,...ev,style:{...ev.style,fontSize:(13*fsc).toFixed(1)+"px",fontWeight:500}},nm));}
+        else if((a1-a0)*190>=8){const fs=Math.min(11,(a1-a0)*190*0.72),max=Math.floor(68/(fs*0.58)),t=nm.length>max?nm.slice(0,max-1)+"…":nm,flip=deg>180;
+          uniEls.push(E("text",{key:"n"+ci,transform:`rotate(${(deg-90).toFixed(2)}) translate(156,0)${flip?" rotate(180)":""}`,textAnchor:flip?"end":"start",dominantBaseline:"central",fill:tcol,...ev,style:{...ev.style,fontSize:(fs*fsc).toFixed(1)+"px",fontWeight:500}},t));}
+        const ts=U.ts;
+        sec.groups.forEach(g=>{const col=CAT_COLOR[g.cat],on=catOn(g.cat),ri=231,ro=Math.min(g.rMax+ts*0.75,496),e=1.2/ro;
+          uniEls.push(E("path",{key:"gp"+ci+g.cat,d:this.arc(ri,ro,g.a0+e,g.a1-e),fill:col,fillOpacity:on?0.05:0.02,stroke:col,strokeOpacity:on?(dim?0.3:0.7):0.2,strokeWidth:1.4,strokeLinejoin:"round",clipPath:"url(#uni-clip)",style:{pointerEvents:"none"}}));});
+        co.brands.forEach((bi,j)=>{if(!sec.pos[j])return;const b=D.brands[bi],[x,y]=sec.pos[j],on=catOn(b.cat)&&qMatch(b),op=!on?0.12:(st.selCo!=null&&st.selCo!==ci)?0.25:1,isB=hv&&hv.bi===bi;
+          const g=E("g",{key:"t"+bi,transform:`translate(${x.toFixed(1)},${y.toFixed(1)})${isB?" scale(2.1)":""}`,opacity:isB?1:op,filter:isB?"url(#uni-sh)":undefined,style:{cursor:"pointer"},onMouseEnter:()=>this.setState({hover:{ci,cat:null,bi}}),onClick:()=>this.openCo(ci,b.cat,bi)},
+            E("rect",{x:-ts/2,y:-ts/2,width:ts,height:ts,rx:ts*0.2,fill:"#fff"}),
+            showLogos&&b.logo?E("image",{href:b.logo,x:-ts*0.34,y:-ts*0.34,width:ts*0.68,height:ts*0.68,preserveAspectRatio:"xMidYMid meet"})
+              :E("text",{textAnchor:"middle",dominantBaseline:"central",fill:CAT_COLOR[b.cat],style:{fontFamily:"'Geist',sans-serif",fontWeight:600,fontSize:(ts*0.34).toFixed(1)+"px"}},this.mono(b.n)));
+          if(isB)hot=g;else uniEls.push(g);});
+      });
+      uniEls.push(...sepLines);
+      if(hot)uniEls.push(hot);
+    }
+    let c={cShow:false,cKicker:"",cTitle:"",cSub:"",cMeta:null,centerDot:null,cLogo:null,cLogoFb:null};
+    const coLine=co=>{const r=this.usd(co);return r?`${r} FY2025 revenue (USD)`:"Revenue not disclosed";};
+    const hc=hv?D.companies[hv.ci]:(st.selCo!=null?D.companies[st.selCo]:null),hcat=hv?hv.cat:st.selCat;
+    if(hv&&hv.bi!=null){const b=D.brands[hv.bi];c={cShow:true,cKicker:b.cat,centerDot:CAT_COLOR[b.cat],cTitle:b.n,cSub:D.companies[b.c].short,cMeta:b.micros.join(" · ")||b.sub,cLogo:b.logo,cLogoFb:null};}
+    else if(hc){
+      if(hcat){const list=hc.byCat[hcat]||[],names=list.map(i=>D.brands[i].n);
+        c={cKicker:hcat,centerDot:CAT_COLOR[hcat],cTitle:hc.short,cSub:list.length?`${list.length} brand${list.length>1?"s":""} in ${hcat.toLowerCase()}`:`No listed brands in ${hcat.toLowerCase()}`,
+          cMeta:names.length?(names.slice(0,8).join(" · ")+(names.length>8?` · +${names.length-8} more`:"")):null,cLogo:hc.logo,cShow:true};}
+      else{const cats=CATS.filter(([k])=>hc.byCat[k]).length;c={cKicker:hc.tier,cTitle:hc.short,cSub:`${hc.brands.length} brands in ${cats} categor${cats>1?"ies":"y"}`,cMeta:coLine(hc),cLogo:hc.logo,cShow:true,centerDot:null};}
+    }
+    if(!(hv&&hv.bi!=null))c.cLogoFb=hc?hc.logoFb||null:null;c.cLogo=showLogos&&c.cLogo?c.cLogo:null;
+    c.cTitleSize=c.cTitle.length>16?2.5:c.cTitle.length>10?3:3.5;
+    let centerEls=null;
+    if(st.mode==="chart"&&hv&&hv.bi==null&&hv.ci!=null){
+      const hco=D.companies[hv.ci],list=(hv.cat?(hco.byCat[hv.cat]||[]):hco.brands).map(i=>D.brands[i]);
+      if(list.length){const R=146,n=list.length;let p=70,pts=[];
+        for(;p>=14;p-=1){pts=[];const m=Math.ceil(R/p)+1;for(let gy=-m;gy<=m;gy++)for(let gx=-m;gx<=m;gx++){const x=(gx+(n%2?0:0.5))*p,y=(gy+0.5*((Math.ceil(Math.sqrt(n))+1)%2))*p;if(Math.hypot(Math.abs(x)+p*0.42,Math.abs(y)+p*0.42)<=R)pts.push([x,y]);}if(pts.length>=n)break;}
+        pts.sort((u,v)=>Math.hypot(u[0],u[1])-Math.hypot(v[0],v[1])||u[1]-v[1]||u[0]-v[0]);pts=pts.slice(0,n).sort((u,v)=>u[1]-v[1]||u[0]-v[0]);
+        const E=React.createElement,sz=p*0.78;
+        centerEls=E("g",{style:{pointerEvents:"none"}},list.map((b,j)=>{const [x,y]=pts[j],on=catOn(b.cat)&&qMatch(b);
+          return E("g",{key:b.i,transform:`translate(${x.toFixed(1)},${y.toFixed(1)})`,opacity:on?1:0.25},
+            showLogos&&b.logo?E("image",{href:b.logo,x:-sz/2,y:-sz/2,width:sz,height:sz,preserveAspectRatio:"xMidYMid meet"})
+              :E("text",{textAnchor:"middle",dominantBaseline:"central",fill:CAT_COLOR[b.cat],style:{fontFamily:"'Geist',sans-serif",fontWeight:600,fontSize:(sz*0.34).toFixed(1)+"px"}},this.mono(b.n)));}));
+        c.cShow=false;}
+    }
+
+    const visB=cos.flatMap(co=>co.brands.map(i=>D.brands[i]));
+    const chips=CATS.map(([nm,col])=>{const on=st.cats.includes(nm);return {name:nm,color:col,count:visB.filter(b=>b.cat===nm).length,
+      border:on?INK:"oklch(0.82 0.012 80)",bg:on?EMPTY:"transparent",opacity:st.cats.length&&!on?0.5:1,
+      toggle:()=>this.setState(s=>({cats:s.cats.includes(nm)?s.cats.filter(x=>x!==nm):[...s.cats,nm]}))};});
+
+    const maxN=Math.max(...cos.map(o=>o.brands.length));
+    const byCount=cos.slice().sort((a,b)=>b.brands.length-a.brands.length);
+    const coRows=byCount.map(co=>{const bs=co.brands.map(i=>D.brands[i]),m=bs.filter(b=>catOn(b.cat)).length,r=this.usd(co);
+      return {name:co.short,orig:co.tier==="Original 11",rev:r||"Not disclosed",revColor:r?INK:"oklch(0.6 0.012 60)",
+        count:st.cats.length?`${m} of ${bs.length}`:`${bs.length}`,barW:(bs.length/maxN*82).toFixed(1),opacity:m?1:0.4,
+        segs:CATS.map(([nm,col])=>({n:bs.filter(b=>b.cat===nm).length,color:catOn(nm)?col:DIM})).filter(s=>s.n),
+        click:()=>this.openCo(co.i),enter:()=>this.setState({hover:{ci:co.i,cat:null}})};});
+
+    let coMatches=[],brMatches=[];
+    if(q){
+      coMatches=cos.filter(co=>co.n.toLowerCase().includes(q)||co.short.toLowerCase().includes(q)).map(co=>({name:co.short,meta:`${co.brands.length} brands`,click:()=>this.openCo(co.i)}));
+      brMatches=visB.filter(b=>catOn(b.cat)&&(b.n.toLowerCase().includes(q)||b.micros.some(m=>m.toLowerCase().includes(q)))).sort((a,b)=>a.n.toLowerCase().indexOf(q)-b.n.toLowerCase().indexOf(q)||a.n.localeCompare(b.n)).slice(0,40)
+        .map(b=>({name:b.n,sub:`${b.mc} · ${zLabel(ZL[b.z])}`,co:D.companies[b.c].short,color:CAT_COLOR[b.cat],click:()=>this.openCo(b.c,b.cat,b.i)}));
+    }
+    const searchHead=`${coMatches.length?coMatches.length+" compan"+(coMatches.length>1?"ies":"y")+" · ":""}${brMatches.length} brand${brMatches.length===1?"":"s"}`;
+
+    let d={},groups=[],b={},hasBrand=false;
+    if(st.selCo!=null){
+      const co=D.companies[st.selCo],bs=co.brands.map(i=>D.brands[i]);
+      const shares=D.share.filter(s=>s.co===co.n).map(s=>({pct:Math.round(s.share*1000)/10+"%",label:`${s.brand?s.brand+" · ":""}${s.cat} · ${s.type.toLowerCase()} · ${s.per}`,pub:s.pub,url:s.url}));
+      const kw=co.short.split(" ")[0].toLowerCase();
+      const deals=D.deals.filter(x=>(x.t+" "+x.impact).toLowerCase().includes(kw)).map(x=>({t:x.t,status:x.status,impact:x.impact}));
+      const cats=[...new Set(bs.map(x=>x.cat))];
+      d={name:co.short,mono:this.mono(co.short),logo:showLogos&&co.logo?co.logo:null,logoFb:co.logoFb||null,tier:co.tier,focus:co.focus,
+        rev:this.usd(co)||"—",revPer:co.usd!=null?(co.cur==="USD"||!co.cur?`${co.per} · reported in USD`:`${co.per} · ${this.fmtRev(co.rev,co.cur)} at ${co.fx} ${co.cur}/USD (2025 IRS avg)`):(co.revStatus||"Not publicly verified"),
+        us:co.us?"$"+(co.us/1000).toFixed(1)+"B":null,usBasis:co.usBasis,count:bs.length,catCount:`${cats.length} categor${cats.length>1?"ies":"y"} · ${new Set(bs.flatMap(x=>x.micros)).size} micro`,
+        parentLine:co.parent&&co.parent!==co.n?`Ultimate parent: ${co.parent}`:(co.op&&co.op!==co.n?`Operating business: ${co.op}`:null),
+        notes:co.notes||null,revNote:co.rev?co.revNotes:null,revUrl:co.revUrl,hasShare:shares.length>0,shares,hasDeals:deals.length>0,deals};
+      const catList=CATS.map(x=>x[0]).filter(k=>co.byCat[k]);
+      if(st.selCat&&co.byCat[st.selCat])catList.sort((a,b2)=>(b2===st.selCat)-(a===st.selCat));
+      groups=catList.map(cat=>{const items=co.byCat[cat].map(i=>D.brands[i]);
+        return {cat,color:catOn(cat)?CAT_COLOR[cat]:"oklch(0.7 0.012 70)",n:items.length,bg:cat===st.selCat?"oklch(0.94 0.016 85)":"transparent",
+          items:items.map(x=>{const sel=st.selBrand===x.i;
+            return {name:x.n,sub:`${x.mc} · ${zLabel(ZL[x.z])}`,mono:this.mono(x.n),logo:showLogos&&x.logo?x.logo:null,logoFb:x.logoFb||null,rel:x.rel!=="Owned / controlled"?x.rel:null,
+              perf:x.perf&&x.perf.share?Math.round(x.perf.share*1000)/10+"% share":null,bg:sel?"oklch(0.9 0.025 80)":"transparent",
+              click:()=>this.setState({selBrand:sel?null:x.i,selCat:x.cat})};})};});
+      if(st.selBrand!=null){
+        const x=D.brands[st.selBrand],p=x.perf;hasBrand=true;
+        b={name:x.n,mono:this.mono(x.n),logo:showLogos&&x.logo?x.logo:null,logoFb:x.logoFb||null,color:CAT_COLOR[x.cat],cat:x.cat,sub:x.sub,
+          rel:`${x.rel} · ${co.n}`,micros:x.micros.map(m=>({name:m})),hasMicros:x.micros.length>0,shelf:`${zLabel(ZL[x.z])} — ${x.mc}`,toShelf:()=>{if(x.z==="prestige")return;this.setState({mode:"plan"});this.openZone(x.z);},logoNote:x.gen?"Generated placeholder icon — not the official brand logo":x.ph?"No brand-specific logo sourced yet — initials shown":null,notes:x.notes||null,url:x.url||null,hasPerf:!!p,
+          sales:p&&p.sales?"$"+Math.round(p.sales).toLocaleString()+"M":null,share:p&&p.share?Math.round(p.share*1000)/10+"%":null,
+          shareOf:p?`${p.meas&&p.meas.includes("volume")?"volume":"dollar"} share of ${p.denom}`:"",
+          perfNote:p?`${p.meas}, ${p.per}. ${p.note}.`:"",perfUrl:p?p.src:""};
+      }
+    }
+
+    const top=byCount.slice(0,5);
+    const top5=top.map(co=>({name:co.short,n:co.brands.length,click:()=>this.openCo(co.i),
+      cells:co.brands.map(i=>{const x=D.brands[i];return {title:`${x.n} · ${x.cat}`,color:CAT_COLOR[x.cat],op:catOn(x.cat)&&qMatch(x)?1:0.18,click:()=>this.openCo(co.i,x.cat,i)};})}));
+    const totB=visB.length,topB=top.reduce((s,co)=>s+co.brands.length,0);
+    const topShareHead=`${top.length} companies, ${Math.round(topB/totB*100)}% of brands`;
+    const topShareText=`${top.map(x=>x.short).join(", ")} own ${topB} of the ${totB} brands listed here. Counts reflect how many brands the atlas lists, not sales.`;
+    const catMix=CATS.map(([nm,col])=>{const k=visB.filter(x=>x.cat===nm).length;return {name:nm,color:col,n:k,pct:Math.round(k/totB*100)+"%",title:`${nm}: ${k}`};});
+
+    // ---- floor plan
+    const visSet=new Set(cos.map(x=>x.i));
+    const planB=visB.filter(x=>x.z!=="prestige"&&catOn(x.cat)&&qMatch(x)&&(st.selCo==null||x.c===st.selCo));
+    const zc={};planB.forEach(x=>{(zc[x.z]=zc[x.z]||[]).push(x);});
+    const zMax=Math.max(1,...Object.values(zc).map(l=>l.length));
+    const dom=l=>{const k={};l.forEach(x=>k[x.cat]=(k[x.cat]||0)+1);return Object.entries(k).sort((a,b2)=>b2[1]-a[1])[0][0];};
+    const allZ={};visB.filter(x=>x.z!=="prestige").forEach(x=>{(allZ[x.z]=allZ[x.z]||[]).push(x);});
+    const zones=[],pe=[];
+    const T=(k,p,txt)=>pe.push(React.createElement("text",{key:k,...p,style:{fontFamily:p.mono?"'Geist Mono',monospace":"'Geist',sans-serif",fontSize:p.fs+"px",fontWeight:p.fw||400,...(p.st||{})},mono:undefined,fs:undefined,fw:undefined,st:undefined},txt));
+    ZONES.forEach(z=>{
+      if(z.off||st.mode!=="plan")return;
+      const l=zc[z.id]||[],n=l.length,has=!!(allZ[z.id]||[]).length,isH=st.hz===z.id,isS=st.selZone===z.id;
+      const col=n?CAT_COLOR[dom(l)]:null,bn=n?bin(n):0,shade=n?SHADE[bn]:0,dark=n&&bn>=2&&!["Snacks & Confectionery","Pet Care","Beauty"].includes(dom(l));
+      if(st.planIcons){const all=(allZ[z.id]||[]).slice().sort((a,b2)=>CAT_ORDER[a.cat]-CAT_ORDER[b2.cat]||a.mc.localeCompare(b2.mc)||a.n.localeCompare(b2.n)),N=all.length,show=new Set(l.map(x=>x.i));
+        zones.push({...z,rx:0,fill:N?"#fff":EMPTY,stroke:isH||isS?INK:GRID,sw:isH||isS?2:0.75,cursor:N?"pointer":"default",enter:()=>this.setState({hz:z.id}),click:()=>{if(N)this.openZone(z.id);}});
+        if(!N){if(!z.aisle&&!z.hb)T("zn"+z.id,{x:z.x+z.w/2,y:z.y+z.h/2,textAnchor:"middle",dominantBaseline:"central",fill:"oklch(0.6 0.012 60)",fs:z.h<50?11:13,st:{fontFamily:"'Instrument Serif',serif"}},z.name);return;}
+        const pad=1.5,W=z.w-pad*2,H=z.h-pad*2;let best=null;
+        for(let cols=1;cols<=N;cols++){const rows=Math.ceil(N/cols),p=Math.min(W/cols,H/rows);if(!best||p>best.p)best={p,cols,rows};}
+        const {p,cols,rows}=best,ox=z.x+pad+(W-cols*p)/2,oy=z.y+pad+(H-rows*p)/2,sz=p*0.86;
+        all.forEach((b,j)=>{const x=ox+(j%cols)*p+p/2,y=oy+Math.floor(j/cols)*p+p/2,on=show.has(b.i);
+          pe.push(React.createElement("g",{key:"pi"+b.i,transform:`translate(${x.toFixed(2)},${y.toFixed(2)})`,opacity:on?1:0.15},
+            showLogos&&b.logo?React.createElement("image",{href:b.logo,x:-sz/2,y:-sz/2,width:sz,height:sz,preserveAspectRatio:"xMidYMid meet"})
+              :React.createElement("text",{textAnchor:"middle",dominantBaseline:"central",fill:CAT_COLOR[b.cat],style:{fontFamily:"'Geist',sans-serif",fontWeight:600,fontSize:Math.max(2,sz*0.38).toFixed(1)+"px"}},this.mono(b.n))));});
+        return;}
+      zones.push({...z,rx:0,fill:z.off?(n?`color-mix(in oklch, ${col} ${Math.min(shade,40)}%, ${PAPER})`:"transparent"):n?`color-mix(in oklch, ${col} ${shade}%, ${PAPER})`:(has?DIM:EMPTY),
+        stroke:isH||isS?INK:n?PAPER:GRID,sw:isH||isS?2:n?1.2:0.6,cursor:has?"pointer":"default",
+        enter:()=>this.setState({hz:z.id}),click:()=>{if(has)this.openZone(z.id);}});
+      const cx=z.x+z.w/2,cy=z.y+z.h/2,tc=dark?"#fff":n||!has?INK:"oklch(0.6 0.012 60)",cnt=has?String(n):"",LS={letterSpacing:"0.06em",textTransform:"uppercase"};
+      if(z.aisle){T("zc"+z.id,{x:cx,y:z.y+12,textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:10,fw:600,mono:1},z.code);
+        T("zn"+z.id,{transform:`translate(${cx},${cy}) rotate(-90)`,textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:7.5,mono:1,st:LS},z.name);
+        if(cnt)T("zk"+z.id,{x:cx,y:z.y+z.h-11,textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:9,mono:1},cnt);}
+      else if(z.hb){T("zc"+z.id,{x:cx,y:z.y+11,textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:8.5,fw:600,mono:1},z.code);
+        if(cnt)T("zk"+z.id,{x:cx,y:z.y+z.h-11,textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:9,mono:1},cnt);}
+      else if(z.off){T("zn"+z.id,{x:36,y:z.y+24,dominantBaseline:"central",fill:INK,fs:14,fw:500},z.name);
+        T("zs"+z.id,{x:36,y:z.y+44,dominantBaseline:"central",fill:"oklch(0.42 0.012 60)",fs:11},"Prestige skin care & makeup, fine fragrance, salon hair — sold mainly outside the supermarket");
+        T("zk"+z.id,{x:644,y:z.y+33,textAnchor:"end",dominantBaseline:"central",fill:tc,fs:13,mono:1},n+" brands");}
+      else{const small=z.h<50;T("zn"+z.id,{x:cx,y:cy-(cnt?(small?7:10):0),textAnchor:"middle",dominantBaseline:"central",fill:dark?"#fff":has?INK:"oklch(0.55 0.012 60)",fs:small?14:17,st:{fontFamily:"'Instrument Serif',serif"}},z.name);
+        if(cnt)T("zk"+z.id,{x:cx,y:cy+(small?8:11),textAnchor:"middle",dominantBaseline:"central",fill:tc,fs:small?8.5:9.5,mono:1,st:LS},n+(n===1?" brand":" brands"));}
+    });
+    if(!st.planIcons)T("hbt",{x:179,y:309,textAnchor:"middle",dominantBaseline:"central",fill:"oklch(0.35 0.012 60)",fs:8.5,fw:600,mono:1,st:{letterSpacing:"0.08em",textTransform:"uppercase"}},"Health & Beauty");
+    T("ent0",{x:277,y:410,textAnchor:"middle",dominantBaseline:"central",fill:"oklch(0.48 0.012 60)",fs:8.5,mono:1,st:{letterSpacing:"0.08em",textTransform:"uppercase"}},"Entry");
+    let pHas=false,pTitle="",pSub="",pMicros=[],pHint="";
+    const hzZ=st.hz&&ZL[st.hz];
+    if(hzZ){const l=zc[hzZ.id]||[],all=allZ[hzZ.id]||[];pHas=true;pTitle=zLabel(hzZ);
+      if(!all.length)pSub="No atlas brands shelved here";
+      else{const coN=new Set(l.map(x=>x.c)).size;pSub=`${l.length} brand${l.length===1?"":"s"} from ${coN} compan${coN===1?"y":"ies"}${l.length!==all.length?` · ${all.length} in total`:""}`;
+        const mm={};l.forEach(x=>{(mm[x.mc]=mm[x.mc]||[]).push(x);});pMicros=Object.entries(mm).sort((a,b2)=>b2[1].length-a[1].length).map(([k,v])=>({name:k,n:v.length,color:CAT_COLOR[dom(v)]}));}}
+    else if(st.selCo!=null){const co=D.companies[st.selCo],zs=new Set(planB.map(x=>x.z));pHint=`Showing ${co.short} only: ${planB.length} brands across ${zs.size} zone${zs.size===1?"":"s"} of the store.`;}
+
+    let zd={},zGroups=[];
+    if(st.selZone){const Z=ZL[st.selZone],all=(allZ[Z.id]||[]),l=zc[Z.id]||[];
+      const coN=new Set(all.map(x=>x.c)).size;
+      zd={name:Z.name,code:Z.code||Z.name.slice(0,2),where:Z.where,color:all.length?CAT_COLOR[dom(all)]:INK,
+        summary:`${all.length} brands from ${coN} parent compan${coN===1?"y":"ies"}${l.length!==all.length?` · ${l.length} match your filters`:""}.`};
+      const mm={};all.forEach(x=>{(mm[x.mc]=mm[x.mc]||[]).push(x);});
+      zGroups=Object.entries(mm).sort((a,b2)=>b2[1].length-a[1].length).map(([k,v])=>({name:k,n:v.length,color:CAT_COLOR[dom(v)],
+        items:v.slice().sort((a,b2)=>a.n.localeCompare(b2.n)).map(x=>{const ok=catOn(x.cat)&&qMatch(x)&&(st.selCo==null||x.c===st.selCo);
+          const C=D.companies[x.c];return {name:x.n,sub:x.micros.join(" · ")||x.cat,co:C.short,coMono:this.mono(C.short),coLogo:showLogos&&C.logo?C.logo:null,coLogoFb:C.logoFb||null,color:CAT_COLOR[x.cat],mono:this.mono(x.n),logo:showLogos&&x.logo?x.logo:null,logoFb:x.logoFb||null,op:ok?1:0.4,click:()=>this.openCo(x.c,x.cat,x.i)};})}));}
+    const zBackLabel=st.selCo!=null?`← ${D.companies[st.selCo].short}`:"← All Companies";
+
+    const statusStyle=s=>{const t=s.toLowerCase();
+      if(t.startsWith("completed"))return ["oklch(0.36 0.08 150)","oklch(0.92 0.04 150)"];
+      if(t.includes("pending")||t.startsWith("announced")||t.startsWith("paused"))return ["oklch(0.42 0.1 70)","oklch(0.93 0.06 85)"];
+      if(t.startsWith("divested"))return ["oklch(0.4 0.06 30)","oklch(0.92 0.03 40)"];
+      return ["oklch(0.35 0.03 260)","oklch(0.92 0.015 260)"];};
+    const deals=D.deals.slice().sort((a,b2)=>String(b2.date).localeCompare(String(a.date))).map(x=>{const [fg,bg]=statusStyle(x.status);return {...x,t:tc(x.t),fg,bg};});
+
+    this._clv={D,cosIds:cos.map(x=>x.i),on:new Set(visB.filter(x=>catOn(x.cat)&&qMatch(x)).map(x=>x.i)),coOn:new Set(cos.filter(co=>co.brands.some(i=>{const b=D.brands[i];return catOn(b.cat)&&qMatch(b);})).map(x=>x.i)),selCo:st.selCo,showLogos,catOn,short:i=>D.companies[i].short};
+    if(this.cl&&st.mode==="clu")setTimeout(()=>this.cl&&this.cl.kick(),0);
+    return {...base,...c,centerEls,uniEls,allCount:visB.length,chips,cells,svgEls:els,hoverWedge,selWedge,coRows,coMatches,brMatches,searchHead,
+      showSearch:!!q,noResults:q&&!coMatches.length&&!brMatches.length,showList:!q&&st.selCo==null&&!st.selZone,showDetail:!q&&st.selCo!=null&&!st.selZone,showZone:!q&&!!st.selZone,
+      zones,planEls:pe,pHas,pBox:pHas||st.selCo!=null,pNone:!pHas,pTitle,pSub,pMicros,pHint,pCo:!pHas&&st.selCo!=null,z:zd,zGroups,zBackLabel,
+      listHead:`${n} companies · by brands listed`,d,groups,b,hasBrand,top5,topShareHead,topShareText,catMix,deals};
+  }
+}
+</script>
+</body>
+</html>
