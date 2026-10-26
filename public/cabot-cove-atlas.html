@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Murder, She Wrote · Cabot Cove Atlas · Story Field Guide № 011</title>
+<meta name="description" content="A toy-diorama 3D atlas of Cabot Cove, Maine, from Murder, She Wrote: the town’s places, the episodes set there and the murders that happened in them.">
+<link rel="icon" href="favicon.ico" sizes="any"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>window.__resources=Object.assign(window.__resources||{},{"ph4":"assets/cabot/photos/ph4.jpg","ph17":"assets/cabot/photos/ph17.jpg","ph14":"assets/cabot/photos/ph14.jpg","ph25":"assets/cabot/photos/ph25.jpg","ph18":"assets/cabot/photos/ph18.jpg","ph26":"assets/cabot/photos/ph26.jpg","ph7":"assets/cabot/photos/ph7.jpg","ph8":"assets/cabot/photos/ph8.jpg","ph11":"assets/cabot/photos/ph11.jpg","ph24":"assets/cabot/photos/ph24.jpg","ph6":"assets/cabot/photos/ph6.jpg","ph16":"assets/cabot/photos/ph16.jpg","ph12":"assets/cabot/photos/ph12.jpg","ph9":"assets/cabot/photos/ph9.jpg","ph10":"assets/cabot/photos/ph10.jpg","ph13":"assets/cabot/photos/ph13.jpg","ph23":"assets/cabot/photos/ph23.jpg","ph29":"assets/cabot/photos/ph29.jpg","ph15":"assets/cabot/photos/ph15.jpg","ph27":"assets/cabot/photos/ph27.jpg","ph33":"assets/cabot/photos/ph33.jpg","ph5":"assets/cabot/photos/ph5.jpg","ph1":"assets/cabot/photos/ph1.jpg","ph20":"assets/cabot/photos/ph20.jpg","ph35":"assets/cabot/photos/ph35.jpg","ph32":"assets/cabot/photos/ph32.jpg","ph30":"assets/cabot/photos/ph30.jpg","ph37":"assets/cabot/photos/ph37.jpg","ph21":"assets/cabot/photos/ph21.jpg","orbit":"vendor/three-0.160.0/OrbitControls.js","ph28":"assets/cabot/photos/ph28.jpg","ph31":"assets/cabot/photos/ph31.jpg","cabot3d":"assets/cabot/cabot3d.js","ph2":"assets/cabot/photos/ph2.jpg","ph34":"assets/cabot/photos/ph34.jpg","bgu":"vendor/three-0.160.0/BufferGeometryUtils.js","ph22":"assets/cabot/photos/ph22.jpg","ph19":"assets/cabot/photos/ph19.jpg","three":"vendor/three-0.160.0/three.module.js","ph0":"assets/cabot/photos/ph0.jpg","ph36":"assets/cabot/photos/ph36.jpg","ph38":"assets/cabot/photos/ph38.jpg","ph41":"assets/cabot/photos/ph41.jpg","ph39":"assets/cabot/photos/ph39.jpg","ph3":"assets/cabot/photos/ph3.jpg","ph42":"assets/cabot/photos/ph42.jpg","cabotData":"assets/cabot/cabot-data.json","ph43":"assets/cabot/photos/ph43.jpg","ph45":"assets/cabot/photos/ph45.jpg","ph44":"assets/cabot/photos/ph44.jpg","ph40":"assets/cabot/photos/ph40.jpg","ph49":"assets/cabot/photos/ph49.jpg","ph47":"assets/cabot/photos/ph47.jpg","ph50":"assets/cabot/photos/ph50.jpg","murders":"assets/cabot/murders.json","ph46":"assets/cabot/photos/ph46.jpg","ph48":"assets/cabot/photos/ph48.jpg","ph51":"assets/cabot/photos/ph51.jpg","https://unpkg.com/react@18.3.1/umd/react.production.min.js":"vendor/react.production.min.js","https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js":"vendor/react-dom.production.min.js"})</script>
+<script src="assets/cabot/support.js"></script>
+</head>
+<body>
+
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Murder, She Wrote · Cabot Cove Atlas · Story Field Guide № 011</title>
+<style>@font-face{font-family:'Rye';font-weight:400;font-display:swap;src:url("assets/cabot/rye.woff2") format('woff2')}
+@font-face{font-family:'Bebas Neue';font-weight:400;font-display:swap;src:url("assets/cabot/bebas-neue.woff2") format('woff2')}
+@font-face{font-family:'Nunito';font-weight:200 1000;font-display:swap;src:url("assets/cabot/nunito.woff2") format('woff2')}
+</style>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#e9e4cf;-webkit-font-smoothing:antialiased}
+a{color:#3e6b65;text-decoration-color:rgba(47,127,122,.4);text-underline-offset:2px}
+a:hover{color:#3e6b65}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2.5px solid #4f8a82;outline-offset:2px}
+summary{cursor:pointer}
+input::placeholder{color:#7a7688}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:fixed; inset:0; overflow:hidden; font-family:'Nunito', system-ui, sans-serif; color:#37334a; background:{{ bgCss }}; transition:background .6s;">
+  <div ref="{{ stageRef }}" tabindex="0" aria-label="3D tabletop model of Cabot Cove. Drag to orbit. Two-finger scroll or arrow keys move the map; pinch or plus and minus keys zoom. Click a building for details." style="position:absolute; inset:0; outline:none;"></div>
+
+  <div ref="{{ labelsRef }}" style="position:absolute; inset:0; pointer-events:none; overflow:hidden; display:{{ labelsDisplay }};">
+    <sc-for list="{{ labels }}" as="m" hint-placeholder-count="0">
+      <div data-lbl="{{ m.id }}" data-rank="{{ m.rank }}" data-pri="{{ m.pri }}" data-force="{{ m.force }}" data-stem="{{ m.stemN }}" data-hover="{{ m.hov }}" data-dot="{{ m.dot }}" style="position:absolute; left:0; top:0; width:0; height:0; visibility:hidden;">
+        <button type="button" tabindex="-1" aria-hidden="true" sc-camel-on-click="{{ m.onClick }}" sc-camel-on-mouse-enter="{{ m.onEnter }}" sc-camel-on-mouse-leave="{{ m.onLeave }}" style="position:absolute; left:-6px; top:-6px; width:12px; height:12px; padding:0; box-sizing:border-box; border-radius:50%; border:2px solid #f6f1da; background:{{ m.pin }}; box-shadow:0 1px 4px rgba(0,0,0,.4); cursor:pointer; pointer-events:auto; opacity:{{ m.dotOp }}; transition:opacity .15s, transform .15s;" style-hover="transform:scale(1.35); opacity:1"></button>
+        <sc-if value="{{ m.full }}">
+        <span data-stem-line="1" style="position:absolute; left:-.75px; bottom:0; width:1.5px; height:{{ m.stem }}; background:rgba(38,50,44,.55);"></span>
+        <button type="button" data-lbl-btn="1" aria-label="{{ m.aria }}" sc-camel-on-click="{{ m.onClick }}" sc-camel-on-mouse-enter="{{ m.onEnter }}" sc-camel-on-mouse-leave="{{ m.onLeave }}" style="position:absolute; left:0; bottom:{{ m.stem }}; transform:translateX(-50%); pointer-events:auto; display:flex; align-items:center; gap:7px; white-space:nowrap; border:2px solid {{ m.bd }}; background:{{ m.bg }}; color:{{ m.fg }}; border-radius:999px; padding:3px 11px 4px 8px; cursor:pointer; box-shadow:2px 3px 0 rgba(55,51,74,.3); font-weight:800; font-size:{{ m.fs }};" style-hover="transform:translateX(-50%) translateY(-2px); box-shadow:2px 5px 0 rgba(55,51,74,.38)">
+          <sc-if value="{{ m.evOn }}"><span style="flex:none; width:8px; height:8px; border-radius:50%; background:{{ m.gc }};"></span></sc-if>
+          <sc-if value="{{ m.evDlg }}"><span style="flex:none; width:7px; height:7px; transform:rotate(45deg); background:{{ m.gc }};"></span></sc-if>
+          <sc-if value="{{ m.evInf }}"><span style="flex:none; width:8px; height:8px; border-radius:50%; border:2px solid {{ m.gc }}; box-sizing:border-box;"></span></sc-if>
+          <sc-if value="{{ m.hasStop }}"><span style="flex:none; min-width:16px; height:16px; border-radius:8px; background:#37334a; color:#f6f1da; font-size:10.5px; line-height:16px; text-align:center;">{{ m.stopNo }}</span></sc-if>
+          <sc-if value="{{ m.hasM }}"><span style="display:flex; gap:3px;"><sc-for list="{{ m.mdots }}" as="md"><span title="{{ md.t }}" style="flex:none; width:10px; height:10px; border-radius:50%; background:{{ md.c }}; opacity:{{ md.op }}; box-shadow:0 0 0 1.5px #f6f1da;"></span></sc-for></span></sc-if>
+          <span>{{ m.name }}</span>
+          <sc-if value="{{ m.hasDetail }}"><span style="font-weight:600; font-size:11.5px; color:{{ m.dc }};">{{ m.detail }}</span></sc-if>
+        <span aria-hidden="true" style="margin-left:-2px; opacity:.55; font-weight:800;">›</span></button>
+        </sc-if>
+      </div>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ showLoading }}">
+    <div style="position:absolute; inset:0; z-index:80; display:flex; align-items:center; justify-content:center; background:#e9e4cf;">
+      <div style="text-align:center;">
+        <div style="font-family:'Rye', serif; font-size:46px; color:#37334a;">Cabot Cove</div>
+        <div style="font-weight:700; font-size:14px; color:#5a5668; margin-top:6px;">{{ loadText }}</div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div ref="{{ leftRef }}" style="position:absolute; left:{{ left.x }}; top:{{ left.y }}; width:{{ left.w }}; bottom:{{ left.b }}; z-index:30; display:flex; flex-direction:column; gap:14px; pointer-events:none;">
+    <div data-ui-block="1" role="banner" style="flex:none; width:{{ sign.w }}; max-width:100%; pointer-events:auto; display:flex; flex-direction:column; align-items:stretch;">
+      <div style="background:#e6dfb4 repeating-linear-gradient(180deg, transparent 0 26px, rgba(55,51,74,.06) 26px 27.5px); border:{{ left.bw }} solid #37334a; border-radius:{{ sign.r }}; padding:6px; box-shadow:4px 6px 0 rgba(55,51,74,.25);">
+        <div style="border:1.5px solid rgba(55,51,74,.55); border-radius:{{ sign.ri }}; display:flex; flex-direction:column; align-items:center; text-align:center; padding:{{ signPad }};">
+          <sc-if value="{{ signFull }}"><div style="font-family:'Bebas Neue', sans-serif; font-size:{{ sign.kicker }}; line-height:1; letter-spacing:.24em; color:#625e6e; padding-left:.24em;">Murder, She Wrote</div></sc-if>
+          <div style="font-family:'Rye', serif; font-size:{{ signName }}; line-height:1.02; color:#37334a; margin-top:{{ signNameMt }}; white-space:nowrap;">Cabot Cove</div>
+          <sc-if value="{{ signFull }}"><div style="display:flex; align-items:center; gap:10px; margin-top:6px; width:72%;">
+            <span style="flex:1; height:1.5px; background:#37334a;"></span>
+            <span style="font-family:'Bebas Neue', sans-serif; font-size:{{ sign.state }}; line-height:1; letter-spacing:.3em; padding-left:.3em; color:#37334a;">Maine</span>
+            <span style="flex:1; height:1.5px; background:#37334a;"></span>
+          </div></sc-if>
+          <sc-if value="{{ signSeries }}"><div style="margin-top:10px; font-size:10.5px; font-weight:800; letter-spacing:.14em; line-height:1.35; color:#4d4959; text-wrap:balance;">FIELD GUIDE № 011 · A STORY FIELD GUIDE PROJECT</div></sc-if>
+          <sc-if value="{{ notPoster }}" hint-placeholder-val="{{ true }}"><a href="./" style="margin-top:{{ signLinkMt }}; font-size:11px; font-weight:800; letter-spacing:.08em; color:#3e6b65; text-underline-offset:3px;">← All Field Guides</a></sc-if>
+        </div>
+      </div>
+      <sc-if value="{{ signFull }}"><div aria-hidden="true" style="display:flex; justify-content:space-between; padding:0 24%;">
+        <span style="width:3px; height:12px; background:#37334a; border-radius:2px;"></span>
+        <span style="width:3px; height:12px; background:#37334a; border-radius:2px;"></span>
+      </div>
+      <div style="align-self:center; width:84%; box-sizing:border-box; background:#37334a; color:#e6dfb4; border-radius:8px; text-align:center; font-family:'Bebas Neue', sans-serif; font-size:{{ left.t3 }}; line-height:1; letter-spacing:.12em; padding:{{ left.pad3 }}; box-shadow:3px 4px 0 rgba(55,51,74,.25);">Murder Capital of the US</div>
+      <sc-if value="{{ signRate }}"><div aria-hidden="true" style="display:flex; justify-content:space-between; padding:0 30%;">
+        <span style="width:3px; height:9px; background:#37334a; border-radius:2px;"></span>
+        <span style="width:3px; height:9px; background:#37334a; border-radius:2px;"></span>
+      </div>
+      <div style="align-self:center; width:72%; box-sizing:border-box; background:#e6dfb4; color:#37334a; border:2px solid #37334a; border-radius:7px; text-align:center; font-size:11.5px; font-weight:800; letter-spacing:.06em; line-height:1.3; padding:5px 10px 6px; box-shadow:3px 4px 0 rgba(55,51,74,.22); text-wrap:balance;">A Homicide Rate 17× the U.S. National Average</div></sc-if></sc-if>
+    </div>
+    <sc-if value="{{ showIntro }}">
+      <div data-ui-block="1" style="pointer-events:auto; flex:{{ fx.intro }}; min-height:0; overflow:auto; box-sizing:border-box; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; padding:6px 14px 6px 20px; box-shadow:4px 5px 0 rgba(55,51,74,.22);">
+        <button sc-camel-on-click="{{ toggleIntro }}" aria-expanded="{{ introOpen }}" style="all:unset; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; min-height:32px; font-size:12.5px; font-weight:800; letter-spacing:.08em; color:#37334a;" style-hover="opacity:.75"><span>ABOUT THE TOWN</span><span style="font-size:15px; line-height:1;">{{ introIcon }}</span></button>
+        <sc-if value="{{ introOpen }}">
+        <div style="padding:6px 6px 7px 0;">
+        <p style="margin:0; font-size:14.5px; line-height:1.5; color:#3f3b4d; text-wrap:pretty;">Jessica Fletcher’s fictional Maine hometown as a toy-scale model: a working harbor, a Main Street of clapboard shops, and two lighthouses (only one still standing).</p>
+        <div style="display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:8px; margin-top:13px;">
+          <div style="background:#f6f1da; border-radius:14px; padding:8px 12px;"><div style="font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#5a5668;">SUN</div><div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:23px; color:#4f8a82;">{{ sunAlt }}°<span style="font-size:13px; color:#5a5668; margin-left:4px;">{{ sunDir }}</span></div></div>
+          <div style="background:#f6f1da; border-radius:14px; padding:8px 12px;"><div style="font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#5a5668;">IN SERIES</div><div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:23px;">{{ estCount }}<span style="font-size:13px; color:#5a5668; margin-left:3px;">/ {{ totalCount }}</span></div></div>
+          <div style="background:#f6f1da; border-radius:14px; padding:8px 12px;"><div style="font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#5a5668;">POP.</div><div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:23px;">3,560</div></div>
+        </div>
+        </div>
+        </sc-if>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showGuide }}">
+      <div data-ui-block="1" style="pointer-events:auto; min-height:0; flex:{{ fx.guide }}; display:flex; flex-direction:column; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; box-shadow:4px 5px 0 rgba(55,51,74,.22); overflow:hidden;">
+        <button type="button" sc-camel-on-click="{{ toggleGuide }}" aria-expanded="{{ guideOpen }}" style="all:unset; flex:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:32px; padding:6px 14px 6px 20px; font-size:12.5px; font-weight:800; letter-spacing:.08em; color:#37334a;" style-hover="opacity:.75"><span>SEARCH &amp; FIELD GUIDE</span><span style="font-size:15px; line-height:1;">{{ guideIcon }}</span></button>
+        <sc-if value="{{ guideOpen }}">
+        <div style="flex:none; padding:0 14px 0;">
+          <label style="display:flex; align-items:center; gap:8px; background:#f6f1da; border-radius:14px; padding:0 6px 0 12px; height:42px;">
+            <span aria-hidden="true" style="flex:none; width:10px; height:10px; border:2px solid #625e6e; border-radius:50%; position:relative;"><span style="position:absolute; right:-5px; bottom:-4px; width:6px; height:2px; background:#625e6e; transform:rotate(45deg);"></span></span>
+            <input type="search" value="{{ q }}" sc-camel-on-change="{{ onQuery }}" placeholder="Search places, people, episodes…" aria-label="Search places, characters, episodes or districts" style="flex:1; min-width:0; border:0; background:transparent; outline:none; font-size:15.5px; height:40px;">
+            <sc-if value="{{ hasQuery }}"><button type="button" sc-camel-on-click="{{ clearQuery }}" aria-label="Clear search" style="flex:none; width:30px; height:30px; border:0; background:transparent; cursor:pointer; font-size:19px; color:#625e6e;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">×</button></sc-if>
+          </label>
+          <sc-if value="{{ noQuery }}">
+            <nav role="tablist" aria-label="Guide sections" style="display:flex; flex-wrap:wrap; gap:5px; margin-top:10px;">
+              <sc-for list="{{ tabs }}" as="t"><button type="button" role="tab" aria-selected="{{ t.sel }}" sc-camel-on-click="{{ t.onClick }}" style="border:0; border-radius:999px; background:{{ t.bg }}; color:{{ t.fg }}; padding:6px 12px; cursor:pointer; font-weight:800; font-size:13.5px;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ t.label }}</button></sc-for>
+            </nav>
+          </sc-if>
+        </div>
+        <div style="flex:1; min-height:0; overflow:auto; padding:10px 14px 16px;">
+          <sc-if value="{{ hasQuery }}">
+            <div style="font-size:12px; font-weight:800; color:#625e6e; margin:2px 4px 6px;">{{ resultCount }}</div>
+            <sc-if value="{{ noResults }}"><div style="padding:14px 4px; font-size:16px; color:#625e6e;">No matching locations.</div></sc-if>
+            <sc-for list="{{ results }}" as="r">
+              <button type="button" sc-camel-on-click="{{ r.onClick }}" style="display:flex; align-items:center; gap:10px; width:100%; text-align:left; border:0; border-radius:12px; background:transparent; padding:7px 8px; cursor:pointer;" style-hover="background:#f6f1da">
+                <span style="flex:none; width:12px; display:flex; justify-content:center;">
+                  <sc-if value="{{ r.evOn }}"><span style="width:8px; height:8px; border-radius:50%; background:#4f8a82;"></span></sc-if>
+                  <sc-if value="{{ r.evDlg }}"><span style="width:7px; height:7px; transform:rotate(45deg); background:#a85a3c;"></span></sc-if>
+                  <sc-if value="{{ r.evInf }}"><span style="width:8px; height:8px; border-radius:50%; border:2px solid #625e6e; box-sizing:border-box;"></span></sc-if>
+                </span>
+                <span style="display:flex; flex-direction:column; min-width:0;"><span style="font-weight:800; font-size:15px;">{{ r.name }}</span><span style="font-size:13px; color:#625e6e;">{{ r.why }}</span></span>
+              <span aria-hidden="true" style="flex:none; margin-left:auto; padding-left:8px; color:#7a7688; font-size:17px; font-weight:800; line-height:1;">›</span></button>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ tabPlaces }}">
+            <sc-for list="{{ groups }}" as="g">
+              <div style="margin:4px 0 10px;">
+                <div style="font-size:12px; font-weight:800; letter-spacing:.08em; color:#3e6b65; margin:0 8px 2px;">{{ g.name }}</div>
+                <sc-for list="{{ g.items }}" as="it">
+                  <button type="button" sc-camel-on-click="{{ it.onClick }}" style="display:flex; align-items:center; gap:10px; width:100%; text-align:left; border:0; border-radius:10px; background:transparent; padding:5px 8px; cursor:pointer; font-size:14.5px;" style-hover="background:#f6f1da">
+                    <span style="flex:none; width:12px; display:flex; justify-content:center;">
+                      <sc-if value="{{ it.evOn }}"><span style="width:8px; height:8px; border-radius:50%; background:#4f8a82;"></span></sc-if>
+                      <sc-if value="{{ it.evDlg }}"><span style="width:7px; height:7px; transform:rotate(45deg); background:#a85a3c;"></span></sc-if>
+                      <sc-if value="{{ it.evInf }}"><span style="width:8px; height:8px; border-radius:50%; border:2px solid #625e6e; box-sizing:border-box;"></span></sc-if>
+                    </span>
+                    <span style="flex:1; min-width:0; font-weight:{{ it.weight }};">{{ it.name }}</span>
+                    <span style="flex:none; font-size:11.5px; font-weight:700; color:#7a7688;">{{ it.tag }}</span>
+                  <span aria-hidden="true" style="flex:none; margin-left:auto; padding-left:8px; color:#7a7688; font-size:17px; font-weight:800; line-height:1;">›</span></button>
+                </sc-for>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ tabEpisodes }}">
+            <div style="font-size:13.5px; color:#625e6e; line-height:1.45; margin:2px 4px 10px;">Spoiler-free. An episode lights up only the places the dataset links to it.</div>
+            <sc-for list="{{ episodes }}" as="e">
+              <div style="border:2px solid {{ e.bd }}; border-radius:16px; background:{{ e.bg }}; padding:9px 12px 10px; margin-bottom:8px;">
+                <button type="button" aria-pressed="{{ e.on }}" sc-camel-on-click="{{ e.onClick }}" style="display:block; width:100%; text-align:left; border:0; background:transparent; padding:0; cursor:pointer; position:relative; padding-right:30px;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">
+                  <div style="display:flex; justify-content:space-between; font-size:11.5px; font-weight:800; color:#3e6b65;"><span>{{ e.code }}</span><span style="color:#625e6e;">{{ e.count }}</span></div>
+                  <div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:17.5px; margin-top:1px;">{{ e.title }}</div>
+                  <div style="font-size:13.5px; line-height:1.4; color:#4d4959; margin-top:2px; text-wrap:pretty;">{{ e.syn }}</div>
+                <span aria-hidden="true" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#7a7688; font-size:17px; font-weight:800; line-height:1;">›</span></button>
+                <sc-if value="{{ e.on }}"><div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:8px;"><sc-for list="{{ e.places }}" as="pl"><button type="button" sc-camel-on-click="{{ pl.onClick }}" style="border:0; border-radius:999px; background:#f6f1da; padding:4px 10px; cursor:pointer; font-weight:700; font-size:12.5px; box-shadow:0 1px 3px rgba(0,0,0,.08);" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ pl.name }}<span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></sc-for></div></sc-if>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ tabPeople }}">
+            <div style="font-size:12.5px; color:#625e6e; margin:2px 4px 10px;">Recurring Cabot Cove residents across all twelve seasons. Sheriff Tupper served seasons 1–4; Sheriff Metzger seasons 5–12.</div>
+            <sc-for list="{{ people }}" as="p">
+              <button type="button" aria-pressed="{{ p.on }}" sc-camel-on-click="{{ p.onClick }}" style="display:block; width:100%; text-align:left; border:2px solid {{ p.bd }}; border-radius:16px; background:{{ p.bg }}; padding:8px 12px; margin-bottom:6px; cursor:pointer; opacity:{{ p.op }}; position:relative; padding-right:30px;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">
+                <div style="display:flex; justify-content:space-between; gap:8px;"><span style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:16.5px;">{{ p.name }}</span><span style="font-size:12px; font-weight:800; color:#625e6e;">{{ p.count }}</span></div>
+                <div style="font-size:13.5px; color:#4d4959;">{{ p.desc }}</div>
+              <span aria-hidden="true" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); color:#7a7688; font-size:17px; font-weight:800; line-height:1;">›</span></button>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ tabHistory }}">
+            <div style="font-size:13.5px; color:#625e6e; line-height:1.45; margin:2px 4px 10px;">Episodes and props don’t always agree, so competing accounts are shown side by side.</div>
+            <sc-for list="{{ history }}" as="hg">
+              <div style="background:#f6f1da; border-radius:16px; padding:10px 13px 12px; margin-bottom:10px;">
+                <div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:17px;">{{ hg.title }}</div>
+                <sc-if value="{{ hg.contested }}"><div style="display:inline-block; margin-top:3px; background:#dbe8e1; color:#3e6b65; border-radius:8px; font-size:12px; font-weight:800; padding:2px 8px;">Accounts differ</div></sc-if>
+                <sc-for list="{{ hg.items }}" as="hi">
+                  <div style="margin-top:8px;">
+                    <div style="display:flex; align-items:baseline; gap:9px;"><span style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:21px; color:#4f8a82;">{{ hi.year }}</span><span style="font-size:12px; font-weight:700; color:#625e6e;">{{ hi.status }}</span></div>
+                    <div style="font-size:14px; line-height:1.4;">{{ hi.claim }}</div>
+                    <div style="display:flex; flex-wrap:wrap; gap:3px 10px; margin-top:3px;">
+                      <sc-if value="{{ hi.hasEp }}"><button type="button" sc-camel-on-click="{{ hi.onEp }}" style="border:0; background:transparent; padding:0; cursor:pointer; color:#3e6b65; text-decoration:underline; font-size:13px; font-weight:700;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">“{{ hi.ep }}”: show places<span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></sc-if>
+                      <a href="{{ hi.url }}" target="_blank" rel="noopener" style="font-size:12.5px;">{{ hi.host }}</a>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-for>
+          </sc-if>
+          <sc-if value="{{ tabFilm }}">
+            <div style="font-size:13.5px; color:#625e6e; line-height:1.45; margin:2px 4px 10px;">Mendocino, Noyo Harbor and the Universal backlot stood in for Maine. These real places are kept off the model.</div>
+            <sc-for list="{{ film }}" as="f">
+              <div style="background:#f6f1da; border-radius:16px; padding:10px 13px; margin-bottom:8px;">
+                <div style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:16.5px;">{{ f.name }}</div>
+                <div style="font-size:13.5px; color:#4d4959;">{{ f.place }}</div>
+                <sc-if value="{{ f.hasAddr }}"><div style="font-size:12.5px; color:#625e6e; margin-top:2px;">{{ f.address }}</div></sc-if>
+                <div style="display:flex; flex-wrap:wrap; gap:5px; margin-top:7px;"><sc-for list="{{ f.links }}" as="fl"><button type="button" sc-camel-on-click="{{ fl.onClick }}" style="border:0; border-radius:999px; background:#f6f1da; padding:4px 10px; cursor:pointer; font-weight:700; font-size:12.5px; box-shadow:0 1px 3px rgba(0,0,0,.08);" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">→ {{ fl.name }}<span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></sc-for></div>
+              </div>
+            </sc-for>
+          </sc-if>
+        </div>
+        </sc-if>
+      </div>
+    </sc-if>
+    <sc-if value="{{ showLower }}" hint-placeholder-val="{{ true }}">
+    <div data-ui-block="1" role="region" aria-label="Murders" style="pointer-events:auto; margin-top:{{ left.mt }}; flex:{{ fx.m }}; min-height:0; max-height:{{ left.mmh }}; overflow:auto; box-sizing:border-box; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; padding:6px 14px 6px 20px; display:flex; flex-direction:column; gap:10px; box-shadow:4px 5px 0 rgba(55,51,74,.22);">
+      <button type="button" sc-camel-on-click="{{ mToggle }}" aria-expanded="{{ mOn }}" style="all:unset; flex:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:32px; font-size:12.5px; font-weight:800; letter-spacing:.08em; color:#37334a;" style-hover="opacity:.75"><span>MURDERS</span><span style="font-size:15px; line-height:1;">{{ mIcon }}</span></button>
+      <sc-if value="{{ mOn }}">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;"><span style="font-size:13px; font-weight:800; color:#4d4959;">{{ mRangeText }}</span><sc-if value="{{ mPartial }}"><button type="button" sc-camel-on-click="{{ mAll }}" style="height:30px; border-radius:10px; border:0; background:#dcd3a3; cursor:pointer; font-size:12.5px; font-weight:800; padding:0 10px; white-space:nowrap;" style-hover="background:#e2d9a8">All seasons</button></sc-if></div>
+      <div style="flex:none; background:#f6f1da; border-radius:14px; padding:6px 12px 8px;">
+        <div ref="{{ mTrackRef }}" sc-camel-on-pointer-down="{{ onMTrackDown }}" style="position:relative; height:30px; margin:0 9px; cursor:pointer; touch-action:none;">
+          <div style="position:absolute; left:0; right:0; top:13px; height:4px; border-radius:2px; background:#d8cf9f;"></div>
+          <div style="position:absolute; left:{{ mFromPct }}; width:{{ mSpanPct }}; top:12px; height:6px; border-radius:3px; background:#9c3d30;"></div>
+          <div role="slider" tabindex="0" aria-label="First season" aria-valuemin="1" aria-valuemax="12" aria-valuenow="{{ mFrom }}" sc-camel-on-key-down="{{ mKeyFrom }}" style="position:absolute; left:{{ mFromPct }}; top:4px; width:22px; height:22px; margin-left:-11px; border-radius:50%; background:#f6f1da; border:3px solid #37334a; box-sizing:border-box; box-shadow:0 2px 6px rgba(0,0,0,.2);"></div>
+          <div role="slider" tabindex="0" aria-label="Last season" aria-valuemin="1" aria-valuemax="12" aria-valuenow="{{ mTo }}" sc-camel-on-key-down="{{ mKeyTo }}" style="position:absolute; left:{{ mToPct }}; top:4px; width:22px; height:22px; margin-left:-11px; border-radius:50%; background:#f6f1da; border:3px solid #37334a; box-sizing:border-box; box-shadow:0 2px 6px rgba(0,0,0,.2);"></div>
+        </div>
+        <div style="position:relative; height:14px; margin:0 9px;">
+          <sc-for list="{{ mTicks }}" as="tk"><span style="position:absolute; left:{{ tk.x }}; transform:translateX(-50%); font-size:11px; font-weight:800; color:{{ tk.c }};">{{ tk.n }}</span></sc-for>
+        </div>
+      </div>
+      <div style="flex:none; display:flex; flex-wrap:wrap; gap:4px 12px;">
+        <sc-for list="{{ mTypes }}" as="mt"><span style="display:flex; align-items:center; gap:6px; font-size:13px; font-weight:700; opacity:{{ mt.op }};"><span style="flex:none; width:4px; height:14px; border-radius:2px; background:{{ mt.c }};"></span>{{ mt.label }}</span></sc-for>
+      </div>
+          <sc-if value="{{ mNone }}"><div style="font-size:13.5px; color:#625e6e;">No placed deaths yet. Slide forward.</div></sc-if>
+          <div style="border-top:1.5px solid #e2d9a8; padding-top:7px;">
+          
+          <div style="display:flex; flex-direction:column; gap:1px; margin-top:4px;">
+            <sc-for list="{{ mRows }}" as="mr">
+              <button type="button" sc-camel-on-click="{{ mr.onClick }}" style="display:flex; align-items:center; gap:9px; width:100%; text-align:left; border:0; border-radius:10px; background:transparent; padding:5px 6px; cursor:pointer; opacity:{{ mr.op }};" style-hover="background:#ebe4bd">
+                <span style="flex:none; width:10px; height:10px; border-radius:50%; background:{{ mr.c }};"></span>
+                <span style="flex:none; width:48px; font-size:11px; font-weight:800; color:#3e6b65;">{{ mr.code }}</span>
+                <span style="flex:1; min-width:0; display:flex; flex-direction:column;"><span style="font-weight:800; font-size:14px;">{{ mr.victim }}</span><span style="font-size:12.5px; color:#625e6e;">{{ mr.how }} · {{ mr.place }}</span></span>
+              <span aria-hidden="true" style="flex:none; margin-left:auto; padding-left:8px; color:#7a7688; font-size:17px; font-weight:800; line-height:1;">›</span></button>
+            </sc-for>
+          </div>
+          <sc-if value="{{ mHasUn }}"><details style="margin-top:8px; border-top:1.5px solid #e2d9a8; padding-top:7px;"><summary style="font-size:12px; font-weight:800; letter-spacing:.08em; color:#3e6b65;">{{ mUnLabel }}</summary>
+            <div style="display:flex; flex-direction:column; gap:1px; margin-top:4px;">
+              <sc-for list="{{ mUnRows }}" as="ur"><div style="display:flex; align-items:center; gap:9px; padding:4px 6px; opacity:{{ ur.op }};"><span style="flex:none; width:10px; height:10px; border-radius:50%; background:{{ ur.c }};"></span><span style="flex:none; width:48px; font-size:11px; font-weight:800; color:#3e6b65;">{{ ur.code }}</span><span style="flex:1; min-width:0; display:flex; flex-direction:column;"><span style="font-weight:800; font-size:14px;">{{ ur.victim }}</span><span style="font-size:12.5px; color:#625e6e;">{{ ur.how }}</span></span></div></sc-for>
+            </div></details></sc-if>
+          <sc-if value="{{ mHasOff }}"><div style="font-size:12.5px; line-height:1.45; color:#625e6e; margin-top:6px; text-wrap:pretty;"><strong style="color:#4d4959;">Named, but not on this model:</strong> {{ mOffText }}</div></sc-if>
+          <div style="font-size:11.5px; line-height:1.4; color:#7a7688; text-wrap:pretty; margin-top:6px;">{{ mNote }}</div>
+          </div>
+      </div>
+      </sc-if>
+    </div>
+    <div data-ui-block="1" style="pointer-events:auto; flex:{{ fx.env }}; min-height:0; overflow:auto; display:{{ panel.disp }}; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; padding:6px 14px 6px 20px; box-sizing:border-box; flex-direction:column; gap:12px; box-shadow:4px 5px 0 rgba(55,51,74,.22);">
+      <button type="button" sc-camel-on-click="{{ togglePanel }}" aria-expanded="{{ panelOpen }}" style="all:unset; flex:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; min-height:32px; font-size:12.5px; font-weight:800; letter-spacing:.08em; color:#37334a;" style-hover="opacity:.75"><span>ENVIRONMENT</span><span style="font-size:15px; line-height:1;">{{ panelIcon }}</span></button>
+    <sc-if value="{{ showControls }}">
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div>
+          <div style="display:flex; align-items:baseline; justify-content:space-between; gap:10px;">
+            <span style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#625e6e;">TIME OF DAY</span>
+            <span style="font-family:'Bebas Neue', sans-serif; font-weight:400; letter-spacing:.03em; font-size:16px;">{{ timeText }} · {{ dateShort }}</span>
+          </div>
+          <div ref="{{ trackRef }}" sc-camel-on-pointer-down="{{ onTrackDown }}" role="slider" tabindex="0" aria-label="Time of day" aria-valuemin="300" aria-valuemax="1290" aria-valuenow="{{ minutes }}" aria-valuetext="{{ timeText }}" sc-camel-on-key-down="{{ onTrackKey }}" style="position:relative; height:30px; margin-top:4px; cursor:pointer; touch-action:none;">
+            <div style="position:absolute; left:0; right:0; top:12px; height:6px; border-radius:3px; background:linear-gradient(90deg, #3b4a78 0%, #f2a35a 18%, #9fd0e6 35%, #bfe3f0 50%, #9fd0e6 65%, #f2a35a 82%, #3b4a78 100%);"></div>
+            <div style="position:absolute; left:{{ sliderPct }}; top:4px; width:22px; height:22px; margin-left:-11px; border-radius:50%; background:#f6f1da; border:3px solid #4f8a82; box-sizing:border-box; box-shadow:0 2px 8px rgba(0,0,0,.2);"></div>
+          </div>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px 14px; align-items:flex-end;">
+          <div>
+            <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#625e6e;">SEASONS</div>
+            <div style="display:flex; gap:2px; background:#dcd3a3; border-radius:12px; padding:3px; margin-top:5px;">
+              <sc-for list="{{ seasons }}" as="se"><button type="button" aria-pressed="{{ se.on }}" sc-camel-on-click="{{ se.onClick }}" style="border:0; border-radius:9px; background:{{ se.bg }}; color:{{ se.fg }}; padding:6px 12px; cursor:pointer; font-weight:800; font-size:14px; box-shadow:{{ se.sh }};" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ se.label }}</button></sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#625e6e;">VIEW</div>
+            <div style="display:flex; gap:2px; background:#dcd3a3; border-radius:12px; padding:3px; margin-top:5px;">
+              <sc-for list="{{ views }}" as="vw"><button type="button" aria-pressed="{{ vw.on }}" sc-camel-on-click="{{ vw.onClick }}" style="border:0; border-radius:9px; background:{{ vw.bg }}; color:{{ vw.fg }}; padding:6px 12px; cursor:pointer; font-weight:800; font-size:14px; box-shadow:{{ vw.sh }};" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ vw.label }}</button></sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    
+  </div>
+  </sc-if></div>
+
+  <div data-ui-block="1" data-poster-hide="1" style="position:absolute; right:{{ bar.right }}; bottom:{{ bar.bottom }}; z-index:33; display:flex; gap:6px;">
+    <sc-if value="{{ poster }}">
+    <button type="button" sc-camel-on-click="{{ downloadPoster }}" disabled="{{ posterBusy }}" style="height:34px; border-radius:11px; border:2px solid #37334a; background:#37334a; color:#e6dfb4; cursor:pointer; padding:2px 12px 0; font-family:'Bebas Neue', sans-serif; font-size:16px; letter-spacing:.07em; white-space:nowrap; box-shadow:2px 3px 0 rgba(55,51,74,.25);" style-hover="background:#4d4959">{{ dlLabel }}</button>
+    <button type="button" sc-camel-on-click="{{ togglePoster }}" style="height:34px; border-radius:11px; border:2px solid #37334a; background:#ebe4bd; cursor:pointer; padding:2px 12px 0; font-family:'Bebas Neue', sans-serif; font-size:16px; letter-spacing:.07em; white-space:nowrap; box-shadow:2px 3px 0 rgba(55,51,74,.25);" style-hover="background:#f6f1da">Exit poster</button>
+    </sc-if>
+    <sc-if value="{{ notPoster }}" hint-placeholder-val="{{ true }}">
+    <button type="button" sc-camel-on-click="{{ togglePoster }}" style="height:34px; border-radius:11px; border:2px solid #37334a; background:#ebe4bd; cursor:pointer; padding:2px 12px 0; font-family:'Bebas Neue', sans-serif; font-size:16px; letter-spacing:.07em; white-space:nowrap; box-shadow:2px 3px 0 rgba(55,51,74,.25);" style-hover="background:#f6f1da">Poster view</button>
+    <button type="button" sc-camel-on-click="{{ openSrc }}" style="height:34px; border-radius:11px; border:2px solid #37334a; background:#ebe4bd; cursor:pointer; padding:2px 12px 0; font-family:'Bebas Neue', sans-serif; font-size:16px; letter-spacing:.07em; white-space:nowrap; box-shadow:2px 3px 0 rgba(55,51,74,.25);" style-hover="background:#f6f1da">Sources &amp; Method</button>
+    <button type="button" sc-camel-on-click="{{ home }}" style="height:34px; border-radius:11px; border:2px solid #37334a; background:#ebe4bd; cursor:pointer; padding:2px 12px 0; font-family:'Bebas Neue', sans-serif; font-size:16px; letter-spacing:.07em; white-space:nowrap; box-shadow:2px 3px 0 rgba(55,51,74,.25);" style-hover="background:#f6f1da">Reset view</button>
+    </sc-if>
+  </div>
+  <sc-if value="{{ showFoot }}">
+    <div style="position:absolute; top:26px; right:28px; max-width:360px; z-index:28; text-align:right; font-size:12px; line-height:1.5; font-weight:700; color:{{ footColor }}; pointer-events:none; text-wrap:pretty;">Drag to rotate · two-finger scroll or arrow keys to move · pinch or +/− to zoom · click a building for details</div>
+    <footer style="position:absolute; left:40px; right:{{ foot.right }}; bottom:22px; min-height:44px; z-index:28; display:flex; flex-direction:column; justify-content:center; gap:1px; font-size:11.5px; line-height:1.45; font-weight:600; color:{{ footColor }}; pointer-events:none;"><div style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Fan atlas, not affiliated with Universal or CBS<span aria-hidden="true" style="padding:0 6px;">·</span>Placements are interpretive estimates<span aria-hidden="true" style="padding:0 6px;">·</span>v0.1 · 10/25/26</div><div style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Sources: Murder, She Wrote, She Wrote; Murder, She Watched; TVmaze; IMDb<span aria-hidden="true" style="padding:0 6px;">·</span>Built with Claude and ChatGPT</div></footer>
+  </sc-if>
+  <sc-if value="{{ showCard }}">
+    <div data-ui-block="1" role="dialog" aria-label="{{ D.name }}" style="position:absolute; left:{{ card.x }}; top:{{ card.y }}; width:{{ card.w }}; max-height:{{ card.mh }}; z-index:40; overflow:auto; box-sizing:border-box; pointer-events:auto; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; padding:16px 20px 18px; box-shadow:6px 8px 0 rgba(55,51,74,.25);">
+      <div sc-camel-on-pointer-down="{{ onCardDown }}" title="Drag to move" style="position:sticky; top:-16px; z-index:2; margin:-16px -20px 12px; padding:9px 20px 8px; background:#e2d9a8; border-bottom:1.5px solid #d8cf9f; border-radius:20px 20px 0 0; cursor:grab; touch-action:none; user-select:none; display:flex; align-items:center; justify-content:space-between; font-size:11.5px; font-weight:800; letter-spacing:.1em; color:#4d4959;"><span>LOCATION CARD</span><span aria-hidden="true" style="font-size:14px; letter-spacing:1px;">⠿ drag</span></div>
+      <div style="display:flex; align-items:flex-start; gap:12px;">
+        <div style="flex:none; width:96px; height:72px; border:2px solid #37334a; border-radius:12px; overflow:hidden; background:#dcd3a3;">
+          <sc-if value="{{ D.hasPhoto }}"><img src="{{ D.photoSrc }}" alt="{{ D.name }}" draggable="false" style="display:block; width:100%; height:100%; object-fit:cover;"></sc-if>
+        </div>
+        <div style="flex:1; min-width:0;">
+          <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65;">{{ D.district }}</div>
+          <h2 style="margin:4px 0 0; font-family:'Rye', serif; font-weight:400; font-size:23px; line-height:1.08; text-wrap:balance;">{{ D.name }}</h2>
+        </div>
+        <button type="button" sc-camel-on-click="{{ closeSel }}" aria-label="Close details" style="flex:none; width:36px; height:36px; border-radius:50%; border:0; background:#dcd3a3; cursor:pointer; font-size:20px; line-height:1;" style-hover="background:#e2d9a8">×</button>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:12px;">
+        <span style="display:inline-flex; align-items:center; gap:7px; background:#dbe8e1; color:#2f5a55; border-radius:999px; padding:4px 11px; font-size:13px; font-weight:800;">
+          <sc-if value="{{ D.evOn }}"><span style="width:8px; height:8px; border-radius:50%; background:#4f8a82;"></span></sc-if>
+          <sc-if value="{{ D.evDlg }}"><span style="width:7px; height:7px; transform:rotate(45deg); background:#a85a3c;"></span></sc-if>
+          <sc-if value="{{ D.evInf }}"><span style="width:8px; height:8px; border-radius:50%; border:2px solid #625e6e; box-sizing:border-box;"></span></sc-if>
+          {{ D.evLabel }}
+        </span>
+        <span style="display:inline-flex; align-items:center; border:1.5px dashed #a89e70; border-radius:999px; padding:3px 11px; font-size:13px; font-weight:700; color:#4d4959;">Placement: interpretive</span>
+      </div>
+      <div style="font-size:12.5px; line-height:1.45; color:#625e6e; margin-top:6px;">{{ D.evDesc }}</div>
+      <p style="margin:12px 0 0; font-size:16px; line-height:1.55; color:#3f3b4d; text-wrap:pretty;">{{ D.summary }}</p>
+      <sc-if value="{{ D.hasWatch }}"><div style="margin-top:8px; font-size:14px; line-height:1.45; color:#4d4959;">To explore this further, watch <a href="{{ D.watchUrl }}" target="_blank" rel="noopener">{{ D.watchText }}</a></div></sc-if>
+      <sc-if value="{{ D.isSheriff }}">
+        <div style="margin-top:12px; background:#f6f1da; border-radius:14px; padding:10px 12px;">
+          <div style="display:flex; gap:3px; background:#f6f1da; border-radius:11px; padding:3px; width:max-content;">
+            <sc-for list="{{ eraOpts }}" as="eo"><button type="button" aria-pressed="{{ eo.on }}" sc-camel-on-click="{{ eo.onClick }}" style="border:0; border-radius:9px; background:{{ eo.bg }}; color:{{ eo.fg }}; padding:5px 11px; cursor:pointer; font-weight:800; font-size:13px;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ eo.label }}</button></sc-for>
+          </div>
+          <div style="font-size:14.5px; line-height:1.45; margin-top:8px;">{{ D.eraText }}</div>
+        </div>
+      </sc-if>
+      <details style="margin-top:12px; border-top:1.5px solid #d8cf9f; padding-top:9px;">
+        <summary style="font-size:13px; font-weight:800; letter-spacing:.06em; color:#3e6b65;">EXPLORE THIS PLACE</summary>
+        <p style="margin:7px 0 0; font-size:15px; line-height:1.5; color:#3f3b4d; text-wrap:pretty;">{{ D.visual }}</p>
+      </details>
+      <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#625e6e; margin-top:14px;">EPISODES</div>
+      <sc-if value="{{ D.noEps }}"><div style="font-size:14px; color:#625e6e; margin-top:4px;">Episode reference not yet verified.</div></sc-if>
+      <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+        <sc-for list="{{ D.eps }}" as="de"><button type="button" sc-camel-on-click="{{ de.onClick }}" style="display:flex; align-items:baseline; gap:7px; border:0; border-radius:12px; background:#f6f1da; padding:6px 11px; cursor:pointer; white-space:nowrap;" style-hover="background:#e2d9a8"><span style="font-size:11px; font-weight:800; color:#3e6b65;">{{ de.code }}</span><span style="font-weight:700; font-size:14px;">{{ de.title }}</span><span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></sc-for>
+      </div>
+      <sc-if value="{{ D.hasChars }}">
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#625e6e; margin-top:14px;">PEOPLE</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:6px;">
+          <sc-for list="{{ D.chars }}" as="dc"><button type="button" sc-camel-on-click="{{ dc.onClick }}" title="{{ dc.desc }}" style="border:1.5px solid #cfc596; border-radius:999px; background:#f6f1da; padding:4px 12px; cursor:pointer; font-size:14px; font-weight:700; white-space:nowrap;" style-hover="border-color:#4f8a82">{{ dc.name }}<span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ D.hasRelated }}">
+        <div style="margin-top:12px; border:1.5px dashed #8fb5ad; border-radius:14px; padding:8px 12px; font-size:14px; line-height:1.4;">{{ D.relatedNote }} <button type="button" sc-camel-on-click="{{ D.relatedGo }}" style="border:0; background:transparent; padding:0; cursor:pointer; color:#3e6b65; font-weight:800; text-decoration:underline; font-size:14px;" style-hover="box-shadow:inset 0 0 0 2px rgba(55,51,74,.55)">{{ D.relatedName }}<span aria-hidden="true" style="margin-left:5px; color:#7a7688; font-weight:800;">›</span></button></div>
+      </sc-if>
+      <sc-if value="{{ D.hasFilm }}">
+        <div style="margin-top:14px; background:#dbe8e1; border-radius:14px; padding:9px 12px;">
+          <div style="font-size:11.5px; font-weight:800; letter-spacing:.1em; color:#3e6b65;">FILMED IN CALIFORNIA</div>
+          <div style="font-size:14px; line-height:1.45; margin-top:3px; color:#3f3b4d;">{{ D.film }}</div>
+        </div>
+      </sc-if>
+      <div style="margin-top:14px; border-top:1.5px solid #d8cf9f; padding-top:9px;">
+        <div style="font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#625e6e;">SOURCES · FAN RESEARCH, NOT OFFICIAL CONTINUITY</div>
+        <sc-if value="{{ D.noSources }}"><div style="font-size:13px; color:#625e6e; margin-top:3px;">No source attached. This placement is a creative reconstruction.</div></sc-if>
+        <div style="display:flex; flex-direction:column; gap:2px; margin-top:4px;">
+          <sc-for list="{{ D.sources }}" as="ds"><a href="{{ ds.url }}" target="_blank" rel="noopener" style="font-size:12.5px; word-break:break-all;">{{ ds.label }}</a></sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{ srcOpen }}">
+    <div data-ui-block="1" sc-camel-on-click="{{ closeSrc }}" style="position:absolute; inset:0; z-index:60; background:rgba(55,51,74,.35); display:flex; align-items:center; justify-content:center; padding:20px; box-sizing:border-box;">
+      <div role="dialog" aria-label="Sources and method" sc-camel-on-click="{{ stopProp }}" style="width:100%; max-width:720px; max-height:100%; overflow:auto; box-sizing:border-box; background:#ebe4bd; border-radius:22px; border:2.5px solid #37334a; padding:18px 24px 22px; box-shadow:4px 5px 0 rgba(55,51,74,.22); color:#37334a;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
+          <h2 style="margin:0; font-family:'Bebas Neue', sans-serif; font-weight:400; font-size:30px; letter-spacing:.08em; line-height:1; padding-top:3px;">Sources &amp; Method</h2>
+          <button type="button" sc-camel-on-click="{{ closeSrc }}" aria-label="Close sources and method" style="flex:none; width:36px; height:36px; border-radius:50%; border:0; background:#dcd3a3; cursor:pointer; font-size:20px; line-height:1;" style-hover="background:#e2d9a8">×</button>
+        </div>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">HOW THIS MAP WAS MADE</div>
+        <p style="margin:5px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">Cabot Cove is fictional, and the series never published a map of it. Places come from fan research on the show and its Mendocino, California filming locations. Their positions on this model are interpretive: they keep the relationships the show describes (harbor below Main Street, the inn on the ridge, lighthouses on the headlands) without claiming a real layout. Reconstructed places fill in what a working Maine harbor town would need.</p>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">MAP ACCURACY</div>
+        <div style="display:flex; flex-direction:column; gap:6px; margin-top:6px;">
+          <sc-for list="{{ srcKey }}" as="k">
+            <div style="display:flex; align-items:baseline; gap:10px; font-size:14.5px; line-height:1.45;">
+              <span style="flex:none; width:12px; display:flex; justify-content:center; transform:translateY(-1px);">
+                <sc-if value="{{ k.on }}"><span style="width:8px; height:8px; border-radius:50%; background:#4f8a82;"></span></sc-if>
+                <sc-if value="{{ k.dlg }}"><span style="width:7px; height:7px; transform:rotate(45deg); background:#a85a3c;"></span></sc-if>
+                <sc-if value="{{ k.inf }}"><span style="width:8px; height:8px; border-radius:50%; border:2px solid #625e6e; box-sizing:border-box;"></span></sc-if>
+              </span>
+              <span><strong>{{ k.label }}</strong> <span style="color:#625e6e;">({{ k.n }})</span> · {{ k.desc }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">EPISODES AND MURDERS</div>
+        <p style="margin:5px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">Episodes use season and episode numbers in original CBS broadcast order (1984–1996). The murder map counts deaths in episodes set in Cabot Cove. Every murder gets a beam: solid where the place is recorded, faded where the place is estimated from the episode setup. Accidents, self-defense, past deaths and the two deaths recorded outside town are excluded. Faded beams mark places estimated from the episode setup rather than recorded. Death records come from fan-compiled research (v0.7, October 2026), are not verified against footage, and include some deaths that are not murders. Confidence is low to medium.</p>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">MURDER RATE · 1984–1996</div>
+        <div style="margin-top:6px; font-family:'Rye', serif; font-size:21px; line-height:1.2; text-wrap:balance;">Welcome to Cabot Cove: America’s deadliest fictional small town.</div>
+        <p style="margin:6px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">During the 12-year run of <em>Murder, She Wrote</em>, Cabot Cove’s estimated murder rate was approximately 17 times the U.S. national average.</p>
+        <div style="margin-top:12px; background:#f6f1da; border-radius:14px; padding:12px 14px 14px; display:flex; flex-direction:column; gap:10px;">
+          <div style="font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#625e6e;">AVERAGE ANNUAL MURDERS PER 100,000 PEOPLE · 1984–1996</div>
+          <div style="display:grid; grid-template-columns:minmax(0,150px) minmax(0,1fr); gap:12px; align-items:center;"><div><div style="font-weight:800; font-size:14.5px;">Cabot Cove</div><div style="font-size:12px; color:#625e6e;">Fictional population: 3,560</div></div><div style="display:flex; align-items:center; gap:10px;"><div style="height:18px; width:78%; min-width:6px; background:#9c3d30; border-radius:4px;"></div><span style="font-family:'Bebas Neue', sans-serif; font-size:24px; line-height:1; letter-spacing:.02em;">149.8</span></div></div>
+          <div style="display:grid; grid-template-columns:minmax(0,150px) minmax(0,1fr); gap:12px; align-items:center;"><div><div style="font-weight:800; font-size:14.5px;">United States</div><div style="font-size:12px; color:#625e6e;">Average annual national rate</div></div><div style="display:flex; align-items:center; gap:10px;"><div style="height:18px; width:4.5%; min-width:6px; background:#37334a; border-radius:4px;"></div><span style="font-family:'Bebas Neue', sans-serif; font-size:24px; line-height:1; letter-spacing:.02em;">8.7</span></div></div>
+          <div style="font-family:'Bebas Neue', sans-serif; font-size:26px; letter-spacing:.04em; color:#9c3d30; line-height:1;">17.3× the national average</div>
+        </div>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.08em; color:#4d4959; margin-top:14px;">HOW THE NUMBERS WORK</div>
+        <p style="margin:6px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">Contemporary reporting from 1996 documented 64 murders in Cabot Cove over the show’s 12 seasons and cited a CBS population estimate of 3,560 residents (<em>Deseret News</em>).</p>
+        <div style="margin-top:8px; background:#f6f1da; border-radius:12px; padding:10px 14px; font-size:16px; font-weight:700; text-align:center; letter-spacing:.02em;">(64 ÷ 12) ÷ 3,560 × 100,000 = 149.8</div>
+        <p style="margin:6px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">The U.S. averaged approximately 8.7 murders per 100,000 people annually across calendar years 1984–1996, calculated from historical FBI homicide rates (everycrsreport.com).</p>
+        <p style="margin:6px 0 0; font-size:15px; line-height:1.55; text-wrap:pretty;">The comparison uses the years the series actually aired, rather than contrasting Cabot Cove with modern American crime statistics.</p>
+        <p style="margin:10px 0 0; font-size:13.5px; line-height:1.5; color:#4d4959; text-wrap:pretty;"><strong>Caveat:</strong> Cabot Cove’s figure uses a fictional, essentially fixed population and a historical aggregate murder count that includes visitors. It is a well-sourced illustrative comparison, not a fully independently verified victim-by-victim census. The 64 reported murders also differ from the 59 placed on this map from fan research.</p>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">SOURCES</div>
+        <div style="display:flex; flex-direction:column; gap:2px; margin-top:5px;">
+          <sc-for list="{{ srcLinks }}" as="sl"><a href="{{ sl.url }}" target="_blank" rel="noopener" style="font-size:14px; line-height:1.5; overflow-wrap:anywhere;">{{ sl.label }}</a></sc-for>
+        </div>
+        <div style="font-size:12px; font-weight:800; letter-spacing:.1em; color:#3e6b65; margin-top:16px;">FIND A LOCATION OR PLACEMENT STATUS</div>
+        <input type="search" value="{{ srcQ }}" sc-camel-on-change="{{ onSrcQ }}" placeholder="Filter places…" aria-label="Filter locations" style="display:block; width:100%; box-sizing:border-box; margin-top:6px; height:40px; border:0; border-radius:12px; background:#f6f1da; padding:0 12px; font-size:15px; outline:none;">
+        <div role="table" aria-label="Locations and placement status" style="margin-top:8px; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr); font-size:13.5px; line-height:1.35;">
+          <div role="row" style="display:contents;"><span role="columnheader" style="padding:6px 8px; font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#625e6e; border-bottom:1.5px solid #d8cf9f;">LOCATION</span><span role="columnheader" style="padding:6px 8px; font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#625e6e; border-bottom:1.5px solid #d8cf9f;">EVIDENCE</span><span role="columnheader" style="padding:6px 8px; font-size:11.5px; font-weight:800; letter-spacing:.08em; color:#625e6e; border-bottom:1.5px solid #d8cf9f;">PLACEMENT</span></div>
+          <sc-for list="{{ srcRows }}" as="r">
+            <div role="row" style="display:contents;">
+              <span role="cell" style="padding:6px 8px; border-bottom:1px solid #e2d9a8;"><button type="button" sc-camel-on-click="{{ r.onClick }}" style="all:unset; cursor:pointer; font-weight:800; text-decoration:underline; text-decoration-color:rgba(55,51,74,.35); text-underline-offset:3px;" style-hover="text-decoration:underline">{{ r.name }}</button></span>
+              <span role="cell" style="padding:6px 8px; border-bottom:1px solid #e2d9a8;">{{ r.ev }}</span>
+              <span role="cell" style="padding:6px 8px; color:#625e6e; border-bottom:1px solid #e2d9a8;">{{ r.pl }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ srcNone }}"><div style="padding:10px 8px; font-size:14px; color:#625e6e;">No matching places.</div></sc-if>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  state = { data: null, ready: false, err: null, minutes: 612, season: 'summer', view: 'model', orbit: false, playing: false, layersOpen: false, guideOpen: false, panelOpen: false,
+    tab: 'places', q: '', sel: null, ep: null, ch: null, tour: null, ti: 0, tourPick: 0, era: 'early', hover: null, vw: 1440, vh: 900,
+    layers: { landmarks: false, town: false, creative: true, people: false, cases: false, history: false, murders: false }, mFrom: 1, mTo: 12, murders: null, srcOpen: false, srcQ: '', cardPos: null, poster: false, posterBusy: false };
+  rootRef = React.createRef(); leftRef = React.createRef();
+  paintDom(ctx, el, ox, oy) {
+    const cs = getComputedStyle(el); if (cs.display === 'none' || cs.visibility === 'hidden') return;
+    const r = el.getBoundingClientRect(); if (!r.width && !r.height) return;
+    const x = r.left - ox, y = r.top - oy, rad = k => { const v = cs[k].split(' ').map(parseFloat); return { x: v[0] || 0, y: v[1] ?? v[0] ?? 0 }; };
+    const radii = [rad('borderTopLeftRadius'), rad('borderTopRightRadius'), rad('borderBottomRightRadius'), rad('borderBottomLeftRadius')];
+    const path = (px, py, w, hh, ins) => { ctx.beginPath(); ctx.roundRect(px + ins, py + ins, Math.max(0, w - ins * 2), Math.max(0, hh - ins * 2), radii.map(q => ({ x: Math.max(0, q.x - ins), y: Math.max(0, q.y - ins) }))); };
+    const bg = cs.backgroundColor, bw = parseFloat(cs.borderTopWidth) || 0, hasBg = bg && !/rgba\(.*,\s*0\)$/.test(bg) && bg !== 'transparent';
+    if (cs.boxShadow && cs.boxShadow !== 'none' && (hasBg || bw)) { const m = cs.boxShadow.match(/^(rgba?\([^)]+\)|#\w+)\s+(-?[\d.]+)px\s+(-?[\d.]+)px/); if (m) { ctx.fillStyle = m[1]; path(x + +m[2], y + +m[3], r.width, r.height, 0); ctx.fill(); } }
+    if (hasBg) { ctx.fillStyle = bg; path(x, y, r.width, r.height, 0); ctx.fill(); }
+    if (bw && cs.borderTopStyle !== 'none') { ctx.strokeStyle = cs.borderTopColor; ctx.lineWidth = bw; path(x, y, r.width, r.height, bw / 2); ctx.stroke(); }
+    el.childNodes.forEach(n => {
+      if (n.nodeType === 1) return this.paintDom(ctx, n, ox, oy);
+      if (n.nodeType !== 3 || !n.textContent.trim()) return;
+      const tt = cs.textTransform, txt = n.textContent;
+      ctx.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`; ctx.fillStyle = cs.color; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+      if ('letterSpacing' in ctx) ctx.letterSpacing = cs.letterSpacing === 'normal' ? '0px' : cs.letterSpacing;
+      const re = /\S+/g; let m; const rg = document.createRange();
+      while ((m = re.exec(txt))) { rg.setStart(n, m.index); rg.setEnd(n, m.index + m[0].length); const wr = rg.getBoundingClientRect(); if (!wr.width) continue;
+        const w = tt === 'uppercase' ? m[0].toUpperCase() : m[0]; ctx.fillText(w, wr.left - ox, wr.top - oy + wr.height / 2); }
+    });
+  }
+  async downloadPoster() {
+    const root = this.rootRef.current, left = this.leftRef.current, gl = this.stageRef.current && this.stageRef.current.querySelector('canvas');
+    if (this.state.posterBusy || !root) return;
+    this.setState({ posterBusy: true });
+    try {
+      await document.fonts.ready;
+      const pr = 2, rr = root.getBoundingClientRect(), W = rr.width, H = rr.height;
+      const cv = document.createElement('canvas'); cv.width = Math.round(W * pr); cv.height = Math.round(H * pr);
+      const ctx = cv.getContext('2d'); ctx.scale(pr, pr);
+      const bgs = this._bgCss || '', at = bgs.match(/at (\d+)% (\d+)%/) || [0, 55, 42], sz = bgs.match(/ellipse (\d+)% (\d+)%/) || [0, 80, 70], stops = [...bgs.matchAll(/(#[0-9a-f]{6}) (\d+)%/gi)];
+      ctx.save(); ctx.translate(W * at[1] / 100, H * at[2] / 100); ctx.scale(W * sz[1] / 100, H * sz[2] / 100);
+      const g = ctx.createRadialGradient(0, 0, 0, 0, 0, 1); stops.forEach(st => g.addColorStop(+st[2] / 100, st[1]));
+      ctx.fillStyle = stops.length ? g : '#e9e4cf'; ctx.fillRect(-5, -5, 10, 10); ctx.restore();
+      if (gl) { const q = gl.getBoundingClientRect(); ctx.drawImage(gl, q.left - rr.left, q.top - rr.top, q.width, q.height); }
+      if (left) this.paintDom(ctx, left, rr.left, rr.top);
+      const blob = await new Promise(ok => cv.toBlob(ok, 'image/png'));
+      const url = URL.createObjectURL(blob), a = document.createElement('a'); a.href = url; a.download = 'cabot-cove-poster.png'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 4000);
+    } catch (e) { console.error('Poster export failed', e); alert('Sorry — the poster image could not be generated.'); }
+    this.setState({ posterBusy: false });
+  }
+  cardBox() { const L = this.lay(), w = L.compact ? L.vw - 24 : Math.min(400, L.vw - 40), d = L.compact ? { x: 12, y: Math.round(L.vh * .42) } : { x: L.vw - w - 28, y: 72 }, c = this.state.cardPos || d;
+    const x = Math.max(8, Math.min(L.vw - w - 8, c.x)), y = Math.max(8, Math.min(L.vh - 120, c.y)); return { x, y, w, mh: Math.max(220, L.vh - y - (L.compact ? 70 : 90)) }; }
+  onCardDown = e => { if (e.button) return; e.preventDefault(); const b = this.cardBox(), sx = e.clientX, sy = e.clientY, h = e.currentTarget; h.style.cursor = 'grabbing';
+    const mv = ev => this.setState({ cardPos: { x: b.x + ev.clientX - sx, y: b.y + ev.clientY - sy } });
+    const up = () => { h.style.cursor = 'grab'; removeEventListener('pointermove', mv); removeEventListener('pointerup', up); removeEventListener('pointercancel', up); };
+    addEventListener('pointermove', mv); addEventListener('pointerup', up); addEventListener('pointercancel', up); };
+  mTrackRef = React.createRef();
+  onMTrackDown = e => { if (e.button) return; const val = ev => { const r = this.mTrackRef.current.getBoundingClientRect(); return Math.max(1, Math.min(12, Math.round(1 + (ev.clientX - r.left) / r.width * 11))); };
+    const v = val(e), { mFrom, mTo } = this.state, which = v < mFrom ? 'f' : v > mTo ? 't' : (v - mFrom <= mTo - v ? 'f' : 't');
+    const set = ev => { const x = val(ev); this.setState(st => which === 'f' ? { mFrom: Math.min(x, st.mTo) } : { mTo: Math.max(x, st.mFrom) }); };
+    set(e); const up = () => { removeEventListener('pointermove', set); removeEventListener('pointerup', up); }; addEventListener('pointermove', set); addEventListener('pointerup', up); };
+  mKey = which => e => { const d = e.key === 'ArrowRight' || e.key === 'ArrowUp' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowDown' ? -1 : 0; if (!d) return; e.preventDefault(); e.stopPropagation();
+    this.setState(st => which === 'f' ? { mFrom: Math.max(1, Math.min(st.mTo, st.mFrom + d)) } : { mTo: Math.min(12, Math.max(st.mFrom, st.mTo + d)) }); };
+  mList() { const s = this.state; if (!s.layers.murders || !s.murders) return []; return s.murders.mapped.filter(x => x.season >= s.mFrom && x.season <= s.mTo); }
+  syncDeaths() { if (!this.app || !this.app.setDeaths) return; this.app.setDeaths(this.mList().map(x => ({ loc: x.locationId, color: (this.MT[x.type] || [0, '#7a7688'])[1], op: x.est ? .45 : 1 }))); }
+  MT = { gun: ['Gunshot', '#c0473a'], blunt: ['Blunt force', '#8a5a3a'], blade: ['Stabbing', '#d08a2e'], poison: ['Poison', '#4f8a3a'], asphyx: ['Strangled', '#6a5aa0'], drown: ['Drowned', '#2f7fa8'], other: ['Other', '#b8932a'] };
+  stageRef = React.createRef(); labelsRef = React.createRef(); trackRef = React.createRef();
+  SEASONS = { spring: { label: 'Spring', doy: 120, date: '30 April 1987', short: '30 Apr' }, summer: { label: 'Summer', doy: 205, date: '24 July 1987', short: '24 Jul' }, fall: { label: 'Fall', doy: 287, date: '14 October 1987', short: '14 Oct' }, winter: { label: 'Winter', doy: 20, date: '20 January 1987', short: '20 Jan' } };
+
+  componentDidMount() {
+    window.__cabotToy = this;
+    this.setState({ vw: innerWidth, vh: innerHeight });
+    addEventListener('resize', this.onResize); addEventListener('keydown', this.onKey);
+    fetch(window.__resources.murders).then(r => r.json()).then(m => this.setState({ murders: m })).catch(e => console.warn('murders.json', e));
+    Promise.all([fetch(window.__resources.cabotData).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }), (async () => { const Rs = window.__resources, txt = async k => (await fetch(Rs[k])).text(), blob = t => URL.createObjectURL(new Blob([t], { type: 'text/javascript' })); const three = blob(await txt('three')), fix = t => t.split('"/npm/three@0.160.0/+esm"').join('"' + three + '"'); const oc = blob(fix(await txt('orbit'))), bg = blob(fix(await txt('bgu'))); const main = (await txt('cabot3d')).split("'https://cdn.jsdelivr.net/npm/three@0.160.0/+esm'").join("'" + three + "'").split("'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js/+esm'").join("'" + oc + "'").split("'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/utils/BufferGeometryUtils.js/+esm'").join("'" + bg + "'"); return import(blob(main)); })()])
+      .then(([d, mod]) => { this.data = d; this.index(d); this.setState({ data: d }, () => this.boot(mod)); })
+      .catch(e => { console.error(e); this.setState({ err: String(e.message || e) }); });
+  }
+  componentWillUnmount() { removeEventListener('resize', this.onResize); removeEventListener('keydown', this.onKey); clearInterval(this.playT); if (this.app) this.app.dispose(); }
+  async boot(mod) {
+    if (this.app) return;
+    this.app = await mod.createCabot3D({ container: this.stageRef.current, labelsRoot: this.labelsRef.current, data: this.data, onSelect: id => this.select(id, true), onHover: id => this.setHover(id) });
+    this.syncAll(); this.setState({ ready: true }, () => this.app.refreshLabels());
+  }
+  syncAll() { if (!this.app) return; const s = this.state, sun = this.sun(); this.app.setSun(sun.alt, sun.az); this.app.setSeason(s.season); this.app.setOrbit(s.orbit); this.app.setHistory(true); this.app.setInsets(this.insets()); this.applyHL(); this.syncDeaths(); }
+  componentDidUpdate() {
+    const s = this.state, ps = this.prevS || {}; this.prevS = { ...s }; if (!this.app) return;
+    if (ps.minutes !== s.minutes || ps.season !== s.season) { const sun = this.sun(); this.app.setSun(sun.alt, sun.az); }
+    if (ps.season !== s.season) this.app.setSeason(s.season);
+    if (ps.orbit !== s.orbit) this.app.setOrbit(s.orbit);
+    if (ps.layers !== s.layers) this.app.setHistory(true);
+    if (ps.layers !== s.layers || ps.mFrom !== s.mFrom || ps.mTo !== s.mTo || ps.murders !== s.murders) this.syncDeaths();
+    if (ps.sel !== s.sel || ps.ep !== s.ep || ps.ch !== s.ch || ps.tour !== s.tour) this.applyHL();
+    const ins = JSON.stringify(this.insets()); if (ins !== this.lastIns) { this.lastIns = ins; this.app.setInsets(this.insets()); }
+    this.app.refreshLabels();
+  }
+  index(d) { this.L = {}; d.locations.forEach(l => this.L[l.id] = l); this.E = {}; d.episodes.forEach(e => this.E[e.id] = e); this.Ch = {}; d.characters.forEach(c => this.Ch[c.id] = c); this.Dd = {}; d.districts.forEach(x => this.Dd[x.id] = x); }
+  lay() { const { vw, vh } = this.state, lw = Math.min(440, Math.max(330, vw * .3)), compact = vw < 980 || vh < 560; return { vw, vh, compact, leftW: compact ? 0 : lw }; }
+  insets() { const L = this.lay(), s = this.state; if (L.compact) return { left: 0, right: 0, top: (s.sel || s.guideOpen) ? Math.round(L.vh * .5) : 230, bottom: s.layers.murders ? Math.round(L.vh * .38) + 172 : s.panelOpen ? 380 : 220 }; return { left: L.leftW + 40, right: 0, top: 80, bottom: 70 }; }
+  onResize = () => this.setState({ vw: innerWidth, vh: innerHeight });
+  onKey = e => {
+    const tag = (e.target && e.target.tagName) || ''; if (tag === 'INPUT') { if (e.key === 'Escape') this.setState({ q: '' }); return; }
+    if (e.key === 'Escape') { const s = this.state; if (s.srcOpen) this.setState({ srcOpen: false }); else if (s.layersOpen) this.setState({ layersOpen: false }); else if (s.sel) this.closeSel(); else if (s.guideOpen) this.setState({ guideOpen: false }); return; }
+    if ('1234'.includes(e.key) && e.key.length === 1) this.setState({ season: ['spring', 'summer', 'fall', 'winter'][+e.key - 1] });
+    if ('567'.includes(e.key) && e.key.length === 1) this.setView(['model', 'top', 'street'][+e.key - 5]);
+  };
+  setView(v) { this.setState({ view: v }); if (this.app) this.app.setView(v); }
+  onTrackDown = e => { const set = ev => { const r = this.trackRef.current.getBoundingClientRect(); const t = Math.max(0, Math.min(1, (ev.clientX - r.left) / r.width)); this.setState({ minutes: Math.round((300 + t * 990) / 2) * 2 }); };
+    set(e); const mv = ev => set(ev), up = () => { removeEventListener('pointermove', mv); removeEventListener('pointerup', up); }; addEventListener('pointermove', mv); addEventListener('pointerup', up); };
+  onTrackKey = e => { const d = e.key === 'ArrowRight' || e.key === 'ArrowUp' ? 10 : e.key === 'ArrowLeft' || e.key === 'ArrowDown' ? -10 : 0; if (d) { e.preventDefault(); this.setState(s => ({ minutes: Math.max(300, Math.min(1290, s.minutes + d)) })); } };
+  sun() { const s = this.state, S = this.SEASONS[s.season], lat = 44 * Math.PI / 180, dec = 23.44 * Math.sin(2 * Math.PI * (284 + S.doy) / 365) * Math.PI / 180, off = -.63;
+    const H = ((s.minutes / 60 + off) - 12) * 15 * Math.PI / 180, alt = Math.asin(Math.sin(lat) * Math.sin(dec) + Math.cos(lat) * Math.cos(dec) * Math.cos(H));
+    const az = (Math.atan2(Math.sin(H), Math.cos(H) * Math.sin(lat) - Math.tan(dec) * Math.cos(lat)) * 180 / Math.PI + 540) % 360;
+    return { alt: alt * 180 / Math.PI, az }; }
+  select(id, stay) { if (!this.L[id]) return; this.setState({ sel: id, layersOpen: false }, () => !stay && this.app && this.app.flyTo(id)); }
+  acc(k, on) { return { introOpen: k === 'intro' && on, guideOpen: k === 'guide' && on, panelOpen: k === 'env' && on, layers: { ...this.state.layers, murders: k === 'm' && on } }; }
+  closeSel = () => this.setState({ sel: null });
+  setHover(id) { clearTimeout(this.hT); if (id === null) { this.hT = setTimeout(() => { if (this.state.hover !== null) this.setState({ hover: null }); }, 220); return; } if (this.state.hover !== id) this.setState({ hover: id }); }
+  pickEp(id, toTab) { clearInterval(this.playT); const v = this.state.ep === id ? null : id; this.setState({ ep: v, ch: null, tour: null, playing: false, sel: null, ...this.acc('guide', true), tab: toTab ? 'episodes' : this.state.tab, q: '' }, () => { if (v && this.app) this.app.fitTo(this.data.locations.filter(l => l.episodeIds.includes(v)).map(l => l.id)); }); }
+  pickCh(id) { clearInterval(this.playT); const v = this.state.ch === id ? null : id; this.setState({ ch: v, ep: null, tour: null, playing: false, sel: null, ...this.acc('guide', true), tab: 'people', q: '' }, () => { if (v && this.app) this.app.fitTo(this.data.locations.filter(l => l.characterIds.includes(v)).map(l => l.id)); }); }
+  tours() { return (this.data && this.data.guidedTours) || []; }
+  tourObj() { return this.state.tour ? this.tours().find(t => t.id === this.state.tour) : null; }
+  tourJump(i) { const t = this.tourObj() || this.tours()[this.state.tourPick]; if (!t) return; i = Math.max(0, Math.min(t.locationIds.length - 1, i)); const id = t.locationIds[i]; this.setState({ tour: t.id, ti: i, sel: id, ep: null, ch: null }, () => this.app && this.app.flyTo(id)); }
+  tourGo(d) { if (!this.tourObj()) return this.tourJump(0); this.tourJump(this.state.ti + d); }
+  exitTour = () => { clearInterval(this.playT); this.setState({ tour: null, ti: 0, sel: null, playing: false }, () => this.app && this.app.setView(this.state.view)); };
+  cycleTour = () => { clearInterval(this.playT); const n = this.tours().length; this.setState(s => ({ tourPick: (s.tourPick + 1) % n, tour: null, ti: 0, playing: false, sel: s.tour ? null : s.sel })); };
+  togglePlay = () => { if (this.state.playing) { clearInterval(this.playT); this.setState({ playing: false }); return; }
+    if (!this.tourObj()) this.tourJump(0); this.setState({ playing: true }); clearInterval(this.playT);
+    this.playT = setInterval(() => { const t = this.tourObj(); if (!t || this.state.ti >= t.locationIds.length - 1) { clearInterval(this.playT); this.setState({ playing: false }); return; } this.tourGo(1); }, 6500); };
+  hl() { const s = this.state, d = this.data; if (!d) return null; const t = this.tourObj(); if (t) return new Set(t.locationIds);
+    if (s.ep) return new Set(d.locations.filter(l => l.episodeIds.includes(s.ep)).map(l => l.id)); if (s.ch) return new Set(d.locations.filter(l => l.characterIds.includes(s.ch)).map(l => l.id)); return null; }
+  applyHL() { if (!this.app) return; const set = this.hl(), t = this.tourObj(); this.app.setHighlight(this.state.sel, set ? [...set] : []); this.app.setRoute(t ? t.locationIds : null); }
+  host(u) { try { return new URL(u).hostname.replace(/^www\./, ''); } catch (e) { return u; } }
+  srcLabel(u) { try { const x = new URL(u); return x.hostname.replace(/^www\./, '') + x.pathname.replace(/\/$/, ''); } catch (e) { return u; } }
+  fmtTime(m) { let h = Math.floor(m / 60), mm = m % 60; const ap = h >= 12 ? 'pm' : 'am'; h = h % 12 || 12; return `${h}:${String(mm).padStart(2, '0')} ${ap}`; }
+
+  renderVals() {
+    const s = this.state, d = s.data, L = this.lay(), ready = s.ready && !!d;
+    const EVL = { ON_SCREEN: 'Seen on screen', DIALOGUE_CONFIRMED: 'Named in dialogue', PRODUCTION_REFERENCE: 'Production reference', CREATIVE_INFILL: 'Creative reconstruction' };
+    const ev = e => ({ evOn: e === 'ON_SCREEN' || e === 'PRODUCTION_REFERENCE', evDlg: e === 'DIALOGUE_CONFIRMED', evInf: e === 'CREATIVE_INFILL' });
+    const gcol = e => e === 'DIALOGUE_CONFIRMED' ? '#a85a3c' : e === 'CREATIVE_INFILL' ? '#625e6e' : '#4f8a82';
+    const locs = d ? d.locations : [], hl = ready ? this.hl() : null, tour = ready ? this.tourObj() : null;
+    const sun = this.sun(), alt = sun.alt, S = this.SEASONS[s.season], DIRS = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'], di = Math.round(sun.az / 45) % 8;
+    const labels = [], MT = this.MT, mOn = !!(s.layers.murders && s.murders), mVis = mOn ? this.mList() : [], mBy = {};
+    mVis.forEach(x => (mBy[x.locationId] = mBy[x.locationId] || []).push(x));
+    const mc = x => (MT[x.type] || ['Unknown', '#7a7688'])[1], mhow = x => x.cause.replace(/_/g, ' ');
+    if (ready) locs.forEach(l => {
+      const mAt = mBy[l.id] || [], isSel = l.id === s.sel, isHl = !!(hl && hl.has(l.id)), hov = l.id === s.hover, force = isSel || isHl || hov || mAt.length > 0;
+      let full = force; if (!force) { full = !(l.locationEvidence === 'CREATIVE_INFILL' && !s.layers.creative) && !(l.priority === 'C' ? !s.layers.town : !s.layers.landmarks); }
+      let detail = '';
+      if (s.layers.people && l.characterIds.length) detail = l.characterIds.map(x => ((this.Ch[x] || {}).name || x).split(' ').slice(-1)[0]).join(' · ');
+      if (s.layers.cases && l.episodeIds.length) detail = l.episodeIds.length + (l.episodeIds.length > 1 ? ' episodes' : ' episode');
+      if (l.id === 'sheriffs-office' && (isSel || s.layers.people)) detail = s.era === 'early' ? 'Sheriff Tupper' : 'Sheriff Metzger';
+      const si = tour ? tour.locationIds.indexOf(l.id) : -1, stemN = l.priority === 'A' ? 30 : l.priority === 'B' ? 20 : 14;
+      labels.push({ id: l.id, name: l.name, pri: l.priority, full, dot: full ? 0 : 1, dotOp: isSel || hov ? 1 : .33, force: force ? 1 : 0, hov: hov ? 1 : 0, rank: (isSel ? 0 : force ? 10 : full ? 20 : 50) + ({ A: 0, B: 3, C: 6 })[l.priority], stemN, stem: stemN + 'px', fs: l.priority === 'A' ? '14px' : '13px',
+        bg: isSel ? '#37334a' : '#f6f1da', fg: isSel ? '#f6f1da' : '#37334a', bd: isSel ? '#37334a' : isHl ? '#4f8a82' : '#f6f1da', gc: isSel ? '#f6f1da' : gcol(l.locationEvidence), dc: isSel ? '#cfc8de' : '#625e6e',
+        hasDetail: !!detail, detail, ...ev(l.locationEvidence), pin: mAt.length ? mc(mAt[0]) : '#e0612f', hasM: mAt.length > 0, mdots: mAt.map(x => ({ c: mc(x), op: x.est ? .45 : 1, t: x.victim + ' · ' + mhow(x) + (x.est ? ' (place estimated)' : '') })), hasStop: si >= 0, stopNo: si + 1, aria: `${l.name}. ${EVL[l.locationEvidence]}. Placement interpretive.`,
+        onClick: () => this.select(l.id), onEnter: () => this.setHover(l.id), onLeave: () => this.setHover(null) });
+    });
+    let bgCss = 'radial-gradient(ellipse 80% 70% at 55% 40%, #f7f4e6 0%, #e9e4cf 55%, #d5cfb4 100%)';
+    if (s.season === 'winter') bgCss = 'radial-gradient(ellipse 80% 70% at 55% 42%, #f3f5f4 0%, #e2e7e8 60%, #cfd6d9 100%)';
+    if (alt < -4) bgCss = 'radial-gradient(ellipse 80% 70% at 55% 42%, #3a4766 0%, #232c45 60%, #151a2b 100%)';
+    else if (alt < 3) bgCss = 'radial-gradient(ellipse 80% 70% at 55% 42%, #c9a9a8 0%, #7d7a96 55%, #3d4560 100%)';
+    else if (alt < 12) bgCss = 'radial-gradient(ellipse 80% 70% at 55% 42%, #fbeedd 0%, #f0d6bb 55%, #d9b495 100%)';
+    const nightUI = alt < 3;
+    const q = s.q.trim().toLowerCase().replace(/[’]/g, "'"); let results = [];
+    if (d && q) { const toks = q.split(/\s+/).filter(Boolean), norm = x => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[’]/g, "'");
+      results = locs.map(l => { const chars = l.characterIds.map(x => (this.Ch[x] || {}).name || ''), eps = l.episodeIds.map(e => (this.E[e] || {}).title || ''), dist = (this.Dd[l.districtId] || {}).name || '', name = norm(l.name);
+        const hay = norm([l.name, l.summary, l.tags.join(' '), l.category, l.districtId, dist, chars.join(' '), eps.join(' ')].join(' ')); if (!toks.every(t => hay.includes(t))) return null;
+        let why = dist; const t0 = toks[0]; if (!name.includes(t0)) { const ch = chars.find(x => norm(x).includes(t0)), e = eps.find(x => norm(x).includes(t0)); why = ch ? 'Linked character: ' + ch : e ? 'Episode: ' + e : dist; }
+        return { l, score: name.includes(q) ? 0 : toks.every(t => name.includes(t)) ? 1 : 2, why }; }).filter(Boolean).sort((a, b) => a.score - b.score || a.l.priority.localeCompare(b.l.priority) || a.l.name.localeCompare(b.l.name))
+        .map(r => ({ name: r.l.name, why: r.why, ...ev(r.l.locationEvidence), onClick: () => this.select(r.l.id) })); }
+    const groups = d ? d.districts.map(x => ({ name: x.name.toUpperCase(), items: locs.filter(l => l.districtId === x.id).sort((a, b) => a.priority.localeCompare(b.priority) || a.name.localeCompare(b.name)).map(l => ({ name: l.name, weight: l.priority === 'A' ? 800 : 600, tag: l.priority === 'C' ? 'town life' : '', ...ev(l.locationEvidence), onClick: () => this.select(l.id) })) })).filter(g => g.items.length) : [];
+    const episodes = d ? d.episodes.map(e => { const pl = locs.filter(l => l.episodeIds.includes(e.id)), on = s.ep === e.id; return { code: `S${e.season} · E${e.episode}`, title: e.title, syn: e.spoilerFreeSynopsis, count: pl.length + (pl.length === 1 ? ' place' : ' places'), on, bd: on ? '#4f8a82' : '#d8cf9f', bg: on ? '#e4ede4' : '#f6f1da', onClick: () => this.pickEp(e.id), places: pl.map(l => ({ name: l.name, onClick: () => this.select(l.id) })) }; }) : [];
+    const eraOpts = [['early', 'Early seasons'], ['late', 'Later seasons']].map(([k, label]) => ({ label, on: s.era === k, bg: s.era === k ? '#37334a' : 'transparent', fg: s.era === k ? '#f6f1da' : '#4d4959', onClick: () => this.setState({ era: k }) }));
+    const people = d ? d.characters.map(ch => { const n = locs.filter(l => l.characterIds.includes(ch.id)).length, on = s.ch === ch.id, dim = false; return { name: ch.name, desc: ch.description, count: n + (n === 1 ? ' place' : ' places'), on, bd: on ? '#4f8a82' : '#d8cf9f', bg: on ? '#e4ede4' : '#f6f1da', op: dim ? .55 : 1, onClick: () => this.pickCh(ch.id) }; }) : [];
+    const TITLES = { 'settlement-1684': 'When was Cabot Cove founded?', 'founders-war-1778': 'The Battle of Cabot Cove', 'great-storm-1836': 'The great storm', 'old-lighthouse-fire': 'The old wooden lighthouse' };
+    const STATUS = { EPISODE_ACCOUNT: 'episode account', CONFLICTING_PROP_DETAIL: 'conflicting prop', LOCAL_LEGEND_CONTESTED: 'contested legend' };
+    const history = []; if (d) { const seen = new Set(); d.historicalClaims.forEach(cl => { if (seen.has(cl.id)) return; const grp = [cl, ...cl.competingClaimIds.map(id => d.historicalClaims.find(x => x.id === id)).filter(Boolean)]; grp.forEach(x => seen.add(x.id));
+      history.push({ title: TITLES[cl.id] || 'Episode account', contested: grp.length > 1, items: grp.map(x => ({ year: x.year || 'Undated', claim: x.claim, status: STATUS[x.claimStatus] || x.claimStatus, hasEp: !!(x.episodeId && this.E[x.episodeId]), ep: x.episodeId && this.E[x.episodeId] ? this.E[x.episodeId].title : '', onEp: () => this.pickEp(x.episodeId, true), url: x.sourceUrl, host: this.host(x.sourceUrl) })) }); }); }
+    const film = d ? d.realWorldFilmingLocations.map(f => ({ name: f.name, place: f.realWorldPlace, hasAddr: !!f.address, address: f.address || '', links: f.fictionalLandmarkIds.filter(id => this.L[id]).map(id => ({ name: this.L[id].name, onClick: () => this.select(id) })) })) : [];
+    let D = { name: '' };
+    if (d && s.sel && this.L[s.sel]) { const l = this.L[s.sel], eps = l.episodeIds.filter(e => this.E[e]), chars = l.characterIds.filter(x => this.Ch[x]);
+      const rel = { 'old-lighthouse-site': ['cabot-point-lighthouse', 'Not to be confused with the surviving', 'Cabot Point Lighthouse.'], 'cabot-point-lighthouse': ['old-lighthouse-site', 'A different, wooden lighthouse burned at the', 'Old Wooden Lighthouse Site.'] }[l.id];
+      const si = tour ? tour.locationIds.indexOf(l.id) : -1;
+      const PHOTOS = { 'beverly-gareth-house': (window.__resources || {}).ph0 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-beverly-gareth-house.jpg?w=1024', 'ednas-house': (window.__resources || {}).ph1 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-ednas-house.jpg?w=1024', 'wharfside-cafe': (window.__resources || {}).ph2 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-harbor.jpg?w=1024', 'cabot-cove-church': (window.__resources || {}).ph3 || 'https://a0.muscache.com/im/pictures/Mt/MtTemplate-2542475/original/18ee3440-a00c-489f-8cee-091e85abc9a7.jpeg', 'jessica-fletcher-house': (window.__resources || {}).ph4 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-03-22-17h08m06s654.png', 'village-gazebo': (window.__resources || {}).ph5 || 'https://fortmonroe.org/wp-content/uploads/captain-cochran-4.jpg', 'sheriffs-office': (window.__resources || {}).ph6 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-03-22-19h59m50s195.png?w=720', 'hill-house': (window.__resources || {}).ph7 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-03-22-19h57m00s745.png?w=720', 'founders-day-green': (window.__resources || {}).ph8 || 'https://murdershewroteshewrote.com/wp-content/uploads/2024/03/vlcsnap-2023-11-18-15h21m27s687.png?w=720', 'cabot-cove-booksellers': (window.__resources || {}).ph9 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-03-19-13h50m32s282.png?w=720', 'cobbs-mortuary': (window.__resources || {}).ph10 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-03-22-19h52m24s664.png?w=720', 'cabot-cove-hospital': (window.__resources || {}).ph11 || 'https://murdershewroteshewrote.com/wp-content/uploads/2024/03/vlcsnap-2023-11-18-15h15m16s794.png?w=720', 'cabot-cove-high-school': (window.__resources || {}).ph12 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-02-13-16h24m43s259.png?w=720', 'cabot-cove-entrance-sign': (window.__resources || {}).ph13 || 'https://murdershewroteshewrote.com/wp-content/uploads/2024/03/vlcsnap-2023-11-18-15h09m50s864.png?w=720', 'cabot-cove-harbor': (window.__resources || {}).ph14 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-02-13-16h21m57s895.png?w=720', 'guillermos-beautique': (window.__resources || {}).ph15 || 'https://murdershewroteshewrote.com/wp-content/uploads/2022/03/vlcsnap-2022-02-13-16h32m33s455-1.png?w=720', 'cotters-beach': (window.__resources || {}).ph16 || 'https://murdershewroteshewrote.com/wp-content/uploads/2023/04/vlcsnap-2023-04-26-14h06m44s284.png?w=720', 'cabot-point-lighthouse': (window.__resources || {}).ph17 || 'https://murdershewroteshewrote.com/wp-content/uploads/2024/03/lighthouse.png?w=720', 'cabot-cove-softball-field': (window.__resources || {}).ph18 || 'https://murdershewroteshewrote.com/wp-content/uploads/2023/12/vlcsnap-2023-11-18-15h12m07s626.png?w=720', 'town-docks': (window.__resources || {}).ph2 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-harbor.jpg?w=1024', 'boat-repair-yard': (window.__resources || {}).ph2 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-harbor.jpg?w=1024', 'historical-society': (window.__resources || {}).ph19 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-cabot-cove-historical-society.jpg?w=1024', 'amos-tupper-house': (window.__resources || {}).ph20 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-amos-tupper-house.jpg?w=1024', 'gallerie-frederich': (window.__resources || {}).ph21 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-elvira-tree-house.jpg?w=1024', 'old-lighthouse-site': (window.__resources || {}).ph22 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-cabot-cove-shore.jpg?w=1024', 'cabot-cove-gazette': (window.__resources || {}).ph23 || 'https://murdershewatched.com/wp-content/uploads/2020/10/msw7-2-cabotcove.png?w=1024', 'eve-simpson-real-estate': (window.__resources || {}).ph23 || 'https://murdershewatched.com/wp-content/uploads/2020/10/msw7-2-cabotcove.png?w=1024', 'cabot-cove-courthouse': (window.__resources || {}).ph24 || 'https://murdershewatched.com/wp-content/uploads/2018/12/LansingUkiah1.jpg?w=720', 'lorettas-beauty-parlor': (window.__resources || {}).ph24 || 'https://murdershewatched.com/wp-content/uploads/2018/12/LansingUkiah1.jpg?w=720', 'main-street': (window.__resources || {}).ph25 || 'https://murdershewatched.com/wp-content/uploads/2018/12/MainStreet.jpg?w=720', 'eve-simpson-home': (window.__resources || {}).ph26 || 'https://murdershewatched.com/wp-content/uploads/2018/12/EveSimpson.jpg?w=720', 'harbor-fish-market': (window.__resources || {}).ph27 || 'https://murdershewatched.com/wp-content/uploads/2020/10/mendocino1-harbor.jpg?w=1024', 'lobster-coop': (window.__resources || {}).ph27 || 'https://murdershewatched.com/wp-content/uploads/2020/10/mendocino1-harbor.jpg?w=1024', 'cabot-cove-library': (window.__resources || {}).ph28 || 'https://murdershewatched.com/wp-content/uploads/2023/03/cabot-cove-sticks-and-stones-library.jpg?w=1024', 'cabot-cove-travel-agency': (window.__resources || {}).ph29 || 'https://murdershewatched.com/wp-content/uploads/2018/12/TravelAgency.jpg?w=720', 'old-cemetery': (window.__resources || {}).ph30 || 'https://murdershewatched.com/wp-content/uploads/2020/10/mendocino1-cemetery.png?w=1024', 'local-bank': (window.__resources || {}).ph31 || 'https://upload.wikimedia.org/wikipedia/commons/7/70/Savings_Bank_of_Mendocino.jpg', 'woodland-overlook': (window.__resources || {}).ph32 || 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Mendocino_Headlands_State_Park_-_39.jpg', 'old-chapel-ruin': (window.__resources || {}).ph33 || 'https://upload.wikimedia.org/wikipedia/commons/7/77/Basford_Cemetery%2C_the_old_chapel_-_geograph.org.uk_-_4122852.jpg', 'dockmasters-office': (window.__resources || {}).ph34 || 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Inner_Noyo_Harbor.JPG', 'coastal-boat-launch': (window.__resources || {}).ph34 || 'https://upload.wikimedia.org/wikipedia/commons/8/8b/Inner_Noyo_Harbor.JPG', 'hardware-store': (window.__resources || {}).ph35 || 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Storefronts_in_Mendocino%2C_California.jpg', 'secluded-coastal-cottage': (window.__resources || {}).ph36 || 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Agate_Cove_Inn_-_1.jpg', 'farmhouse-and-orchard': (window.__resources || {}).ph37 || 'https://upload.wikimedia.org/wikipedia/commons/4/46/Parrish_Pioneer_Ranch%2C_Oak_Glen%2C_CA.6-23-12a_(7449467254).jpg', 'old-gas-station': (window.__resources || {}).ph38 || 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Small_gas_pump_at_store_along_coastline_north_of_Fort_Bragg%2C_CA._(21287547124).jpg', 'joshua-peabody-inn': (window.__resources || {}).ph39 || 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Paradise_Cove%2C_Malibu%2C_California-2613881447.jpg', 'town-post-office': (window.__resources || {}).ph40 || 'https://upload.wikimedia.org/wikipedia/commons/2/2e/Mendocino_Post_Office.jpg', 'flower-shop': (window.__resources || {}).ph41 || 'https://upload.wikimedia.org/wikipedia/commons/e/ee/Twist_in_Mendocino_-_November_2016_-_Sarah_Stierch.jpg', 'rocky-coast-trail': (window.__resources || {}).ph42 || 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Mendocino_Headlands_3.jpg', 'town-hall': (window.__resources || {}).ph43 || 'https://upload.wikimedia.org/wikipedia/commons/8/85/Mendocino_Visitor_Center.jpg', 'bo-dixons-diner': (window.__resources || {}).ph44 || 'https://upload.wikimedia.org/wikipedia/commons/e/e7/GoodLife_Cafe_%26_Bakery_-_October_2022_-_Sarah_Stierch_01.jpg', 'general-store': (window.__resources || {}).ph45 || 'https://upload.wikimedia.org/wikipedia/commons/0/08/J._D._Johnson%27s_Store_-_Mendocino%2C_California_-_DSC01681.JPG', 'harbor-chandlery': (window.__resources || {}).ph46 || 'https://upload.wikimedia.org/wikipedia/commons/7/77/Noyo_Fishing_Center_-_March_2024_-_Sarah_Stierch.jpg', 'bait-tackle-shop': (window.__resources || {}).ph46 || 'https://upload.wikimedia.org/wikipedia/commons/7/77/Noyo_Fishing_Center_-_March_2024_-_Sarah_Stierch.jpg', 'marina-fuel-dock': (window.__resources || {}).ph47 || 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Noyo_Harbor_-_August_2022_-_Sarah_Stierch_01.jpg', 'dr-seth-hazlitt-practice': (window.__resources || {}).ph48 || 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Nahara_Healing_Arts_-_October_2022_-_Sarah_Stierch.jpg', 'firehouse': (window.__resources || {}).ph49 || 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Mendocino_Volunteer_Fire_Department_-_October_2022_-_Sarah_Stierch.jpg', 'joshua-peabody-marker': (window.__resources || {}).ph50 || 'https://upload.wikimedia.org/wikipedia/commons/4/43/Mendocino_Presbyterian_Church_plaque_-_Mendocino%2C_California_-_DSC01673.JPG', 'coastal-inn-bb': (window.__resources || {}).ph51 || 'https://upload.wikimedia.org/wikipedia/commons/b/b8/MacCallum_House_Inn_-_October_2022_-_Sarah_Stierch.jpg' };
+      D = { photoId: 'loc-photo-' + l.id, photoSrc: PHOTOS[l.id] || '', hasPhoto: !!PHOTOS[l.id], name: l.name, district: ((this.Dd[l.districtId] || {}).name || '').toUpperCase(), summary: l.summary, visual: l.visualDescription, evLabel: EVL[l.locationEvidence], evDesc: (d.evidenceLegend || {})[l.locationEvidence] || '', ...ev(l.locationEvidence),
+        eps: eps.map(e => ({ code: `S${this.E[e].season}·E${this.E[e].episode}`, title: this.E[e].title, onClick: () => this.pickEp(e, true) })), noEps: !eps.length,
+        chars: chars.map(x => ({ name: this.Ch[x].name, desc: this.Ch[x].description, onClick: () => this.pickCh(x) })), hasChars: !!chars.length,
+        hasFilm: !!l.filmingReference, film: l.filmingReference || '', sources: l.sourceUrls.map(u => ({ url: u, label: this.srcLabel(u) })), noSources: !l.sourceUrls.length,
+        hasWatch: !!eps.length, watchText: eps.length ? 'S' + this.E[eps[0]].season + 'E' + this.E[eps[0]].episode + ', “' + this.E[eps[0]].title + '”' : '', watchUrl: eps.length ? 'https://www.imdb.com/find/?q=' + encodeURIComponent('Murder She Wrote ' + this.E[eps[0]].title) + '&s=tt' : '',
+        isSheriff: l.id === 'sheriffs-office', eraText: s.era === 'early' ? 'Sheriff Amos Tupper runs the office in the earlier seasons.' : 'Sheriff Mort Metzger, formerly a New York police officer, takes over in the later seasons.',
+        hasRelated: !!rel, relatedNote: rel ? rel[1] : '', relatedName: rel ? rel[2] : '', relatedGo: () => rel && this.select(rel[0]),
+        inTour: si >= 0, stopText: tour ? `Stop ${si + 1} of ${tour.locationIds.length}` : '', prevOp: si <= 0 ? .35 : 1, nextOp: !tour || si >= tour.locationIds.length - 1 ? .35 : 1 }; }
+    const tPick = tour || this.tours()[s.tourPick];
+    const tourDots = tPick ? tPick.locationIds.map((id, i) => ({ aria: `Stop ${i + 1}: ${this.L[id] ? this.L[id].name : id}`, c: tour && i === s.ti ? '#37334a' : tour && i < s.ti ? '#a9c6bf' : '#cfc596', onClick: () => this.tourJump(i) })) : [];
+    const est = locs.filter(l => l.locationEvidence !== 'CREATIVE_INFILL').length;
+    const P = s.poster, showCard = !P && !!(d && s.sel && this.L[s.sel]), showGuide = !P;
+    const narr = alt > 0 ? `${this.fmtTime(s.minutes)}, ${S.date}. The sun is ${Math.round(alt)}° up in the ${['north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'][di]}; ${alt < 12 ? 'long shadows stretch across Main Street.' : 'the harbor is busy.'}` : `${this.fmtTime(s.minutes)}. The sun is down; windows are lit and Cabot Point Lighthouse is sweeping the bay.`;
+    const LAY = [['landmarks', 'Landmarks', 'Priority A and B places from the series'], ['town', 'Town life', 'Shops, docks and civic infill'], ['creative', 'Reconstruction', 'Places invented to complete the town'], ['people', 'Characters', 'Who is linked to each place'], ['cases', 'Episodes', 'How many episodes link to each place'], ['history', 'History', 'Ghost of the lost wooden lighthouse'], ['murders', 'Murders', 'Deaths with a known place, colored by method']];
+    const segBtn = (on) => ({ bg: on ? '#f6f1da' : 'transparent', fg: on ? '#37334a' : '#625e6e', sh: on ? '0 1px 4px rgba(0,0,0,.12)' : 'none' });
+    const byEp = (a, b) => a.season - b.season || a.episode - b.episode, mUn = mOn ? (s.murders.unplaced || []).filter(x => x.season >= s.mFrom && x.season <= s.mTo).sort(byEp) : [];
+    const mOff = mOn ? s.murders.namedOffMap.filter(x => x.season >= s.mFrom && x.season <= s.mTo).sort(byEp) : [], mAllIn = mOn ? mVis.concat(mOff, mUn) : [], mp = v => ((v - 1) / 11 * 100).toFixed(2) + '%';
+    const mVals = { mOn, mFrom: s.mFrom, mTo: s.mTo, mFromPct: mp(s.mFrom), mToPct: mp(s.mTo), mSpanPct: ((s.mTo - s.mFrom) / 11 * 100).toFixed(2) + '%', mTrackRef: this.mTrackRef, onMTrackDown: this.onMTrackDown, mKeyFrom: this.mKey('f'), mKeyTo: this.mKey('t'),
+      mRangeText: s.mFrom === s.mTo ? 'Season ' + s.mFrom : 'Seasons ' + s.mFrom + '–' + s.mTo, mPartial: s.mFrom !== 1 || s.mTo !== 12, mAll: () => this.setState({ mFrom: 1, mTo: 12 }), mClose: () => this.setState({ layers: { ...s.layers, murders: false } }), mToggle: () => this.setState(this.acc('m', !s.layers.murders)), mToggleLabel: mOn ? 'Collapse' : 'Expand', mIcon: mOn ? '−' : '+',
+      mTicks: Array.from({ length: 12 }, (_, i) => ({ n: i + 1, x: mp(i + 1), c: i + 1 >= s.mFrom && i + 1 <= s.mTo ? '#37334a' : '#a8a3b4' })),
+      mw: L.compact ? (mOn ? { left: '12px', right: '12px', top: 'auto', bottom: '68px', w: 'auto', mh: '44vh' } : { left: '12px', right: 'auto', top: 'auto', bottom: '12px', w: 'auto', mh: 'none', pad: '6px 10px 6px 14px' }) : { left: 'auto', right: (42 + Math.min(560, L.vw - L.leftW - 120)) + 'px', top: '24px', bottom: 'auto', w: mOn ? Math.max(300, Math.min(380, L.vw - L.leftW - Math.min(560, L.vw - L.leftW - 120) - 110)) + 'px' : 'auto', mh: 'calc(100vh - 110px)' },
+      mTypes: Object.keys(MT).map(k => { const n = mVis.filter(x => x.type === k).length, t = mAllIn.filter(x => x.type === k).length; return { label: MT[k][0], c: MT[k][1], n: n + ' / ' + t, op: t ? 1 : .45 }; }),
+      mRows: mVis.slice().sort((a, b) => a.season - b.season || a.episode - b.episode).map(x => ({ c: mc(x), op: 1, code: 'S' + x.season + '·E' + x.episode, victim: x.victim, how: mhow(x) + (x.est ? ' · place estimated' : ''), place: this.L && this.L[x.locationId] ? this.L[x.locationId].name : x.place, onClick: () => this.select(x.locationId) })),
+      mNone: mOn && !mVis.length, mListOpen: !L.compact, mListLabel: 'VICTIMS & PLACES (' + mVis.length + ')', mHasOff: mOff.length > 0, mOffText: mOff.map(x => x.place + ' (S' + x.season + ')').join(' · '),
+      mNote: mOn ? 'All ' + s.murders.totalCabotDeaths + ' murders in Cabot Cove episodes are placed. ' + s.murders.mapped.filter(x => !x.est).length + ' are at their recorded place; faded beams are estimated from the episode setup. Fan-compiled research, low to medium confidence.' : '',
+      mHasUn: mOn && mUn.length > 0, mUnLabel: 'NO RECORDED PLACE (' + mUn.length + ')', mUnRows: mUn.map(x => ({ c: mc(x), op: x.est ? .45 : 1, code: 'S' + x.season + '·E' + x.episode, victim: x.victim, how: mhow(x) + (x.est ? ' · place estimated' : '') })) };
+    return { ...mVals,
+      stageRef: this.stageRef, labelsRef: this.labelsRef, trackRef: this.trackRef, labels, bgCss: (this._bgCss = bgCss),
+      showLoading: !ready, loadText: s.err ? 'The model could not load: ' + s.err : 'Building the model…',
+      left: L.compact ? { t4: '12px', mt: 'auto', mmh: '38vh', x: '16px', y: '14px', w: 'calc(100vw - 32px)', b: '72px', t1: '19px', t2: '30px', t3: '15px', bw: '3px', br: '60px 60px 14px 14px', pad: '10px 22px 4px', pad3: '5px 0 4px .22em' } : { t4: L.vw < 1240 ? '15px' : '17px', mt: '0px', mmh: 'none', x: '40px', y: '28px', w: L.leftW + 'px', b: L.vh >= 700 ? '84px' : '24px', t1: L.vw < 1240 ? '27px' : '33px', t2: L.vw < 1240 ? '44px' : '54px', t3: L.vw < 1240 ? '20px' : '24px', bw: '4px', br: '120px 120px 22px 22px', pad: L.vw < 1240 ? '16px 34px 6px' : '20px 42px 8px', pad3: '7px 0 6px .22em' },
+      ...(() => { const open = !P && !!(s.introOpen || s.guideOpen || s.layers.murders || s.panelOpen), full = !open; const sg = L.compact ? { w: '300px', series: false, linkMt: '5px', pad: '7px 12px 6px', name: '24px' } : { series: true, linkMt: '3px', pad: '16px 16px 11px', name: L.vw < 1240 ? '36px' : '42px' };
+        return { signFull: full, signRate: full && !L.compact, signSeries: full && sg.series && !P, signLinkMt: full ? sg.linkMt : '2px', signPad: full ? sg.pad : '6px 12px 6px', signName: full ? sg.name : (L.compact ? '20px' : '26px'), signNameMt: full ? '6px' : '0px' }; })(),
+      card: (() => { const b = this.cardBox(); return { x: b.x + 'px', y: b.y + 'px', w: b.w + 'px', mh: b.mh + 'px' }; })(), onCardDown: this.onCardDown,
+      showLower: !P && !(L.compact && (s.guideOpen || showCard)),
+      poster: P, notPoster: !P, labelsDisplay: P ? 'none' : 'block', posterBusy: s.posterBusy, dlLabel: s.posterBusy ? 'Saving…' : 'Download poster', rootRef: this.rootRef, leftRef: this.leftRef,
+      togglePoster: () => this.setState({ poster: !P, srcOpen: false }), downloadPoster: () => this.downloadPoster(), fx: { intro: s.introOpen ? '0 1 auto' : 'none', guide: s.guideOpen ? '0 1 auto' : 'none', m: mOn ? '0 1 auto' : 'none', env: s.panelOpen ? '0 1 auto' : 'none' },
+      showIntro: !P && !L.compact && L.vh >= 680, narr, introOpen: !!s.introOpen, introIcon: s.introOpen ? '−' : '+', toggleIntro: () => this.setState(this.acc('intro', !s.introOpen)),
+      sunAlt: Math.round(alt), sunDir: DIRS[di], estCount: est, totalCount: locs.length || 57,
+      showCard, showGuide, D, closeSel: this.closeSel, eraOpts,
+      q: s.q, hasQuery: !!q, noQuery: !q, onQuery: e => this.setState({ q: e.target.value }), clearQuery: () => this.setState({ q: '' }),
+      results, noResults: !!q && !results.length, resultCount: q ? `${results.length} ${results.length === 1 ? 'PLACE' : 'PLACES'}` : '',
+      tabs: [['places', 'Places'], ['episodes', 'Episodes'], ['people', 'People']].map(([k, label]) => ({ label, sel: s.tab === k, bg: s.tab === k ? '#37334a' : '#dcd3a3', fg: s.tab === k ? '#f6f1da' : '#4d4959', onClick: () => this.setState({ tab: k }) })),
+      tabPlaces: !q && s.tab === 'places', tabEpisodes: !q && s.tab === 'episodes', tabPeople: !q && s.tab === 'people', tabHistory: !q && s.tab === 'history', tabFilm: !q && s.tab === 'film',
+      groups, episodes, people, history, film,
+      panel: L.compact ? { left: '12px', right: '12px', top: 'auto', bottom: '92px', w: 'auto', mh: 'calc(100vh - 140px)', disp: 'flex' } : { left: 'auto', right: '28px', top: '24px', bottom: 'auto', w: Math.min(560, L.vw - L.leftW - 120) + 'px', mh: 'calc(100vh - 110px)', disp: 'flex' },
+      isCompact: L.compact, panelOpen: s.panelOpen, showControls: s.panelOpen, panelToggleLabel: s.panelOpen ? 'Collapse' : 'Expand', panelIcon: s.panelOpen ? '−' : '+', togglePanel: () => this.setState(this.acc('env', !s.panelOpen)),
+      timeText: this.fmtTime(s.minutes), dateShort: S.short, minutes: s.minutes, sliderPct: ((s.minutes - 300) / 990 * 100).toFixed(2) + '%', onTrackDown: this.onTrackDown, onTrackKey: this.onTrackKey,
+      seasons: ['spring', 'summer', 'fall', 'winter'].map(k => ({ label: this.SEASONS[k].label, on: s.season === k, ...segBtn(s.season === k), onClick: () => this.setState({ season: k }) })),
+      views: [['model', 'Model'], ['top', 'Top'], ['street', 'Street']].map(([k, label]) => ({ label, on: s.view === k, ...segBtn(s.view === k), onClick: () => this.setView(k) })),
+      orbit: s.orbit, orbitBg: s.orbit ? '#37334a' : '#dcd3a3', orbitFg: s.orbit ? '#f6f1da' : '#37334a', toggleOrbit: () => this.setState({ orbit: !s.orbit }),
+      layersOpen: s.layersOpen, layersBg: s.layersOpen ? '#37334a' : '#dcd3a3', layersFg: s.layersOpen ? '#f6f1da' : '#37334a', toggleLayers: () => this.setState({ layersOpen: !s.layersOpen }),
+      layerList: LAY.map(([k, label, desc]) => ({ label, desc, on: s.layers[k], bg: s.layers[k] ? '#dbe8e1' : '#f6f1da', fg: s.layers[k] ? '#2f5a55' : '#625e6e', bd: s.layers[k] ? '#4f8a82' : '#e2d9a8', onToggle: () => this.setState({ layers: { ...s.layers, [k]: !s.layers[k] } }) })),
+      playing: s.playing, notPlaying: !s.playing, playLabel: s.playing ? 'Pause tour' : 'Play tour', togglePlay: this.togglePlay,
+      tourLine: tPick ? `${tPick.name} · ${tPick.locationIds.length} stops` : '', tourDots, tourPrev: () => this.tourGo(-1), tourNext: () => this.tourGo(1), cycleTour: this.cycleTour, exitTour: this.exitTour,
+      bar: L.compact ? { right: '12px', bottom: '12px' } : { right: '28px', bottom: '22px' },
+      guideOpen: s.guideOpen, guideIcon: s.guideOpen ? '−' : '+', guideBg: s.guideOpen ? '#37334a' : '#f6f1da', guideFg: s.guideOpen ? '#f6f1da' : '#37334a', toggleGuide: () => this.setState({ ...this.acc('guide', !s.guideOpen), sel: null }),
+      titleColor: nightUI ? '#efe8c6' : '#37334a', sign: L.compact ? { w: '300px', series: false, linkMt: '5px', r: '60px 60px 12px 12px / 22px 22px 12px 12px', ri: '54px 54px 8px 8px / 17px 17px 8px 8px', pad: '7px 12px 6px', kicker: '11px', name: '24px', state: '12px' } : { w: '100%', series: true, linkMt: '3px', r: '120px 120px 16px 16px / 44px 44px 16px 16px', ri: '112px 112px 11px 11px / 38px 38px 11px 11px', pad: '16px 16px 11px', kicker: L.vw < 1240 ? '14px' : '16px', name: L.vw < 1240 ? '36px' : '42px', state: L.vw < 1240 ? '15px' : '17px' },
+      foot: { right: '380px' },
+      srcOpen: s.srcOpen, openSrc: () => this.setState({ srcOpen: true }), closeSrc: () => this.setState({ srcOpen: false }), stopProp: e => e.stopPropagation(),
+      srcQ: s.srcQ, onSrcQ: e => this.setState({ srcQ: e.target.value }),
+      ...(() => { if (!s.srcOpen || !d) return { srcKey: [], srcLinks: [], srcRows: [], srcNone: false };
+        const EVN = {"ON_SCREEN":"On screen","DIALOGUE_CONFIRMED":"Named in dialogue","PRODUCTION_REFERENCE":"Filming reference","CREATIVE_INFILL":"Reconstruction"}, cnt = k => locs.filter(l => k.includes(l.locationEvidence)).length, lg = d.evidenceLegend || {}, sq = s.srcQ.trim().toLowerCase();
+        const rows = locs.filter(l => !sq || (l.name + ' ' + (EVN[l.locationEvidence] || '')).toLowerCase().includes(sq)).slice().sort((a, b) => a.name.localeCompare(b.name)).map(l => ({ name: l.name, ev: EVN[l.locationEvidence] || l.locationEvidence, pl: (l.placementAccuracy || 'interpretive').toLowerCase().replace(/_/g, ' '), onClick: () => this.setState({ srcOpen: false }, () => this.select(l.id)) }));
+        return { srcKey: [{ on: true, label: 'On screen or filming reference', n: cnt(['ON_SCREEN', 'PRODUCTION_REFERENCE']), desc: lg.ON_SCREEN || '' }, { dlg: true, label: 'Named in dialogue', n: cnt(['DIALOGUE_CONFIRMED']), desc: lg.DIALOGUE_CONFIRMED || '' }, { inf: true, label: 'Reconstruction', n: cnt(['CREATIVE_INFILL']), desc: lg.CREATIVE_INFILL || '' }],
+          srcLinks: (d.sourceDirectory || []).map(x => ({ url: x.url, label: this.srcLabel(x.url) })), srcRows: rows, srcNone: !rows.length }; })(), showFoot: !P && !L.compact && L.vh >= 700, footColor: nightUI ? 'rgba(230,236,240,.75)' : '#5a5668',
+      home: () => { clearInterval(this.playT); this.setState({ sel: null, ep: null, ch: null, tour: null, ti: 0, playing: false, q: '', view: s.view === 'street' ? 'model' : s.view }, () => this.app && this.app.setView(this.state.view)); }
+    };
+  }
+}
+</script>
+
+
+</body></html>

@@ -1,0 +1,993 @@
+{
+  "source": "uploads/murder_she_wrote_episodes_murders_updated_2026-10-25.json (v0.7.0)",
+  "note": "Murders in Cabot Cove episodes, excluding accidents, self-defense, past deaths and the 2 deaths recorded outside town. est=false: place recorded in the dataset. est=true: place estimated from the episode setup.",
+  "totalCabotDeaths": 59,
+  "mapped": [
+    {
+      "id": "S01E02-D01",
+      "season": 1,
+      "episode": 2,
+      "title": "Deadly Lady",
+      "victim": "Stephen Earl / Ralph",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Body found in the surf; spot estimated",
+      "locationId": "cotters-beach",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.tvguide.com/tvshows/murder-she-wrote/episodes-season-1/1030038216/"
+      ]
+    },
+    {
+      "id": "S01E07-D01",
+      "season": 1,
+      "episode": 7,
+      "title": "Hit, Run and Homicide",
+      "victim": "Dean Merrill",
+      "cause": "vehicle",
+      "type": "other",
+      "est": true,
+      "placeNote": "Hit-and-run; street estimated",
+      "locationId": "main-street",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S02E02-D01",
+      "season": 2,
+      "episode": 2,
+      "title": "Joshua Peabody Died Here... Possibly",
+      "victim": "Henderson Wheatley",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Dispute over the Peabody grave site",
+      "locationId": "joshua-peabody-marker",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S02E07-D01",
+      "season": 2,
+      "episode": 7,
+      "title": "A Lady in the Lake",
+      "victim": "Carolyn Hester Crane",
+      "cause": "drowning",
+      "type": "drown",
+      "est": true,
+      "placeNote": "Drowning; waterfront estimated",
+      "locationId": "cotters-beach",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S02E10-D01",
+      "season": 2,
+      "episode": 10,
+      "title": "Sticks and Stones",
+      "victim": "Beverly Gareth",
+      "cause": "electrocution",
+      "type": "other",
+      "est": false,
+      "placeNote": "Beverly Gareth bathroom",
+      "locationId": "beverly-gareth-house",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.tvguide.com/tvshows/murder-she-wrote/episodes-season-2/1000803580/",
+        "https://murdershewrote.fandom.com/wiki/Sticks_and_Stones"
+      ]
+    },
+    {
+      "id": "S02E10-D02",
+      "season": 2,
+      "episode": 10,
+      "title": "Sticks and Stones",
+      "victim": "Elvira Tree",
+      "cause": "hanging",
+      "type": "asphyx",
+      "est": true,
+      "placeNote": "Found at her home above the gallery",
+      "locationId": "gallerie-frederich",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.tvguide.com/tvshows/murder-she-wrote/episodes-season-2/1000803580/",
+        "https://murdershewrote.fandom.com/wiki/Sticks_and_Stones"
+      ]
+    },
+    {
+      "id": "S02E14-D01",
+      "season": 2,
+      "episode": 14,
+      "title": "Keep the Home Fries Burning",
+      "victim": "Betty Fiddler",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": false,
+      "placeNote": "Joshua Peabody Inn",
+      "locationId": "joshua-peabody-inn",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.tvguide.com/tvshows/murder-she-wrote/episodes-season-2/1000803580/",
+        "https://murdershewrote.fandom.com/wiki/Keep_the_Home_Fries_Burning"
+      ]
+    },
+    {
+      "id": "S02E18-D01",
+      "season": 2,
+      "episode": 18,
+      "title": "If a Body Meet a Body",
+      "victim": "Henry Vernon",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Body linked to the mortuary",
+      "locationId": "cobbs-mortuary",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S03E03-D01",
+      "season": 3,
+      "episode": 3,
+      "title": "Unfinished Business",
+      "victim": "Gary Roberts",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Visitor to town; hotel estimated",
+      "locationId": "hill-house",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S03E06-D01",
+      "season": 3,
+      "episode": 6,
+      "title": "Dead Man's Gold",
+      "victim": "Alexandra Bell",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Treasure-boat story; docks estimated",
+      "locationId": "town-docks",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S03E09-D01",
+      "season": 3,
+      "episode": 9,
+      "title": "Obituary for a Dead Anchor",
+      "victim": "Doug Helman",
+      "cause": "explosion",
+      "type": "other",
+      "est": true,
+      "placeNote": "Newsroom story; estimated",
+      "locationId": "cabot-cove-gazette",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S03E13-D01",
+      "season": 3,
+      "episode": 13,
+      "title": "Crossed Up",
+      "victim": "Abel Grocey",
+      "cause": "fall_or_push",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Fall; bluffs estimated",
+      "locationId": "woodland-overlook",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S03E13-D02",
+      "season": 3,
+      "episode": 13,
+      "title": "Crossed Up",
+      "victim": "Jed Rogers",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Remote shooting; estimated",
+      "locationId": "secluded-coastal-cottage",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S04E02-D01",
+      "season": 4,
+      "episode": 2,
+      "title": "When Thieves Fall Out",
+      "victim": "Unnamed businessman",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Robbery story; estimated",
+      "locationId": "local-bank",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S04E02-D02",
+      "season": 4,
+      "episode": 2,
+      "title": "When Thieves Fall Out",
+      "victim": "Bill Hampton",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Robbery story; estimated",
+      "locationId": "local-bank",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S04E18-D01",
+      "season": 4,
+      "episode": 18,
+      "title": "Benedict Arnold Slipped Here",
+      "victim": "Benny Tibbles",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Antiques and history; estimated",
+      "locationId": "historical-society",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Benedict_Arnold_Slipped_Here"
+      ]
+    },
+    {
+      "id": "S05E03-D01",
+      "season": 5,
+      "episode": 3,
+      "title": "Mr. Penroy's Vacation",
+      "victim": "Clifford Coleson",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Hotel guest; estimated",
+      "locationId": "hill-house",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Mr._Penroy%27s_Vacation"
+      ]
+    },
+    {
+      "id": "S05E17-D01",
+      "season": 5,
+      "episode": 17,
+      "title": "The Sins of Castle Cove",
+      "victim": "Miriam Harwood",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Visiting author; hotel estimated",
+      "locationId": "hill-house",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/The_Sins_of_Castle_Cove"
+      ]
+    },
+    {
+      "id": "S05E21-D01",
+      "season": 5,
+      "episode": 21,
+      "title": "Mirror, Mirror on the Wall (Part 1)",
+      "victim": "Tony Cappaletti",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "lorettas-beauty-parlor",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Mirror%2C_Mirror%2C_on_the_Wall%3A_Part_2"
+      ]
+    },
+    {
+      "id": "S06E02-D01",
+      "season": 6,
+      "episode": 2,
+      "title": "Seal of the Confessional",
+      "victim": "Evan West",
+      "cause": "drowning",
+      "type": "drown",
+      "est": true,
+      "placeNote": "Body found on the beach; spot estimated",
+      "locationId": "cotters-beach",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.springfieldspringfield.co.uk/view_episode_scripts.php?episode=s06e02&tv-show=murder-she-wrote",
+        "https://murdershewrote.fandom.com/wiki/Seal_of_the_Confessional"
+      ]
+    },
+    {
+      "id": "S06E13-D01",
+      "season": 6,
+      "episode": 13,
+      "title": "If the Shoe Fits",
+      "victim": "Jack Franzen",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "main-street",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S06E21-D01",
+      "season": 6,
+      "episode": 21,
+      "title": "The Szechuan Dragon",
+      "victim": "Captain Herbert Malachi",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Sea captain; docks estimated",
+      "locationId": "town-docks",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S07E02-D01",
+      "season": 7,
+      "episode": 2,
+      "title": "Deadly Misunderstanding",
+      "victim": "Ralph Maddox",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "eve-simpson-real-estate",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S07E06-D01",
+      "season": 7,
+      "episode": 6,
+      "title": "A Body to Die For",
+      "victim": "Fred Keppard",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "bo-dixons-diner",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S07E13-D01",
+      "season": 7,
+      "episode": 13,
+      "title": "Moving Violation",
+      "victim": "Brad Hellman",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Traffic-stop story; estimated",
+      "locationId": "sheriffs-office",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S08E04-D01",
+      "season": 8,
+      "episode": 4,
+      "title": "Thicker Than Water",
+      "victim": "Terry Montagne",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Family story; residence estimated",
+      "locationId": "amos-tupper-house",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S08E21-D01",
+      "season": 8,
+      "episode": 21,
+      "title": "Badge of Honor",
+      "victim": "Mason Porter",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Police story; estimated",
+      "locationId": "sheriffs-office",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S09E02-D01",
+      "season": 9,
+      "episode": 2,
+      "title": "Family Secrets",
+      "victim": "Randy Sloan",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Family story; estimated",
+      "locationId": "farmhouse-and-orchard",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S09E11-D01",
+      "season": 9,
+      "episode": 11,
+      "title": "Final Curtain",
+      "victim": "Eric Benderson",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Stage production; hall estimated",
+      "locationId": "town-hall",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S09E17-D01",
+      "season": 9,
+      "episode": 17,
+      "title": "The Big Kill",
+      "victim": "Henry Riddett",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": false,
+      "placeNote": "Fishing boat, Cabot Cove coast",
+      "locationId": "cabot-cove-harbor",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.imdb.com/title/tt0653629/plotsummary/",
+        "https://murdershewatched.com/2021/08/26/murder-she-wrote-9-17-the-big-kill/"
+      ]
+    },
+    {
+      "id": "S09E17-D02",
+      "season": 9,
+      "episode": 17,
+      "title": "The Big Kill",
+      "victim": "Carl Ward",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": false,
+      "placeNote": "Company boat, Cabot Cove coast",
+      "locationId": "cabot-cove-harbor",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://www.imdb.com/title/tt0653629/plotsummary/",
+        "https://murdershewatched.com/2021/08/26/murder-she-wrote-9-17-the-big-kill/"
+      ]
+    },
+    {
+      "id": "S09E22-D01",
+      "season": 9,
+      "episode": 22,
+      "title": "Love's Deadly Desire",
+      "victim": "Marian King",
+      "cause": "fall_or_push",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Fall; headland estimated",
+      "locationId": "old-lighthouse-site",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S10E14-D01",
+      "season": 10,
+      "episode": 14,
+      "title": "Deadly Assets",
+      "victim": "Oscar James Gandile",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Money story; estimated",
+      "locationId": "local-bank",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S10E18-D01",
+      "season": 10,
+      "episode": 18,
+      "title": "The Trouble with Seth",
+      "victim": "Leo David Fender",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Seth is accused; estimated",
+      "locationId": "dr-seth-hazlitt-practice",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/The_Trouble_with_Seth"
+      ]
+    },
+    {
+      "id": "S10E21-D01",
+      "season": 10,
+      "episode": 21,
+      "title": "Wheel of Death",
+      "victim": "Carl Dorner",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Carnival story; estimated",
+      "locationId": "founders-day-green",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S11E18-D01",
+      "season": 11,
+      "episode": 18,
+      "title": "The Dream Team",
+      "victim": "Lorna Buffam",
+      "cause": "drowning",
+      "type": "drown",
+      "est": true,
+      "placeNote": "Drowning; estimated",
+      "locationId": "coastal-boat-launch",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S11E19-D01",
+      "season": 11,
+      "episode": 19,
+      "title": "School for Murder",
+      "victim": "James Ryerson",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "School story",
+      "locationId": "cabot-cove-high-school",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S12E05-D01",
+      "season": 12,
+      "episode": 5,
+      "title": "Home Care",
+      "victim": "Maggie Saunders",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": true,
+      "placeNote": "Home-care story; residence estimated",
+      "locationId": "eve-simpson-home",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Home_Care"
+      ]
+    },
+    {
+      "id": "S12E19-D01",
+      "season": 12,
+      "episode": 19,
+      "title": "Evidence of Malice",
+      "victim": "Leverett Boggs",
+      "cause": "strangulation",
+      "type": "asphyx",
+      "est": true,
+      "placeNote": "Trial story; estimated",
+      "locationId": "cabot-cove-courthouse",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Evidence_of_Malice"
+      ]
+    },
+    {
+      "id": "S12E19-D02",
+      "season": 12,
+      "episode": 19,
+      "title": "Evidence of Malice",
+      "victim": "Fred Berrigan",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Trial story; estimated",
+      "locationId": "cabot-cove-courthouse",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Evidence_of_Malice"
+      ]
+    },
+    {
+      "id": "S12E21-D01",
+      "season": 12,
+      "episode": 21,
+      "title": "Race to Death",
+      "victim": "Kyle Kimball",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Racing story; estimated",
+      "locationId": "old-gas-station",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Race_to_Death",
+        "https://www.imdb.com/title/tt0653602/plotsummary/"
+      ]
+    },
+    {
+      "id": "S12E22-D01",
+      "season": 12,
+      "episode": 22,
+      "title": "What You Don't Know Can Kill You",
+      "victim": "Johnny Carter",
+      "cause": "strangulation",
+      "type": "asphyx",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "harbor-chandlery",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S12E22-D02",
+      "season": 12,
+      "episode": 22,
+      "title": "What You Don't Know Can Kill You",
+      "victim": "Jeremy Woods",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "harbor-chandlery",
+      "confidence": "low",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote"
+      ]
+    },
+    {
+      "id": "S07E22-D01",
+      "season": 7,
+      "episode": 22,
+      "title": "The Skinny According to Nick Cullhane",
+      "victim": "Nick Cullhane",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "cabot-cove-booksellers",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/The_Skinny_According_to_Nick_Cullhane"
+      ]
+    },
+    {
+      "id": "S04E12-D01",
+      "season": 4,
+      "episode": 12,
+      "title": "Who Threw the Barbitals in Mrs. Fletcher's Chowder?",
+      "victim": "Elmo Banner",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": false,
+      "placeNote": "Jessica Fletcher residence / dinner table",
+      "locationId": "jessica-fletcher-house",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Who_Threw_the_Barbitals_in_Mrs._Fletcher%27s_Chowder%3F"
+      ]
+    },
+    {
+      "id": "S05E10-D01",
+      "season": 5,
+      "episode": 10,
+      "title": "Weave a Tangled Web",
+      "victim": "Eric Bowman",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "coastal-inn-bb",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Weave_a_Tangled_Web"
+      ]
+    },
+    {
+      "id": "S05E13-D01",
+      "season": 5,
+      "episode": 13,
+      "title": "Fire Burn, Cauldron Bubble",
+      "victim": "Irene Terhune / Annie Gorman",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "School play story",
+      "locationId": "cabot-cove-high-school",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Fire_Burn%2C_Cauldron_Bubble"
+      ]
+    },
+    {
+      "id": "S06E06-D01",
+      "season": 6,
+      "episode": 6,
+      "title": "Dead Letter",
+      "victim": "Bud Fricksey",
+      "cause": "smoke_inhalation",
+      "type": "asphyx",
+      "est": false,
+      "placeNote": "Furniture store fire",
+      "locationId": "cabot-furniture-store",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Dead_Letter"
+      ]
+    },
+    {
+      "id": "S06E11-D01",
+      "season": 6,
+      "episode": 11,
+      "title": "Town Father",
+      "victim": "Annie Mae Chapman",
+      "cause": "shooting",
+      "type": "gun",
+      "est": true,
+      "placeNote": "Town politics story",
+      "locationId": "town-hall",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Town_Father"
+      ]
+    },
+    {
+      "id": "S07E17-D01",
+      "season": 7,
+      "episode": 17,
+      "title": "The Prodigal Father",
+      "victim": "Ned Jenks",
+      "cause": "strangulation",
+      "type": "asphyx",
+      "est": false,
+      "placeNote": "Lighthouse Motel, guest room",
+      "locationId": "lighthouse-motel",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewatched.com/2020/05/14/murder-she-wrote-7-17-the-prodigal-father/"
+      ]
+    },
+    {
+      "id": "S08E12-D01",
+      "season": 8,
+      "episode": 12,
+      "title": "The Witch's Curse",
+      "victim": "Judge Willard Clinton",
+      "cause": "fall_or_push",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Witch legend; estimated",
+      "locationId": "old-cemetery",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/The_Witch%27s_Curse"
+      ]
+    },
+    {
+      "id": "S08E18-D01",
+      "season": 8,
+      "episode": 18,
+      "title": "Programmed for Murder",
+      "victim": "Harriet Simmons Wooster",
+      "cause": "poisoning",
+      "type": "poison",
+      "est": false,
+      "placeNote": "Hospital following blood transfusion",
+      "locationId": "cabot-cove-hospital",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Programmed_for_Murder"
+      ]
+    },
+    {
+      "id": "S10E08-D01",
+      "season": 10,
+      "episode": 8,
+      "title": "Love and Hate in Cabot Cove",
+      "victim": "Ethan Loomis",
+      "cause": "shooting",
+      "type": "gun",
+      "est": false,
+      "placeNote": "Deserted road in Cabot Cove",
+      "locationId": "deserted-coast-road",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewatched.com/2022/04/14/murder-she-wrote-10-8-love-hate-in-cabot-cove/"
+      ]
+    },
+    {
+      "id": "S11E09-D01",
+      "season": 11,
+      "episode": 9,
+      "title": "Murder by Twos",
+      "victim": "Sam Bryce",
+      "cause": "electrocution",
+      "type": "other",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "cabot-cove-church",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Murder_by_Twos"
+      ]
+    },
+    {
+      "id": "S11E09-D02",
+      "season": 11,
+      "episode": 9,
+      "title": "Murder by Twos",
+      "victim": "Terry Deauville",
+      "cause": "strangulation",
+      "type": "asphyx",
+      "est": true,
+      "placeNote": "Estimated",
+      "locationId": "cabot-cove-church",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Murder_by_Twos"
+      ]
+    },
+    {
+      "id": "S12E14-D01",
+      "season": 12,
+      "episode": 14,
+      "title": "Murder in Tempo",
+      "victim": "Tommy Vaughn",
+      "cause": "electrocution",
+      "type": "other",
+      "est": false,
+      "placeNote": "Concert rehearsal stage",
+      "locationId": "concert-stage",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/Murder_in_Tempo",
+        "https://www.imdb.com/title/tt0653569/"
+      ]
+    },
+    {
+      "id": "S10E03-D02",
+      "season": 10,
+      "episode": 3,
+      "title": "The Legacy of Borbey House",
+      "victim": "Lawrence Baker",
+      "cause": "stabbing",
+      "type": "blade",
+      "est": false,
+      "placeNote": "Borbey House",
+      "locationId": "borbey-house",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/The_Legacy_of_Borbey_House"
+      ]
+    },
+    {
+      "id": "S11E03-D01",
+      "season": 11,
+      "episode": 3,
+      "title": "To Kill a Legend",
+      "victim": "Alexander Sandsby",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Peabody legend story",
+      "locationId": "joshua-peabody-marker",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/To_Kill_a_Legend"
+      ]
+    },
+    {
+      "id": "S11E03-D02",
+      "season": 11,
+      "episode": 3,
+      "title": "To Kill a Legend",
+      "victim": "Amelia Farnum",
+      "cause": "blunt_force",
+      "type": "blunt",
+      "est": true,
+      "placeNote": "Peabody legend story",
+      "locationId": "historical-society",
+      "confidence": "medium",
+      "sources": [
+        "https://listofdeaths.fandom.com/wiki/Murder%2C_She_Wrote",
+        "https://murdershewrote.fandom.com/wiki/To_Kill_a_Legend"
+      ]
+    }
+  ],
+  "namedOffMap": [],
+  "unplaced": []
+}
