@@ -1,0 +1,4065 @@
+{
+  "schemaVersion": "1.0.0",
+  "datasetTitle": "Cabot Cove — Interpretive Atlas Location Dataset",
+  "generatedDate": "2026-10-10",
+  "licenseNote": "A fan-oriented interpretive reconstruction. Fictional properties and characters belong to their respective rights holders. External images are not bundled; only use imagery with appropriate rights.",
+  "usage": "Provide this file together with Cabot_Cove_Claude_Design_Instructions.md to Claude Design. Coordinates are design-space percentages and are not geographic coordinates.",
+  "setting": {
+    "name": "Cabot Cove",
+    "state": "Maine",
+    "country": "United States",
+    "fictional": true,
+    "series": "Murder, She Wrote",
+    "settingPeriod": {
+      "from": 1984,
+      "to": 1996,
+      "defaultYear": 1987
+    },
+    "population": 3560,
+    "populationNote": "Frequently cited TV town population; avoid treating it as a real census statistic.",
+    "description": "Fictional, close-knit New England fishing village with a working harbor, Victorian houses, compact historic downtown and rocky coastline."
+  },
+  "mapCoordinateSystem": {
+    "kind": "fictional_normalized_2d",
+    "minX": 0,
+    "maxX": 100,
+    "minY": 0,
+    "maxY": 100,
+    "origin": "top-left",
+    "xAxis": "east",
+    "yAxis": "south",
+    "northAtTop": true,
+    "projection": "illustrative only",
+    "isGPS": false,
+    "coordinateAccuracy": "ALL_POSITIONS_INTERPRETIVE",
+    "notes": [
+      "Do not geocode these numbers or place them onto a real-world map.",
+      "Render roads and coastline as organic curves, not straight line segments between every control point.",
+      "Harbor and some pier labels can sit over water, with interactive hit areas anchored to shore/pier art."
+    ]
+  },
+  "evidenceLegend": {
+    "ON_SCREEN": "A named landmark or recognizable facility appears in the series; not proof of proposed fictional placement.",
+    "DIALOGUE_CONFIRMED": "A location is named, described, or established by the show; image/precise architecture may not be certain.",
+    "PRODUCTION_REFERENCE": "Grounded primarily through confirmed real-world filming-location evidence.",
+    "CREATIVE_INFILL": "Invented or composited to create a complete believable map, not a claimed series landmark."
+  },
+  "priorityLegend": {
+    "A": "Build and render first; prominent",
+    "B": "Include as a distinct clickable stop",
+    "C": "Supporting town-scale setting; can be filtered at overview zoom"
+  },
+  "sourceDirectory": [
+    {
+      "id": "around",
+      "url": "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+    },
+    {
+      "id": "geography",
+      "url": "https://murdershewroteshewrote.com/2023/11/30/where-is-cabot-cove/"
+    },
+    {
+      "id": "jessica",
+      "url": "https://murdershewroteshewrote.com/2024/04/07/a-certain-victorian/"
+    },
+    {
+      "id": "stones",
+      "url": "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+    },
+    {
+      "id": "deadly",
+      "url": "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+    },
+    {
+      "id": "beverly",
+      "url": "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+    },
+    {
+      "id": "history",
+      "url": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    },
+    {
+      "id": "moving",
+      "url": "https://murdershewatched.com/2020/04/16/murder-she-wrote-7-13-moving-violation/"
+    },
+    {
+      "id": "population",
+      "url": "https://scholar.lib.vt.edu/VA-news/ROA-Times/issues/1996/rt9604/960419/04190070.htm"
+    },
+    {
+      "id": "episodeGuide",
+      "url": "https://www.tvmaze.com/shows/2083/murder-she-wrote/episodeguide"
+    },
+    {
+      "id": "filmIMDb",
+      "url": "https://www.imdb.com/title/tt0086765/locations/"
+    }
+  ],
+  "districts": [
+    {
+      "id": "residential",
+      "name": "Old Residential Quarter",
+      "description": "Quiet, tree-lined blocks of clapboard and Victorian homes.",
+      "labelPosition": {
+        "x": 27,
+        "y": 40
+      }
+    },
+    {
+      "id": "civic",
+      "name": "Civic and Institutional Quarter",
+      "description": "Courthouse, sheriff’s office, library and community institutions.",
+      "labelPosition": {
+        "x": 48,
+        "y": 48
+      }
+    },
+    {
+      "id": "downtown",
+      "name": "Historic Downtown",
+      "description": "Compact Main Street district with independent shops and newspaper.",
+      "labelPosition": {
+        "x": 58,
+        "y": 53
+      }
+    },
+    {
+      "id": "waterfront",
+      "name": "Working Waterfront",
+      "description": "Sheltered harbor, docks, boat sheds and marine businesses.",
+      "labelPosition": {
+        "x": 77,
+        "y": 46
+      }
+    },
+    {
+      "id": "hotel",
+      "name": "Hotel Ridge",
+      "description": "Gently elevated inn grounds with town and coastal views.",
+      "labelPosition": {
+        "x": 37,
+        "y": 26
+      }
+    },
+    {
+      "id": "coastal",
+      "name": "Headlands and Shore",
+      "description": "Rocky headlands, lighthouse sites, beaches and coastal paths.",
+      "labelPosition": {
+        "x": 80,
+        "y": 77
+      }
+    },
+    {
+      "id": "outskirts",
+      "name": "Inland Outskirts",
+      "description": "School, hospital, ballfield and quiet parcels beyond the village.",
+      "labelPosition": {
+        "x": 25,
+        "y": 77
+      }
+    },
+    {
+      "id": "historic",
+      "name": "Heritage and Church Quarter",
+      "description": "Old gallery buildings, churchyard, cemetery and local history.",
+      "labelPosition": {
+        "x": 49,
+        "y": 69
+      }
+    }
+  ],
+  "geographicFeatures": [
+    {
+      "id": "land-mass",
+      "type": "landPolygon",
+      "label": "Interpretive mainland silhouette",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          78,
+          0
+        ],
+        [
+          79,
+          12
+        ],
+        [
+          83,
+          23
+        ],
+        [
+          86,
+          32
+        ],
+        [
+          79,
+          36
+        ],
+        [
+          72,
+          39
+        ],
+        [
+          72,
+          48
+        ],
+        [
+          78,
+          54
+        ],
+        [
+          84,
+          54
+        ],
+        [
+          83,
+          61
+        ],
+        [
+          88,
+          69
+        ],
+        [
+          96,
+          78
+        ],
+        [
+          98,
+          84
+        ],
+        [
+          91,
+          91
+        ],
+        [
+          77,
+          87
+        ],
+        [
+          70,
+          100
+        ],
+        [
+          0,
+          100
+        ]
+      ],
+      "style": "soft coastal grass/forest",
+      "note": "Approximate coastline: turn vertices into organic curves; leave coherent headlands and space for lighthouse."
+    },
+    {
+      "id": "open-atlantic",
+      "type": "ocean",
+      "label": "Atlantic Ocean",
+      "fillDirection": "to-east-of-coastline",
+      "note": "Water occupies roughly 25–35% of the overview; dark teal deep water and pale shallows."
+    },
+    {
+      "id": "protected-harbor",
+      "type": "waterArea",
+      "label": "Sheltered Harbor",
+      "points": [
+        [
+          83,
+          33
+        ],
+        [
+          77,
+          36
+        ],
+        [
+          72,
+          40
+        ],
+        [
+          71,
+          47
+        ],
+        [
+          76,
+          52
+        ],
+        [
+          84,
+          54
+        ],
+        [
+          91,
+          54
+        ],
+        [
+          94,
+          43
+        ],
+        [
+          90,
+          35
+        ]
+      ],
+      "note": "Interpretive inlet, open to ocean. Town Docks on landward edge; harbor marker floats over water."
+    },
+    {
+      "id": "pine-reserve",
+      "type": "forestArea",
+      "label": "Wooded Hinterland",
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ],
+        [
+          38,
+          13
+        ],
+        [
+          25,
+          28
+        ],
+        [
+          11,
+          35
+        ],
+        [
+          0,
+          31
+        ]
+      ],
+      "note": "Break up with farm parcels and roadways."
+    },
+    {
+      "id": "southern-woods",
+      "type": "forestArea",
+      "label": "Southwest Forest",
+      "points": [
+        [
+          0,
+          60
+        ],
+        [
+          20,
+          61
+        ],
+        [
+          28,
+          77
+        ],
+        [
+          23,
+          100
+        ],
+        [
+          0,
+          100
+        ]
+      ],
+      "note": "Leave clear parcel for ballfield and school."
+    },
+    {
+      "id": "coastal-headland",
+      "type": "rockyHeadland",
+      "label": "Eastern Headlands",
+      "points": [
+        [
+          81,
+          61
+        ],
+        [
+          90,
+          70
+        ],
+        [
+          96,
+          77
+        ],
+        [
+          94,
+          89
+        ],
+        [
+          85,
+          89
+        ],
+        [
+          76,
+          80
+        ]
+      ],
+      "note": "Beach cuts and trails, exposed rock and low scrub."
+    }
+  ],
+  "roadNetwork": {
+    "coordinateSystem": "fictional_normalized_2d",
+    "roads": [
+      {
+        "id": "inland-approach",
+        "name": "Inland Approach",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "two-lane",
+        "points": [
+          [
+            0,
+            45
+          ],
+          [
+            9,
+            45
+          ],
+          [
+            18,
+            43
+          ],
+          [
+            27,
+            41
+          ],
+          [
+            36,
+            44
+          ],
+          [
+            45,
+            48
+          ]
+        ],
+        "connects": [
+          "cabot-cove-entrance-sign",
+          "jessica-fletcher-house",
+          "main-street"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "main-street-route",
+        "name": "Main Street",
+        "nameEvidence": "ON_SCREEN_GENERAL",
+        "mode": "road",
+        "width": "village-commercial",
+        "points": [
+          [
+            31,
+            49
+          ],
+          [
+            42,
+            49
+          ],
+          [
+            53,
+            50
+          ],
+          [
+            64,
+            50
+          ],
+          [
+            69,
+            47
+          ],
+          [
+            74,
+            43
+          ]
+        ],
+        "connects": [
+          "cabot-cove-library",
+          "cabot-cove-courthouse",
+          "main-street",
+          "cabot-cove-booksellers",
+          "cabot-cove-harbor"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "residential-lane",
+        "name": "Residential Lane",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "neighborhood",
+        "points": [
+          [
+            17,
+            27
+          ],
+          [
+            24,
+            34
+          ],
+          [
+            27,
+            38
+          ],
+          [
+            30,
+            44
+          ],
+          [
+            35,
+            55
+          ],
+          [
+            44,
+            56
+          ]
+        ],
+        "connects": [
+          "joshua-peabody-inn",
+          "jessica-fletcher-house",
+          "amos-tupper-house",
+          "gallerie-frederich"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "hotel-ridge-road",
+        "name": "Hill House Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "local",
+        "points": [
+          [
+            30,
+            44
+          ],
+          [
+            34,
+            36
+          ],
+          [
+            40,
+            25
+          ],
+          [
+            47,
+            31
+          ],
+          [
+            50,
+            43
+          ]
+        ],
+        "connects": [
+          "hill-house",
+          "sheriffs-office"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "harbor-road",
+        "name": "Harbor Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "two-lane",
+        "points": [
+          [
+            63,
+            50
+          ],
+          [
+            69,
+            48
+          ],
+          [
+            74,
+            43
+          ],
+          [
+            75,
+            51
+          ],
+          [
+            72,
+            58
+          ],
+          [
+            69,
+            63
+          ]
+        ],
+        "connects": [
+          "main-street",
+          "town-docks",
+          "harbor-fish-market",
+          "cabot-cove-harbor"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "civic-south-road",
+        "name": "Civic South Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "local",
+        "points": [
+          [
+            44,
+            51
+          ],
+          [
+            44,
+            59
+          ],
+          [
+            42,
+            67
+          ],
+          [
+            47,
+            72
+          ],
+          [
+            53,
+            74
+          ],
+          [
+            57,
+            70
+          ]
+        ],
+        "connects": [
+          "historical-society",
+          "dr-seth-hazlitt-practice",
+          "old-cemetery",
+          "cobbs-mortuary"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "southern-approach",
+        "name": "South Village Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "two-lane",
+        "points": [
+          [
+            0,
+            66
+          ],
+          [
+            15,
+            70
+          ],
+          [
+            24,
+            73
+          ],
+          [
+            32,
+            72
+          ],
+          [
+            42,
+            68
+          ],
+          [
+            50,
+            60
+          ]
+        ],
+        "connects": [
+          "cabot-cove-high-school",
+          "cabot-cove-hospital",
+          "main-street"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "lighthouse-road",
+        "name": "Headlands Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "scenic-local",
+        "points": [
+          [
+            67,
+            59
+          ],
+          [
+            71,
+            66
+          ],
+          [
+            75,
+            75
+          ],
+          [
+            83,
+            79
+          ],
+          [
+            90,
+            80
+          ]
+        ],
+        "connects": [
+          "cabot-point-lighthouse",
+          "cotters-beach",
+          "rocky-coast-trail"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "northern-headland-road",
+        "name": "Old Coast Guard Road",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "narrow-local",
+        "points": [
+          [
+            40,
+            25
+          ],
+          [
+            54,
+            20
+          ],
+          [
+            65,
+            15
+          ],
+          [
+            70,
+            11
+          ]
+        ],
+        "connects": [
+          "hill-house",
+          "old-lighthouse-site"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "harbor-boardwalk",
+        "name": "Harbor Walk",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "pedestrian",
+        "width": "footpath",
+        "points": [
+          [
+            69,
+            49
+          ],
+          [
+            74,
+            48
+          ],
+          [
+            79,
+            50
+          ],
+          [
+            83,
+            49
+          ]
+        ],
+        "connects": [
+          "town-docks",
+          "dockmasters-office"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "coastal-footpath",
+        "name": "Bluffs Footpath",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "pedestrian",
+        "width": "footpath",
+        "points": [
+          [
+            75,
+            79
+          ],
+          [
+            83,
+            66
+          ],
+          [
+            86,
+            70
+          ],
+          [
+            90,
+            80
+          ]
+        ],
+        "connects": [
+          "cotters-beach",
+          "woodland-overlook",
+          "cabot-point-lighthouse"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      },
+      {
+        "id": "ballfield-access",
+        "name": "Recreation Lane",
+        "nameEvidence": "INTERPRETIVE",
+        "mode": "road",
+        "width": "local",
+        "points": [
+          [
+            17,
+            72
+          ],
+          [
+            15,
+            84
+          ]
+        ],
+        "connects": [
+          "cabot-cove-high-school",
+          "cabot-cove-softball-field"
+        ],
+        "sourceOfGeometry": "CREATIVE_RECONSTRUCTION"
+      }
+    ],
+    "topologyNote": "Paths are rough draw guides, not a routable navigation graph; do not show travel times or distances. A drawn tour can connect locations via local hand-authored polylines."
+  },
+  "characters": [
+    {
+      "id": "jessica",
+      "name": "Jessica B. Fletcher",
+      "description": "Writer and retired teacher; the central detective and resident"
+    },
+    {
+      "id": "seth",
+      "name": "Dr. Seth Hazlitt",
+      "description": "Local doctor and close friend of Jessica"
+    },
+    {
+      "id": "amos",
+      "name": "Sheriff Amos Tupper",
+      "description": "Earlier-series Cabot Cove sheriff"
+    },
+    {
+      "id": "mort",
+      "name": "Sheriff Mort Metzger",
+      "description": "Later-series Cabot Cove sheriff"
+    },
+    {
+      "id": "ethan",
+      "name": "Captain Ethan Cragg",
+      "description": "Fisherman and maritime figure"
+    },
+    {
+      "id": "eve",
+      "name": "Eve Simpson",
+      "description": "Local realtor and neighbor"
+    },
+    {
+      "id": "loretta",
+      "name": "Loretta Spiegel",
+      "description": "Owner of Loretta’s beauty parlor"
+    },
+    {
+      "id": "sam",
+      "name": "Mayor Sam Booth",
+      "description": "Town mayor appearing in civic storylines"
+    },
+    {
+      "id": "joshua",
+      "name": "Joshua Peabody",
+      "description": "Disputed Revolutionary War figure in local lore"
+    }
+  ],
+  "episodes": [
+    {
+      "id": "deadly-lady",
+      "title": "Deadly Lady",
+      "season": 1,
+      "episode": 2,
+      "spoilerFreeSynopsis": "A dramatic coastal storm and a visiting family mystery draw Jessica into an investigation.",
+      "sources": [
+        "deadly"
+      ]
+    },
+    {
+      "id": "hit-run-homicide",
+      "title": "Hit, Run and Homicide",
+      "season": 1,
+      "episode": 7,
+      "numberingNote": "Numbering may differ for guides counting the pilot as one or two episodes.",
+      "spoilerFreeSynopsis": "A strange motor-vehicle incident disrupts the small town.",
+      "sources": [
+        "history",
+        "geography"
+      ]
+    },
+    {
+      "id": "joshua-peabody",
+      "title": "Joshua Peabody Died Here… Possibly",
+      "season": 2,
+      "episode": 2,
+      "spoilerFreeSynopsis": "An archaeological mystery revives an uncertain Revolutionary War legend.",
+      "sources": [
+        "history"
+      ]
+    },
+    {
+      "id": "sticks-and-stones",
+      "title": "Sticks and Stones",
+      "season": 2,
+      "episode": 10,
+      "spoilerFreeSynopsis": "Troubling letters, a prospective land development and town history collide.",
+      "sources": [
+        "stones",
+        "history"
+      ]
+    },
+    {
+      "id": "home-fries",
+      "title": "Keep the Home Fries Burning",
+      "season": 2,
+      "episode": 14,
+      "spoilerFreeSynopsis": "A new roadside-themed eating spot causes a stir, and a poisoning becomes a mystery.",
+      "sources": [
+        "history",
+        "episodeGuide"
+      ]
+    },
+    {
+      "id": "dead-mans-gold",
+      "title": "Dead Man’s Gold",
+      "season": 3,
+      "episode": 6,
+      "spoilerFreeSynopsis": "Local stories of sunken treasure become newly significant.",
+      "sources": [
+        "history"
+      ]
+    },
+    {
+      "id": "beverly",
+      "title": "If It’s Thursday, It Must Be Beverly",
+      "season": 4,
+      "episode": 7,
+      "spoilerFreeSynopsis": "A murder investigation exposes the social life of a deputy and his neighbors.",
+      "sources": [
+        "beverly",
+        "episodeGuide"
+      ]
+    },
+    {
+      "id": "indian-giver",
+      "title": "Indian Giver",
+      "season": 4,
+      "episode": 10,
+      "spoilerFreeSynopsis": "Founders Day and a land dispute reopen conversations about the community’s past.",
+      "sources": [
+        "history"
+      ]
+    },
+    {
+      "id": "to-kill-a-legend",
+      "title": "To Kill a Legend",
+      "season": 11,
+      "episode": 3,
+      "spoilerFreeSynopsis": "The legacy of Joshua Peabody is reexamined through historical evidence.",
+      "sources": [
+        "history"
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "jessica-fletcher-house",
+      "name": "Jessica Fletcher’s House",
+      "districtId": "residential",
+      "category": "residence",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "Jessica’s iconic and warmly lived-in home, the narrative anchor of Cabot Cove.",
+      "visualDescription": "White Victorian clapboard house with gables, sash windows, entrance porch, white picket fence, garden flowers, curving path, and her bicycle near the gate.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "deadly-lady",
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "home",
+        "bicycle",
+        "Victorian"
+      ],
+      "filmingReference": "Blair House Inn, 45110 Little Lake Street, Mendocino, California; production exterior, not a Cabot Cove address.",
+      "mapPosition": {
+        "x": 27,
+        "y": 38
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/04/07/a-certain-victorian/",
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://www.imdb.com/title/tt0086765/locations/"
+      ],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Jessica Fletcher’s House",
+        "body": "Jessica’s iconic and warmly lived-in home, the narrative anchor of Cabot Cove.",
+        "environmentPrompt": "White Victorian clapboard house with gables, sash windows, entrance porch, white picket fence, garden flowers, curving path, and her bicycle near the gate.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-harbor",
+      "name": "Cabot Cove Harbor",
+      "districtId": "waterfront",
+      "category": "harbor",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "The working heart of Cabot Cove, a sheltered cove that supports local fishing and maritime activity.",
+      "visualDescription": "Tidal blue-green water, a cluster of lobster and fishing boats, modest sailboats, rope coils, moored dinghies, low docks and gulls.",
+      "characterIds": [
+        "ethan"
+      ],
+      "episodeIds": [
+        "deadly-lady",
+        "dead-mans-gold"
+      ],
+      "tags": [
+        "boats",
+        "water",
+        "fishing"
+      ],
+      "filmingReference": "Noyo Harbor area, Fort Bragg, California; additional Universal Studios waterfront settings.",
+      "mapPosition": {
+        "x": 81,
+        "y": 43
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/",
+        "https://murdershewroteshewrote.com/2023/11/30/where-is-cabot-cove/"
+      ],
+      "icon": "anchor",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Harbor",
+        "body": "The working heart of Cabot Cove, a sheltered cove that supports local fishing and maritime activity.",
+        "environmentPrompt": "Tidal blue-green water, a cluster of lobster and fishing boats, modest sailboats, rope coils, moored dinghies, low docks and gulls.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "water"
+    },
+    {
+      "id": "town-docks",
+      "name": "Town Docks and Fishermen’s Wharf",
+      "districtId": "waterfront",
+      "category": "pier",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "The piers and working quays where vessels arrive and fishermen tend equipment.",
+      "visualDescription": "Salt-bleached wooden piers, lobster traps, winches, tackle, dock ladders and piles of coiled netting.",
+      "characterIds": [
+        "ethan"
+      ],
+      "episodeIds": [
+        "deadly-lady"
+      ],
+      "tags": [
+        "piers",
+        "working harbor"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 78,
+        "y": 50
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/",
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "anchor",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Town Docks and Fishermen’s Wharf",
+        "body": "The piers and working quays where vessels arrive and fishermen tend equipment.",
+        "environmentPrompt": "Salt-bleached wooden piers, lobster traps, winches, tackle, dock ladders and piles of coiled netting.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "shoreline"
+    },
+    {
+      "id": "main-street",
+      "name": "Main Street",
+      "districtId": "downtown",
+      "category": "street",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "The town’s intimate commercial corridor and main gathering place.",
+      "visualDescription": "Four to six short blocks with clapboard facades, restrained brick storefronts, business signs and parked 1980s sedans and station wagons.",
+      "characterIds": [
+        "jessica",
+        "seth",
+        "amos"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "shops",
+        "walkable",
+        "downtown"
+      ],
+      "filmingReference": "Multiple streets in Mendocino and other filming locations stood in for downtown; do not import their actual street coordinates.",
+      "mapPosition": {
+        "x": 56,
+        "y": 50
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "map",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Main Street",
+        "body": "The town’s intimate commercial corridor and main gathering place.",
+        "environmentPrompt": "Four to six short blocks with clapboard facades, restrained brick storefronts, business signs and parked 1980s sedans and station wagons.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "sheriffs-office",
+      "name": "Cabot Cove Sheriff’s Office",
+      "districtId": "civic",
+      "category": "civic",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "The local law-enforcement headquarters, led earlier by Amos Tupper and later by Mort Metzger.",
+      "visualDescription": "Modest government entrance, painted wooden or masonry facade, flag, period police car and a small holding area suggested from outside.",
+      "characterIds": [
+        "amos",
+        "mort",
+        "jessica"
+      ],
+      "episodeIds": [
+        "sticks-and-stones",
+        "beverly"
+      ],
+      "tags": [
+        "law enforcement",
+        "civic"
+      ],
+      "filmingReference": "Russian Gulch State Park ranger/park office, California, used as one exterior.",
+      "mapPosition": {
+        "x": 55,
+        "y": 43
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Sheriff’s Office",
+        "body": "The local law-enforcement headquarters, led earlier by Amos Tupper and later by Mort Metzger.",
+        "environmentPrompt": "Modest government entrance, painted wooden or masonry facade, flag, period police car and a small holding area suggested from outside.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-courthouse",
+      "name": "Cabot Cove Courthouse",
+      "districtId": "civic",
+      "category": "civic",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "A small courthouse in the historic civic heart of town.",
+      "visualDescription": "Solid older public building with steps, trim, compact entrance and understated courthouse lettering.",
+      "characterIds": [
+        "amos",
+        "jessica"
+      ],
+      "episodeIds": [
+        "beverly"
+      ],
+      "tags": [
+        "courthouse",
+        "civic"
+      ],
+      "filmingReference": "Masonic Hall building in Mendocino stood in for the exterior.",
+      "mapPosition": {
+        "x": 49,
+        "y": 46
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Courthouse",
+        "body": "A small courthouse in the historic civic heart of town.",
+        "environmentPrompt": "Solid older public building with steps, trim, compact entrance and understated courthouse lettering.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "historical-society",
+      "name": "Cabot Cove Historical Society",
+      "districtId": "historic",
+      "category": "museum",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "Small local-history institution that preserves the town’s colonial, maritime and civic past.",
+      "visualDescription": "Restored historic building with a side garden, historical plaque, map display and cozy wood-framed windows.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "archives",
+        "museum",
+        "history"
+      ],
+      "filmingReference": "Kelley House Museum, Mendocino, California, used as exterior.",
+      "mapPosition": {
+        "x": 47,
+        "y": 56
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+      ],
+      "icon": "book-open",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Historical Society",
+        "body": "Small local-history institution that preserves the town’s colonial, maritime and civic past.",
+        "environmentPrompt": "Restored historic building with a side garden, historical plaque, map display and cozy wood-framed windows.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-library",
+      "name": "Cabot Cove Library",
+      "districtId": "civic",
+      "category": "library",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "A neighborhood institution and a natural stop for Jessica’s research and literary interests.",
+      "visualDescription": "Small historic library with substantial windows, broad steps, a book-return slot and mature trees.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "books",
+        "research",
+        "civic"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 43,
+        "y": 47
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "book-open",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Library",
+        "body": "A neighborhood institution and a natural stop for Jessica’s research and literary interests.",
+        "environmentPrompt": "Small historic library with substantial windows, broad steps, a book-return slot and mature trees.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "hill-house",
+      "name": "Hill House of Cabot Cove",
+      "districtId": "hotel",
+      "category": "hotel",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "A",
+      "summary": "Cabot Cove’s elegant and slightly old-fashioned hilltop hotel, welcoming out-of-town guests.",
+      "visualDescription": "Large but low-rise inn with sloping rooflines, manicured gardens, a sheltered entrance, guest windows, turning driveway and views toward the water.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "deadly-lady"
+      ],
+      "tags": [
+        "hotel",
+        "tourism",
+        "lodging"
+      ],
+      "filmingReference": "Hill House Inn, 10701 Palette Drive, Mendocino, California; filming exterior.",
+      "mapPosition": {
+        "x": 40,
+        "y": 25
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+      ],
+      "icon": "bed",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Hill House of Cabot Cove",
+        "body": "Cabot Cove’s elegant and slightly old-fashioned hilltop hotel, welcoming out-of-town guests.",
+        "environmentPrompt": "Large but low-rise inn with sloping rooflines, manicured gardens, a sheltered entrance, guest windows, turning driveway and views toward the water.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-gazette",
+      "name": "Cabot Cove Gazette",
+      "districtId": "downtown",
+      "category": "newspaper",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The town’s local newspaper office, a center for announcements, local reporting and investigations.",
+      "visualDescription": "Narrow two-story print-era business with a newspaper display case, delivery stack and an upstairs office.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "journalism",
+        "newspaper",
+        "local news"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 60,
+        "y": 52
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "newspaper",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Gazette",
+        "body": "The town’s local newspaper office, a center for announcements, local reporting and investigations.",
+        "environmentPrompt": "Narrow two-story print-era business with a newspaper display case, delivery stack and an upstairs office.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "lorettas-beauty-parlor",
+      "name": "Loretta’s Beauty Parlor",
+      "districtId": "downtown",
+      "category": "salon",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A social and conversational hub where Cabot Cove residents exchange news.",
+      "visualDescription": "Cozy storefront with vintage coiffure lettering, plate-glass window and classic salon chairs visible inside.",
+      "characterIds": [
+        "loretta",
+        "jessica"
+      ],
+      "episodeIds": [
+        "beverly"
+      ],
+      "tags": [
+        "salon",
+        "gossip",
+        "shops"
+      ],
+      "filmingReference": "Lansing and Ukiah Streets, Mendocino, California, used for the scene location.",
+      "mapPosition": {
+        "x": 58,
+        "y": 56
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "scissors",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Loretta’s Beauty Parlor",
+        "body": "A social and conversational hub where Cabot Cove residents exchange news.",
+        "environmentPrompt": "Cozy storefront with vintage coiffure lettering, plate-glass window and classic salon chairs visible inside.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "guillermos-beautique",
+      "name": "Guillermo’s Beautique",
+      "districtId": "downtown",
+      "category": "salon",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A separately identified beauty establishment used in early-series footage.",
+      "visualDescription": "Small vintage beauty shop front, traditional awning and cheerful signage; visually distinct from Loretta’s salon.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "salon",
+        "shops",
+        "early seasons"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 63,
+        "y": 59
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "scissors",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Guillermo’s Beautique",
+        "body": "A separately identified beauty establishment used in early-series footage.",
+        "environmentPrompt": "Small vintage beauty shop front, traditional awning and cheerful signage; visually distinct from Loretta’s salon.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-booksellers",
+      "name": "Cabot Cove Booksellers",
+      "districtId": "downtown",
+      "category": "bookstore",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The local bookshop and a fitting home for displays of J. B. Fletcher mysteries.",
+      "visualDescription": "Warm amber window display, wooden shelves, hand-lettered bookshop sign and a small exterior book cart.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "books",
+        "literary",
+        "shops"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 64,
+        "y": 51
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "book-open",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Booksellers",
+        "body": "The local bookshop and a fitting home for displays of J. B. Fletcher mysteries.",
+        "environmentPrompt": "Warm amber window display, wooden shelves, hand-lettered bookshop sign and a small exterior book cart.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "eve-simpson-real-estate",
+      "name": "Eve Simpson’s Real Estate Office",
+      "districtId": "downtown",
+      "category": "real-estate",
+      "locationEvidence": "DIALOGUE_CONFIRMED",
+      "priority": "B",
+      "summary": "A location representing Eve Simpson’s real-estate business and Cabot Cove property culture.",
+      "visualDescription": "Neat street-front office with property cards in the window, a bell over the door, and period signage.",
+      "characterIds": [
+        "eve"
+      ],
+      "episodeIds": [
+        "beverly"
+      ],
+      "tags": [
+        "property",
+        "shops",
+        "town economy"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 61,
+        "y": 46
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "key",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Eve Simpson’s Real Estate Office",
+        "body": "A location representing Eve Simpson’s real-estate business and Cabot Cove property culture.",
+        "environmentPrompt": "Neat street-front office with property cards in the window, a bell over the door, and period signage.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "eve-simpson-home",
+      "name": "Eve Simpson’s Home",
+      "districtId": "residential",
+      "category": "residence",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A home associated with the town’s real-estate agent, represented separately from her business.",
+      "visualDescription": "Well-kept wood-sided residence with a small rear deck and established garden.",
+      "characterIds": [
+        "eve"
+      ],
+      "episodeIds": [
+        "beverly"
+      ],
+      "tags": [
+        "home",
+        "neighbors"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 32,
+        "y": 55
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Eve Simpson’s Home",
+        "body": "A home associated with the town’s real-estate agent, represented separately from her business.",
+        "environmentPrompt": "Well-kept wood-sided residence with a small rear deck and established garden.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "bo-dixons-diner",
+      "name": "Bo Dixon’s Diner",
+      "districtId": "downtown",
+      "category": "diner",
+      "locationEvidence": "DIALOGUE_CONFIRMED",
+      "priority": "B",
+      "summary": "A classic independent diner challenged by a new themed roadside restaurant.",
+      "visualDescription": "Single-story diner with chrome-trim details, large front windows, stools, booth seating and coffee sign.",
+      "characterIds": [],
+      "episodeIds": [
+        "home-fries"
+      ],
+      "tags": [
+        "food",
+        "diner",
+        "local business"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 66,
+        "y": 56
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/",
+        "https://www.tvmaze.com/shows/2083/murder-she-wrote/episodeguide"
+      ],
+      "icon": "coffee",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Bo Dixon’s Diner",
+        "body": "A classic independent diner challenged by a new themed roadside restaurant.",
+        "environmentPrompt": "Single-story diner with chrome-trim details, large front windows, stools, booth seating and coffee sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "joshua-peabody-inn",
+      "name": "Joshua Peabody Inn",
+      "districtId": "hotel",
+      "category": "inn",
+      "locationEvidence": "DIALOGUE_CONFIRMED",
+      "priority": "B",
+      "summary": "A Revolutionary War–themed roadside restaurant/inn associated with the town’s disputed historical hero.",
+      "visualDescription": "Large inn-style roadside building, broad sign, parking pullout and old-fashioned tavern lighting.",
+      "characterIds": [
+        "joshua",
+        "seth",
+        "amos"
+      ],
+      "episodeIds": [
+        "home-fries"
+      ],
+      "tags": [
+        "inn",
+        "dining",
+        "history"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 17,
+        "y": 27
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/",
+        "https://www.tvmaze.com/shows/2083/murder-she-wrote/episodeguide"
+      ],
+      "icon": "bed",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Joshua Peabody Inn",
+        "body": "A Revolutionary War–themed roadside restaurant/inn associated with the town’s disputed historical hero.",
+        "environmentPrompt": "Large inn-style roadside building, broad sign, parking pullout and old-fashioned tavern lighting.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "dr-seth-hazlitt-practice",
+      "name": "Dr. Seth Hazlitt’s Practice",
+      "districtId": "historic",
+      "category": "medical",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "B",
+      "summary": "An interpretive standalone office for Cabot Cove’s doctor; the character’s profession is canonical but this plot is not fixed by a verified map.",
+      "visualDescription": "Modest converted-house clinic with a small brass sign, porch, waiting room windows and tidy landscaping.",
+      "characterIds": [
+        "seth",
+        "jessica"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "medical",
+        "reconstruction"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 42,
+        "y": 67
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "stethoscope",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Dr. Seth Hazlitt’s Practice",
+        "body": "An interpretive standalone office for Cabot Cove’s doctor; the character’s profession is canonical but this plot is not fixed by a verified map.",
+        "environmentPrompt": "Modest converted-house clinic with a small brass sign, porch, waiting room windows and tidy landscaping.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-hospital",
+      "name": "Cabot Cove Hospital",
+      "districtId": "outskirts",
+      "category": "hospital",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The town’s medical facility on a road slightly beyond the old downtown blocks.",
+      "visualDescription": "Low-profile regional clinic/hospital with pale brick, an entrance canopy, simple lettering, parking and shrubs.",
+      "characterIds": [
+        "seth"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "medical",
+        "institution"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 32,
+        "y": 72
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "hospital",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Hospital",
+        "body": "The town’s medical facility on a road slightly beyond the old downtown blocks.",
+        "environmentPrompt": "Low-profile regional clinic/hospital with pale brick, an entrance canopy, simple lettering, parking and shrubs.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-high-school",
+      "name": "Cabot Cove High School",
+      "districtId": "outskirts",
+      "category": "school",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The community school serving the town and its surrounding area.",
+      "visualDescription": "Two-story masonry or clapboard school wing, a small flagpole, front steps, athletic field and parked older cars.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "education",
+        "school"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 20,
+        "y": 72
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "school",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove High School",
+        "body": "The community school serving the town and its surrounding area.",
+        "environmentPrompt": "Two-story masonry or clapboard school wing, a small flagpole, front steps, athletic field and parked older cars.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-softball-field",
+      "name": "Cabot Cove Softball Field",
+      "districtId": "outskirts",
+      "category": "recreation",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A simple community playing field and gathering place.",
+      "visualDescription": "Dirt diamond, chain-link backstop, timber benches, chalk baselines and a hand-painted scoreboard.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "sports",
+        "park",
+        "community"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 15,
+        "y": 84
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "trees",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Softball Field",
+        "body": "A simple community playing field and gathering place.",
+        "environmentPrompt": "Dirt diamond, chain-link backstop, timber benches, chalk baselines and a hand-painted scoreboard.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-church",
+      "name": "Old Cabot Cove Church",
+      "districtId": "historic",
+      "category": "church",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A composite New England church representing the familiar civic and religious architecture of a Maine village; no specific official building is asserted.",
+      "visualDescription": "White steepled clapboard church with arched windows and a simple lawn; do not confuse with the mortuary.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "faith",
+        "landmark",
+        "composite"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 46,
+        "y": 72
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "church",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Old Cabot Cove Church",
+        "body": "A composite New England church representing the familiar civic and religious architecture of a Maine village; no specific official building is asserted.",
+        "environmentPrompt": "White steepled clapboard church with arched windows and a simple lawn; do not confuse with the mortuary.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "old-cemetery",
+      "name": "Old Town Cemetery",
+      "districtId": "historic",
+      "category": "cemetery",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A modest historic burying ground with old stones and shade trees.",
+      "visualDescription": "Uneven historic headstones behind a low iron/stone boundary, gravel footpath, old maples and weathered monuments.",
+      "characterIds": [],
+      "episodeIds": [
+        "deadly-lady"
+      ],
+      "tags": [
+        "history",
+        "cemetery"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 53,
+        "y": 74
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+      ],
+      "icon": "cross",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Old Town Cemetery",
+        "body": "A modest historic burying ground with old stones and shade trees.",
+        "environmentPrompt": "Uneven historic headstones behind a low iron/stone boundary, gravel footpath, old maples and weathered monuments.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cobbs-mortuary",
+      "name": "Cobb’s Mortuary",
+      "districtId": "historic",
+      "category": "mortuary",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The local mortuary, an established setting that should remain distinct from the church.",
+      "visualDescription": "Quiet old institutional residence with a covered entrance, subdued sign and elegant trim.",
+      "characterIds": [],
+      "episodeIds": [
+        "deadly-lady"
+      ],
+      "tags": [
+        "mortuary",
+        "civic"
+      ],
+      "filmingReference": "Saint Anthony’s Roman Catholic Church, Mendocino, was used as the on-screen mortuary exterior.",
+      "mapPosition": {
+        "x": 57,
+        "y": 70
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/",
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+      ],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cobb’s Mortuary",
+        "body": "The local mortuary, an established setting that should remain distinct from the church.",
+        "environmentPrompt": "Quiet old institutional residence with a covered entrance, subdued sign and elegant trim.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-point-lighthouse",
+      "name": "Cabot Point Lighthouse",
+      "districtId": "coastal",
+      "category": "lighthouse",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "An extant coastal lighthouse appearing among the series’ Cabot Cove exterior landmarks.",
+      "visualDescription": "White lantern tower with red/black cap, low keeper’s cottage, sea grass, waves breaking against the point, narrow access path.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "lighthouse",
+        "viewpoint",
+        "sea"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 90,
+        "y": 80
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "tower-control",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Point Lighthouse",
+        "body": "An extant coastal lighthouse appearing among the series’ Cabot Cove exterior landmarks.",
+        "environmentPrompt": "White lantern tower with red/black cap, low keeper’s cottage, sea grass, waves breaking against the point, narrow access path.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "old-lighthouse-site",
+      "name": "Old Wooden Lighthouse Site",
+      "districtId": "coastal",
+      "category": "ruin",
+      "locationEvidence": "DIALOGUE_CONFIRMED",
+      "priority": "B",
+      "summary": "Site of a wooden lighthouse said to have burned down before the action of “Sticks and Stones”; the coastal parcel attracts a condo-development proposal.",
+      "visualDescription": "Grassy exposed bluff with surviving foundation stones, fenced former Coast Guard land and a small historic marker; ghost overlay of lost wooden tower.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "former lighthouse",
+        "development",
+        "historic conflict"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 70,
+        "y": 11
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+      ],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Old Wooden Lighthouse Site",
+        "body": "Site of a wooden lighthouse said to have burned down before the action of “Sticks and Stones”; the coastal parcel attracts a condo-development proposal.",
+        "environmentPrompt": "Grassy exposed bluff with surviving foundation stones, fenced former Coast Guard land and a small historic marker; ghost overlay of lost wooden tower.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cotters-beach",
+      "name": "Cotter’s Beach",
+      "districtId": "coastal",
+      "category": "beach",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A named beach associated with Cabot Cove, pictured as a quiet coastal access area.",
+      "visualDescription": "Pale sand transitioning to rounded stones, dune grasses, driftwood, a footpath and a bench.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "beach",
+        "coast"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 75,
+        "y": 79
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "waves",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cotter’s Beach",
+        "body": "A named beach associated with Cabot Cove, pictured as a quiet coastal access area.",
+        "environmentPrompt": "Pale sand transitioning to rounded stones, dune grasses, driftwood, a footpath and a bench.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "gallerie-frederich",
+      "name": "Gallerie Frederich / Elvira Tree Residence",
+      "districtId": "historic",
+      "category": "gallery",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "An art gallery beneath a residence that appears in “Sticks and Stones.”",
+      "visualDescription": "Two-story clapboard home, gallery window at street level, smaller upper-story residential windows and a small hanging sign.",
+      "characterIds": [],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "art",
+        "gallery",
+        "historic building"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 35,
+        "y": 56
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "image",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Gallerie Frederich / Elvira Tree Residence",
+        "body": "An art gallery beneath a residence that appears in “Sticks and Stones.”",
+        "environmentPrompt": "Two-story clapboard home, gallery window at street level, smaller upper-story residential windows and a small hanging sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-travel-agency",
+      "name": "Cabot Cove Travel Agency",
+      "districtId": "downtown",
+      "category": "travel",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "A small travel office in town; a documented downtown exterior from the Beverly episode.",
+      "visualDescription": "Narrow storefront with 1980s travel posters, world-map window decals and modest sign.",
+      "characterIds": [],
+      "episodeIds": [
+        "beverly"
+      ],
+      "tags": [
+        "travel",
+        "shops"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 54,
+        "y": 59
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "plane",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Travel Agency",
+        "body": "A small travel office in town; a documented downtown exterior from the Beverly episode.",
+        "environmentPrompt": "Narrow storefront with 1980s travel posters, world-map window decals and modest sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "amos-tupper-house",
+      "name": "Amos Tupper’s House",
+      "districtId": "residential",
+      "category": "residence",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The early sheriff’s unpretentious residence on an older residential lane.",
+      "visualDescription": "Simple two-story clapboard house, small front step, lawn and driveway.",
+      "characterIds": [
+        "amos"
+      ],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "home",
+        "sheriff"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 21,
+        "y": 52
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Amos Tupper’s House",
+        "body": "The early sheriff’s unpretentious residence on an older residential lane.",
+        "environmentPrompt": "Simple two-story clapboard house, small front step, lawn and driveway.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "beverly-gareth-house",
+      "name": "Beverly Gareth’s House",
+      "districtId": "residential",
+      "category": "residence",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "Home of Beverly Gareth, whose death opens “Sticks and Stones”; the sheriff’s car pulls up out front within minutes of the episode starting.",
+      "visualDescription": "Two-storey clapboard corner house with a front porch and a picket fence; the same exterior later doubles as the deputy’s house in “If It’s Thursday, It Must Be Beverly.”",
+      "characterIds": [
+        "amos"
+      ],
+      "episodeIds": [
+        "sticks-and-stones",
+        "beverly"
+      ],
+      "tags": [
+        "home",
+        "crime scene"
+      ],
+      "filmingReference": "Northwest corner of Covelo and Lansing Streets, Mendocino, California; production exterior, not a Cabot Cove address.",
+      "mapPosition": {
+        "x": 30,
+        "y": 46
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://murdershewatched.com/2018/12/10/murder-she-wrote-in-mendocino-california/"
+      ],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Beverly Gareth’s House",
+        "body": "Home of Beverly Gareth, whose death opens “Sticks and Stones”; the sheriff’s car pulls up out front within minutes of the episode starting.",
+        "environmentPrompt": "Two-storey clapboard corner house with a front porch and a picket fence; the same exterior later doubles as the deputy’s house in “If It’s Thursday, It Must Be Beverly.”",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "ednas-house",
+      "name": "Edna’s House",
+      "districtId": "civic",
+      "category": "residence",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "C",
+      "summary": "Jessica calls on Edna in “Sticks and Stones”; the library can be seen from her garden, which places the house a street away from it.",
+      "visualDescription": "Modest shingled cottage with a deep garden and a view across to the library.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "home",
+        "garden"
+      ],
+      "filmingReference": "Southwest corner of Capella and Woodward Streets, Mendocino, California; production exterior, not a Cabot Cove address.",
+      "mapPosition": {
+        "x": 40,
+        "y": 43
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Edna’s House",
+        "body": "Jessica calls on Edna in “Sticks and Stones”; the library can be seen from her garden, which places the house a street away from it.",
+        "environmentPrompt": "Modest shingled cottage with a deep garden and a view across to the library.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "founders-day-green",
+      "name": "Founders Day Green",
+      "districtId": "historic",
+      "category": "green",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "B",
+      "summary": "An invented central green used to stage historical festivities mentioned in the series; its precise setting is not established.",
+      "visualDescription": "Small grassy gathering lawn with vintage picnic benches, bunting for Founders Day, a flag and an optional history kiosk.",
+      "characterIds": [
+        "jessica",
+        "sam"
+      ],
+      "episodeIds": [
+        "hit-run-homicide",
+        "indian-giver"
+      ],
+      "tags": [
+        "park",
+        "festival",
+        "history"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 48,
+        "y": 61
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+      ],
+      "icon": "trees",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Founders Day Green",
+        "body": "An invented central green used to stage historical festivities mentioned in the series; its precise setting is not established.",
+        "environmentPrompt": "Small grassy gathering lawn with vintage picnic benches, bunting for Founders Day, a flag and an optional history kiosk.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "joshua-peabody-marker",
+      "name": "Joshua Peabody Heritage Marker",
+      "districtId": "historic",
+      "category": "monument",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "B",
+      "summary": "A proposed marker interpreting the conflicting town legends about Joshua Peabody.",
+      "visualDescription": "Bronze-toned plaque on rough stone, colonial-style low rail, period-looking landscaping.",
+      "characterIds": [
+        "joshua"
+      ],
+      "episodeIds": [
+        "joshua-peabody",
+        "to-kill-a-legend"
+      ],
+      "tags": [
+        "heritage",
+        "contested history"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 49,
+        "y": 63
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+      ],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Joshua Peabody Heritage Marker",
+        "body": "A proposed marker interpreting the conflicting town legends about Joshua Peabody.",
+        "environmentPrompt": "Bronze-toned plaque on rough stone, colonial-style low rail, period-looking landscaping.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-cove-entrance-sign",
+      "name": "Welcome to Cabot Cove Sign",
+      "districtId": "outskirts",
+      "category": "sign",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "B",
+      "summary": "The familiar town entrance marker seen during a Cabot Cove bicycle ride sequence.",
+      "visualDescription": "Hand-painted wooden welcome sign beside a two-lane country road, grass verge and tall roadside pines.",
+      "characterIds": [
+        "jessica"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "arrival",
+        "scenic",
+        "town identity"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 9,
+        "y": 45
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2024/03/08/around-town/"
+      ],
+      "icon": "signpost",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Welcome to Cabot Cove Sign",
+        "body": "The familiar town entrance marker seen during a Cabot Cove bicycle ride sequence.",
+        "environmentPrompt": "Hand-painted wooden welcome sign beside a two-lane country road, grass verge and tall roadside pines.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "harbor-fish-market",
+      "name": "Harbor Fish Market",
+      "districtId": "waterfront",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A useful fictional fish counter supporting the working local fishing economy.",
+      "visualDescription": "Weathered one-story fish shop with chalkboard prices, ice crates and a modest blue-painted awning.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "fish",
+        "shops",
+        "harbor"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 70,
+        "y": 55
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Harbor Fish Market",
+        "body": "A useful fictional fish counter supporting the working local fishing economy.",
+        "environmentPrompt": "Weathered one-story fish shop with chalkboard prices, ice crates and a modest blue-painted awning.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "bait-tackle-shop",
+      "name": "Bait and Tackle Shop",
+      "districtId": "waterfront",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Invented independent marine supply storefront near the piers.",
+      "visualDescription": "Peeling sea-green paint, hooks and rope in windows, net baskets and painted fish sign.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "marine",
+        "shops"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 73,
+        "y": 56
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Bait and Tackle Shop",
+        "body": "Invented independent marine supply storefront near the piers.",
+        "environmentPrompt": "Peeling sea-green paint, hooks and rope in windows, net baskets and painted fish sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "boat-repair-yard",
+      "name": "Boat Repair Yard",
+      "districtId": "waterfront",
+      "category": "industrial",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A practical shore-side repair area to make the docklands feel genuinely employed.",
+      "visualDescription": "Open timber shed, boat hull on stands, saw horses, stacked planks and oil drums.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "working harbor",
+        "boats"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 73.2,
+        "y": 61.5
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "factory",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Boat Repair Yard",
+        "body": "A practical shore-side repair area to make the docklands feel genuinely employed.",
+        "environmentPrompt": "Open timber shed, boat hull on stands, saw horses, stacked planks and oil drums.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "harbor-chandlery",
+      "name": "Harbor Chandlery",
+      "districtId": "waterfront",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A small marine equipment and provisions shop linking the village center to the docks.",
+      "visualDescription": "Clapboard storefront, ship lantern in front window, bins of rope and brass hardware.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "marine",
+        "shops"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 68,
+        "y": 50
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Harbor Chandlery",
+        "body": "A small marine equipment and provisions shop linking the village center to the docks.",
+        "environmentPrompt": "Clapboard storefront, ship lantern in front window, bins of rope and brass hardware.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "lobster-coop",
+      "name": "Fishermen’s Lobster Co-op",
+      "districtId": "waterfront",
+      "category": "industrial",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Interpretive cooperative shed for weighing catch, stocking traps and hauling gear.",
+      "visualDescription": "Timber-sided wharf structure, trap stacks and brightly painted floats.",
+      "characterIds": [
+        "ethan"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "fishing",
+        "business"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 74,
+        "y": 48
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "factory",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Fishermen’s Lobster Co-op",
+        "body": "Interpretive cooperative shed for weighing catch, stocking traps and hauling gear.",
+        "environmentPrompt": "Timber-sided wharf structure, trap stacks and brightly painted floats.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "dockmasters-office",
+      "name": "Dockmaster’s Office",
+      "districtId": "waterfront",
+      "category": "civic",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A tiny pier office giving the harbor a clear destination and operational detail.",
+      "visualDescription": "Single-room hut built on a timber pier, window facing the moorings and a notice board.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "water",
+        "pier",
+        "working harbor"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 83,
+        "y": 49
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Dockmaster’s Office",
+        "body": "A tiny pier office giving the harbor a clear destination and operational detail.",
+        "environmentPrompt": "Single-room hut built on a timber pier, window facing the moorings and a notice board.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "water"
+    },
+    {
+      "id": "marina-fuel-dock",
+      "name": "Marina Fuel Dock",
+      "districtId": "waterfront",
+      "category": "pier",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "An unobtrusive dock where working boats can refuel.",
+      "visualDescription": "Narrow pontoon beside tide-worn pilings and a small vintage hand-painted fuel sign.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "water",
+        "marina"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 85,
+        "y": 52
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "anchor",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Marina Fuel Dock",
+        "body": "An unobtrusive dock where working boats can refuel.",
+        "environmentPrompt": "Narrow pontoon beside tide-worn pilings and a small vintage hand-painted fuel sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "water"
+    },
+    {
+      "id": "wharfside-cafe",
+      "name": "The Dock Restaurant",
+      "districtId": "waterfront",
+      "category": "restaurant",
+      "locationEvidence": "ON_SCREEN",
+      "priority": "C",
+      "summary": "Harbor-front restaurant the sheriff’s cruiser drives past in “Sticks and Stones,” among the dockside shops where Jessica gets her toaster repaired.",
+      "visualDescription": "Weathered waterfront restaurant with a painted name board, harbor-facing windows and outdoor benches.",
+      "characterIds": [],
+      "episodeIds": [
+        "sticks-and-stones"
+      ],
+      "tags": [
+        "food",
+        "waterfront"
+      ],
+      "filmingReference": "Fort Bragg harbor, California; the building now houses the Noyo River Grill. Production exterior, not a Cabot Cove address.",
+      "mapPosition": {
+        "x": 69,
+        "y": 58
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "The Dock Restaurant",
+        "body": "Harbor-front restaurant the sheriff’s cruiser drives past in “Sticks and Stones,” among the dockside shops where Jessica gets her toaster repaired.",
+        "environmentPrompt": "Weathered waterfront restaurant with a painted name board, harbor-facing windows and outdoor benches.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "town-post-office",
+      "name": "Cabot Cove Post Office",
+      "districtId": "downtown",
+      "category": "civic",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A compact postal counter fitting an established New England town center; not claimed as a specific established facade.",
+      "visualDescription": "Brick or whitewashed storefront with a simple postal emblem, concrete steps and mail collection box.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "civic",
+        "services"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 51,
+        "y": 54
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Post Office",
+        "body": "A compact postal counter fitting an established New England town center; not claimed as a specific established facade.",
+        "environmentPrompt": "Brick or whitewashed storefront with a simple postal emblem, concrete steps and mail collection box.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "general-store",
+      "name": "Cabot Cove General Store",
+      "districtId": "downtown",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A plausible local merchant supplying the village with daily necessities.",
+      "visualDescription": "Awning, newspaper rack, crates of apples and bottled soda in the window.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "retail",
+        "groceries"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 46,
+        "y": 51
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove General Store",
+        "body": "A plausible local merchant supplying the village with daily necessities.",
+        "environmentPrompt": "Awning, newspaper rack, crates of apples and bottled soda in the window.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "hardware-store",
+      "name": "Town Hardware",
+      "districtId": "downtown",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "An independent hardware shop supplying fishermen, households and tradespeople.",
+      "visualDescription": "Wood-front store, paint signs, garden tools and metal pails by the entrance.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "retail",
+        "services"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 62,
+        "y": 61
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Town Hardware",
+        "body": "An independent hardware shop supplying fishermen, households and tradespeople.",
+        "environmentPrompt": "Wood-front store, paint signs, garden tools and metal pails by the entrance.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "flower-shop",
+      "name": "Harbor Flower Shop",
+      "districtId": "downtown",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A floral storefront softening the transition from the main blocks to the church quarter.",
+      "visualDescription": "Muted green awning, geraniums and chrysanthemums in wooden tubs, neat window lettering.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "retail",
+        "flowers"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 59,
+        "y": 63
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Harbor Flower Shop",
+        "body": "A floral storefront softening the transition from the main blocks to the church quarter.",
+        "environmentPrompt": "Muted green awning, geraniums and chrysanthemums in wooden tubs, neat window lettering.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "local-bank",
+      "name": "Cabot Cove Savings",
+      "districtId": "downtown",
+      "category": "bank",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A modest bank building reinforcing the town’s ordinary commercial routines.",
+      "visualDescription": "Two-story red brick corner building with simple 1980s bank sign and narrow windows.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "bank",
+        "commerce"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 52,
+        "y": 49
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Savings",
+        "body": "A modest bank building reinforcing the town’s ordinary commercial routines.",
+        "environmentPrompt": "Two-story red brick corner building with simple 1980s bank sign and narrow windows.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "town-hall",
+      "name": "Cabot Cove Town Hall",
+      "districtId": "civic",
+      "category": "civic",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A plausible office for Mayor Sam Booth; municipal government exists in the show but this dedicated facade is interpretive.",
+      "visualDescription": "Small dignified town building with clock, flag and modest green space, not a grand capitol.",
+      "characterIds": [
+        "sam"
+      ],
+      "episodeIds": [],
+      "tags": [
+        "government",
+        "civic"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 44,
+        "y": 53
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Cabot Cove Town Hall",
+        "body": "A plausible office for Mayor Sam Booth; municipal government exists in the show but this dedicated facade is interpretive.",
+        "environmentPrompt": "Small dignified town building with clock, flag and modest green space, not a grand capitol.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "firehouse",
+      "name": "Volunteer Firehouse",
+      "districtId": "outskirts",
+      "category": "civic",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A practical village service building along the road out of town.",
+      "visualDescription": "Single-bay red-and-cream building with vintage fire engine just visible inside.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "community",
+        "service"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 31,
+        "y": 67
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Volunteer Firehouse",
+        "body": "A practical village service building along the road out of town.",
+        "environmentPrompt": "Single-bay red-and-cream building with vintage fire engine just visible inside.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "old-gas-station",
+      "name": "Route 27 Service Station",
+      "districtId": "outskirts",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Vintage petrol and mechanic stop on the road leading inland; the route association is an interpretive nod to dialogue, not a verified in-town street address.",
+      "visualDescription": "Low brick shop, two old-fashioned pumps, garage door and an old station wagon.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "roadside",
+        "cars"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 13,
+        "y": 54
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [
+        "https://murdershewroteshewrote.com/2023/11/30/where-is-cabot-cove/"
+      ],
+      "icon": "store",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Route 27 Service Station",
+        "body": "Vintage petrol and mechanic stop on the road leading inland; the route association is an interpretive nod to dialogue, not a verified in-town street address.",
+        "environmentPrompt": "Low brick shop, two old-fashioned pumps, garage door and an old station wagon.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "farmhouse-and-orchard",
+      "name": "Inland Farmhouse and Orchard",
+      "districtId": "outskirts",
+      "category": "farm",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A working homestead lending scale and authenticity to the land beyond the village.",
+      "visualDescription": "Weathered red barn, orchard rows, split-rail fence, kitchen garden and meadow.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "farm",
+        "countryside"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 8,
+        "y": 72
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "wheat",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Inland Farmhouse and Orchard",
+        "body": "A working homestead lending scale and authenticity to the land beyond the village.",
+        "environmentPrompt": "Weathered red barn, orchard rows, split-rail fence, kitchen garden and meadow.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "woodland-overlook",
+      "name": "Pine Bluffs Overlook",
+      "districtId": "coastal",
+      "category": "scenic",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A viewpoint above the coast where visitors can look back toward the harbor.",
+      "visualDescription": "Pines, scrub, benches, a timber rail and layered cliffs with sea spray.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "viewpoint",
+        "trail"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 83,
+        "y": 65
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "binoculars",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Pine Bluffs Overlook",
+        "body": "A viewpoint above the coast where visitors can look back toward the harbor.",
+        "environmentPrompt": "Pines, scrub, benches, a timber rail and layered cliffs with sea spray.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "rocky-coast-trail",
+      "name": "Rocky Cove Trail",
+      "districtId": "coastal",
+      "category": "trail",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A scenic walking path connecting woodlands, beach access and the lighthouse road.",
+      "visualDescription": "Narrow well-worn earth trail weaving through spruce, fern and rocky sea grass.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "walking",
+        "coast"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 85,
+        "y": 70
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "area",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "footprints",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Rocky Cove Trail",
+        "body": "A scenic walking path connecting woodlands, beach access and the lighthouse road.",
+        "environmentPrompt": "Narrow well-worn earth trail weaving through spruce, fern and rocky sea grass.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "secluded-coastal-cottage",
+      "name": "Secluded Coastal Cottage",
+      "districtId": "coastal",
+      "category": "residence",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Quiet summer cottage suitable for a future standalone episode location, but not linked to a particular storyline.",
+      "visualDescription": "Silvered shingle cabin with small porch, wind-bent trees and a gravel drive.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "residence",
+        "shore"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 63,
+        "y": 86
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "house",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Secluded Coastal Cottage",
+        "body": "Quiet summer cottage suitable for a future standalone episode location, but not linked to a particular storyline.",
+        "environmentPrompt": "Silvered shingle cabin with small porch, wind-bent trees and a gravel drive.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "village-gazebo",
+      "name": "Village Bandstand",
+      "districtId": "historic",
+      "category": "recreation",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A small period-appropriate gathering pavilion on the town green.",
+      "visualDescription": "Octagonal white-painted wood gazebo with simple railings.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "park",
+        "bandstand"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 44,
+        "y": 60
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "trees",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Village Bandstand",
+        "body": "A small period-appropriate gathering pavilion on the town green.",
+        "environmentPrompt": "Octagonal white-painted wood gazebo with simple railings.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "coastal-boat-launch",
+      "name": "Public Boat Launch",
+      "districtId": "waterfront",
+      "category": "pier",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A simple access ramp for small craft on the sheltered south side of the cove.",
+      "visualDescription": "Concrete ramp, short dock, wooden sign and grassy parking turnout.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "maritime",
+        "public access"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 76,
+        "y": 63
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "anchor",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Public Boat Launch",
+        "body": "A simple access ramp for small craft on the sheltered south side of the cove.",
+        "environmentPrompt": "Concrete ramp, short dock, wooden sign and grassy parking turnout.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "shoreline"
+    },
+    {
+      "id": "old-chapel-ruin",
+      "name": "Old Chapel Foundation",
+      "districtId": "historic",
+      "category": "ruin",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "A tasteful optional landmark representing the many layers of settlement history, without inventing a specific televised chapel.",
+      "visualDescription": "Low mossy stone foundation among shrubs and old shade trees.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "history",
+        "ruins"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 64,
+        "y": 76
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "landmark",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Old Chapel Foundation",
+        "body": "A tasteful optional landmark representing the many layers of settlement history, without inventing a specific televised chapel.",
+        "environmentPrompt": "Low mossy stone foundation among shrubs and old shade trees.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "coastal-inn-bb",
+      "name": "Shore Lane Bed and Breakfast",
+      "districtId": "hotel",
+      "category": "inn",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "One quiet independent guesthouse to imply seasonal visitors beyond Hill House.",
+      "visualDescription": "Large farmhouse converted to B&B with porch swings, hydrangeas and modest sign.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "inn",
+        "lodging"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 30,
+        "y": 23
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": false,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "bed",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Shore Lane Bed and Breakfast",
+        "body": "One quiet independent guesthouse to imply seasonal visitors beyond Hill House.",
+        "environmentPrompt": "Large farmhouse converted to B&B with porch swings, hydrangeas and modest sign.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "lighthouse-motel",
+      "name": "Lighthouse Motel",
+      "districtId": "coastal",
+      "category": "motel",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Roadside motel named in “The Prodigal Father”; its position here is a reconstruction.",
+      "visualDescription": "Single-storey motor court with a lighthouse sign and a row of guest-room doors.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "murder site"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 84,
+        "y": 72
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Lighthouse Motel",
+        "body": "Roadside motel named in “The Prodigal Father”; its position here is a reconstruction.",
+        "environmentPrompt": "Single-storey motor court with a lighthouse sign and a row of guest-room doors.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "borbey-house",
+      "name": "Borbey House",
+      "districtId": "hotel",
+      "category": "residence",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Old family house at the center of “The Legacy of Borbey House”; position reconstructed.",
+      "visualDescription": "Large weathered Victorian with a widow’s walk, set back on the ridge.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "murder site"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 47,
+        "y": 22
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Borbey House",
+        "body": "Old family house at the center of “The Legacy of Borbey House”; position reconstructed.",
+        "environmentPrompt": "Large weathered Victorian with a widow’s walk, set back on the ridge.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "cabot-furniture-store",
+      "name": "Furniture Store",
+      "districtId": "downtown",
+      "category": "shop",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Downtown furniture store destroyed by fire in “Dead Letter”; position reconstructed.",
+      "visualDescription": "Two-storey brick storefront with display windows.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "murder site"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 66,
+        "y": 47
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Furniture Store",
+        "body": "Downtown furniture store destroyed by fire in “Dead Letter”; position reconstructed.",
+        "environmentPrompt": "Two-storey brick storefront with display windows.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "concert-stage",
+      "name": "Concert Rehearsal Stage",
+      "districtId": "civic",
+      "category": "venue",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Rehearsal stage from “Murder in Tempo”; position reconstructed.",
+      "visualDescription": "Open-sided timber stage with a canvas roof and stacked speakers.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "murder site"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 52,
+        "y": 66
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Concert Rehearsal Stage",
+        "body": "Rehearsal stage from “Murder in Tempo”; position reconstructed.",
+        "environmentPrompt": "Open-sided timber stage with a canvas roof and stacked speakers.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    },
+    {
+      "id": "deserted-coast-road",
+      "name": "Deserted Road",
+      "districtId": "outskirts",
+      "category": "road",
+      "locationEvidence": "CREATIVE_INFILL",
+      "priority": "C",
+      "summary": "Lonely stretch of road where the victim is shot in “Love and Hate in Cabot Cove”; position reconstructed.",
+      "visualDescription": "Empty two-lane road edge with a mile marker and wild grass.",
+      "characterIds": [],
+      "episodeIds": [],
+      "tags": [
+        "murder site"
+      ],
+      "filmingReference": null,
+      "mapPosition": {
+        "x": 18,
+        "y": 62
+      },
+      "placementAccuracy": "INTERPRETIVE",
+      "fictionalMap": true,
+      "mapGeometry": "point",
+      "visibleByDefault": true,
+      "interactive": true,
+      "spoilerLevel": "none",
+      "sourceUrls": [],
+      "icon": "restaurant",
+      "era": {
+        "startYear": 1984,
+        "endYear": 1996,
+        "note": "Nominal fictional-map browse range; not a claim the landmark appears in every year."
+      },
+      "detailPanel": {
+        "headline": "Deserted Road",
+        "body": "Lonely stretch of road where the victim is shot in “Love and Hate in Cabot Cove”; position reconstructed.",
+        "environmentPrompt": "Empty two-lane road edge with a mile marker and wild grass.",
+        "showEvidenceDisclaimer": true
+      },
+      "visualAnchor": "land"
+    }
+  ],
+  "guidedTours": [
+    {
+      "id": "jessicas-bicycle-tour",
+      "name": "Jessica Fletcher’s Bicycle Tour",
+      "type": "curated",
+      "description": "A fictional suggested visitor loop inspired by Jessica’s life, not a verified on-screen itinerary.",
+      "mode": "bicycle",
+      "locationIds": [
+        "jessica-fletcher-house",
+        "cabot-cove-library",
+        "main-street",
+        "sheriffs-office",
+        "cabot-cove-gazette",
+        "town-docks",
+        "hill-house"
+      ],
+      "routeGeometry": "compute-pedestrian-and-cycle-path-through-road-network",
+      "estimateDuration": null
+    },
+    {
+      "id": "maritime-cabot-cove",
+      "name": "Working Harbor Walk",
+      "type": "curated",
+      "description": "Explore the town’s fishing economy and harbor views.",
+      "mode": "walking",
+      "locationIds": [
+        "cabot-cove-harbor",
+        "town-docks",
+        "lobster-coop",
+        "harbor-chandlery",
+        "bait-tackle-shop",
+        "harbor-fish-market",
+        "coastal-boat-launch"
+      ],
+      "routeGeometry": "compute-path"
+    },
+    {
+      "id": "heritage-and-legends",
+      "name": "Cabot Cove History & Legends",
+      "type": "curated",
+      "description": "Disputed founding stories, civic history and shoreline development.",
+      "mode": "walking-plus-driving",
+      "locationIds": [
+        "historical-society",
+        "joshua-peabody-marker",
+        "founders-day-green",
+        "old-cemetery",
+        "old-lighthouse-site"
+      ],
+      "routeGeometry": "compute-path"
+    },
+    {
+      "id": "seaside-scenic-tour",
+      "name": "Coastal Views",
+      "type": "curated",
+      "description": "Waterfront, seaside trails, Cotter’s Beach and the surviving lighthouse.",
+      "mode": "walking-plus-driving",
+      "locationIds": [
+        "town-docks",
+        "coastal-boat-launch",
+        "woodland-overlook",
+        "cotters-beach",
+        "cabot-point-lighthouse"
+      ],
+      "routeGeometry": "compute-path"
+    }
+  ],
+  "historicalClaims": [
+    {
+      "id": "settlement-1684",
+      "year": 1684,
+      "claim": "Cabot Cove was first settled in 1684.",
+      "episodeId": "sticks-and-stones",
+      "claimStatus": "EPISODE_ACCOUNT",
+      "competingClaimIds": [
+        "established-1752"
+      ],
+      "sourceUrl": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    },
+    {
+      "id": "established-1752",
+      "year": 1752,
+      "claim": "A conflicting on-screen map appears to label Cabot Cove established in 1752.",
+      "episodeId": null,
+      "claimStatus": "CONFLICTING_PROP_DETAIL",
+      "competingClaimIds": [
+        "settlement-1684"
+      ],
+      "sourceUrl": "https://murdershewatched.com/2020/04/16/murder-she-wrote-7-13-moving-violation/"
+    },
+    {
+      "id": "founders-war-1778",
+      "year": 1778,
+      "claim": "The Battle of Cabot Cove described as a minor clash in 1778.",
+      "episodeId": "sticks-and-stones",
+      "claimStatus": "EPISODE_ACCOUNT",
+      "competingClaimIds": [
+        "peabody-death-1779"
+      ],
+      "sourceUrl": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    },
+    {
+      "id": "peabody-death-1779",
+      "year": 1779,
+      "claim": "Sheriff Tupper recounts Joshua Peabody dying in the Battle of Cabot Cove in 1779.",
+      "episodeId": "joshua-peabody",
+      "claimStatus": "LOCAL_LEGEND_CONTESTED",
+      "competingClaimIds": [
+        "founders-war-1778"
+      ],
+      "sourceUrl": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    },
+    {
+      "id": "great-storm-1836",
+      "year": 1836,
+      "claim": "A storm reportedly destroyed much of the settlement.",
+      "episodeId": "sticks-and-stones",
+      "claimStatus": "EPISODE_ACCOUNT",
+      "competingClaimIds": [],
+      "sourceUrl": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    },
+    {
+      "id": "old-lighthouse-fire",
+      "year": null,
+      "claim": "A wooden lighthouse burned down the year before events recounted in Sticks and Stones.",
+      "episodeId": "sticks-and-stones",
+      "claimStatus": "EPISODE_ACCOUNT",
+      "competingClaimIds": [],
+      "sourceUrl": "https://murdershewatched.com/2021/10/11/exploring-cabot-cove-history-on-murder-she-wrote/"
+    }
+  ],
+  "realWorldFilmingLocations": [
+    {
+      "id": "blair-house",
+      "name": "Blair House Inn",
+      "realWorldPlace": "Mendocino, California",
+      "address": "45110 Little Lake Street, Mendocino, CA",
+      "fictionalLandmarkIds": [
+        "jessica-fletcher-house"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://www.imdb.com/title/tt0086765/locations/"
+      ]
+    },
+    {
+      "id": "mendocino-hill-house",
+      "name": "Hill House Inn",
+      "realWorldPlace": "Mendocino, California",
+      "address": "10701 Palette Drive, Mendocino, CA",
+      "fictionalLandmarkIds": [
+        "hill-house"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+      ]
+    },
+    {
+      "id": "noyo-harbor",
+      "name": "Noyo Harbor",
+      "realWorldPlace": "Fort Bragg, California",
+      "address": null,
+      "fictionalLandmarkIds": [
+        "cabot-cove-harbor",
+        "town-docks"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/",
+        "https://murdershewatched.com/2020/10/19/mendocino-as-cabot-cove-in-deadly-lady/"
+      ]
+    },
+    {
+      "id": "russian-gulch-station",
+      "name": "Russian Gulch ranger/park office",
+      "realWorldPlace": "near Mendocino, California",
+      "address": null,
+      "fictionalLandmarkIds": [
+        "sheriffs-office"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ]
+    },
+    {
+      "id": "kelley-house",
+      "name": "Kelley House Museum",
+      "realWorldPlace": "Mendocino, California",
+      "address": null,
+      "fictionalLandmarkIds": [
+        "historical-society"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ]
+    },
+    {
+      "id": "universal-studios",
+      "name": "Universal Studios backlot waterfront",
+      "realWorldPlace": "Universal City, California",
+      "address": null,
+      "fictionalLandmarkIds": [
+        "cabot-cove-harbor"
+      ],
+      "sources": [
+        "https://murdershewatched.com/2023/04/03/mendocino-as-cabot-cove-in-sticks-and-stones/"
+      ]
+    }
+  ],
+  "uiDefaults": {
+    "center": {
+      "x": 53,
+      "y": 49
+    },
+    "initialZoom": 1,
+    "defaultTheme": "late-summer-1987",
+    "visiblePriorities": [
+      "A",
+      "B"
+    ],
+    "panEnabled": true,
+    "zoomEnabled": true,
+    "searchFields": [
+      "name",
+      "summary",
+      "tags",
+      "category",
+      "districtId"
+    ],
+    "layers": [
+      "town-landmarks",
+      "character-connections",
+      "episode-mysteries",
+      "local-history",
+      "creative-reconstruction",
+      "real-world-filming-comparison"
+    ],
+    "episodeSpoilersDefault": false,
+    "showEvidenceLegend": true,
+    "showCreativeInfillDefault": true
+  },
+  "validationRules": [
+    "IDs must be unique across locations; episodeIds and characterIds must point to existing records.",
+    "All x/y must be in [0,100]; never convert fictional x/y to latitude or longitude.",
+    "Do not invent missing episode identifiers; an empty episodeIds array means not verified.",
+    "Keep the old lighthouse burn site and extant Cabot Point Lighthouse as two separate POIs.",
+    "No direct road-travel distance or time should be computed from normalized coordinate differences.",
+    "Missing image assets should yield illustrated placeholders, never broken external images.",
+    "Do not merge California filming locations with fictional Cabot Cove positions.",
+    "Evidence status and interpretive placement must be shown separately in detail panels."
+  ]
+}
